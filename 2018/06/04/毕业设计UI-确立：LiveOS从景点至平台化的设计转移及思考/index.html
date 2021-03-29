@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="交互,原型,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="此篇文章为我主要做的毕业设计的详细思考过程以及制作的想法，此为第二篇确立。 在之前的选题制作中，一些设计的手稿的最终都是在为这个最后的设计做准备。 其中包括几个想法：在路上、梧桐树下、TravelNanking、LiveRoute以及最终的LiveOS。 我是如何从旅游应用扩展到平台化的，并却在这个设计过程里中从产品和开发层面考虑导致的设计感的缺失以及设计的结果，在数个制作的过程中，最紧迫的是时间">
+<meta name="keywords" content="交互,原型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22">
+<meta property="og:url" content="https://felixxiong.github.io/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/index.html">
+<meta property="og:site_name" content="故事熊">
+<meta property="og:description" content="此篇文章为我主要做的毕业设计的详细思考过程以及制作的想法，此为第二篇确立。 在之前的选题制作中，一些设计的手稿的最终都是在为这个最后的设计做准备。 其中包括几个想法：在路上、梧桐树下、TravelNanking、LiveRoute以及最终的LiveOS。 我是如何从旅游应用扩展到平台化的，并却在这个设计过程里中从产品和开发层面考虑导致的设计感的缺失以及设计的结果，在数个制作的过程中，最紧迫的是时间">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2018/06/11/5b1e12294e06a.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20187e832e1.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b202602967b2.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b2026053d67f.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b2016556cb67.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20191719468.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20162209616.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b2016e18e377.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20286c323e9.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b201625a9458.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20162b8e744.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b2016e5b3598.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20ccacaa027.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20ec09e9252.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20244a0f11f.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20244d62ca5.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b201630a15a8.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/15/5b23126562853.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/15/5b2312a80ca7e.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b201790adc44.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20249ede61f.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b201777d72a3.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b2024a5d4d9c.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20161e50635.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e775e1591.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e0e1dd27a.gif">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20ea0dabce0.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e5a433553.gif">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e77d7f457.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e18803680.gif">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e7df27189.jpeg">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e31ad3766.gif">
+<meta property="og:image" content="https://i.loli.net/2018/06/13/5b20e7e5d7ca8.jpeg">
+<meta property="og:updated_time" content="2018-09-02T03:07:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22">
+<meta name="twitter:description" content="此篇文章为我主要做的毕业设计的详细思考过程以及制作的想法，此为第二篇确立。 在之前的选题制作中，一些设计的手稿的最终都是在为这个最后的设计做准备。 其中包括几个想法：在路上、梧桐树下、TravelNanking、LiveRoute以及最终的LiveOS。 我是如何从旅游应用扩展到平台化的，并却在这个设计过程里中从产品和开发层面考虑导致的设计感的缺失以及设计的结果，在数个制作的过程中，最紧迫的是时间">
+<meta name="twitter:image" content="https://i.loli.net/2018/06/11/5b1e12294e06a.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://felixxiong.github.io/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/">
+
+
+
+
+
+  <title>毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22 | 故事熊</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126731684-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">故事熊</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">情绪泛滥 沉浸其中</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogmenorabilia">
+          <a href="/blogmenorabilia/" rel="section">
+            
+            blogmenorabilia
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wechatpublic">
+          <a href="/wechatpublic/" rel="section">
+            
+            微信公众账号
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume/" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-messageboard">
+          <a href="/messageboard/" rel="section">
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FelixXiong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事熊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T04:01:57+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/毕业设计（接本）/" itemprop="url" rel="index">
+                    <span itemprop="name">毕业设计（接本）</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/" class="leancloud_visitors" data-flag-title="毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,290
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>此篇文章为我主要做的毕业设计的详细思考过程以及制作的想法，此为第二篇确立。</p>
+<p>在之前的选题制作中，一些设计的手稿的最终都是在为这个最后的设计做准备。</p>
+<p>其中包括几个想法：在路上、梧桐树下、TravelNanking、LiveRoute以及最终的LiveOS。</p>
+<p>我是如何从旅游应用扩展到平台化的，并却在这个设计过程里中从产品和开发层面考虑导致的设计感的缺失以及设计的结果，在数个制作的过程中，最紧迫的是时间，以及心理上的压力。将在文中阐述。</p>
+<p>如果您对最终的想法有意，欢迎联系我或者在下方评论留言。</p>
+<a id="more"></a>
+<p>制作一个毕业设计，经历了很多，同时也修改了很多。</p>
+<p>在制作这个毕业设计中，起初根据一位同学的建议，为“毕业设计中制作这个民宿非常适合出效果”。</p>
+<p>图片中的聊天记录使用截图的形式是为了保障个人的思考权益以及证明，文字的形式可以极为方便的进行复制粘贴，可能会与其他人进行沟通。</p>
+<h2 id="os的产生"><a class="markdownIt-Anchor" href="#os的产生"></a> OS的产生</h2>
+<p>由于在城市以及景点应用上的研究以及总担心开发以及设计方面，并却总是在设计方面没有任何显著的结果，决定转变题材。</p>
+<p>在时间非常急迫的前提下，保留之前文章第三周内的健康模块LOGO，直接食用sketch进行描边制作，运用在LiveOS的“健康”功能中。</p>
+<p>因为之前考虑的很多关于软件功能以及调研上的想法，决定制作一个OS。</p>
+<p>在某一天，我将现有的应用进行了重构，深知将以上的界面进行毕业设计作品的提交，是不可能过去的。</p>
+<p>因为之前其实都是草稿，都是思考过程。</p>
+<p>从OS开始，便直接开始用户操作上面的考量，所以直接使用sketch进行模拟的操作。</p>
+<p>本篇文章由于和上一篇不同，每一个时间段也许没有几个版本，同时根据群里的设计师的建议，进行每个功能进行对比展现，在此感谢优秀网页设计的小安以及Vivian。</p>
+<h3 id="liveos生活平台信息应用-201844-2018422"><a class="markdownIt-Anchor" href="#liveos生活平台信息应用-201844-2018422"></a> LiveOS生活平台信息应用 2018.4.4-2018.4.22</h3>
+<p>关于平台化软件，所有内容以及我制作的一览表（迭代次数不算草稿）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能全部名称</th>
+<th>页面数量（最终）</th>
+<th>是否有交互</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">引导页</td>
+<td>3</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">首页</td>
+<td>2</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">工作</td>
+<td>7</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">音乐</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">健康</td>
+<td>4</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">语音助手</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">快递</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">动态</td>
+<td>9</td>
+<td>是</td>
+</tr>
+<tr>
+<td style="text-align:left">优惠</td>
+<td>5</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="小的prd文档-48"><a class="markdownIt-Anchor" href="#小的prd文档-48"></a> <a href="#%E7%AE%80%E6%98%93PRD">小的PRD文档 4.8</a></h3>
+<p>在路上的时候，使用锤子便签进行制作小的产品文档。</p>
+<p>产品心态死心不改。</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e12294e06a.jpeg" alt></p>
+<p>参考的链接是在知乎创建了了一个收藏夹。</p>
+<p>在后面专门需要撰写产品文档的时候同样会有一篇文章出来。</p>
+<h3 id="ui对比呈现"><a class="markdownIt-Anchor" href="#ui对比呈现"></a> <a href="#%E9%AB%98%E4%BF%9D%E7%9C%9F">UI：对比呈现</a></h3>
+<p>固定顺序：上方为4.11版本，下方为4.22版本，以下简称为初版和最终版。</p>
+<h4 id="引导"><a class="markdownIt-Anchor" href="#引导"></a> 引导</h4>
+<p>对于一个OS页面引导的设置，刚开始想的是使用两个主题，借用了之前的黑色想法，夜间模式以及日间模式。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20187e832e1.jpeg" alt></p>
+<p>用户可以根据系统预置的功能进行选择，选择的功能越多，主页功能越多。</p>
+<p>其实这里的button，当时都准备进行重新设计，由于时间原因居然就保留了下来。</p>
+<h4 id="首页"><a class="markdownIt-Anchor" href="#首页"></a> 首页</h4>
+<p><img src="https://i.loli.net/2018/06/13/5b202602967b2.jpeg" alt></p>
+<p>为增加页数，制作了一个切换视图的按钮，进行视图的切换。</p>
+<p>交互上使用上下或左右滑动。</p>
+<h4 id="工作"><a class="markdownIt-Anchor" href="#工作"></a> 工作</h4>
+<p>平台化的软件当然也是需要生产力的，引入高效的番茄工作法，</p>
+<p>特色点：自定义键盘。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b2026053d67f.jpeg" alt></p>
+<p>不难看出，首先的版本非常乱，用色也不够完美。</p>
+<p>在最终版里增加了（可以说是）全局的button，控制底部为白色。</p>
+<p><strong>自定义键盘：</strong></p>
+<p>由于当今笔记类软件众多，以及他们的各个（快捷）菜单有着不同的习惯：有markdown的，有rich text（富文本）的，有快速添加To do（待办事项列表）的，以及最常用的Microsoft Word，我在这个软件中设置了自定义菜单，快速添加自己常用功能，确保每个人的需求。</p>
+<p><a href>下面的长图</a>中还预置的模板可供用户直接选择。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b2016556cb67.jpeg" alt></p>
+<p><img src="https://i.loli.net/2018/06/13/5b20191719468.jpeg" alt></p>
+<p>工作使用了可以滑动且点击的统一的按钮栏进行切换。</p>
+<p>新增：</p>
+<p>日历界面，任意更改便签颜色（来源于Google Keep）</p>
+<p>新建界面尝试从下方划出，最终确定使用这种页面交互，左方为可以选择的添加的待办事项以及添加番茄等。</p>
+<p>番茄工作法：使用红色进度条以及番茄的横截面展现。</p>
+<h4 id="音乐"><a class="markdownIt-Anchor" href="#音乐"></a> 音乐</h4>
+<p>实话关于界面设计其实很绞尽脑汁去设计了。</p>
+<p>特色点：突出“在线”“离线下载”的概念，以及滑动查看专辑。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20162209616.jpeg" alt></p>
+<p>第一版本包含了最基础的播放功能界面，在线与离线和查看专辑是我想的突出的设计，点击出现卡片式歌词。</p>
+<p>专辑底盘尝试过拟物化，但为了突出轻盈简约而并没有采用。</p>
+<p><strong>在线与离线查看专辑：</strong></p>
+<p>由于当今很多软件仅仅是使用简单的button进行设计。</p>
+<p><strong>滑动查看专辑（本地专辑滚轮）、快捷播放和专辑信息：</strong></p>
+<p>突出显示选中的专辑其余用降低透明度弱化的方式突出。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b2016e18e377.jpeg" alt></p>
+<p>最终版本：</p>
+<p>首页：增加了音乐的首页和专辑的快速排布。</p>
+<p>用户推荐与在线试听：长拉出现拖拽至方形留声机唱盘动画，需要学习交互。</p>
+<p>下载和滑动查看专辑方式不变。</p>
+<h4 id="健康"><a class="markdownIt-Anchor" href="#健康"></a> 健康</h4>
+<p>健康其实是延续了之前的设计的一些稿子进行保留，延续了LOGO而保留了线。</p>
+<p>关于此LOGO是我的毕业设计选题之一：Behance链接：</p>
+<p><a href="https://www.behance.net/gallery/62864669/Sensory-Visual-Design-Based-on-Hospital-System" target="_blank" rel="noopener">Sensory Visual Design Based on Hospital System</a></p>
+<p><img src="https://i.loli.net/2018/06/13/5b20286c323e9.jpeg" alt></p>
+<p>直接使用之前的健康LOGO，并且使用sketch进行描边。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b201625a9458.jpeg" alt></p>
+<p>首先在进行制作的时候，就开始考虑到可以使用更棒的曲线图进行展示，或许是由于想象的过于美好，不得不参考现有的图片模板。</p>
+<p>其实考虑小的进行icon的制作，主要体征这使用了红色为背景。</p>
+<p><strong>主要信息：</strong></p>
+<p>信息可隐藏，使用场景主要为在入职或者其他（例如医院）中，能够清晰地查找自己需要的各种健康信息。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20162b8e744.jpeg" alt></p>
+<p>使用了统一的tab栏之后，背景统一为白色。</p>
+<p>这里的手稿图以及想象的设计的icon非常的多，以及可切换的统一的Tab为自定义是否可增加，延续主要增加自定义栏。</p>
+<h4 id="语音助手"><a class="markdownIt-Anchor" href="#语音助手"></a> 语音助手</h4>
+<p><img src="https://i.loli.net/2018/06/13/5b2016e5b3598.jpeg" alt></p>
+<p>这个助手的名字是随便起的，后来发现特别巧的是居然是一个国家中的中国的读音。</p>
+<p><strong>搜索结果：</strong></p>
+<p>右上角的书签的形式借鉴的是Microsoft Word 2003的小书签。</p>
+<p><strong>热门详情：</strong></p>
+<p>制作了两种样式，第二种参考了Tinder/陌陌。探探的滑动交互，这也非常的像网易哒哒中根据用户选择是否推向更多的用户。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20ccacaa027.jpeg" alt></p>
+<p>最后仅仅保留了这两个页面。</p>
+<h4 id="快递"><a class="markdownIt-Anchor" href="#快递"></a> 快递</h4>
+<p>让快递管理出现在这个软件中。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20ec09e9252.jpeg" alt></p>
+<p><strong>首页：</strong></p>
+<p>累计快递X件，在路上X件，以及可视化地图。</p>
+<p><strong>手动输入编号：</strong></p>
+<p>机器自动识别商品信息、价格以及快递物流公司。</p>
+<p><strong>累计商品分析：</strong></p>
+<p>分析最近一笔快递价格，本月消费最高，所有涨幅区间的价格。</p>
+<p>###最终版增加</p>
+<h4 id="动态"><a class="markdownIt-Anchor" href="#动态"></a> 动态</h4>
+<p><img src="https://i.loli.net/2018/06/13/5b20244a0f11f.jpeg" alt></p>
+<p>动态按距离上下交互滑动浏览，若遇到外文动态可长按翻译。</p>
+<p>简短详情出现评论抽屉，若字数较多的详情，则以图二完全显示。</p>
+<p>更多操作有评论、屏蔽以及忽略，在下方有三种状态的介绍。</p>
+<h5 id="三种状态"><a class="markdownIt-Anchor" href="#三种状态"></a> 三种状态</h5>
+<p><img src="https://i.loli.net/2018/06/13/5b20244d62ca5.jpeg" alt></p>
+<p>关于点击一条动态的三种不同评论。</p>
+<p>快捷回复以及弹幕评论、屏蔽出现红色，动态出现灰色，上下滑动可进行更多操作。</p>
+<h4 id="优惠"><a class="markdownIt-Anchor" href="#优惠"></a> 优惠</h4>
+<p><img src="https://i.loli.net/2018/06/13/5b201630a15a8.jpeg" alt></p>
+<p>优惠界面使用了彩色进行，以及POS机的真实拟物制作。</p>
+<p>后面的交互也选出这个进行制作。</p>
+<p>最终版本统一大标题下的简介以及切换按钮，全部底色为白色。</p>
+<h3 id="长图的制作"><a class="markdownIt-Anchor" href="#长图的制作"></a> 长图的制作</h3>
+<p>第一版制作为最初的想法版本，可能也是最终的展板上的展示版本。</p>
+<p><img src="https://i.loli.net/2018/06/15/5b23126562853.png" alt></p>
+<p><img src="https://i.loli.net/2018/06/15/5b2312a80ca7e.png" alt></p>
+<h3 id="之后的版本迭代"><a class="markdownIt-Anchor" href="#之后的版本迭代"></a> 之后的版本迭代</h3>
+<p>说实话<strong>在第一版里</strong>我是比较担心之后没有什么东西可以说，以及想要做的赶不上了时间，这里作为版本迭代进行展示，有时间的时候还是尝试去做的。</p>
+<p>其实现在也仅仅是想法而已啦。</p>
+<p>这里也有文案。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b201790adc44.jpeg" alt></p>
+<p>现场：可能是创新的周边气泡，发现身边朋友，进行多样状态表达</p>
+<p>健康，<a href="#">链接到本文之前</a>。</p>
+<p>城市：第一手城市信息，了解城市基本动态变化 ，方便你的城市生活</p>
+<p>周边：仅显示你附近的信息，去除陈杂冗余信息</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20249ede61f.jpeg" alt></p>
+<p>公交：南京的朋友不难看出这个是新庄立交。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b201777d72a3.jpeg" alt></p>
+<p>阅读界面就显得很普通了。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b2024a5d4d9c.jpeg" alt></p>
+<p>联系人：这个界面在制作的时候有大学生创新项目，于是这个设计搬到那篇文章里去说。</p>
+<h3 id="辅助图形一览表-418"><a class="markdownIt-Anchor" href="#辅助图形一览表-418"></a> 辅助图形一览表 4.18</h3>
+<p>在进行重构的时候想像非常美好，需要设计一系列的icon，进行展板的展示。</p>
+<p>其实设计icon的想法很早就有了。</p>
+<p>手绘稿的截图</p>
+<p>最终的截图</p>
+<h2 id="交互设计"><a class="markdownIt-Anchor" href="#交互设计"></a> <a href="#%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1">交互设计</a></h2>
+<p>既然是制作概念性的UI，交互设计必不可少。</p>
+<p>当时甚至考虑在时间来得及的情况下进行交互的制作，否则仅仅只有一个界面，并没有交互。<strong>或许仅仅是担心毕业制作概念的UI连一个交互设计都没有，或许也算不上是UI设计吧。</strong></p>
+<h4 id="制作交互前的步骤"><a class="markdownIt-Anchor" href="#制作交互前的步骤"></a> 制作交互前的步骤</h4>
+<p><img src="https://i.loli.net/2018/06/13/5b20161e50635.jpeg" alt></p>
+<p>使用sketch制作交互前的不同状态的界面，之后再导入Principle。</p>
+<p>在导入的过程中：</p>
+<p>必须将需要导入的窗口保留在最顶层，其他sketch界面关闭或最小化，使得Principle识别出最顶层的Sketch界面。</p>
+<h4 id="根据展览效果决定选择性制作如下交互"><a class="markdownIt-Anchor" href="#根据展览效果决定选择性制作如下交互"></a> 根据展览效果决定选择性制作如下交互</h4>
+<ol>
+<li>主界面及其引导：引导页的设计，主界面的小动画设计</li>
+<li>工作 使用交互：新建便签以及番茄工作法</li>
+<li>健康 切换交互：点击icon功能切换</li>
+<li>优惠券使用交互：从用户卡包直至使用之后</li>
+</ol>
+<h4 id="交互制作截图与gif展示与优酷链接"><a class="markdownIt-Anchor" href="#交互制作截图与gif展示与优酷链接"></a> 交互制作截图与GIF展示与优酷链接</h4>
+<p>所有的效果图一览，全部版本全部上传至我的优酷自频道里的播单：<a href="https://list.youku.com/albumlist/show/id_51778318.html?" target="_blank" rel="noopener">毕业设计（接本）交互视频</a></p>
+<h5 id="主界面及其引导"><a class="markdownIt-Anchor" href="#主界面及其引导"></a> 主界面及其引导</h5>
+<p>截图：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e775e1591.jpeg" alt></p>
+<p>优酷链接： <a href="https://v.youku.com/v_show/id_XMzY2MjM4NTY1Mg.html?spm=a2h0j.11185381.0.i11185381" target="_blank" rel="noopener">LiveRoute引导页与主界面交互测试</a></p>
+<p>GIF:</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e0e1dd27a.gif" alt></p>
+<h5 id="工作使用交互"><a class="markdownIt-Anchor" href="#工作使用交互"></a> 工作使用交互</h5>
+<p>截图：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20ea0dabce0.jpeg" alt></p>
+<p>优酷链接：</p>
+<p>GIF：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e5a433553.gif" alt></p>
+<h5 id="健康切换交互"><a class="markdownIt-Anchor" href="#健康切换交互"></a> 健康切换交互</h5>
+<p>截图：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e77d7f457.jpeg" alt></p>
+<p>优酷链接：<a href="https://v.youku.com/v_show/id_XMzY2MjM1ODU0OA==.html?spm=a2h3j.8428770.3416059.1" target="_blank" rel="noopener">LiveRoute软件健康模块交互测试演示</a></p>
+<p>GIF：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e18803680.gif" alt></p>
+<h5 id="优惠券-使用交互"><a class="markdownIt-Anchor" href="#优惠券-使用交互"></a> 优惠券 使用交互</h5>
+<p>截图：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e7df27189.jpeg" alt></p>
+<p>优酷链接：<a href="https://v.youku.com/v_show/id_XMzY2MjQwOTI0NA==.html?spm=a2h3j.8428770.3416059.1" target="_blank" rel="noopener">LiveRoute软件优惠券模块交互测试演示</a></p>
+<p>GIF：</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e31ad3766.gif" alt></p>
+<h5 id="动态-使用交互"><a class="markdownIt-Anchor" href="#动态-使用交互"></a> 动态 使用交互</h5>
+<p>由于压缩文件超过5m，故仅有截图以及优酷链接。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20e7e5d7ca8.jpeg" alt></p>
+<p>优酷链接：<a href="https://v.youku.com/v_show/id_XMzY2MjM0ODY4OA==.html?spm=a2h3j.8428770.3416059.1" target="_blank" rel="noopener">LiveRoute软件动态模块交互测试演示</a></p>
+<p>在这几个特色的交互当中，重点为“优惠券的界面设计”，这个在制作的过程中为模拟POS机进行的设计与制作。</p>
+<h3 id="毕业展览"><a class="markdownIt-Anchor" href="#毕业展览"></a> 毕业展览</h3>
+<p>在毕业展览的时候，使用手机进行交互展览的展示。</p>
+<h4 id="principle手机展示"><a class="markdownIt-Anchor" href="#principle手机展示"></a> Principle手机展示</h4>
+<p>使用Principle在手机中保存以及展示。</p>
+<p>关于手机展示，Z老师说：</p>
+<blockquote>
+<p>毕业设计主要就是在界面上的设计，不需要偏向在手机上编程的感觉。</p>
+</blockquote>
+<p>我回答：</p>
+<blockquote>
+<p>可以展示界面以及交互的展示。</p>
+</blockquote>
+<p>当时依然准备将<a href="#">之前的框架的导入</a>也进行尝试，后来并没有展示，因为并没有内容，即使是在路上，里面的标志也没有添加，直接是系统的，担心会给人一种不完成的感觉。</p>
+<p>使用机器：iPhone6s，Principle软件。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>仍需要学习的：交互：</p>
+<ol>
+<li>折线图的交互（健康界面）</li>
+<li>数字卡片自上而下与碰撞的交互（快递界面）</li>
+<li>让交互动画更加自然</li>
+<li>在制作交互的过程中第一个元素和第二个元素制作的动画以及所在位置需要考量</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="FelixXiong wechat" style="width: 200px; max-width: 100%;">
+    <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你们的赞赏是我更新的动力～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="FelixXiong 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="FelixXiong 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    FelixXiong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://felixxiong.github.io/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/" title="毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22">https://felixxiong.github.io/2018/06/04/毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/交互/" rel="tag"># 交互</a>
+          
+            <a href="/tags/原型/" rel="tag"># 原型</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/31/锤子手机的折腾之路：分屏和语音助手的折腾与探索尝试/" rel="next" title="锤子手机的折腾之路：分屏和语音助手的折腾与探索尝试">
+                <i class="fa fa-chevron-left"></i> 锤子手机的折腾之路：分屏和语音助手的折腾与探索尝试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/16/ 大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果/" rel="prev" title="大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果">
+                大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">FelixXiong</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">163</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:holothemixet@gmail.com" target="_blank" title="E-Mail">
+                      
+                          <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/felixxiong" target="_blank" title="GitHub">
+                      
+                          <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                      
+                          <i class="iconfont icon-zhihu"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/felixxiong0513" target="_blank" title="Instagram">
+                      
+                          <i class="fa fa-fw fa-instagram"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://dribbble.com/FelixXiong" target="_blank" title="Dribbble">
+                      
+                          <i class="fa fa-fw fa-dribbble"></i></a>
+                  </span>
+                
+            </div>
+          
+         
+          <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="86" src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            
+         </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#os的产生"><span class="nav-text"> OS的产生</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#liveos生活平台信息应用-201844-2018422"><span class="nav-text"> LiveOS生活平台信息应用 2018.4.4-2018.4.22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小的prd文档-48"><span class="nav-text"> 小的PRD文档 4.8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ui对比呈现"><span class="nav-text"> UI：对比呈现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引导"><span class="nav-text"> 引导</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#首页"><span class="nav-text"> 首页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作"><span class="nav-text"> 工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#音乐"><span class="nav-text"> 音乐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#健康"><span class="nav-text"> 健康</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语音助手"><span class="nav-text"> 语音助手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快递"><span class="nav-text"> 快递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态"><span class="nav-text"> 动态</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#三种状态"><span class="nav-text"> 三种状态</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优惠"><span class="nav-text"> 优惠</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长图的制作"><span class="nav-text"> 长图的制作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#之后的版本迭代"><span class="nav-text"> 之后的版本迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辅助图形一览表-418"><span class="nav-text"> 辅助图形一览表 4.18</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互设计"><span class="nav-text"> 交互设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#制作交互前的步骤"><span class="nav-text"> 制作交互前的步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据展览效果决定选择性制作如下交互"><span class="nav-text"> 根据展览效果决定选择性制作如下交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互制作截图与gif展示与优酷链接"><span class="nav-text"> 交互制作截图与GIF展示与优酷链接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主界面及其引导"><span class="nav-text"> 主界面及其引导</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工作使用交互"><span class="nav-text"> 工作使用交互</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#健康切换交互"><span class="nav-text"> 健康切换交互</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优惠券-使用交互"><span class="nav-text"> 优惠券 使用交互</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态-使用交互"><span class="nav-text"> 动态 使用交互</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#毕业展览"><span class="nav-text"> 毕业展览</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#principle手机展示"><span class="nav-text"> Principle手机展示</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text"> 总结</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FelixXiong</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">215.2k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      People
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      Times
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'DQBKYNto8PW0Xx4jPlj43fg3-MdYXbMMI',
+        appKey: 'qoCDtmEwxwjGoXTskK0Da3k1',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("aDQBKYNto8PW0Xx4jPlj43fg3-MdYXbMMI", "qoCDtmEwxwjGoXTskK0Da3k1");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
