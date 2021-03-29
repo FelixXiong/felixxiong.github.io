@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://felixxiong.github.io/"/>
-  <updated>2021-03-25T15:50:22.204Z</updated>
+  <updated>2021-03-25T15:47:54.311Z</updated>
   <id>https://felixxiong.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>声音入门与Au系后期应用小记</title>
+    <link href="https://felixxiong.github.io/2021/02/10/%E5%A3%B0%E9%9F%B3%E5%85%A5%E9%97%A8%E4%B8%8EAu%E7%B3%BB%E5%90%8E%E6%9C%9F%E5%BA%94%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://felixxiong.github.io/2021/02/10/声音入门与Au系后期应用小记/</id>
+    <published>2021-02-09T16:00:00.000Z</published>
+    <updated>2021-03-25T15:47:54.311Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在和朋友制作一档播客，这是我在学习声音、音频剪辑软件Audacity、Audition的一些功能小记。</p><p>在音频后期中会遇到各种问题：前期应当调节什么？在细剪阶段又该调节哪些？相信在日后制作播客的过程中都会慢慢加深印象。</p><p>如果你有经常用到的功能，欢迎在下方评论留言。</p><a id="more"></a><h2 id="声音基础"><a class="markdownIt-Anchor" href="#声音基础"></a> 声音基础</h2><h2 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h2><p>db：分贝</p><p>0db：最大容许音量，通常在音轨最上&amp;最下，愈到中间愈小。</p><p>注意：一般音量不建议做满，保留“-1db”为安全的做法，这里让我想起了书籍装帧中的3mm的保留”出血线“。</p><h2 id="audacity"><a class="markdownIt-Anchor" href="#audacity"></a> Audacity</h2><p>一款免费多平台的音频后期应用，目前来看很多人使用它做降噪处理。</p><p>此处为部分常用功能的学习笔记。</p><h3 id="降噪"><a class="markdownIt-Anchor" href="#降噪"></a> 降噪</h3><p>Noise Reduction功能：选中噪声-效果-降噪</p><blockquote><p>Noise reduction (dB)：这个应该是指把噪声降低多少分贝。取值范围为0-48，默认值为12，应该是指把音量降低到1/4。</p><p>Sensitivity：取值范围0-24，默认6。</p><p>Frequency smoothing (bands)：取值0-12，默认3。这个值越大，频率带越多，也越容易降低信号质量。3个 bands 应该差不多代表着高中低频。</p></blockquote><h3 id="声音大小相关功能"><a class="markdownIt-Anchor" href="#声音大小相关功能"></a> 声音大小相关功能</h3><h4 id="增幅"><a class="markdownIt-Anchor" href="#增幅"></a> 增幅</h4><p>使用场景：录音声音太小/波形平坦</p><p>特效（Effect）→增幅（Amplify）</p><blockquote><p>没有问题的情况下，Audacity 会放大选取区的音波；接着将「新的峰值振幅「New Peak Amplitude」设置为「0.0」，不要选到「Allow Clippin」，会影响到结果</p></blockquote><h4 id="压缩器压限"><a class="markdownIt-Anchor" href="#压缩器压限"></a> 压缩器/压限</h4><p>使用场景：解决录音因为前后左右是否远离麦克风导致的声音有大有小问题</p><p>动态调节声音波形的振幅</p><p>效果（Effect）→压缩器（Compressor）</p><blockquote><p>将临界值设定在 -10dB 和 -16dB 之间，即可解决声音忽大忽小问题。</p></blockquote><h5 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h5><ul><li>压缩的阈值（Threshold）：它设定当电平值达到多少的时候，限制器开始工作。比如说，你输入-20dbfs，那么-20dbfs 以下的就不被压缩，-20dbfs 以上的会被压缩。</li><li>压缩比例（Ratio）：压缩比例只针对阈值以上的电平进行处理，而对阈值以下的电平不工作。接以上例子，阈值是-20dbfs，压缩比例是2:1，那么就是说-20dbfs 以上的电平以2:1的比例被压缩。</li><li>平滑系数（Knee）：当你没有对它进行设定的时候，限制器做的是线性变化；当你作出设定的时候，折线将会变成曲线，那么限制期的门限会往下移动变成压缩器的门限，这样避免压缩出来的声音生硬。</li><li>Acctak Time和Release  Time：分别是压缩开始和结束的缓冲时间。比如你设定的是15ms（毫秒），那么在达到-20dbfs 的时候，会过15ms  才开始压缩。两者小，则声音的压缩快，很快进入和离开工作状态。前小后大，则声音的回复慢，声音过度更加柔和一些。</li><li>增益（Gain）：就是放大或减少音量，同样在增大或减少音量时也受 Ratio 影响，比如对阈值以下的值是按1:1放大缩小，但是对阈值以上的按 Ratio 放大或缩小。</li></ul><p>当压缩不够的时候，主播的声音就会让你觉得很生硬，同时也会很刺耳；压缩过量的时候，声音就会变得软塌塌，甚至还会让声音有点闷。不够和过量都是由压缩比例（Ratio）决定。</p><h3 id="等化"><a class="markdownIt-Anchor" href="#等化"></a> 等化</h3><p>使用场景：需要更清楚的录音：</p><blockquote><p>一般来说，当低频被提升，同时高频被减少时，录音的内容听起来会更清楚，使你的声音听起来更深刻。</p></blockquote><p>特效（Effect）→ 等化（Equalization）</p><blockquote><p>小技巧：将低频（低于200Hz）调到 10dB 和 20dB 之间，高频（超过4,000Hz）调到 -3dB 和 -6dB 之间，便能呈现出最棒的声音</p></blockquote><h2 id="audition常用操作"><a class="markdownIt-Anchor" href="#audition常用操作"></a> Audition常用操作</h2><p>调节语速：时间与变调-伸缩与变调（处理）</p><p>在波形界面快速裁切分段：Ctrl/Command + X</p><hr><p>通用概念：</p><ol><li><a href="https://www.jianshu.com/p/cca157381b22" target="_blank" rel="noopener">降噪 Noise Reduction</a></li><li><a href="https://zhuanlan.zhihu.com/p/25345326?refer=onespiece" target="_blank" rel="noopener">从零开始做播客：第四章 ‧ 播客制作过程注意事项</a></li></ol><p>Audicity：</p><ol><li><a href="https://www.audioapp.cn/thread-179642-1-1.html" target="_blank" rel="noopener">录音：如何使用 Audacity 调整完美音质</a></li><li><a href="http://marvin.yabi.me/diy/Ada_Amp.htm?i=1" target="_blank" rel="noopener">Audacity 的音量調整（以單軌錄音為著眼點）</a></li><li><a href="http://marvin.yabi.me/diy/Ada_Cfg.htm" target="_blank" rel="noopener">Audacity 調教攻略（以有聲書錄音為著眼點）</a></li></ol><p>Audition：</p><ol><li><a href="https://www.cnblogs.com/obge/p/11498269.html" target="_blank" rel="noopener">Adobe Audition cc 修改音频 — 淡出、淡入，合并、裁剪</a></li></ol><p>论坛：<a href="https://www.audioapp.cn/" target="_blank" rel="noopener">音频应用</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在和朋友制作一档播客，这是我在学习声音、音频剪辑软件Audacity、Audition的一些功能小记。&lt;/p&gt;
+&lt;p&gt;在音频后期中会遇到各种问题：前期应当调节什么？在细剪阶段又该调节哪些？相信在日后制作播客的过程中都会慢慢加深印象。&lt;/p&gt;
+&lt;p&gt;如果你有经常用到的功能，欢迎在下方评论留言。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="音频后期" scheme="https://felixxiong.github.io/categories/%E9%9F%B3%E9%A2%91%E5%90%8E%E6%9C%9F/"/>
+    
+      <category term="AU" scheme="https://felixxiong.github.io/categories/%E9%9F%B3%E9%A2%91%E5%90%8E%E6%9C%9F/AU/"/>
+    
+    
+      <category term="播客" scheme="https://felixxiong.github.io/tags/%E6%92%AD%E5%AE%A2/"/>
+    
+      <category term="PocketCast" scheme="https://felixxiong.github.io/tags/PocketCast/"/>
+    
+  </entry>
   
   <entry>
     <title>如何跳出尴尬处境</title>
@@ -42,34 +70,6 @@
       <category term="人际关系" scheme="https://felixxiong.github.io/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"/>
     
       <category term="性" scheme="https://felixxiong.github.io/tags/%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>声音入门与Au系后期应用小记</title>
-    <link href="https://felixxiong.github.io/2021/02/10/%E5%A3%B0%E9%9F%B3%E5%85%A5%E9%97%A8%E4%B8%8EAu%E7%B3%BB%E5%90%8E%E6%9C%9F%E5%BA%94%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://felixxiong.github.io/2021/02/10/声音入门与Au系后期应用小记/</id>
-    <published>2021-02-09T16:00:00.000Z</published>
-    <updated>2021-03-25T15:47:54.311Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在和朋友制作一档播客，这是我在学习声音、音频剪辑软件Audacity、Audition的一些功能小记。</p><p>在音频后期中会遇到各种问题：前期应当调节什么？在细剪阶段又该调节哪些？相信在日后制作播客的过程中都会慢慢加深印象。</p><p>如果你有经常用到的功能，欢迎在下方评论留言。</p><a id="more"></a><h2 id="声音基础"><a class="markdownIt-Anchor" href="#声音基础"></a> 声音基础</h2><h2 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h2><p>db：分贝</p><p>0db：最大容许音量，通常在音轨最上&amp;最下，愈到中间愈小。</p><p>注意：一般音量不建议做满，保留“-1db”为安全的做法，这里让我想起了书籍装帧中的3mm的保留”出血线“。</p><h2 id="audacity"><a class="markdownIt-Anchor" href="#audacity"></a> Audacity</h2><p>一款免费多平台的音频后期应用，目前来看很多人使用它做降噪处理。</p><p>此处为部分常用功能的学习笔记。</p><h3 id="降噪"><a class="markdownIt-Anchor" href="#降噪"></a> 降噪</h3><p>Noise Reduction功能：选中噪声-效果-降噪</p><blockquote><p>Noise reduction (dB)：这个应该是指把噪声降低多少分贝。取值范围为0-48，默认值为12，应该是指把音量降低到1/4。</p><p>Sensitivity：取值范围0-24，默认6。</p><p>Frequency smoothing (bands)：取值0-12，默认3。这个值越大，频率带越多，也越容易降低信号质量。3个 bands 应该差不多代表着高中低频。</p></blockquote><h3 id="声音大小相关功能"><a class="markdownIt-Anchor" href="#声音大小相关功能"></a> 声音大小相关功能</h3><h4 id="增幅"><a class="markdownIt-Anchor" href="#增幅"></a> 增幅</h4><p>使用场景：录音声音太小/波形平坦</p><p>特效（Effect）→增幅（Amplify）</p><blockquote><p>没有问题的情况下，Audacity 会放大选取区的音波；接着将「新的峰值振幅「New Peak Amplitude」设置为「0.0」，不要选到「Allow Clippin」，会影响到结果</p></blockquote><h4 id="压缩器压限"><a class="markdownIt-Anchor" href="#压缩器压限"></a> 压缩器/压限</h4><p>使用场景：解决录音因为前后左右是否远离麦克风导致的声音有大有小问题</p><p>动态调节声音波形的振幅</p><p>效果（Effect）→压缩器（Compressor）</p><blockquote><p>将临界值设定在 -10dB 和 -16dB 之间，即可解决声音忽大忽小问题。</p></blockquote><h5 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h5><ul><li>压缩的阈值（Threshold）：它设定当电平值达到多少的时候，限制器开始工作。比如说，你输入-20dbfs，那么-20dbfs 以下的就不被压缩，-20dbfs 以上的会被压缩。</li><li>压缩比例（Ratio）：压缩比例只针对阈值以上的电平进行处理，而对阈值以下的电平不工作。接以上例子，阈值是-20dbfs，压缩比例是2:1，那么就是说-20dbfs 以上的电平以2:1的比例被压缩。</li><li>平滑系数（Knee）：当你没有对它进行设定的时候，限制器做的是线性变化；当你作出设定的时候，折线将会变成曲线，那么限制期的门限会往下移动变成压缩器的门限，这样避免压缩出来的声音生硬。</li><li>Acctak Time和Release  Time：分别是压缩开始和结束的缓冲时间。比如你设定的是15ms（毫秒），那么在达到-20dbfs 的时候，会过15ms  才开始压缩。两者小，则声音的压缩快，很快进入和离开工作状态。前小后大，则声音的回复慢，声音过度更加柔和一些。</li><li>增益（Gain）：就是放大或减少音量，同样在增大或减少音量时也受 Ratio 影响，比如对阈值以下的值是按1:1放大缩小，但是对阈值以上的按 Ratio 放大或缩小。</li></ul><p>当压缩不够的时候，主播的声音就会让你觉得很生硬，同时也会很刺耳；压缩过量的时候，声音就会变得软塌塌，甚至还会让声音有点闷。不够和过量都是由压缩比例（Ratio）决定。</p><h3 id="等化"><a class="markdownIt-Anchor" href="#等化"></a> 等化</h3><p>使用场景：需要更清楚的录音：</p><blockquote><p>一般来说，当低频被提升，同时高频被减少时，录音的内容听起来会更清楚，使你的声音听起来更深刻。</p></blockquote><p>特效（Effect）→ 等化（Equalization）</p><blockquote><p>小技巧：将低频（低于200Hz）调到 10dB 和 20dB 之间，高频（超过4,000Hz）调到 -3dB 和 -6dB 之间，便能呈现出最棒的声音</p></blockquote><h2 id="audition常用操作"><a class="markdownIt-Anchor" href="#audition常用操作"></a> Audition常用操作</h2><p>调节语速：时间与变调-伸缩与变调（处理）</p><p>在波形界面快速裁切分段：Ctrl/Command + X</p><hr><p>通用概念：</p><ol><li><a href="https://www.jianshu.com/p/cca157381b22" target="_blank" rel="noopener">降噪 Noise Reduction</a></li><li><a href="https://zhuanlan.zhihu.com/p/25345326?refer=onespiece" target="_blank" rel="noopener">从零开始做播客：第四章 ‧ 播客制作过程注意事项</a></li></ol><p>Audicity：</p><ol><li><a href="https://www.audioapp.cn/thread-179642-1-1.html" target="_blank" rel="noopener">录音：如何使用 Audacity 调整完美音质</a></li><li><a href="http://marvin.yabi.me/diy/Ada_Amp.htm?i=1" target="_blank" rel="noopener">Audacity 的音量調整（以單軌錄音為著眼點）</a></li><li><a href="http://marvin.yabi.me/diy/Ada_Cfg.htm" target="_blank" rel="noopener">Audacity 調教攻略（以有聲書錄音為著眼點）</a></li></ol><p>Audition：</p><ol><li><a href="https://www.cnblogs.com/obge/p/11498269.html" target="_blank" rel="noopener">Adobe Audition cc 修改音频 — 淡出、淡入，合并、裁剪</a></li></ol><p>论坛：<a href="https://www.audioapp.cn/" target="_blank" rel="noopener">音频应用</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在和朋友制作一档播客，这是我在学习声音、音频剪辑软件Audacity、Audition的一些功能小记。&lt;/p&gt;
-&lt;p&gt;在音频后期中会遇到各种问题：前期应当调节什么？在细剪阶段又该调节哪些？相信在日后制作播客的过程中都会慢慢加深印象。&lt;/p&gt;
-&lt;p&gt;如果你有经常用到的功能，欢迎在下方评论留言。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="音频后期" scheme="https://felixxiong.github.io/categories/%E9%9F%B3%E9%A2%91%E5%90%8E%E6%9C%9F/"/>
-    
-      <category term="AU" scheme="https://felixxiong.github.io/categories/%E9%9F%B3%E9%A2%91%E5%90%8E%E6%9C%9F/AU/"/>
-    
-    
-      <category term="播客" scheme="https://felixxiong.github.io/tags/%E6%92%AD%E5%AE%A2/"/>
-    
-      <category term="PocketCast" scheme="https://felixxiong.github.io/tags/PocketCast/"/>
     
   </entry>
   
