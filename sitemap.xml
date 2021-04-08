@@ -1670,20 +1670,6 @@
   </url>
   
   <url>
-    <loc>https://felixxiong.github.io/tags/%E6%8A%91%E9%83%81/</loc>
-    <lastmod>2021-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felixxiong.github.io/tags/%E4%BA%A4%E9%99%85/</loc>
-    <lastmod>2021-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://felixxiong.github.io/tags/%E4%B9%A6%E7%AD%BE/</loc>
     <lastmod>2021-04-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1692,6 +1678,20 @@
   
   <url>
     <loc>https://felixxiong.github.io/tags/%E6%95%B4%E7%90%86/</loc>
+    <lastmod>2021-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felixxiong.github.io/tags/%E6%8A%91%E9%83%81/</loc>
+    <lastmod>2021-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felixxiong.github.io/tags/%E4%BA%A4%E9%99%85/</loc>
     <lastmod>2021-04-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
