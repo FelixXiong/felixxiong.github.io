@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -44,9 +44,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -64,13 +64,13 @@
 
 
 
-  <meta name="keywords" content="Android,">
+  <meta name="keywords" content="Android," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
 
 
 
@@ -78,24 +78,24 @@
 
 
 <meta name="description" content="重新做一个简单的小项目，在一年后，争取进入android技术开发的行列中。 至于一直未能加入技术开发行业的原因，本博客将会进行展开，其实也是总所周知的原因。 本篇文章其实挺突然的，从笔记就突然变成了一篇分享出来的博客，记录自己的“重学成长”。">
-<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android音乐播放器实践（一）">
-<meta property="og:url" content="https://felixxiong.github.io/2020/09/18/Android音乐播放器实践（一）/index.html">
+<meta property="og:url" content="https://felixxiong.github.io/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="故事熊">
 <meta property="og:description" content="重新做一个简单的小项目，在一年后，争取进入android技术开发的行列中。 至于一直未能加入技术开发行业的原因，本博客将会进行展开，其实也是总所周知的原因。 本篇文章其实挺突然的，从笔记就突然变成了一篇分享出来的博客，记录自己的“重学成长”。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-24T13:48:15.161Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-09-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-24T13:48:15.161Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android音乐播放器实践（一）">
-<meta name="twitter:description" content="重新做一个简单的小项目，在一年后，争取进入android技术开发的行列中。 至于一直未能加入技术开发行业的原因，本博客将会进行展开，其实也是总所周知的原因。 本篇文章其实挺突然的，从笔记就突然变成了一篇分享出来的博客，记录自己的“重学成长”。">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://felixxiong.github.io/2020/09/18/Android音乐播放器实践（一）/">
+  <link rel="canonical" href="https://felixxiong.github.io/2020/09/18/Android音乐播放器实践（一）/"/>
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -161,7 +161,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">故事熊</span>
         <span class="logo-line-after"><i></i></span>
@@ -245,7 +245,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
             关于
           </a>
@@ -285,7 +285,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -322,11 +324,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/09/18/Android音乐播放器实践（一）/">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FelixXiong">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -362,7 +364,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -374,7 +376,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">编程开发</span>
                   </a>
                 </span>
@@ -385,7 +387,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Android开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">Android开发</span>
                   </a>
                 </span>
@@ -396,7 +398,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Android开发/空间开发实践/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/%E7%A9%BA%E9%97%B4%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/" itemprop="url" rel="index">
                     <span itemprop="name">空间开发实践</span>
                   </a>
                 </span>
@@ -407,7 +409,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Android开发/空间开发实践/音乐播放器/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/%E7%A9%BA%E9%97%B4%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" itemprop="url" rel="index">
                     <span itemprop="name">音乐播放器</span>
                   </a>
                 </span>
@@ -425,8 +427,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/09/18/Android音乐播放器实践（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/18/Android音乐播放器实践（一）/" itemprop="commentCount"></span>
+                <a href="/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -434,7 +436,7 @@
 
           
           
-             <span id="/2020/09/18/Android音乐播放器实践（一）/" class="leancloud_visitors" data-flag-title="Android音乐播放器实践（一）">
+             <span id="/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="Android音乐播放器实践（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -449,7 +451,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
@@ -464,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  974
+                  955
                 </span>
               
 
@@ -480,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -504,7 +506,7 @@
         <p>重新做一个简单的小项目，在一年后，争取进入android技术开发的行列中。</p>
 <p>至于一直未能加入技术开发行业的原因，本博客将会进行展开，其实也是总所周知的原因。</p>
 <p>本篇文章其实挺突然的，从笔记就突然变成了一篇分享出来的博客，记录自己的“重学成长”。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2>
 <p>从音乐播放器开始做起。Why MusicPlayer？</p>
 <p>其中涉及列表展示，多线程，媒体等等，以及<strong>一年前</strong>自己开始写了一个较为大而全的项目，其中就有音乐播放器的功能<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
@@ -527,12 +529,15 @@
 <h3 id="基本步骤"><a class="markdownIt-Anchor" href="#基本步骤"></a> 基本步骤</h3>
 <h4 id="加入权限"><a class="markdownIt-Anchor" href="#加入权限"></a> 加入权限</h4>
 <p>AndroidManiFest.xml中加入读写权限：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;</span><br><span class="line">&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+</code></pre>
 <h4 id="bean"><a class="markdownIt-Anchor" href="#bean"></a> Bean</h4>
 <p>编写MusicBean类，（根据<code>单个item</code>中包含的内容为参考），生成getter与setter方法与构造方法，作为List的泛型对象存在被传入</p>
 <h4 id="数据源"><a class="markdownIt-Anchor" href="#数据源"></a> 数据源</h4>
 <p>初始化数据源：MusicBean</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;MusicBean&gt; = new arrayList()</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">List&lt;MusicBean&gt; = new arrayList()
+</code></pre>
 <h4 id="adapter相关"><a class="markdownIt-Anchor" href="#adapter相关"></a> Adapter相关</h4>
 <p>编写适配器：</p>
 <ol>
@@ -548,9 +553,38 @@
 <p>3.2. 定义Context与List数据源，并使用构造函数传递（为什么？）</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class LocalMusicAdapter extends RecyclerView.Adapter&lt;LocalMusicAdapter.LocalMusicViewHolder&gt; &#123;</span><br><span class="line"></span><br><span class="line">  Context context;</span><br><span class="line">  List&lt;LocalMusicBean&gt; musicDataBean;</span><br><span class="line"></span><br><span class="line">  public LocalMusicAdapter(Context context, List&lt;LocalMusicBean&gt; musicDataBean) &#123;</span><br><span class="line">    this.context = context;</span><br><span class="line">    this.musicDataBean = musicDataBean;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">public class LocalMusicAdapter extends RecyclerView.Adapter&lt;LocalMusicAdapter.LocalMusicViewHolder&gt; &#123;
+
+  Context context;
+  List&lt;LocalMusicBean&gt; musicDataBean;
+
+  public LocalMusicAdapter(Context context, List&lt;LocalMusicBean&gt; musicDataBean) &#123;
+    this.context = context;
+    this.musicDataBean = musicDataBean;
+  &#125;
+</code></pre>
 <p>​	3.3 创建Adapter对象继承自Adapter：泛型中传入ViewHolder，重写三个方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public LocalMusicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) &#123; </span><br><span class="line">                            //创建ViewHolder（对象）并返回,作用：生成与初始化每一个ViewHolder</span><br><span class="line">        View view = LayoutInflater.from(context).inflate(R.layout.item_music,parent,false);</span><br><span class="line">        LocalMusicViewHolder holder = new LocalMusicViewHolder(view);</span><br><span class="line">        return holder;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onBindViewHolder(@NonNull LocalMusicViewHolder holder, int position) &#123; </span><br><span class="line">               //查找并绑定数据展示</span><br><span class="line">        LocalMusicBean musicBean = musicDataBean.get(position); //拿到Bean</span><br><span class="line">        holder.songName.setText(musicBean.getSongName());</span><br><span class="line">        holder.artistName.setText(musicBean.getArtistName());</span><br><span class="line">        holder.albumName.setText(musicBean.getAlbumName());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int getItemCount() &#123; //有多少条目就返回多少条目</span><br><span class="line">        return musicDataBean.size();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">public LocalMusicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) &#123; 
+                            //创建ViewHolder（对象）并返回,作用：生成与初始化每一个ViewHolder
+        View view = LayoutInflater.from(context).inflate(R.layout.item_music,parent,false);
+        LocalMusicViewHolder holder = new LocalMusicViewHolder(view);
+        return holder;
+    &#125;
+
+    @Override
+    public void onBindViewHolder(@NonNull LocalMusicViewHolder holder, int position) &#123; 
+               //查找并绑定数据展示
+        LocalMusicBean musicBean = musicDataBean.get(position); //拿到Bean
+        holder.songName.setText(musicBean.getSongName());
+        holder.artistName.setText(musicBean.getArtistName());
+        holder.albumName.setText(musicBean.getAlbumName());
+    &#125;
+
+    @Override
+    public int getItemCount() &#123; //有多少条目就返回多少条目
+        return musicDataBean.size();
+    &#125;
+</code></pre>
 <h4 id="布局管理器"><a class="markdownIt-Anchor" href="#布局管理器"></a> 布局管理器</h4>
 <p>创建布局管理器，设置为何种布局（横向滑动/瀑布流等），使用<code>LinearLayoutManager</code>并设置</p>
 <h4 id="加载文件"><a class="markdownIt-Anchor" href="#加载文件"></a> 加载文件</h4>
@@ -564,9 +598,14 @@
 <h3 id="直接写context报错"><a class="markdownIt-Anchor" href="#直接写context报错"></a> 直接写Context报错</h3>
 <p>fragment中无法直接调用findViewById与Context。（为什么？）</p>
 <p>TODO：什么是context？他在App中开发的作用？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">localMusicAdapter = new LocalMusicAdapter(getContext(),musicDataBean);</span><br><span class="line">mRecycleView.setAdapter(localMusicAdapter);</span><br><span class="line"></span><br><span class="line">LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);</span><br><span class="line">mRecycleView.setLayoutManager(linearLayoutManager);</span><br></pre></td></tr></table></figure>
-<hr>
-<hr class="footnotes-sep">
+<pre class="highlight"><code class="">localMusicAdapter = new LocalMusicAdapter(getContext(),musicDataBean);
+mRecycleView.setAdapter(localMusicAdapter);
+
+LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+mRecycleView.setLayoutManager(linearLayoutManager);
+</code></pre>
+<hr />
+<hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p>即使如此，到现在也是半成品，所以这也是未能入行的原因之一：没有一个完整的项目，于是精简就开始了。 <a href="https://felixxiong.github.io/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/#fnref1">↩︎</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
@@ -587,7 +626,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="FelixXiong wechat" style="width: 200px; max-width: 100%;">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
     <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
 </div>
 
@@ -605,14 +644,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="FelixXiong 微信支付">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="FelixXiong 支付宝">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -634,7 +673,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://felixxiong.github.io/2020/09/18/Android音乐播放器实践（一）/" title="Android音乐播放器实践（一）">https://felixxiong.github.io/2020/09/18/Android音乐播放器实践（一）/</a>
+    <a href="https://felixxiong.github.io/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/" title="Android音乐播放器实践（一）">https://felixxiong.github.io/2020/09/18/Android%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -662,7 +701,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/19/从WordPress去往Bloggler/" rel="next" title="从WordPress去往Bloggler">
+              <a href="/2020/07/19/%E4%BB%8EWordPress%E5%8E%BB%E5%BE%80Bloggler/" rel="next" title="从WordPress去往Bloggler">
                 <i class="fa fa-chevron-left"></i> 从WordPress去往Bloggler
               </a>
             
@@ -672,7 +711,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/09/25/LeanCloud国内版迁移至国际版/" rel="prev" title="LeanCloud国内版迁移至国际版">
+              <a href="/2020/09/25/LeanCloud%E5%9B%BD%E5%86%85%E7%89%88%E8%BF%81%E7%A7%BB%E8%87%B3%E5%9B%BD%E9%99%85%E7%89%88/" rel="prev" title="LeanCloud国内版迁移至国际版">
                 LeanCloud国内版迁移至国际版 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -743,7 +782,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">FelixXiong</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -754,7 +793,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -765,7 +804,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -809,15 +848,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
                       
-                          <i class="iconfont icon-zhihu"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://instagram.com/felixxiong0513" target="_blank" title="Instagram">
-                      
-                          <i class="fa fa-fw fa-instagram"></i></a>
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
@@ -826,19 +859,25 @@
                           <i class="fa fa-fw fa-dribbble"></i></a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
             </div>
           
          
           <div id="music163player">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="86" src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
-            
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
          </div>
 
           
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
               </a>
             </div>
           
@@ -861,7 +900,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-text"> 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所需知识点"><span class="nav-text"> 所需知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始编写"><span class="nav-text"> 开始编写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#界面"><span class="nav-text"> 界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要业务逻辑"><span class="nav-text"> 主要业务逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本步骤"><span class="nav-text"> 基本步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加入权限"><span class="nav-text"> 加入权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bean"><span class="nav-text"> Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据源"><span class="nav-text"> 数据源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#adapter相关"><span class="nav-text"> Adapter相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布局管理器"><span class="nav-text"> 布局管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载文件"><span class="nav-text"> 加载文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#todofragment的坑"><span class="nav-text"> TODO：Fragment的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接写context报错"><span class="nav-text"> 直接写Context报错</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-text"> 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E9%9C%80%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-text"> 所需知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%BC%96%E5%86%99"><span class="nav-text"> 开始编写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2"><span class="nav-text"> 界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91"><span class="nav-text"> 主要业务逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="nav-text"> 基本步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5%E6%9D%83%E9%99%90"><span class="nav-text"> 加入权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bean"><span class="nav-text"> Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%BA%90"><span class="nav-text"> 数据源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#adapter%E7%9B%B8%E5%85%B3"><span class="nav-text"> Adapter相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text"> 布局管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="nav-text"> 加载文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#todofragment%E7%9A%84%E5%9D%91"><span class="nav-text"> TODO：Fragment的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%86%99context%E6%8A%A5%E9%94%99"><span class="nav-text"> 直接写Context报错</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -895,7 +934,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">215.2k</span>
+    <span title="Site words total count">215k</span>
   
 </div>
 

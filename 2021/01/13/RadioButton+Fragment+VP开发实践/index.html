@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -44,9 +44,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -64,13 +64,13 @@
 
 
 
-  <meta name="keywords" content="UI,导航,">
+  <meta name="keywords" content="UI,导航," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
 
 
 
@@ -78,24 +78,25 @@
 
 
 <meta name="description" content="底部导航栏的实现方式之一。其他实现方式有： Tablayout+Fragment+VP，Bottom Nav+VP 我的其他控件开发实践：TableLayout+Fragment+VP开发实践">
-<meta name="keywords" content="UI,导航">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RadioButton+Fragment+VP开发实践">
-<meta property="og:url" content="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP开发实践/index.html">
+<meta property="og:url" content="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="故事熊">
 <meta property="og:description" content="底部导航栏的实现方式之一。其他实现方式有： Tablayout+Fragment+VP，Bottom Nav+VP 我的其他控件开发实践：TableLayout+Fragment+VP开发实践">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-25T15:45:23.590Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-01-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-25T15:45:23.590Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="UI">
+<meta property="article:tag" content="导航">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RadioButton+Fragment+VP开发实践">
-<meta name="twitter:description" content="底部导航栏的实现方式之一。其他实现方式有： Tablayout+Fragment+VP，Bottom Nav+VP 我的其他控件开发实践：TableLayout+Fragment+VP开发实践">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -118,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP开发实践/">
+  <link rel="canonical" href="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP开发实践/"/>
 
 
 
@@ -143,7 +144,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -161,7 +162,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">故事熊</span>
         <span class="logo-line-after"><i></i></span>
@@ -245,7 +246,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
             关于
           </a>
@@ -285,7 +286,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -322,11 +325,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP开发实践/">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FelixXiong">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -362,7 +365,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -374,7 +377,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">编程开发</span>
                   </a>
                 </span>
@@ -385,7 +388,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Android开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">Android开发</span>
                   </a>
                 </span>
@@ -396,7 +399,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Android开发/导航栏/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/%E5%AF%BC%E8%88%AA%E6%A0%8F/" itemprop="url" rel="index">
                     <span itemprop="name">导航栏</span>
                   </a>
                 </span>
@@ -414,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2021/01/13/RadioButton+Fragment+VP开发实践/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2021/01/13/RadioButton+Fragment+VP开发实践/" itemprop="commentCount"></span>
+                <a href="/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,7 +426,7 @@
 
           
           
-             <span id="/2021/01/13/RadioButton+Fragment+VP开发实践/" class="leancloud_visitors" data-flag-title="RadioButton+Fragment+VP开发实践">
+             <span id="/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/" class="leancloud_visitors" data-flag-title="RadioButton+Fragment+VP开发实践">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -438,7 +441,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
@@ -453,7 +456,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  965
+                  961
                 </span>
               
 
@@ -492,7 +495,7 @@
       
         <p>底部导航栏的实现方式之一。其他实现方式有： Tablayout+Fragment+VP，Bottom Nav+VP</p>
 <p>我的其他控件开发实践：<a href="https://felixxiong.github.io/2018/12/02/TableLayout-Fragment-VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/">TableLayout+Fragment+VP开发实践</a></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="主要步骤"><a class="markdownIt-Anchor" href="#主要步骤"></a> 主要步骤</h2>
 <ol>
 <li>RadioButton：写布局与设置样式、实现<code>OnCheckedChangeListener</code>接口并重写<code>onCheckedChanged</code>方法、设定初始值<code>check</code></li>
@@ -501,13 +504,94 @@
 </ol>
 <h2 id="xml"><a class="markdownIt-Anchor" href="#xml"></a> XML</h2>
 <p>activity_min.xml:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot; &lt;！--设置布局的Radiogroup位置--&gt;</span><br><span class="line">    tools:context=&quot;.MainActivity&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;androidx.viewpager.widget.ViewPager</span><br><span class="line">        android:id=&quot;@+id/mainViewPager&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_gravity=&quot;bottom&quot;</span><br><span class="line">        android:layout_height=&quot;0dp&quot;</span><br><span class="line">        android:layout_weight=&quot;1&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/androidx.viewpager.widget.ViewPager&gt;</span><br><span class="line"></span><br><span class="line">    &lt;RadioGroup</span><br><span class="line">        android:id=&quot;@+id/mainRadioGroup&quot;</span><br><span class="line">        android:gravity=&quot;center&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;RadioButton</span><br><span class="line">            android:id=&quot;@+id/Frag1Btn&quot;</span><br><span class="line">            android:button=&quot;@null&quot; &lt;！--去除原生按钮--&gt;</span><br><span class="line">            android:text=&quot;@string/fragment1&quot;</span><br><span class="line">            android:layout_width=&quot;50dp&quot;</span><br><span class="line">            android:layout_height=&quot;50dp&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;&gt;</span><br><span class="line">        &lt;/RadioButton&gt;</span><br><span class="line"></span><br><span class="line">        &lt;RadioButton</span><br><span class="line">            android:id=&quot;@+id/Frag2Btn&quot;</span><br><span class="line">            android:button=&quot;@null&quot;</span><br><span class="line">            android:text=&quot;@string/fragment2&quot;</span><br><span class="line">            android:layout_width=&quot;50dp&quot;</span><br><span class="line">            android:layout_height=&quot;50dp&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;&gt;</span><br><span class="line">        &lt;/RadioButton&gt;</span><br><span class="line"></span><br><span class="line">        &lt;RadioButton</span><br><span class="line">            android:id=&quot;@+id/Frag3Btn&quot;</span><br><span class="line">            android:button=&quot;@null&quot;</span><br><span class="line">            android:text=&quot;@string/fragment3&quot;</span><br><span class="line">            android:layout_width=&quot;50dp&quot;</span><br><span class="line">            android:layout_height=&quot;50dp&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;&gt;</span><br><span class="line">        &lt;/RadioButton&gt;</span><br><span class="line"></span><br><span class="line">        &lt;RadioButton</span><br><span class="line">            android:id=&quot;@+id/Frag4Btn&quot;</span><br><span class="line">            android:button=&quot;@null&quot;</span><br><span class="line">            android:text=&quot;@string/fragment4&quot;</span><br><span class="line">            android:layout_width=&quot;50dp&quot;</span><br><span class="line">            android:layout_height=&quot;50dp&quot;</span><br><span class="line">            android:layout_weight=&quot;1&quot;</span><br><span class="line">            android:gravity=&quot;center&quot;&gt;</span><br><span class="line">        &lt;/RadioButton&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/RadioGroup&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">
+&lt;LinearLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot; &lt;！--设置布局的Radiogroup位置--&gt;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;androidx.viewpager.widget.ViewPager
+        android:id=&quot;@+id/mainViewPager&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_gravity=&quot;bottom&quot;
+        android:layout_height=&quot;0dp&quot;
+        android:layout_weight=&quot;1&quot;&gt;
+
+    &lt;/androidx.viewpager.widget.ViewPager&gt;
+
+    &lt;RadioGroup
+        android:id=&quot;@+id/mainRadioGroup&quot;
+        android:gravity=&quot;center&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/Frag1Btn&quot;
+            android:button=&quot;@null&quot; &lt;！--去除原生按钮--&gt;
+            android:text=&quot;@string/fragment1&quot;
+            android:layout_width=&quot;50dp&quot;
+            android:layout_height=&quot;50dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:gravity=&quot;center&quot;&gt;
+        &lt;/RadioButton&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/Frag2Btn&quot;
+            android:button=&quot;@null&quot;
+            android:text=&quot;@string/fragment2&quot;
+            android:layout_width=&quot;50dp&quot;
+            android:layout_height=&quot;50dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:gravity=&quot;center&quot;&gt;
+        &lt;/RadioButton&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/Frag3Btn&quot;
+            android:button=&quot;@null&quot;
+            android:text=&quot;@string/fragment3&quot;
+            android:layout_width=&quot;50dp&quot;
+            android:layout_height=&quot;50dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:gravity=&quot;center&quot;&gt;
+        &lt;/RadioButton&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/Frag4Btn&quot;
+            android:button=&quot;@null&quot;
+            android:text=&quot;@string/fragment4&quot;
+            android:layout_width=&quot;50dp&quot;
+            android:layout_height=&quot;50dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:gravity=&quot;center&quot;&gt;
+        &lt;/RadioButton&gt;
+
+    &lt;/RadioGroup&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
 <p>单个Fragment页面此处省略。</p>
 <h2 id="mainactivity"><a class="markdownIt-Anchor" href="#mainactivity"></a> MainActivity</h2>
 <p>声明：RadioButton、RadioGroup、Fragment、FragmentPagerAdapter（可选）、ViewPager</p>
 <h3 id="fragment"><a class="markdownIt-Anchor" href="#fragment"></a> Fragment</h3>
 <p>初始化与添加fragment到集合中(两种写法)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">private List&lt;Fragment&gt; fragmentList;           fragmentList = new ArrayList&lt;Fragment&gt;()</span><br><span class="line"> //初始化fragment                               //实例化mlist数组</span><br><span class="line"> frag1 = new Fragment1();                      fragOne = new Frag_One(); </span><br><span class="line"> frag2 = new Fragment2();                      fragTwo = new Frag_Two();</span><br><span class="line"> frag3 = new Fragment3();         =            fragThree = new Frag_Three(); </span><br><span class="line"> frag4 = new Fragment4();                      fragmentList.add(fragOne);</span><br><span class="line">                                               fragmentList.add(fragTwo);</span><br><span class="line"> fragmentList = new ArrayList&lt;&gt;();             fragmentList.add(fragThree);</span><br><span class="line"> fragmentList.add(frag1);                               </span><br><span class="line"> fragmentList.add(frag2);                            </span><br><span class="line"> fragmentList.add(frag3);                             </span><br><span class="line"> fragmentList.add(frag4);</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">private List&lt;Fragment&gt; fragmentList;           fragmentList = new ArrayList&lt;Fragment&gt;()
+ //初始化fragment                               //实例化mlist数组
+ frag1 = new Fragment1();                      fragOne = new Frag_One(); 
+ frag2 = new Fragment2();                      fragTwo = new Frag_Two();
+ frag3 = new Fragment3();         =            fragThree = new Frag_Three(); 
+ frag4 = new Fragment4();                      fragmentList.add(fragOne);
+                                               fragmentList.add(fragTwo);
+ fragmentList = new ArrayList&lt;&gt;();             fragmentList.add(fragThree);
+ fragmentList.add(frag1);                               
+ fragmentList.add(frag2);                            
+ fragmentList.add(frag3);                             
+ fragmentList.add(frag4);
+</code></pre>
 <p><code>.add</code>方法：添加到数组中</p>
 <h4 id="fragmentmanager"><a class="markdownIt-Anchor" href="#fragmentmanager"></a> FragmentManager</h4>
 <p>定义FragmentManager</p>
@@ -516,28 +600,100 @@
 <ol>
 <li>实例化FragmentPagerAdapter<strong>并传入ArrayList</strong>：</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MainFragmentPagerAdapter mainFragmentPagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager()，fragmentList);</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">MainFragmentPagerAdapter mainFragmentPagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager()，fragmentList);
+</code></pre>
 <p>重写三个方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mainFragmentPagerAdapter</span> <span class="keyword">extends</span> <span class="title">FragmentPagerAdapter</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> List&lt;Fragment&gt; fragmentList;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MainViewPagerAdapter</span><span class="params">(FragmentManager fragmentManager, List&lt;Fragment&gt; fragmentList)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>(fragmentManager);</span><br><span class="line">      <span class="keyword">this</span>.fragmentList = fragmentList;</span><br><span class="line">&#125;</span><br><span class="line">   </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Fragment <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123; <span class="comment">//返回每个位置（position）的fragment对象/当前显示的是第几个</span></span><br><span class="line">    <span class="keyword">return</span> fragmentList.get(position);</span><br><span class="line">  &#125;</span><br><span class="line">   </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123; <span class="comment">//获得个数</span></span><br><span class="line">    <span class="keyword">return</span> fragmentList.size(); <span class="comment">//返回fragmentlist的个数</span></span><br><span class="line">  		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">mainFragmentPagerAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FragmentPagerAdapter</span> </span>&#123;
+<span class="hljs-keyword">private</span> List&lt;Fragment&gt; fragmentList;
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MainViewPagerAdapter</span><span class="hljs-params">(FragmentManager fragmentManager, List&lt;Fragment&gt; fragmentList)</span> </span>&#123;
+      <span class="hljs-keyword">super</span>(fragmentManager);
+      <span class="hljs-keyword">this</span>.fragmentList = fragmentList;
+&#125;
+   
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Fragment <span class="hljs-title">getItem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position)</span> </span>&#123; <span class="hljs-comment">//返回每个位置（position）的fragment对象/当前显示的是第几个</span>
+    <span class="hljs-keyword">return</span> fragmentList.get(position);
+  &#125;
+   
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getCount</span><span class="hljs-params">()</span> </span>&#123; <span class="hljs-comment">//获得个数</span>
+    <span class="hljs-keyword">return</span> fragmentList.size(); <span class="hljs-comment">//返回fragmentlist的个数</span>
+  		&#125;
+&#125;
+</code></pre>
 <h3 id="radiogroup"><a class="markdownIt-Anchor" href="#radiogroup"></a> RadioGroup</h3>
 <ol>
 <li>实现<code>RadioGroup.OnpageChangeListener</code>接口，重写<code>OnCheckedChanged</code>方法：</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(RadioGroup radioGroup, <span class="keyword">int</span> checkedID)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span>(checkedID) &#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.Frag1Btn:</span><br><span class="line">                viewPager.setCurrentItem(<span class="number">0</span>, <span class="keyword">true</span>); </span><br><span class="line">								<span class="comment">//此处第二个参数smoothScrool为页面切换动画的启用</span></span><br><span class="line">            <span class="keyword">case</span> R.id.Frag2Btn:</span><br><span class="line">                viewPager.setCurrentItem(<span class="number">1</span>, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">case</span> R.id.Frag3Btn:</span><br><span class="line">                viewPager.setCurrentItem(<span class="number">2</span>, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">case</span> R.id.Frag4Btn:</span><br><span class="line">                viewPager.setCurrentItem(<span class="number">3</span>, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="java"><span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCheckedChanged</span><span class="hljs-params">(RadioGroup radioGroup, <span class="hljs-keyword">int</span> checkedID)</span> </span>&#123;
+
+        <span class="hljs-keyword">switch</span>(checkedID) &#123;
+            <span class="hljs-keyword">case</span> R.id.Frag1Btn:
+                viewPager.setCurrentItem(<span class="hljs-number">0</span>, <span class="hljs-keyword">true</span>); 
+								<span class="hljs-comment">//此处第二个参数smoothScrool为页面切换动画的启用</span>
+            <span class="hljs-keyword">case</span> R.id.Frag2Btn:
+                viewPager.setCurrentItem(<span class="hljs-number">1</span>, <span class="hljs-keyword">true</span>);
+            <span class="hljs-keyword">case</span> R.id.Frag3Btn:
+                viewPager.setCurrentItem(<span class="hljs-number">2</span>, <span class="hljs-keyword">true</span>);
+            <span class="hljs-keyword">case</span> R.id.Frag4Btn:
+                viewPager.setCurrentItem(<span class="hljs-number">3</span>, <span class="hljs-keyword">true</span>);
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">break</span>;
+
+        &#125;
+    &#125;
+</code></pre>
 <p>设置radiogroup监听与初始选择：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">radioGroup.setOnCheckedChangeListener(<span class="keyword">this</span>); <span class="comment">//设置点击监听</span></span><br><span class="line">radioGroup.check(R.id.Frag1Btn);<span class="comment">//设置初始选中按钮</span></span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="java">radioGroup.setOnCheckedChangeListener(<span class="hljs-keyword">this</span>); <span class="hljs-comment">//设置点击监听</span>
+radioGroup.check(R.id.Frag1Btn);<span class="hljs-comment">//设置初始选中按钮</span>
+</code></pre>
 <h3 id="viewpager"><a class="markdownIt-Anchor" href="#viewpager"></a> ViewPager</h3>
 <p>实现<code>ViewPager.OnpageChangeListener</code>接口，重写其中<code>setOnPageChangeListener</code>：滑动选择方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (position) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                radioGroup.check(R.id.Frag1Btn);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                radioGroup.check(R.id.Frag2Btn);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                radioGroup.check(R.id.Frag3Btn);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                radioGroup.check(R.id.Frag4Btn);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="java">
+<span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPageScrolled</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position, <span class="hljs-keyword">float</span> positionOffset, <span class="hljs-keyword">int</span> positionOffsetPixels)</span> </span>&#123;
+
+    &#125;
+    
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPageSelected</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position)</span> </span>&#123;
+        <span class="hljs-keyword">switch</span> (position) &#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+                radioGroup.check(R.id.Frag1Btn);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+                radioGroup.check(R.id.Frag2Btn);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+                radioGroup.check(R.id.Frag3Btn);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+                radioGroup.check(R.id.Frag4Btn);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">break</span>;
+        &#125;
+    
+    &#125;
+    
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPageScrollStateChanged</span><span class="hljs-params">(<span class="hljs-keyword">int</span> state)</span> </span>&#123;
+    
+    &#125;
+</code></pre>
 <h4 id="viewpager-2"><a class="markdownIt-Anchor" href="#viewpager-2"></a> ViewPager</h4>
 <p>设置ViewPager：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mainViewPager.setAdapter(mainViewPagerAdapter);//添加适配器</span><br><span class="line">mainViewPager.addOnPageChangeListener(this); //设置viewpager页面监听</span><br><span class="line">mainViewPager.setCurrentItem(0); //设置第一个页面</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">mainViewPager.setAdapter(mainViewPagerAdapter);//添加适配器
+mainViewPager.addOnPageChangeListener(this); //设置viewpager页面监听
+mainViewPager.setCurrentItem(0); //设置第一个页面
+</code></pre>
 <h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
-<p><a href="https://blog.csdn.net/shenyuanqing/article/details/46670761" target="_blank" rel="noopener">Android ViewPager+RadioGroup+Fragment超高仿微信主界面</a></p>
-<p><a href="https://blog.csdn.net/u013132744/article/details/50296159" target="_blank" rel="noopener">使用ViewPager+Fragment+RadioGroup实现类似微信主界面</a></p>
-<p><a href="https://www.jianshu.com/p/dc0683bb489f" target="_blank" rel="noopener">RadioGroup+ViewPager+Fragment的组合使用</a></p>
-<p><a href="https://www.cnblogs.com/baipengzhan/p/Android_ViewPager_RadioGroup.html" target="_blank" rel="noopener">Android底部导航栏创建——ViewPager + RadioGroup</a></p>
-<p><a href="https://blog.csdn.net/likesidehu/article/details/78440216" target="_blank" rel="noopener">RadioButton点击事件不起作用的坑</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shenyuanqing/article/details/46670761">Android ViewPager+RadioGroup+Fragment超高仿微信主界面</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013132744/article/details/50296159">使用ViewPager+Fragment+RadioGroup实现类似微信主界面</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dc0683bb489f">RadioGroup+ViewPager+Fragment的组合使用</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baipengzhan/p/Android_ViewPager_RadioGroup.html">Android底部导航栏创建——ViewPager + RadioGroup</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/likesidehu/article/details/78440216">RadioButton点击事件不起作用的坑</a></p>
 
       
     </div>
@@ -548,7 +704,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="FelixXiong wechat" style="width: 200px; max-width: 100%;">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
     <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
 </div>
 
@@ -566,14 +722,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="FelixXiong 微信支付">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="FelixXiong 支付宝">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -595,7 +751,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP开发实践/" title="RadioButton+Fragment+VP开发实践">https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP开发实践/</a>
+    <a href="https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/" title="RadioButton+Fragment+VP开发实践">https://felixxiong.github.io/2021/01/13/RadioButton+Fragment+VP%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -612,7 +768,7 @@
           
             <a href="/tags/UI/" rel="tag"># UI</a>
           
-            <a href="/tags/导航/" rel="tag"># 导航</a>
+            <a href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag"># 导航</a>
           
         </div>
       
@@ -625,7 +781,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/12/31/2020年终总结/" rel="next" title="2020年终总结">
+              <a href="/2020/12/31/2020%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="next" title="2020年终总结">
                 <i class="fa fa-chevron-left"></i> 2020年终总结
               </a>
             
@@ -635,7 +791,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/01/16/Android keystore踩坑记录/" rel="prev" title="Android keystore踩坑记录">
+              <a href="/2021/01/16/Android%20keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" rel="prev" title="Android keystore踩坑记录">
                 Android keystore踩坑记录 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -706,7 +862,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">FelixXiong</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -717,7 +873,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -728,7 +884,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -772,15 +928,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
                       
-                          <i class="iconfont icon-zhihu"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://instagram.com/felixxiong0513" target="_blank" title="Instagram">
-                      
-                          <i class="fa fa-fw fa-instagram"></i></a>
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
@@ -789,19 +939,25 @@
                           <i class="fa fa-fw fa-dribbble"></i></a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
             </div>
           
          
           <div id="music163player">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="86" src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
-            
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
          </div>
 
           
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
               </a>
             </div>
           
@@ -824,7 +980,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要步骤"><span class="nav-text"> 主要步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xml"><span class="nav-text"> XML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mainactivity"><span class="nav-text"> MainActivity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fragment"><span class="nav-text"> Fragment</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fragmentmanager"><span class="nav-text"> FragmentManager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fragmentpageradapter"><span class="nav-text"> FragmentPagerAdapter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#radiogroup"><span class="nav-text"> RadioGroup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewpager"><span class="nav-text"> ViewPager</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#viewpager-2"><span class="nav-text"> ViewPager</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-text"> 参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4"><span class="nav-text"> 主要步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xml"><span class="nav-text"> XML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mainactivity"><span class="nav-text"> MainActivity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fragment"><span class="nav-text"> Fragment</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fragmentmanager"><span class="nav-text"> FragmentManager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fragmentpageradapter"><span class="nav-text"> FragmentPagerAdapter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#radiogroup"><span class="nav-text"> RadioGroup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewpager"><span class="nav-text"> ViewPager</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#viewpager-2"><span class="nav-text"> ViewPager</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text"> 参考链接</span></a></li></ol></div>
             
 
           </div>
@@ -858,7 +1014,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">215.2k</span>
+    <span title="Site words total count">215k</span>
   
 </div>
 

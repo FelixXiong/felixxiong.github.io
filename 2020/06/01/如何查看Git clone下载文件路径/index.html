@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -44,9 +44,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -64,13 +64,13 @@
 
 
 
-  <meta name="keywords" content="Git,">
+  <meta name="keywords" content="Git," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
 
 
 
@@ -78,24 +78,24 @@
 
 
 <meta name="description" content="背景：由于手机不在身边，微信无法登陆，忍无可忍之后安装了一个插件。 WeChatTweak-macOS，于是直接clone后，需要查找路径并安装。 关于这个插件的功能，后续可能会写文章进行描述，我主要用来“防撤回”、“双开”以及“长时间不用微信不用扫码登录”。">
-<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何查看Git clone下载文件路径">
-<meta property="og:url" content="https://felixxiong.github.io/2020/06/01/如何查看Git clone下载文件路径/index.html">
+<meta property="og:url" content="https://felixxiong.github.io/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/index.html">
 <meta property="og:site_name" content="故事熊">
 <meta property="og:description" content="背景：由于手机不在身边，微信无法登陆，忍无可忍之后安装了一个插件。 WeChatTweak-macOS，于是直接clone后，需要查找路径并安装。 关于这个插件的功能，后续可能会写文章进行描述，我主要用来“防撤回”、“双开”以及“长时间不用微信不用扫码登录”。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-24T13:41:47.468Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-05-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-24T13:41:47.468Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何查看Git clone下载文件路径">
-<meta name="twitter:description" content="背景：由于手机不在身边，微信无法登陆，忍无可忍之后安装了一个插件。 WeChatTweak-macOS，于是直接clone后，需要查找路径并安装。 关于这个插件的功能，后续可能会写文章进行描述，我主要用来“防撤回”、“双开”以及“长时间不用微信不用扫码登录”。">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://felixxiong.github.io/2020/06/01/如何查看Git clone下载文件路径/">
+  <link rel="canonical" href="https://felixxiong.github.io/2020/06/01/如何查看Git clone下载文件路径/"/>
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -161,7 +161,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">故事熊</span>
         <span class="logo-line-after"><i></i></span>
@@ -245,7 +245,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
             关于
           </a>
@@ -285,7 +285,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -322,11 +324,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/06/01/如何查看Git clone下载文件路径/">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FelixXiong">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -362,7 +364,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -374,7 +376,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">编程开发</span>
                   </a>
                 </span>
@@ -385,7 +387,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Git/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Git/" itemprop="url" rel="index">
                     <span itemprop="name">Git</span>
                   </a>
                 </span>
@@ -403,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/06/01/如何查看Git clone下载文件路径/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/01/如何查看Git clone下载文件路径/" itemprop="commentCount"></span>
+                <a href="/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,7 +414,7 @@
 
           
           
-             <span id="/2020/06/01/如何查看Git clone下载文件路径/" class="leancloud_visitors" data-flag-title="如何查看Git clone下载文件路径">
+             <span id="/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/" class="leancloud_visitors" data-flag-title="如何查看Git clone下载文件路径">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +429,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
@@ -442,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  292
+                  288
                 </span>
               
 
@@ -480,29 +482,33 @@
 
       
         <p>背景：由于手机不在身边，微信无法登陆，忍无可忍之后安装了一个插件。</p>
-<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS" target="_blank" rel="noopener">WeChatTweak-macOS</a>，于是直接clone后，需要查找路径并安装。<br>
+<p><a target="_blank" rel="noopener" href="https://github.com/Sunnyyoung/WeChatTweak-macOS">WeChatTweak-macOS</a>，于是直接clone后，需要查找路径并安装。<br />
 关于这个插件的功能，后续可能会写文章进行描述，我主要用来“防撤回”、“双开”以及“长时间不用微信不用扫码登录”。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="git-笔记"><a class="markdownIt-Anchor" href="#git-笔记"></a> GIT 笔记</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% git clone https://github.com ……</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">% git clone https://github.com ……
+</code></pre>
 <p>直接clone，之后并成功，后续clone需要首先cd到相应文件夹后clone，此插件网站也是这么写：</p>
 <blockquote>
-<p>下载本插件有以下两种方式：<br>
+<p>下载本插件有以下两种方式：<br />
 通过 <code>git clone https://github.com/Sunnyyoung/WeChatTweak-macOS.git</code> 命令下载到<strong>任意地方</strong></p>
-<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS/wiki" target="_blank" rel="noopener">Sunnyyoung/<strong>WeChatTweak-macOS</strong>/Wiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Sunnyyoung/WeChatTweak-macOS/wiki">Sunnyyoung/<strong>WeChatTweak-macOS</strong>/Wiki</a></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% ls</span><br></pre></td></tr></table></figure>
-<p>查看下载的文件，以列表形式呈现。<br>
+<pre class="highlight"><code class="">% ls
+</code></pre>
+<p>查看下载的文件，以列表形式呈现。<br />
 当我在Terminal中输入出现的列表，其实已经看出是/Users/yourusername/里的文档列表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% cd</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">% cd
+</code></pre>
 <p>使用cd进入相应文件下载目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% pwd</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">% pwd
+</code></pre>
 <p>使用pwd显示文件路径。</p>
 <p>全部操作步骤</p>
 <p>后续则可以进行文件夹剪贴的操作步骤，后续进行安装使用了。</p>
 <h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
-<p><a href="https://blog.csdn.net/Smile_Luckly/article/details/70677823" target="_blank" rel="noopener">查看 Git Clone文件下载在哪里</a></p>
-<p><a href="https://medium.com/@picapro33/git-%E5%85%A5%E9%96%80%E5%90%8D%E8%A9%9E%E4%BB%8B%E7%B4%B9-43fe17481855" target="_blank" rel="noopener">Git 入門名詞介紹</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Smile_Luckly/article/details/70677823">查看 Git Clone文件下载在哪里</a></p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@picapro33/git-%E5%85%A5%E9%96%80%E5%90%8D%E8%A9%9E%E4%BB%8B%E7%B4%B9-43fe17481855">Git 入門名詞介紹</a></p>
 
       
     </div>
@@ -513,7 +519,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="FelixXiong wechat" style="width: 200px; max-width: 100%;">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
     <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
 </div>
 
@@ -531,14 +537,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="FelixXiong 微信支付">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="FelixXiong 支付宝">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -560,7 +566,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://felixxiong.github.io/2020/06/01/如何查看Git clone下载文件路径/" title="如何查看Git clone下载文件路径">https://felixxiong.github.io/2020/06/01/如何查看Git clone下载文件路径/</a>
+    <a href="https://felixxiong.github.io/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/" title="如何查看Git clone下载文件路径">https://felixxiong.github.io/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -588,7 +594,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/01/给WP加入SEO/" rel="next" title="给WP加入SEO">
+              <a href="/2020/06/01/%E7%BB%99WP%E5%8A%A0%E5%85%A5SEO/" rel="next" title="给WP加入SEO">
                 <i class="fa fa-chevron-left"></i> 给WP加入SEO
               </a>
             
@@ -598,7 +604,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/14/硬件回顾|华为Mediapad10FHD/" rel="prev" title="硬件回顾|华为Mediapad10FHD">
+              <a href="/2020/06/14/%E7%A1%AC%E4%BB%B6%E5%9B%9E%E9%A1%BE%7C%E5%8D%8E%E4%B8%BAMediapad10FHD/" rel="prev" title="硬件回顾|华为Mediapad10FHD">
                 硬件回顾|华为Mediapad10FHD <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -669,7 +675,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">FelixXiong</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -680,7 +686,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -691,7 +697,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -735,15 +741,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
                       
-                          <i class="iconfont icon-zhihu"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://instagram.com/felixxiong0513" target="_blank" title="Instagram">
-                      
-                          <i class="fa fa-fw fa-instagram"></i></a>
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
@@ -752,19 +752,25 @@
                           <i class="fa fa-fw fa-dribbble"></i></a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
             </div>
           
          
           <div id="music163player">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="86" src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
-            
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
          </div>
 
           
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
               </a>
             </div>
           
@@ -787,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-笔记"><span class="nav-text"> GIT 笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-text"> 参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E7%AC%94%E8%AE%B0"><span class="nav-text"> GIT 笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text"> 参考链接</span></a></li></ol></div>
             
 
           </div>
@@ -821,7 +827,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">215.2k</span>
+    <span title="Site words total count">215k</span>
   
 </div>
 

@@ -254,7 +254,7 @@ NexT.utils = NexT.$u = {
   },
 
   getScrollbarWidth: function () {
-    var $div = $('<div>').addClass('scrollbar-measure').prependTo('body');
+    var $div = $('<div />').addClass('scrollbar-measure').prependTo('body');
     var div = $div[0];
     var scrollbarWidth = div.offsetWidth - div.clientWidth;
 
@@ -337,4 +337,3 @@ $(document).ready(function () {
   }
 
 });
-</div></=></div></div>

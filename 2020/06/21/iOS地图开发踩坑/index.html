@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -44,9 +44,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -64,13 +64,13 @@
 
 
 
-  <meta name="keywords" content="地图,">
+  <meta name="keywords" content="地图," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
 
 
 
@@ -78,24 +78,24 @@
 
 
 <meta name="description" content="最近的项目中研究iOS地图已经有些时日了，这里记录下获得用户位置权限的基本步骤与参考资料。 如文章有误或你的经验分享，欢迎指出与评论。">
-<meta name="keywords" content="地图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS地图开发踩坑">
-<meta property="og:url" content="https://felixxiong.github.io/2020/06/21/iOS地图开发踩坑/index.html">
+<meta property="og:url" content="https://felixxiong.github.io/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="故事熊">
 <meta property="og:description" content="最近的项目中研究iOS地图已经有些时日了，这里记录下获得用户位置权限的基本步骤与参考资料。 如文章有误或你的经验分享，欢迎指出与评论。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-24T13:38:57.699Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-06-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-24T13:38:57.699Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="地图">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS地图开发踩坑">
-<meta name="twitter:description" content="最近的项目中研究iOS地图已经有些时日了，这里记录下获得用户位置权限的基本步骤与参考资料。 如文章有误或你的经验分享，欢迎指出与评论。">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://felixxiong.github.io/2020/06/21/iOS地图开发踩坑/">
+  <link rel="canonical" href="https://felixxiong.github.io/2020/06/21/iOS地图开发踩坑/"/>
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -161,7 +161,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">故事熊</span>
         <span class="logo-line-after"><i></i></span>
@@ -245,7 +245,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
             关于
           </a>
@@ -285,7 +285,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -322,11 +324,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/06/21/iOS地图开发踩坑/">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FelixXiong">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -362,7 +364,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -374,7 +376,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">编程开发</span>
                   </a>
                 </span>
@@ -385,7 +387,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/iOS/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/iOS/" itemprop="url" rel="index">
                     <span itemprop="name">iOS</span>
                   </a>
                 </span>
@@ -403,8 +405,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/06/21/iOS地图开发踩坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/21/iOS地图开发踩坑/" itemprop="commentCount"></span>
+                <a href="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,7 +414,7 @@
 
           
           
-             <span id="/2020/06/21/iOS地图开发踩坑/" class="leancloud_visitors" data-flag-title="iOS地图开发踩坑">
+             <span id="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" class="leancloud_visitors" data-flag-title="iOS地图开发踩坑">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +429,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
@@ -442,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  579
+                  568
                 </span>
               
 
@@ -481,7 +483,7 @@
       
         <p>最近的项目中研究iOS地图已经有些时日了，这里记录下获得用户位置权限的基本步骤与参考资料。</p>
 <p>如文章有误或你的经验分享，欢迎指出与评论。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="导入"><a class="markdownIt-Anchor" href="#导入"></a> 导入</h2>
 <p>import Mapkit 与CoreLocation</p>
 <h2 id="权限申请"><a class="markdownIt-Anchor" href="#权限申请"></a> 权限申请</h2>
@@ -491,15 +493,24 @@
 <p>若同时希望，则可全部添加，代码检查权限，在下文中提到</p>
 <p>注意：业务逻辑若有两个Map，第二个出现“是否保持XX选择“，而不弹出多个选项。</p>
 <h2 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let locationManager = CLLocationManager() //创建获取位置实例</span><br><span class="line">locationManager.delegate = self //创建一个实例</span><br><span class="line">locationManager.desiredAccuracy = kCLLocationAccuracyBest </span><br><span class="line">//设置定位精度</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">let locationManager = CLLocationManager() //创建获取位置实例
+locationManager.delegate = self //创建一个实例
+locationManager.desiredAccuracy = kCLLocationAccuracyBest 
+//设置定位精度
+</code></pre>
 <p>根据实际需求撰写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locationManager.startUpdatingLocation() </span><br><span class="line">//开始更新用户位置信息，并调用</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">locationManager.startUpdatingLocation() 
+//开始更新用户位置信息，并调用
+</code></pre>
 <h2 id="协议"><a class="markdownIt-Anchor" href="#协议"></a> 协议</h2>
 <p>需增加Map与地图的delegate，可作为扩展：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension ViewController: CLLocationManagerDelegate &#123; &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">extension ViewController: CLLocationManagerDelegate &#123; &#125;
+</code></pre>
 <h3 id="不同权限用户申请的不同相应"><a class="markdownIt-Anchor" href="#不同权限用户申请的不同相应"></a> 不同权限用户申请的不同相应</h3>
 <p>添加代理方法（参考资料-踩坑-链接1）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) &#123; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class=""> func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) &#123; 
+&#125;
+</code></pre>
 <p>此处有几个可选的种类：</p>
 <ol>
 <li>.authorizedWhenInUse：用户选择使用时启用</li>
@@ -508,12 +519,24 @@
 <li>.authorizedAlways：总是获取位置信息</li>
 </ol>
 <p>此处为通常使用switch语句，若用户未响应，可添加UIAlertView：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let alert = UIAlertController(title: &quot;xx&quot;, </span><br><span class="line">                              message:&quot;请转到设置&gt;隐私&gt;位置服务允许位置&quot;, </span><br><span class="line">                              preferredStyle: .alert)</span><br><span class="line">let action = UIAlertAction(title: &quot;我知道了&quot;, style: .default) </span><br><span class="line">alert.addAction(action)</span><br><span class="line">present(alert,animated: true,completion: nil)</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class=""> let alert = UIAlertController(title: &quot;xx&quot;, 
+                               message:&quot;请转到设置&gt;隐私&gt;位置服务允许位置&quot;, 
+                               preferredStyle: .alert)
+ let action = UIAlertAction(title: &quot;我知道了&quot;, style: .default) 
+ alert.addAction(action)
+ present(alert,animated: true,completion: nil)
+</code></pre>
 <h3 id="调用位置成功之后"><a class="markdownIt-Anchor" href="#调用位置成功之后"></a> 调用位置成功之后</h3>
 <p>更新用户位置方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class=""> func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) &#123;
+&#125;
+</code></pre>
 <p>此处写法部分遇坑：使用以下方法设置区域：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let location = locations.last else &#123; return &#125; </span><br><span class="line">//若最近位置返回0，则返回为空</span><br><span class="line"></span><br><span class="line">MKCoordinateRegion.init(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">let location = locations.last else &#123; return &#125; 
+//若最近位置返回0，则返回为空
+
+MKCoordinateRegion.init(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
+</code></pre>
 <p>center：设置center用户位置中心点</p>
 <h2 id="遇坑"><a class="markdownIt-Anchor" href="#遇坑"></a> 遇坑</h2>
 <ol>
@@ -522,12 +545,12 @@
 </ol>
 <h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
 <p>获取iOS用户位置：</p>
-<p><a href="https://developer.apple.com/documentation" target="_blank" rel="noopener">Documentation</a>  - <a href="https://developer.apple.com/documentation/mapkit" target="_blank" rel="noopener">MapKit</a> - <a href="https://developer.apple.com/documentation/mapkit/mkmapview" target="_blank" rel="noopener">MKMapView</a></p>
-<p>[<a href="https://dev.classmethod.jp/articles/ios-corelocation-swift3/#toc-6" target="_blank" rel="noopener">iOS] 位置情報の取得 (Swift3編)</a></p>
-<p><a href="http://jackliu17.github.io/2016/06/10/CoreLocation%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/" target="_blank" rel="noopener">CoreLocation框架详解| Cowboy Tech</a></p>
-<p>i<a href="https://www.jianshu.com/p/5c845e281df6" target="_blank" rel="noopener">OS App地图功能开发（1）</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation">Documentation</a>  - <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/mapkit">MapKit</a> - <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/mapkit/mkmapview">MKMapView</a></p>
+<p>[<a target="_blank" rel="noopener" href="https://dev.classmethod.jp/articles/ios-corelocation-swift3/#toc-6">iOS] 位置情報の取得 (Swift3編)</a></p>
+<p><a target="_blank" rel="noopener" href="http://jackliu17.github.io/2016/06/10/CoreLocation%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/">CoreLocation框架详解| Cowboy Tech</a></p>
+<p>i<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5c845e281df6">OS App地图功能开发（1）</a></p>
 <p>踩坑：</p>
-<p><a href="https://blog.csdn.net/shihuboke/article/details/74612529" target="_blank" rel="noopener">iOS 解决iOS 地图获取位置提示框不弹出</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shihuboke/article/details/74612529">iOS 解决iOS 地图获取位置提示框不弹出</a></p>
 
       
     </div>
@@ -538,7 +561,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="FelixXiong wechat" style="width: 200px; max-width: 100%;">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
     <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
 </div>
 
@@ -556,14 +579,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="FelixXiong 微信支付">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="FelixXiong 支付宝">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -585,7 +608,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://felixxiong.github.io/2020/06/21/iOS地图开发踩坑/" title="iOS地图开发踩坑">https://felixxiong.github.io/2020/06/21/iOS地图开发踩坑/</a>
+    <a href="https://felixxiong.github.io/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" title="iOS地图开发踩坑">https://felixxiong.github.io/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -600,7 +623,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/地图/" rel="tag"># 地图</a>
+            <a href="/tags/%E5%9C%B0%E5%9B%BE/" rel="tag"># 地图</a>
           
         </div>
       
@@ -613,7 +636,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/14/硬件回顾|华为Mediapad10FHD/" rel="next" title="硬件回顾|华为Mediapad10FHD">
+              <a href="/2020/06/14/%E7%A1%AC%E4%BB%B6%E5%9B%9E%E9%A1%BE%7C%E5%8D%8E%E4%B8%BAMediapad10FHD/" rel="next" title="硬件回顾|华为Mediapad10FHD">
                 <i class="fa fa-chevron-left"></i> 硬件回顾|华为Mediapad10FHD
               </a>
             
@@ -623,7 +646,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/29/面试里的冲动与版权的自我保护/" rel="prev" title="面试里的冲动与版权的自我保护">
+              <a href="/2020/06/29/%E9%9D%A2%E8%AF%95%E9%87%8C%E7%9A%84%E5%86%B2%E5%8A%A8%E4%B8%8E%E7%89%88%E6%9D%83%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%9D%E6%8A%A4/" rel="prev" title="面试里的冲动与版权的自我保护">
                 面试里的冲动与版权的自我保护 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -694,7 +717,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">FelixXiong</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -705,7 +728,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -716,7 +739,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -760,15 +783,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
                       
-                          <i class="iconfont icon-zhihu"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://instagram.com/felixxiong0513" target="_blank" title="Instagram">
-                      
-                          <i class="fa fa-fw fa-instagram"></i></a>
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
@@ -777,19 +794,25 @@
                           <i class="fa fa-fw fa-dribbble"></i></a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
             </div>
           
          
           <div id="music163player">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="86" src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
-            
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
          </div>
 
           
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
               </a>
             </div>
           
@@ -812,7 +835,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#导入"><span class="nav-text"> 导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限申请"><span class="nav-text"> 权限申请</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-text"> 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协议"><span class="nav-text"> 协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不同权限用户申请的不同相应"><span class="nav-text"> 不同权限用户申请的不同相应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用位置成功之后"><span class="nav-text"> 调用位置成功之后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇坑"><span class="nav-text"> 遇坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-text"> 导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7"><span class="nav-text"> 权限申请</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text"> 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE"><span class="nav-text"> 协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%9D%83%E9%99%90%E7%94%A8%E6%88%B7%E7%94%B3%E8%AF%B7%E7%9A%84%E4%B8%8D%E5%90%8C%E7%9B%B8%E5%BA%94"><span class="nav-text"> 不同权限用户申请的不同相应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E4%BD%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E4%B9%8B%E5%90%8E"><span class="nav-text"> 调用位置成功之后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%9D%91"><span class="nav-text"> 遇坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text"> 参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -846,7 +869,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">215.2k</span>
+    <span title="Site words total count">215k</span>
   
 </div>
 

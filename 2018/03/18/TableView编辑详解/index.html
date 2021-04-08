@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -44,9 +44,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -64,13 +64,13 @@
 
 
 
-  <meta name="keywords" content="iOS,Swift,">
+  <meta name="keywords" content="iOS,Swift," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
 
 
 
@@ -78,24 +78,25 @@
 
 
 <meta name="description" content="这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。 要感谢那位朋友一直帮助我到十二点，让我输出这个笔记。">
-<meta name="keywords" content="iOS,Swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TableView编辑详解">
-<meta property="og:url" content="https://felixxiong.github.io/2018/03/18/TableView编辑详解/index.html">
+<meta property="og:url" content="https://felixxiong.github.io/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="故事熊">
 <meta property="og:description" content="这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。 要感谢那位朋友一直帮助我到十二点，让我输出这个笔记。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T03:56:14.540Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-03-17T20:17:00.000Z">
+<meta property="article:modified_time" content="2018-11-08T03:56:14.540Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="Swift">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TableView编辑详解">
-<meta name="twitter:description" content="这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。 要感谢那位朋友一直帮助我到十二点，让我输出这个笔记。">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -118,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://felixxiong.github.io/2018/03/18/TableView编辑详解/">
+  <link rel="canonical" href="https://felixxiong.github.io/2018/03/18/TableView编辑详解/"/>
 
 
 
@@ -143,7 +144,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -161,7 +162,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">故事熊</span>
         <span class="logo-line-after"><i></i></span>
@@ -245,7 +246,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
             关于
           </a>
@@ -285,7 +286,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -322,11 +325,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2018/03/18/TableView编辑详解/">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FelixXiong">
-      <meta itemprop="description" content>
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -362,7 +365,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -374,7 +377,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">编程开发</span>
                   </a>
                 </span>
@@ -385,7 +388,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程开发/Swift/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Swift/" itemprop="url" rel="index">
                     <span itemprop="name">Swift</span>
                   </a>
                 </span>
@@ -403,8 +406,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/18/TableView编辑详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/TableView编辑详解/" itemprop="commentCount"></span>
+                <a href="/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -412,7 +415,7 @@
 
           
           
-             <span id="/2018/03/18/TableView编辑详解/" class="leancloud_visitors" data-flag-title="TableView编辑详解">
+             <span id="/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/" class="leancloud_visitors" data-flag-title="TableView编辑详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +430,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
@@ -442,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  575
+                  551
                 </span>
               
 
@@ -479,9 +482,9 @@
       
 
       
-        <p>这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。<br>
+        <p>这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。<br />
 要感谢那位朋友一直帮助我到十二点，让我输出这个笔记。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="tableview-编辑模式与是否具有动画属性-详解"><a class="markdownIt-Anchor" href="#tableview-编辑模式与是否具有动画属性-详解"></a> TableView 编辑模式与是否具有动画属性 详解</h2>
 <p>在一个TableView列表中，常见需要进行编辑的操作。</p>
 <h2 id="更改列表编辑状态"><a class="markdownIt-Anchor" href="#更改列表编辑状态"></a> 更改列表编辑状态</h2>
@@ -489,26 +492,37 @@
 <h4 id="isediting"><a class="markdownIt-Anchor" href="#isediting"></a> isEditing</h4>
 <h5 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h5>
 <p>属性 ：isEditing有一个属性为Bool值，true为可编辑状态，false为不可编辑状态</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tableview.isEditing = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift">tableview.isEditing = <span class="hljs-literal">true</span>
+</code></pre>
 <p>此为表格进入可编辑状态。</p>
 <h4 id="setediting"><a class="markdownIt-Anchor" href="#setediting"></a> setEditing</h4>
 <h5 id="介绍-2"><a class="markdownIt-Anchor" href="#介绍-2"></a> 介绍</h5>
 <p>方法：进入编辑模式</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">setEditing</span><span class="params">(<span class="number">_</span> editing: Bool, animated: Bool)</span></span> &#123;</span><br><span class="line">       <span class="keyword">super</span>.setEditing(editing, animated: animated)</span><br><span class="line">       <span class="type">TableView</span>.setEditing(ture, animated: <span class="literal">true</span>)<span class="comment">//括号里第一个true 就是isEditing的值</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift"> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">setEditing</span><span class="hljs-params">(<span class="hljs-number">_</span> editing: Bool, animated: Bool)</span></span> &#123;
+        <span class="hljs-keyword">super</span>.setEditing(editing, animated: animated)
+        <span class="hljs-type">TableView</span>.setEditing(ture, animated: <span class="hljs-literal">true</span>)<span class="hljs-comment">//括号里第一个true 就是isEditing的值</span>
+    &#125;
+</code></pre>
 <h2 id="进入编辑状态是否有动画"><a class="markdownIt-Anchor" href="#进入编辑状态是否有动画"></a> 进入编辑状态是否有动画</h2>
 <h3 id="点击按钮之后"><a class="markdownIt-Anchor" href="#点击按钮之后"></a> 点击按钮之后</h3>
 <h4 id="isediting-2"><a class="markdownIt-Anchor" href="#isediting-2"></a> isEditing</h4>
 <p>无动画</p>
 <h4 id="setediting-2"><a class="markdownIt-Anchor" href="#setediting-2"></a> setEditing</h4>
 <p>有动画</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TableView.setEditing(editing, animated: )</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="">TableView.setEditing(editing, animated: )
+</code></pre>
 <p>setEditing括号里有animated，值true或false决定是否有动画</p>
 <h2 id="添加按编辑按钮的位置的不同方法"><a class="markdownIt-Anchor" href="#添加按编辑按钮的位置的不同方法"></a> 添加按编辑按钮的位置的不同方法</h2>
 <h3 id="纯代码中"><a class="markdownIt-Anchor" href="#纯代码中"></a> 纯代码中</h3>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigationItem.leftBarButtonItem = editButtonItem</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift">navigationItem.leftBarButtonItem = editButtonItem
+</code></pre>
 <p>此代码可省略设置点击之后的Title选中与未选中显示的字样：自动设置</p>
 <p>TableView进入编辑模式：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">setEditing</span><span class="params">(<span class="number">_</span> editing: Bool, animated: Bool)</span></span> &#123;</span><br><span class="line">       <span class="keyword">super</span>.setEditing(editing, animated: animated)</span><br><span class="line">       <span class="type">TableView</span>.setEditing(ture, animated: <span class="literal">true</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift"> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">setEditing</span><span class="hljs-params">(<span class="hljs-number">_</span> editing: Bool, animated: Bool)</span></span> &#123;
+        <span class="hljs-keyword">super</span>.setEditing(editing, animated: animated)
+        <span class="hljs-type">TableView</span>.setEditing(ture, animated: <span class="hljs-literal">true</span>)
+    &#125;
+</code></pre>
 <h3 id="storyboard中"><a class="markdownIt-Anchor" href="#storyboard中"></a> StoryBoard中</h3>
 <p>按钮在StoryBoard里设置的，默认是“编辑”。</p>
 <p><strong>为什么故事版里设置了标题，代码就需要设置？</strong></p>
@@ -516,11 +530,36 @@
 <p>以下为设置点击button之后的显示的字样的代码:</p>
 <h4 id="isediting-3"><a class="markdownIt-Anchor" href="#isediting-3"></a> isEditing</h4>
 <p>若使用一行代码解决动画问题：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">TableView</span>.isEditing = !<span class="type">TableView</span>.isEditing <span class="comment">//给isEditing取反，无动画</span></span><br><span class="line"><span class="keyword">switch</span> <span class="type">TableView</span>.isEditing&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">true</span>:</span><br><span class="line">            editButton.title = <span class="string">"done"</span><span class="comment">//修改标题</span></span><br><span class="line">        <span class="keyword">case</span> <span class="literal">false</span>:</span><br><span class="line">            editButton.title = <span class="string">"edit"</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift"><span class="hljs-type">TableView</span>.isEditing = !<span class="hljs-type">TableView</span>.isEditing <span class="hljs-comment">//给isEditing取反，无动画</span>
+<span class="hljs-keyword">switch</span> <span class="hljs-type">TableView</span>.isEditing&#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>:
+            editButton.title = <span class="hljs-string">"done"</span><span class="hljs-comment">//修改标题</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>:
+            editButton.title = <span class="hljs-string">"edit"</span>
+
+        &#125;
+</code></pre>
 <h4 id="setediting-3"><a class="markdownIt-Anchor" href="#setediting-3"></a> setEditing</h4>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">editAction</span><span class="params">()</span></span></span><br><span class="line">  <span class="keyword">if</span>.<span class="keyword">self</span>.tableView.isEditing = <span class="literal">false</span></span><br><span class="line">     <span class="keyword">self</span>.tableView.setEditing(<span class="literal">true</span>, animated:<span class="literal">true</span>)</span><br><span class="line">     <span class="keyword">self</span>.editBtn.title = <span class="string">"完成"</span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     <span class="keyword">self</span>.tableView.setEditing(<span class="literal">false</span>, animated:<span class="literal">true</span>)</span><br><span class="line">     <span class="keyword">self</span>.editBtn.title = <span class="string">"编辑"</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">editAction</span><span class="hljs-params">()</span></span>
+  <span class="hljs-keyword">if</span>.<span class="hljs-keyword">self</span>.tableView.isEditing = <span class="hljs-literal">false</span>
+     <span class="hljs-keyword">self</span>.tableView.setEditing(<span class="hljs-literal">true</span>, animated:<span class="hljs-literal">true</span>)
+     <span class="hljs-keyword">self</span>.editBtn.title = <span class="hljs-string">"完成"</span>
+  &#125;<span class="hljs-keyword">else</span>&#123;
+     <span class="hljs-keyword">self</span>.tableView.setEditing(<span class="hljs-literal">false</span>, animated:<span class="hljs-literal">true</span>)
+     <span class="hljs-keyword">self</span>.editBtn.title = <span class="hljs-string">"编辑"</span>
+     &#125;
+&#125;
+</code></pre>
 <p>若使用一行代码解决添加动画问题：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tableView.setEditing(!<span class="keyword">self</span>.tableView.isEditing, animated: <span class="literal">true</span>)<span class="comment">//若为setEditing，有动画</span></span><br><span class="line"><span class="keyword">switch</span> <span class="type">TableView</span>.isEditing&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">true</span>:</span><br><span class="line">            editButton.title = <span class="string">"done"</span><span class="comment">//修改标题</span></span><br><span class="line">        <span class="keyword">case</span> <span class="literal">false</span>:</span><br><span class="line">            editButton.title = <span class="string">"edit"</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="swift">tableView.setEditing(!<span class="hljs-keyword">self</span>.tableView.isEditing, animated: <span class="hljs-literal">true</span>)<span class="hljs-comment">//若为setEditing，有动画</span>
+<span class="hljs-keyword">switch</span> <span class="hljs-type">TableView</span>.isEditing&#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>:
+            editButton.title = <span class="hljs-string">"done"</span><span class="hljs-comment">//修改标题</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>:
+            editButton.title = <span class="hljs-string">"edit"</span>
+
+        &#125;
+</code></pre>
 <h3 id="代码里的对象"><a class="markdownIt-Anchor" href="#代码里的对象"></a> 代码里的对象</h3>
 <p>isEditing/setEditing对象是tableview，</p>
 <p>.title对象是btn。</p>
@@ -536,7 +575,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="FelixXiong wechat" style="width: 200px; max-width: 100%;">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
     <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
 </div>
 
@@ -554,14 +593,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="FelixXiong 微信支付">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="FelixXiong 支付宝">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -583,7 +622,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://felixxiong.github.io/2018/03/18/TableView编辑详解/" title="TableView编辑详解">https://felixxiong.github.io/2018/03/18/TableView编辑详解/</a>
+    <a href="https://felixxiong.github.io/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/" title="TableView编辑详解">https://felixxiong.github.io/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -619,7 +658,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/10/使用Hexo问题汇总/" rel="prev" title="使用Hexo问题汇总">
+              <a href="/2018/04/10/%E4%BD%BF%E7%94%A8Hexo%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" rel="prev" title="使用Hexo问题汇总">
                 使用Hexo问题汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -690,7 +729,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">FelixXiong</p>
+              <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -701,7 +740,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -712,7 +751,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -756,15 +795,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
                       
-                          <i class="iconfont icon-zhihu"></i></a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://instagram.com/felixxiong0513" target="_blank" title="Instagram">
-                      
-                          <i class="fa fa-fw fa-instagram"></i></a>
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
@@ -773,19 +806,25 @@
                           <i class="fa fa-fw fa-dribbble"></i></a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
             </div>
           
          
           <div id="music163player">
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="86" src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
-            
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
          </div>
 
           
           
             <div class="cc-license motion-element" itemprop="license">
               <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
               </a>
             </div>
           
@@ -808,7 +847,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tableview-编辑模式与是否具有动画属性-详解"><span class="nav-text"> TableView 编辑模式与是否具有动画属性 详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改列表编辑状态"><span class="nav-text"> 更改列表编辑状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性和方法共两个"><span class="nav-text"> 属性和方法（共两个）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isediting"><span class="nav-text"> isEditing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#介绍"><span class="nav-text"> 介绍</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setediting"><span class="nav-text"> setEditing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#介绍-2"><span class="nav-text"> 介绍</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入编辑状态是否有动画"><span class="nav-text"> 进入编辑状态是否有动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点击按钮之后"><span class="nav-text"> 点击按钮之后</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isediting-2"><span class="nav-text"> isEditing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setediting-2"><span class="nav-text"> setEditing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加按编辑按钮的位置的不同方法"><span class="nav-text"> 添加按编辑按钮的位置的不同方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#纯代码中"><span class="nav-text"> 纯代码中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storyboard中"><span class="nav-text"> StoryBoard中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isediting-3"><span class="nav-text"> isEditing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setediting-3"><span class="nav-text"> setEditing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码里的对象"><span class="nav-text"> 代码里的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在以上代码中"><span class="nav-text"> 在以上代码中</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tableview-%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%98%AF%E5%90%A6%E5%85%B7%E6%9C%89%E5%8A%A8%E7%94%BB%E5%B1%9E%E6%80%A7-%E8%AF%A6%E8%A7%A3"><span class="nav-text"> TableView 编辑模式与是否具有动画属性 详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%88%97%E8%A1%A8%E7%BC%96%E8%BE%91%E7%8A%B6%E6%80%81"><span class="nav-text"> 更改列表编辑状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E5%85%B1%E4%B8%A4%E4%B8%AA"><span class="nav-text"> 属性和方法（共两个）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isediting"><span class="nav-text"> isEditing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text"> 介绍</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setediting"><span class="nav-text"> setEditing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="nav-text"> 介绍</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E7%BC%96%E8%BE%91%E7%8A%B6%E6%80%81%E6%98%AF%E5%90%A6%E6%9C%89%E5%8A%A8%E7%94%BB"><span class="nav-text"> 进入编辑状态是否有动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E4%B9%8B%E5%90%8E"><span class="nav-text"> 点击按钮之后</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isediting-2"><span class="nav-text"> isEditing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setediting-2"><span class="nav-text"> setEditing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%8C%89%E7%BC%96%E8%BE%91%E6%8C%89%E9%92%AE%E7%9A%84%E4%BD%8D%E7%BD%AE%E7%9A%84%E4%B8%8D%E5%90%8C%E6%96%B9%E6%B3%95"><span class="nav-text"> 添加按编辑按钮的位置的不同方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%AF%E4%BB%A3%E7%A0%81%E4%B8%AD"><span class="nav-text"> 纯代码中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storyboard%E4%B8%AD"><span class="nav-text"> StoryBoard中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isediting-3"><span class="nav-text"> isEditing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setediting-3"><span class="nav-text"> setEditing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E9%87%8C%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="nav-text"> 代码里的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BB%A5%E4%B8%8A%E4%BB%A3%E7%A0%81%E4%B8%AD"><span class="nav-text"> 在以上代码中</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -842,7 +881,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">215.2k</span>
+    <span title="Site words total count">215k</span>
   
 </div>
 
