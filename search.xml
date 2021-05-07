@@ -8573,6 +8573,9 @@ Nunjucks Error:  [Line 70, Column 6] expected name as lookup value, got .
   74 | <p>更新了不蒜子的域名，官方解释在<a href="http://ibruce.info/2015/04/04/busuanzi/">这里</a>。</p>
   75 | <p>修改<code>busuanzi-counter.swig</code>：</p>
     =====             Context Dump Ends            =====
+```
+以及以下错误：
+```bash
     at formatNunjucksError (/Users/yourname/FelixXiongHexo/node_modules/hexo/lib/extend/tag.js:102:13)
     at /Users/yourname/FelixXiongHexo/node_modules/hexo/lib/extend/tag.js:124:34
     at tryCatcher (/Users/yourname/FelixXiongHexo/node_modules/bluebird/js/release/util.js:16:23)
@@ -8587,7 +8590,7 @@ Nunjucks Error:  [Line 70, Column 6] expected name as lookup value, got .
     at processImmediate (internal/timers.js:439:21)
 ```
 
-mpn报错
+npm报错
 
 ```bash
 npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
@@ -16616,6 +16619,106 @@ dependencies </span>&#123;
         <tag>设计</tag>
         <tag>广州</tag>
         <tag>毕业展</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用全局变量判断用户是否登录</title>
+    <url>/2021/05/08/%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="判断用户是否登录"><a class="markdownIt-Anchor" href="#判断用户是否登录"></a> 判断用户是否登录</h2>
+<p>在项目中有这样的需求，类似于小鸡辞典小程序的显示用户昵称。</p>
+<p>目前使用全局变量来实现，最终会使用其他方式实现。</p>
+<p>在这里记录下自己的尝试方案，但目前暂未解决，后续要填补这个坑。</p>
+<span id="more"></span>
+<p>app.js：</p>
+<pre class="highlight"><code class="js">App(&#123;
+  <span class="hljs-attr">onLaunch</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; &#125;
+  
+  <span class="hljs-attr">globalData</span>:&#123; <span class="hljs-attr">userInfos</span>:<span class="hljs-literal">null</span> &#125; <span class="hljs-comment">/*定义全局变量userInfos，为了不与用户信息重叠，加了s*/</span>
+  
+&#125;)
+</code></pre>
+<p>在获取用户信息的登录页面（假设login.js）：</p>
+<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> app = getApp(); <span class="hljs-comment">//获取全局app</span>
+
+Page(&#123;
+
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">userInfos</span>:<span class="hljs-string">''</span>,  <span class="hljs-comment">//定义的全局变量</span>
+    <span class="hljs-attr">userInfo</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//使用新接口获得用户信息的两个方法，此处不展开</span>
+    <span class="hljs-attr">hasUserInfo</span>:<span class="hljs-literal">false</span>,
+  &#125;,
+  
+  getUserProfile()&#123; 
+    wx.getUserProfile(&#123;
+      <span class="hljs-attr">desc</span>:<span class="hljs-string">'请登录'</span>,
+      <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'获取用户信息成功'</span>,res)
+        <span class="hljs-keyword">let</span> userinfos = res.userInfo <span class="hljs-comment">//登录需要的用户信息</span>
+        <span class="hljs-keyword">var</span> globalUserInfos = app.globalData.userInfos <span class="hljs-comment">//全局变量的用户信息</span>
+        wx.setStorageSync(<span class="hljs-string">'userinfos'</span>, userinfos)
+        <span class="hljs-keyword">this</span>.setData(&#123;
+          <span class="hljs-attr">userInfos</span>:globalUserInfos,  <span class="hljs-comment">//使用globalUserInfos，目的为了用户信息赋值给全局变量</span>
+          <span class="hljs-attr">userInfo</span>:userinfos, <span class="hljs-comment">//登录需要的用户信息</span>
+          <span class="hljs-attr">hasUserInfo</span>:<span class="hljs-literal">true</span>
+        &#125;)
+      &#125;,
+      <span class="hljs-attr">fail</span>:<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'获取用户信息失败'</span>,res)
+      &#125;
+    &#125;)
+  &#125;,
+
+</code></pre>
+<p>在需要判断用户是否登录的页面（假设commit.js）：</p>
+<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> app = getApp(); <span class="hljs-comment">//获取全局app</span>
+
+Page(&#123;
+
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">userInfos</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//全局变量的用户信息:问题代码处</span>
+    <span class="hljs-attr">username</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//用户名</span>
+  &#125;,
+  
+  ......
+  
+  onLoad: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123; <span class="hljs-comment">//在onload方法中赋值给全局变量userInfos</span>
+    <span class="hljs-keyword">this</span>.setData(&#123;
+      <span class="hljs-attr">userInfos</span>:app.globalData.userInfos
+    &#125;)
+  &#125;,
+
+  getUserName()&#123;
+    <span class="hljs-keyword">this</span>.setData(&#123;
+      <span class="hljs-attr">username</span>:userInfos.nickName <span class="hljs-comment">//赋值给用户昵称</span>
+    &#125;)
+  &#125;,
+
+  commit()&#123;
+  <span class="hljs-keyword">if</span>( userInfos = <span class="hljs-literal">null</span>)&#123; <span class="hljs-comment">//如果GlobaluserInfo为空，提示需要登录</span>
+    wx.showModal(&#123;
+      <span class="hljs-attr">title</span>: <span class="hljs-string">'请登录'</span>,
+      <span class="hljs-attr">content</span>: <span class="hljs-string">'请登陆后再发表'</span>,
+    &#125;<span class="hljs-keyword">else</span>&#123; 
+     <span class="hljs-keyword">const</span> db = wx.cloud.database()
+    	db.collection(<span class="hljs-string">'Sayings'</span>).add(&#123; 
+      <span class="hljs-attr">data</span>:&#123;
+       ...
+       username:GlobaluserInfo <span class="hljs-comment">//把全局变量赋值给username</span>
+      &#125;, &#125;
+  	&#125;)
+  &#125;
+  
+&#125;
+</code></pre>
+<p>目前报错：userInfos is not defined</p>
+]]></content>
+      <categories>
+        <category>编程开发</category>
+        <category>前端</category>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>变量</tag>
       </tags>
   </entry>
 </search>
