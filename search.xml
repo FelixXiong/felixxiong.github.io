@@ -3099,6 +3099,102 @@ adapter.finishUpdate(container);
       </tags>
   </entry>
   <entry>
+    <title>TableView编辑详解</title>
+    <url>/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<p>这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。<br />
+要感谢那位朋友一直帮助我到十二点，让我输出这个笔记。</p>
+<span id="more"></span>
+<h2 id="tableview-编辑模式与是否具有动画属性-详解"><a class="markdownIt-Anchor" href="#tableview-编辑模式与是否具有动画属性-详解"></a> TableView 编辑模式与是否具有动画属性 详解</h2>
+<p>在一个TableView列表中，常见需要进行编辑的操作。</p>
+<h2 id="更改列表编辑状态"><a class="markdownIt-Anchor" href="#更改列表编辑状态"></a> 更改列表编辑状态</h2>
+<h3 id="属性和方法共两个"><a class="markdownIt-Anchor" href="#属性和方法共两个"></a> 属性和方法（共两个）</h3>
+<h4 id="isediting"><a class="markdownIt-Anchor" href="#isediting"></a> isEditing</h4>
+<h5 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h5>
+<p>属性 ：isEditing有一个属性为Bool值，true为可编辑状态，false为不可编辑状态</p>
+<pre class="highlight"><code class="swift">tableview.isEditing = <span class="hljs-literal">true</span>
+</code></pre>
+<p>此为表格进入可编辑状态。</p>
+<h4 id="setediting"><a class="markdownIt-Anchor" href="#setediting"></a> setEditing</h4>
+<h5 id="介绍-2"><a class="markdownIt-Anchor" href="#介绍-2"></a> 介绍</h5>
+<p>方法：进入编辑模式</p>
+<pre class="highlight"><code class="swift"> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">setEditing</span><span class="hljs-params">(<span class="hljs-number">_</span> editing: Bool, animated: Bool)</span></span> &#123;
+        <span class="hljs-keyword">super</span>.setEditing(editing, animated: animated)
+        <span class="hljs-type">TableView</span>.setEditing(ture, animated: <span class="hljs-literal">true</span>)<span class="hljs-comment">//括号里第一个true 就是isEditing的值</span>
+    &#125;
+</code></pre>
+<h2 id="进入编辑状态是否有动画"><a class="markdownIt-Anchor" href="#进入编辑状态是否有动画"></a> 进入编辑状态是否有动画</h2>
+<h3 id="点击按钮之后"><a class="markdownIt-Anchor" href="#点击按钮之后"></a> 点击按钮之后</h3>
+<h4 id="isediting-2"><a class="markdownIt-Anchor" href="#isediting-2"></a> isEditing</h4>
+<p>无动画</p>
+<h4 id="setediting-2"><a class="markdownIt-Anchor" href="#setediting-2"></a> setEditing</h4>
+<p>有动画</p>
+<pre class="highlight"><code class="">TableView.setEditing(editing, animated: )
+</code></pre>
+<p>setEditing括号里有animated，值true或false决定是否有动画</p>
+<h2 id="添加按编辑按钮的位置的不同方法"><a class="markdownIt-Anchor" href="#添加按编辑按钮的位置的不同方法"></a> 添加按编辑按钮的位置的不同方法</h2>
+<h3 id="纯代码中"><a class="markdownIt-Anchor" href="#纯代码中"></a> 纯代码中</h3>
+<pre class="highlight"><code class="swift">navigationItem.leftBarButtonItem = editButtonItem
+</code></pre>
+<p>此代码可省略设置点击之后的Title选中与未选中显示的字样：自动设置</p>
+<p>TableView进入编辑模式：</p>
+<pre class="highlight"><code class="swift"> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">setEditing</span><span class="hljs-params">(<span class="hljs-number">_</span> editing: Bool, animated: Bool)</span></span> &#123;
+        <span class="hljs-keyword">super</span>.setEditing(editing, animated: animated)
+        <span class="hljs-type">TableView</span>.setEditing(ture, animated: <span class="hljs-literal">true</span>)
+    &#125;
+</code></pre>
+<h3 id="storyboard中"><a class="markdownIt-Anchor" href="#storyboard中"></a> StoryBoard中</h3>
+<p>按钮在StoryBoard里设置的，默认是“编辑”。</p>
+<p><strong>为什么故事版里设置了标题，代码就需要设置？</strong></p>
+<p>StoryBoard里btn写了Title的话,代码就会默认是StoryBoard里的那个，所以需要设置标题。</p>
+<p>以下为设置点击button之后的显示的字样的代码:</p>
+<h4 id="isediting-3"><a class="markdownIt-Anchor" href="#isediting-3"></a> isEditing</h4>
+<p>若使用一行代码解决动画问题：</p>
+<pre class="highlight"><code class="swift"><span class="hljs-type">TableView</span>.isEditing = !<span class="hljs-type">TableView</span>.isEditing <span class="hljs-comment">//给isEditing取反，无动画</span>
+<span class="hljs-keyword">switch</span> <span class="hljs-type">TableView</span>.isEditing&#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>:
+            editButton.title = <span class="hljs-string">"done"</span><span class="hljs-comment">//修改标题</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>:
+            editButton.title = <span class="hljs-string">"edit"</span>
+
+        &#125;
+</code></pre>
+<h4 id="setediting-3"><a class="markdownIt-Anchor" href="#setediting-3"></a> setEditing</h4>
+<pre class="highlight"><code class="swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">editAction</span><span class="hljs-params">()</span></span>
+  <span class="hljs-keyword">if</span>.<span class="hljs-keyword">self</span>.tableView.isEditing = <span class="hljs-literal">false</span>
+     <span class="hljs-keyword">self</span>.tableView.setEditing(<span class="hljs-literal">true</span>, animated:<span class="hljs-literal">true</span>)
+     <span class="hljs-keyword">self</span>.editBtn.title = <span class="hljs-string">"完成"</span>
+  &#125;<span class="hljs-keyword">else</span>&#123;
+     <span class="hljs-keyword">self</span>.tableView.setEditing(<span class="hljs-literal">false</span>, animated:<span class="hljs-literal">true</span>)
+     <span class="hljs-keyword">self</span>.editBtn.title = <span class="hljs-string">"编辑"</span>
+     &#125;
+&#125;
+</code></pre>
+<p>若使用一行代码解决添加动画问题：</p>
+<pre class="highlight"><code class="swift">tableView.setEditing(!<span class="hljs-keyword">self</span>.tableView.isEditing, animated: <span class="hljs-literal">true</span>)<span class="hljs-comment">//若为setEditing，有动画</span>
+<span class="hljs-keyword">switch</span> <span class="hljs-type">TableView</span>.isEditing&#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>:
+            editButton.title = <span class="hljs-string">"done"</span><span class="hljs-comment">//修改标题</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>:
+            editButton.title = <span class="hljs-string">"edit"</span>
+
+        &#125;
+</code></pre>
+<h3 id="代码里的对象"><a class="markdownIt-Anchor" href="#代码里的对象"></a> 代码里的对象</h3>
+<p>isEditing/setEditing对象是tableview，</p>
+<p>.title对象是btn。</p>
+<h3 id="在以上代码中"><a class="markdownIt-Anchor" href="#在以上代码中"></a> 在以上代码中</h3>
+<p>点击btn之后，tableView.isEditing/setEditing这句是进入编辑，btn.title这句是改标题</p>
+]]></content>
+      <categories>
+        <category>编程开发</category>
+        <category>Swift</category>
+      </categories>
+      <tags>
+        <tag>iOS</tag>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Typocho初探</title>
     <url>/2020/03/11/Typocho%E5%88%9D%E6%8E%A2/</url>
     <content><![CDATA[<p>了解Typocho，主要是为了使用导航主题做一个导航站，将自己的书签可视化，同时也可惠及他人。</p>
@@ -3640,6 +3736,126 @@ MKCoordinateRegion.init(center: center, latitudinalMeters: 1000, longitudinalMet
       </tags>
   </entry>
   <entry>
+    <title>一段时间内的自学焦虑复盘以及解决方法</title>
+    <url>/2018/12/03/%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%86%85%E7%9A%84%E8%87%AA%E5%AD%A6%E7%84%A6%E8%99%91%E5%A4%8D%E7%9B%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>这是我在自学一门技术语言的时候的焦虑，不知在自学当中（或者是在校学习当中）你是否也有这样的感受，希望得到共鸣。</p>
+<p>本文从以下几点章节讨论“自学中的焦虑”：</p>
+<p>关于书籍与网络教程、想法与学习的冲突、知识库储备管理工具的选用、学习环境及周边以及后记来讨论。</p>
+<p>如果有类似经历以及提出更好的解决方案，欢迎评论留言。</p>
+<span id="more"></span>
+<h2 id="关于书籍与网络教程"><a class="markdownIt-Anchor" href="#关于书籍与网络教程"></a> 关于书籍与网络教程</h2>
+<h3 id="买书与拆书"><a class="markdownIt-Anchor" href="#买书与拆书"></a> 买书与拆书</h3>
+<h4 id="买书时候的思考以及一些观点"><a class="markdownIt-Anchor" href="#买书时候的思考以及一些观点"></a> 买书时候的思考以及一些观点</h4>
+<p>关于买书，自己需要的是确定一个大方向，需要学习哪一门语言，对于书籍的选择似乎自己的“界限”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>也是很明确的。</p>
+<p>对于技术书如果图很多，就觉得不像是技术书<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>；字很多，又觉得非常枯燥难以看的下去<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</p>
+<p>以下是关于“自学”中买书的几个常听到的说法，也是比较受到影响的：</p>
+<ol>
+<li>先看目录觉得是否适合</li>
+</ol>
+<p>自己买书的时候往往是先看书里的目录，往往是看自己是否可以学的下去，之后再入手。</p>
+<ol start="2">
+<li>直接看电子书或者是教程，一步步走</li>
+</ol>
+<p>对于纸质书，自己还是更喜欢可以随时翻阅，电子书看的就比较累，可是最为方便的就要属直接翻译以及记笔记了，还有敲代码。</p>
+<p>在学习《第一行代码Android》时，看到大段代码，总有<strong>打开GitHub链接下载源码</strong>的冲动，可是却又担心学不到东西（因为直接复制粘贴），当然我也知道<strong>添加注释</strong>是很好的学习方法，我之前也这么做。</p>
+<p>如果是视频教程，也确实有用，例如<a href="https://www.youtube.com">YouTube</a>上有很多Tutorial。</p>
+<ol start="3">
+<li>买书会受时代限制，很容易就会脱节</li>
+</ol>
+<p>是否买这本书？买来之后会怎样看？是否可以看的下去？或者直接上网找教程，会来的更快。</p>
+<h4 id="拆书"><a class="markdownIt-Anchor" href="#拆书"></a> 拆书</h4>
+<p>说完了买书，就来说说拆书。</p>
+<p>我可能有一种“罪恶感”，即不看完一本是应该不会拆另一本的——即使有一种“看看试试”的错误想法，好的是我这种想法是不会再有了，也不应该有。</p>
+<p>说拆书，建议还是先拆入门书，这也是应该要有的顺序。</p>
+<h3 id="网上的教程"><a class="markdownIt-Anchor" href="#网上的教程"></a> 网上的教程</h3>
+<p>最近在写一些复盘笔记的时候专门是一些控件，学习的过程当中会产出一些自己觉得非常棒的东西，便在平台上分享，往往这些东西在写的时候就需要查找大量资料，众所周知，很容易在一篇文章里面讲不清楚或者没有讲到位，则需要多看。</p>
+<p>但也正如我们所知道的一句话</p>
+<blockquote>
+<p>免费的就是最贵的</p>
+</blockquote>
+<p>因为免费的内容需要自己筛选，内容的质量好坏与否需要自己鉴别，需要付出时间成本筛选。</p>
+<h4 id="关于xcode错误集合"><a class="markdownIt-Anchor" href="#关于xcode错误集合"></a> 关于Xcode错误集合</h4>
+<p>正是因为这个原因以及自己在开发过程中的疑难杂点，自己尝试做了这样一个错误集合，希望在开发的过程中遇到了问题就直接在这里找答案而不是上网搜集。</p>
+<p>传送门：<a href="https://github.com/FelixXiong/Xcode-Error-Collection">FelixXiong/Xcode-Error-Collection</a></p>
+<p>同时，我也在做着android错误集合，无奈打开gitBook是非常的慢，尝试是否放到GitHub的一个Repo里，和Xcode错误集合一样。</p>
+<h2 id="焦虑的关键"><a class="markdownIt-Anchor" href="#焦虑的关键"></a> 焦虑的关键</h2>
+<p>自学的焦虑：<strong>赶不上风口</strong>，<strong>急于求成</strong>与<strong>浮躁</strong>则是很关键的点，也可能是很多人觉得焦虑的一点：枯燥。</p>
+<p>我因为有十几个产品想法驱动，所以并不觉得枯燥<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。</p>
+<h4 id="想法与学习的冲突"><a class="markdownIt-Anchor" href="#想法与学习的冲突"></a> 想法与学习的冲突</h4>
+<p>在这里我请教过两位独立开发者：随你们去和<a href="https://juejin.im/user/55f939de60b232fc2a9ab37f">KyXu(掘金主页)</a>，他们都建议需要有产品的目标，之后直接去做，我则是受这种思维所影响 ，可是在实际开发的过程中则是遇到了坎，我有一天在一些群中提问的时候发现是Java基础确实的问题。</p>
+<p>或回答这个标题，或许这也算不上是冲突，可以<strong>边学边做</strong>，这也是目前非常使我疑惑的一点。</p>
+<h4 id="经常问自己的问题"><a class="markdownIt-Anchor" href="#经常问自己的问题"></a> 经常问自己的问题</h4>
+<ol>
+<li>
+<p>Q:自己有产品想法，是直接做产品还是看完教程再去做？<br />
+这个问题困扰了自己很久，大致有几个月了。</p>
+</li>
+<li></li>
+</ol>
+<p>Q：如果我看完了基础，自己想做的东西已经被BAT做出来了怎么办？<br />
+A：看教程的时间或许可以多敲几行代码，多定义几个成员变量，多在pocket里添加几个相关文章，甚至是存一些微信公众号文章在印象笔记里了。<br />
+3. Q：如果自己的产品做出来了，结果被收购，或者和“<a href="http://www.bqtalk.com/">脸萌</a>“、“<a href="http://www.fotoplace.cc/index.html">足记</a>”这样成为现象级产品，以及被模仿甚至是抄袭后就没有然后了，怎么办？<br />
+A：先做一个产品出来再说吧。</p>
+<h2 id="知识库储备管理工具的选用"><a class="markdownIt-Anchor" href="#知识库储备管理工具的选用"></a> 知识库储备管理工具的选用</h2>
+<p>既然学习了，就需要管理自己的知识库，有所收获。</p>
+<h3 id="是做笔记还是画思维导图"><a class="markdownIt-Anchor" href="#是做笔记还是画思维导图"></a> 是做笔记还是画思维导图</h3>
+<p>从产品的角度来说，<a href="https://www.xmind.net/">Xmind</a>是互联网人必须要掌握的一个工具，就和程序员必须要会<a href="https://www.axure.com/">Axure</a>，设计师必须要会<a href="https://www.sketchapp.com/">Sketch</a>以及<a href="http://principleformac.com/">principle</a>一样。</p>
+<p>目前的做法是做笔记，将自己觉得有用的作为代码进行记录，可是怕的是最终，就成为“复刻版”的书籍，或者说是经过自己理解的笔记和书籍了，这就是笔记的误区。</p>
+<p>更重要的还是“务实”。</p>
+<p>思维导图的好处可以是循序渐进的，我之前写过一篇文章（软文）是关于我在学校使用思维导图进行的思维发散的作用：</p>
+<p>也可以运用在Java以及任何一门语言的学习中。</p>
+<h4 id="自学工具相关"><a class="markdownIt-Anchor" href="#自学工具相关"></a> 自学工具相关</h4>
+<h4 id="知识储备的工具"><a class="markdownIt-Anchor" href="#知识储备的工具"></a> 知识储备的工具</h4>
+<p>我目前使用<a href="https://getpocket.com/">Pocket</a>进行技术文章的分类与管理，印象笔记存储一些产品和设计相关的文章，笔记用<a href="https://typora.io/">Typora</a>写markdown，正在寻找更好的笔记管理的工具。</p>
+<p>RSS我也有看，但看的很少，准备取消订阅一些源了。</p>
+<p>之前使用Instapaper，准备转向Pocket和印象笔记。</p>
+<p>最终去向就和所说的，“稍后阅读”-“再也不读”，好的是使用Pocket之后我会进行再次查看，不是“再也不读”，而且频次还很高。</p>
+<p>尝试将笔记完全迁移到<a href="https://www.gitbook.com/">GitBook</a>，因为国内访问速度太慢。国内即使有例如“<a href="https://www.kancloud.cn/">看云</a>”“<a href="https://easydoc.xyz/">易文档</a>”等，国内的软件UI设计是一方面，安全性以及数据存储又是另一方面。</p>
+<p>我在记笔记的时候有一个需求，即“markdown生成PDF”文件，目前有Mweb（Mac）、bear（Mac）可以满足需求，但由于界面不习惯/不满意或者是其他原因，导致目前仍在使用本地文件夹存储的方式。</p>
+<h3 id="开发效率工具以及推荐"><a class="markdownIt-Anchor" href="#开发效率工具以及推荐"></a> 开发效率工具以及推荐</h3>
+<p>我购买了字节跳动大佬的《Mac高效开发指南》（小专栏），当中有好用的自动流程shell、Chrome脚本扩展以及vscode最佳实践，还有Mac实用的工具可以提高开发效率，推荐给大家，点下方购买：</p>
+<p>向大家推荐《Mac 高效开发指南》 <a href="https://xiaozhuanlan.com/Effective-Mac?rel=2786045231">https://xiaozhuanlan.com/Effective-Mac?rel=2786045231</a></p>
+<h2 id="学习环境及周边"><a class="markdownIt-Anchor" href="#学习环境及周边"></a> 学习环境及周边</h2>
+<h3 id="看书"><a class="markdownIt-Anchor" href="#看书"></a> 看书</h3>
+<p>看书一定要集中精力看，因为环境的原因（家中总是被告知喝水、休息和其他打扰），使得时不时被打断，则是无法进入良好的自学状态的——或者，是依然没有沉下心。</p>
+<p>曾经有一项研究说的是，当人在做一件事情的时候被打扰一下，就需要20-30分钟回到当前的状态，我觉得编程也是如此。记得是在<strong>韩金乌</strong>或是<strong>崇旭</strong>老师说的<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>：<strong>当接到一件事情的话可以判断是否在3分钟之内做完，如果做完就可以结束这件事，做不完的话则可以先加入待办事项清单中。</strong></p>
+<p>这也是我目前在使用的一个方法。</p>
+<h3 id="设备"><a class="markdownIt-Anchor" href="#设备"></a> 设备</h3>
+<p>如果有更多的设备，技术良好之后可以进行多屏幕的适配而不是用虚拟机。</p>
+<h4 id="显示器的必须"><a class="markdownIt-Anchor" href="#显示器的必须"></a> 显示器的必须</h4>
+<p>代码本来就小了，就别为难自己了，为了保护眼睛等种种借口与理由，直接入一个三星的带鱼屏吧，人生苦短，该需要还是就需要。</p>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>现在的时代是只要想就可以接触到任何前沿技术的时代，如果你在自学中出现了和我一样的焦虑，欢迎提出你的解决办法。</p>
+<p>我目前在学习的是Java、Android、HTML、CSS以及JavaScript，欢迎和我一起学习。</p>
+<p>我的个人博客：<a href="https://felixxiong.github.io/">故事熊</a>，如果本篇文章对你有帮助，别吝啬下方的打赏按钮，如果有任何想法，欢迎评论留言探讨。</p>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>界限：自己对于一些事物的认知以及底线，可能有些言重了。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>例如O’Reilly的深入浅出系列HeadFirst,目前就在观望。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>例如<a href="http://product.dangdang.com/22722790.html">《JavaScript权威指南》(犀牛书)</a>和<a href="http://product.dangdang.com/9317290.html">《Java编程思想（Think in java）》</a>。此处链接为当当购买链接。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>目前我仍没有一个详细的我的想法文档，在等待合适的人。或许更重要的我觉得是需要和现实中的人说，因为网络上的人的交流，只要没有落在合同中的明文规定，都无法保证idea以及商业模式的落实以及著作权和归属，已经遇到了这种情况。如果你觉得真的想和我做一些事情并且可以来南京，欢迎给我发邮件：holothemixet@gmail.com，我随时期待你的邮件。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>爱范儿旗下的MindTalk中的某一课，此处应有网页快照，因为已经下线了。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>编程开发</category>
+        <category>自学</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>自学</tag>
+        <tag>焦虑</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一段时间的“上车”</title>
     <url>/2020/05/31/%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E2%80%9C%E4%B8%8A%E8%BD%A6%E2%80%9D/</url>
     <content><![CDATA[<p>殊不知此篇文章应于2020年1月28日发布，还是拖了这么久。</p>
@@ -3891,102 +4107,6 @@ spotify和etflix，最近倒是可以补一补，毕竟在家里看机会，其�
         <tag>迁移</tag>
         <tag>产品</tag>
         <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TableView编辑详解</title>
-    <url>/2018/03/18/TableView%E7%BC%96%E8%BE%91%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<p>这是关于使用Swift语言的TableView 编辑模式与是否具有动画属性。<br />
-要感谢那位朋友一直帮助我到十二点，让我输出这个笔记。</p>
-<span id="more"></span>
-<h2 id="tableview-编辑模式与是否具有动画属性-详解"><a class="markdownIt-Anchor" href="#tableview-编辑模式与是否具有动画属性-详解"></a> TableView 编辑模式与是否具有动画属性 详解</h2>
-<p>在一个TableView列表中，常见需要进行编辑的操作。</p>
-<h2 id="更改列表编辑状态"><a class="markdownIt-Anchor" href="#更改列表编辑状态"></a> 更改列表编辑状态</h2>
-<h3 id="属性和方法共两个"><a class="markdownIt-Anchor" href="#属性和方法共两个"></a> 属性和方法（共两个）</h3>
-<h4 id="isediting"><a class="markdownIt-Anchor" href="#isediting"></a> isEditing</h4>
-<h5 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h5>
-<p>属性 ：isEditing有一个属性为Bool值，true为可编辑状态，false为不可编辑状态</p>
-<pre class="highlight"><code class="swift">tableview.isEditing = <span class="hljs-literal">true</span>
-</code></pre>
-<p>此为表格进入可编辑状态。</p>
-<h4 id="setediting"><a class="markdownIt-Anchor" href="#setediting"></a> setEditing</h4>
-<h5 id="介绍-2"><a class="markdownIt-Anchor" href="#介绍-2"></a> 介绍</h5>
-<p>方法：进入编辑模式</p>
-<pre class="highlight"><code class="swift"> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">setEditing</span><span class="hljs-params">(<span class="hljs-number">_</span> editing: Bool, animated: Bool)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.setEditing(editing, animated: animated)
-        <span class="hljs-type">TableView</span>.setEditing(ture, animated: <span class="hljs-literal">true</span>)<span class="hljs-comment">//括号里第一个true 就是isEditing的值</span>
-    &#125;
-</code></pre>
-<h2 id="进入编辑状态是否有动画"><a class="markdownIt-Anchor" href="#进入编辑状态是否有动画"></a> 进入编辑状态是否有动画</h2>
-<h3 id="点击按钮之后"><a class="markdownIt-Anchor" href="#点击按钮之后"></a> 点击按钮之后</h3>
-<h4 id="isediting-2"><a class="markdownIt-Anchor" href="#isediting-2"></a> isEditing</h4>
-<p>无动画</p>
-<h4 id="setediting-2"><a class="markdownIt-Anchor" href="#setediting-2"></a> setEditing</h4>
-<p>有动画</p>
-<pre class="highlight"><code class="">TableView.setEditing(editing, animated: )
-</code></pre>
-<p>setEditing括号里有animated，值true或false决定是否有动画</p>
-<h2 id="添加按编辑按钮的位置的不同方法"><a class="markdownIt-Anchor" href="#添加按编辑按钮的位置的不同方法"></a> 添加按编辑按钮的位置的不同方法</h2>
-<h3 id="纯代码中"><a class="markdownIt-Anchor" href="#纯代码中"></a> 纯代码中</h3>
-<pre class="highlight"><code class="swift">navigationItem.leftBarButtonItem = editButtonItem
-</code></pre>
-<p>此代码可省略设置点击之后的Title选中与未选中显示的字样：自动设置</p>
-<p>TableView进入编辑模式：</p>
-<pre class="highlight"><code class="swift"> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">setEditing</span><span class="hljs-params">(<span class="hljs-number">_</span> editing: Bool, animated: Bool)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.setEditing(editing, animated: animated)
-        <span class="hljs-type">TableView</span>.setEditing(ture, animated: <span class="hljs-literal">true</span>)
-    &#125;
-</code></pre>
-<h3 id="storyboard中"><a class="markdownIt-Anchor" href="#storyboard中"></a> StoryBoard中</h3>
-<p>按钮在StoryBoard里设置的，默认是“编辑”。</p>
-<p><strong>为什么故事版里设置了标题，代码就需要设置？</strong></p>
-<p>StoryBoard里btn写了Title的话,代码就会默认是StoryBoard里的那个，所以需要设置标题。</p>
-<p>以下为设置点击button之后的显示的字样的代码:</p>
-<h4 id="isediting-3"><a class="markdownIt-Anchor" href="#isediting-3"></a> isEditing</h4>
-<p>若使用一行代码解决动画问题：</p>
-<pre class="highlight"><code class="swift"><span class="hljs-type">TableView</span>.isEditing = !<span class="hljs-type">TableView</span>.isEditing <span class="hljs-comment">//给isEditing取反，无动画</span>
-<span class="hljs-keyword">switch</span> <span class="hljs-type">TableView</span>.isEditing&#123;
-        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>:
-            editButton.title = <span class="hljs-string">"done"</span><span class="hljs-comment">//修改标题</span>
-        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>:
-            editButton.title = <span class="hljs-string">"edit"</span>
-
-        &#125;
-</code></pre>
-<h4 id="setediting-3"><a class="markdownIt-Anchor" href="#setediting-3"></a> setEditing</h4>
-<pre class="highlight"><code class="swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">editAction</span><span class="hljs-params">()</span></span>
-  <span class="hljs-keyword">if</span>.<span class="hljs-keyword">self</span>.tableView.isEditing = <span class="hljs-literal">false</span>
-     <span class="hljs-keyword">self</span>.tableView.setEditing(<span class="hljs-literal">true</span>, animated:<span class="hljs-literal">true</span>)
-     <span class="hljs-keyword">self</span>.editBtn.title = <span class="hljs-string">"完成"</span>
-  &#125;<span class="hljs-keyword">else</span>&#123;
-     <span class="hljs-keyword">self</span>.tableView.setEditing(<span class="hljs-literal">false</span>, animated:<span class="hljs-literal">true</span>)
-     <span class="hljs-keyword">self</span>.editBtn.title = <span class="hljs-string">"编辑"</span>
-     &#125;
-&#125;
-</code></pre>
-<p>若使用一行代码解决添加动画问题：</p>
-<pre class="highlight"><code class="swift">tableView.setEditing(!<span class="hljs-keyword">self</span>.tableView.isEditing, animated: <span class="hljs-literal">true</span>)<span class="hljs-comment">//若为setEditing，有动画</span>
-<span class="hljs-keyword">switch</span> <span class="hljs-type">TableView</span>.isEditing&#123;
-        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>:
-            editButton.title = <span class="hljs-string">"done"</span><span class="hljs-comment">//修改标题</span>
-        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>:
-            editButton.title = <span class="hljs-string">"edit"</span>
-
-        &#125;
-</code></pre>
-<h3 id="代码里的对象"><a class="markdownIt-Anchor" href="#代码里的对象"></a> 代码里的对象</h3>
-<p>isEditing/setEditing对象是tableview，</p>
-<p>.title对象是btn。</p>
-<h3 id="在以上代码中"><a class="markdownIt-Anchor" href="#在以上代码中"></a> 在以上代码中</h3>
-<p>点击btn之后，tableView.isEditing/setEditing这句是进入编辑，btn.title这句是改标题</p>
-]]></content>
-      <categories>
-        <category>编程开发</category>
-        <category>Swift</category>
-      </categories>
-      <tags>
-        <tag>iOS</tag>
-        <tag>Swift</tag>
       </tags>
   </entry>
   <entry>
@@ -4373,8 +4493,8 @@ tips：利用定时发送功能。</p>
       </categories>
       <tags>
         <tag>一个人</tag>
-        <tag>产品</tag>
         <tag>焦虑</tag>
+        <tag>产品</tag>
         <tag>心理</tag>
       </tags>
   </entry>
@@ -4612,123 +4732,103 @@ found 0 vulnerabilities
       </tags>
   </entry>
   <entry>
-    <title>一段时间内的自学焦虑复盘以及解决方法</title>
-    <url>/2018/12/03/%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E5%86%85%E7%9A%84%E8%87%AA%E5%AD%A6%E7%84%A6%E8%99%91%E5%A4%8D%E7%9B%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>这是我在自学一门技术语言的时候的焦虑，不知在自学当中（或者是在校学习当中）你是否也有这样的感受，希望得到共鸣。</p>
-<p>本文从以下几点章节讨论“自学中的焦虑”：</p>
-<p>关于书籍与网络教程、想法与学习的冲突、知识库储备管理工具的选用、学习环境及周边以及后记来讨论。</p>
-<p>如果有类似经历以及提出更好的解决方案，欢迎评论留言。</p>
+    <title>使用全局变量判断用户是否登录</title>
+    <url>/2021/05/08/%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="判断用户是否登录"><a class="markdownIt-Anchor" href="#判断用户是否登录"></a> 判断用户是否登录</h2>
+<p>在项目中有这样的需求，类似于小鸡辞典小程序的显示用户昵称。</p>
+<p>目前使用全局变量来实现，最终会使用其他方式实现。</p>
+<p>在这里记录下自己的尝试方案，但目前暂未解决，后续要填补这个坑。</p>
 <span id="more"></span>
-<h2 id="关于书籍与网络教程"><a class="markdownIt-Anchor" href="#关于书籍与网络教程"></a> 关于书籍与网络教程</h2>
-<h3 id="买书与拆书"><a class="markdownIt-Anchor" href="#买书与拆书"></a> 买书与拆书</h3>
-<h4 id="买书时候的思考以及一些观点"><a class="markdownIt-Anchor" href="#买书时候的思考以及一些观点"></a> 买书时候的思考以及一些观点</h4>
-<p>关于买书，自己需要的是确定一个大方向，需要学习哪一门语言，对于书籍的选择似乎自己的“界限”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>也是很明确的。</p>
-<p>对于技术书如果图很多，就觉得不像是技术书<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>；字很多，又觉得非常枯燥难以看的下去<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</p>
-<p>以下是关于“自学”中买书的几个常听到的说法，也是比较受到影响的：</p>
-<ol>
-<li>先看目录觉得是否适合</li>
-</ol>
-<p>自己买书的时候往往是先看书里的目录，往往是看自己是否可以学的下去，之后再入手。</p>
-<ol start="2">
-<li>直接看电子书或者是教程，一步步走</li>
-</ol>
-<p>对于纸质书，自己还是更喜欢可以随时翻阅，电子书看的就比较累，可是最为方便的就要属直接翻译以及记笔记了，还有敲代码。</p>
-<p>在学习《第一行代码Android》时，看到大段代码，总有<strong>打开GitHub链接下载源码</strong>的冲动，可是却又担心学不到东西（因为直接复制粘贴），当然我也知道<strong>添加注释</strong>是很好的学习方法，我之前也这么做。</p>
-<p>如果是视频教程，也确实有用，例如<a href="https://www.youtube.com">YouTube</a>上有很多Tutorial。</p>
-<ol start="3">
-<li>买书会受时代限制，很容易就会脱节</li>
-</ol>
-<p>是否买这本书？买来之后会怎样看？是否可以看的下去？或者直接上网找教程，会来的更快。</p>
-<h4 id="拆书"><a class="markdownIt-Anchor" href="#拆书"></a> 拆书</h4>
-<p>说完了买书，就来说说拆书。</p>
-<p>我可能有一种“罪恶感”，即不看完一本是应该不会拆另一本的——即使有一种“看看试试”的错误想法，好的是我这种想法是不会再有了，也不应该有。</p>
-<p>说拆书，建议还是先拆入门书，这也是应该要有的顺序。</p>
-<h3 id="网上的教程"><a class="markdownIt-Anchor" href="#网上的教程"></a> 网上的教程</h3>
-<p>最近在写一些复盘笔记的时候专门是一些控件，学习的过程当中会产出一些自己觉得非常棒的东西，便在平台上分享，往往这些东西在写的时候就需要查找大量资料，众所周知，很容易在一篇文章里面讲不清楚或者没有讲到位，则需要多看。</p>
-<p>但也正如我们所知道的一句话</p>
-<blockquote>
-<p>免费的就是最贵的</p>
-</blockquote>
-<p>因为免费的内容需要自己筛选，内容的质量好坏与否需要自己鉴别，需要付出时间成本筛选。</p>
-<h4 id="关于xcode错误集合"><a class="markdownIt-Anchor" href="#关于xcode错误集合"></a> 关于Xcode错误集合</h4>
-<p>正是因为这个原因以及自己在开发过程中的疑难杂点，自己尝试做了这样一个错误集合，希望在开发的过程中遇到了问题就直接在这里找答案而不是上网搜集。</p>
-<p>传送门：<a href="https://github.com/FelixXiong/Xcode-Error-Collection">FelixXiong/Xcode-Error-Collection</a></p>
-<p>同时，我也在做着android错误集合，无奈打开gitBook是非常的慢，尝试是否放到GitHub的一个Repo里，和Xcode错误集合一样。</p>
-<h2 id="焦虑的关键"><a class="markdownIt-Anchor" href="#焦虑的关键"></a> 焦虑的关键</h2>
-<p>自学的焦虑：<strong>赶不上风口</strong>，<strong>急于求成</strong>与<strong>浮躁</strong>则是很关键的点，也可能是很多人觉得焦虑的一点：枯燥。</p>
-<p>我因为有十几个产品想法驱动，所以并不觉得枯燥<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。</p>
-<h4 id="想法与学习的冲突"><a class="markdownIt-Anchor" href="#想法与学习的冲突"></a> 想法与学习的冲突</h4>
-<p>在这里我请教过两位独立开发者：随你们去和<a href="https://juejin.im/user/55f939de60b232fc2a9ab37f">KyXu(掘金主页)</a>，他们都建议需要有产品的目标，之后直接去做，我则是受这种思维所影响 ，可是在实际开发的过程中则是遇到了坎，我有一天在一些群中提问的时候发现是Java基础确实的问题。</p>
-<p>或回答这个标题，或许这也算不上是冲突，可以<strong>边学边做</strong>，这也是目前非常使我疑惑的一点。</p>
-<h4 id="经常问自己的问题"><a class="markdownIt-Anchor" href="#经常问自己的问题"></a> 经常问自己的问题</h4>
-<ol>
-<li>
-<p>Q:自己有产品想法，是直接做产品还是看完教程再去做？<br />
-这个问题困扰了自己很久，大致有几个月了。</p>
-</li>
-<li></li>
-</ol>
-<p>Q：如果我看完了基础，自己想做的东西已经被BAT做出来了怎么办？<br />
-A：看教程的时间或许可以多敲几行代码，多定义几个成员变量，多在pocket里添加几个相关文章，甚至是存一些微信公众号文章在印象笔记里了。<br />
-3. Q：如果自己的产品做出来了，结果被收购，或者和“<a href="http://www.bqtalk.com/">脸萌</a>“、“<a href="http://www.fotoplace.cc/index.html">足记</a>”这样成为现象级产品，以及被模仿甚至是抄袭后就没有然后了，怎么办？<br />
-A：先做一个产品出来再说吧。</p>
-<h2 id="知识库储备管理工具的选用"><a class="markdownIt-Anchor" href="#知识库储备管理工具的选用"></a> 知识库储备管理工具的选用</h2>
-<p>既然学习了，就需要管理自己的知识库，有所收获。</p>
-<h3 id="是做笔记还是画思维导图"><a class="markdownIt-Anchor" href="#是做笔记还是画思维导图"></a> 是做笔记还是画思维导图</h3>
-<p>从产品的角度来说，<a href="https://www.xmind.net/">Xmind</a>是互联网人必须要掌握的一个工具，就和程序员必须要会<a href="https://www.axure.com/">Axure</a>，设计师必须要会<a href="https://www.sketchapp.com/">Sketch</a>以及<a href="http://principleformac.com/">principle</a>一样。</p>
-<p>目前的做法是做笔记，将自己觉得有用的作为代码进行记录，可是怕的是最终，就成为“复刻版”的书籍，或者说是经过自己理解的笔记和书籍了，这就是笔记的误区。</p>
-<p>更重要的还是“务实”。</p>
-<p>思维导图的好处可以是循序渐进的，我之前写过一篇文章（软文）是关于我在学校使用思维导图进行的思维发散的作用：</p>
-<p>也可以运用在Java以及任何一门语言的学习中。</p>
-<h4 id="自学工具相关"><a class="markdownIt-Anchor" href="#自学工具相关"></a> 自学工具相关</h4>
-<h4 id="知识储备的工具"><a class="markdownIt-Anchor" href="#知识储备的工具"></a> 知识储备的工具</h4>
-<p>我目前使用<a href="https://getpocket.com/">Pocket</a>进行技术文章的分类与管理，印象笔记存储一些产品和设计相关的文章，笔记用<a href="https://typora.io/">Typora</a>写markdown，正在寻找更好的笔记管理的工具。</p>
-<p>RSS我也有看，但看的很少，准备取消订阅一些源了。</p>
-<p>之前使用Instapaper，准备转向Pocket和印象笔记。</p>
-<p>最终去向就和所说的，“稍后阅读”-“再也不读”，好的是使用Pocket之后我会进行再次查看，不是“再也不读”，而且频次还很高。</p>
-<p>尝试将笔记完全迁移到<a href="https://www.gitbook.com/">GitBook</a>，因为国内访问速度太慢。国内即使有例如“<a href="https://www.kancloud.cn/">看云</a>”“<a href="https://easydoc.xyz/">易文档</a>”等，国内的软件UI设计是一方面，安全性以及数据存储又是另一方面。</p>
-<p>我在记笔记的时候有一个需求，即“markdown生成PDF”文件，目前有Mweb（Mac）、bear（Mac）可以满足需求，但由于界面不习惯/不满意或者是其他原因，导致目前仍在使用本地文件夹存储的方式。</p>
-<h3 id="开发效率工具以及推荐"><a class="markdownIt-Anchor" href="#开发效率工具以及推荐"></a> 开发效率工具以及推荐</h3>
-<p>我购买了字节跳动大佬的《Mac高效开发指南》（小专栏），当中有好用的自动流程shell、Chrome脚本扩展以及vscode最佳实践，还有Mac实用的工具可以提高开发效率，推荐给大家，点下方购买：</p>
-<p>向大家推荐《Mac 高效开发指南》 <a href="https://xiaozhuanlan.com/Effective-Mac?rel=2786045231">https://xiaozhuanlan.com/Effective-Mac?rel=2786045231</a></p>
-<h2 id="学习环境及周边"><a class="markdownIt-Anchor" href="#学习环境及周边"></a> 学习环境及周边</h2>
-<h3 id="看书"><a class="markdownIt-Anchor" href="#看书"></a> 看书</h3>
-<p>看书一定要集中精力看，因为环境的原因（家中总是被告知喝水、休息和其他打扰），使得时不时被打断，则是无法进入良好的自学状态的——或者，是依然没有沉下心。</p>
-<p>曾经有一项研究说的是，当人在做一件事情的时候被打扰一下，就需要20-30分钟回到当前的状态，我觉得编程也是如此。记得是在<strong>韩金乌</strong>或是<strong>崇旭</strong>老师说的<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>：<strong>当接到一件事情的话可以判断是否在3分钟之内做完，如果做完就可以结束这件事，做不完的话则可以先加入待办事项清单中。</strong></p>
-<p>这也是我目前在使用的一个方法。</p>
-<h3 id="设备"><a class="markdownIt-Anchor" href="#设备"></a> 设备</h3>
-<p>如果有更多的设备，技术良好之后可以进行多屏幕的适配而不是用虚拟机。</p>
-<h4 id="显示器的必须"><a class="markdownIt-Anchor" href="#显示器的必须"></a> 显示器的必须</h4>
-<p>代码本来就小了，就别为难自己了，为了保护眼睛等种种借口与理由，直接入一个三星的带鱼屏吧，人生苦短，该需要还是就需要。</p>
-<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
-<p>现在的时代是只要想就可以接触到任何前沿技术的时代，如果你在自学中出现了和我一样的焦虑，欢迎提出你的解决办法。</p>
-<p>我目前在学习的是Java、Android、HTML、CSS以及JavaScript，欢迎和我一起学习。</p>
-<p>我的个人博客：<a href="https://felixxiong.github.io/">故事熊</a>，如果本篇文章对你有帮助，别吝啬下方的打赏按钮，如果有任何想法，欢迎评论留言探讨。</p>
-<hr />
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>界限：自己对于一些事物的认知以及底线，可能有些言重了。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>例如O’Reilly的深入浅出系列HeadFirst,目前就在观望。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>例如<a href="http://product.dangdang.com/22722790.html">《JavaScript权威指南》(犀牛书)</a>和<a href="http://product.dangdang.com/9317290.html">《Java编程思想（Think in java）》</a>。此处链接为当当购买链接。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>目前我仍没有一个详细的我的想法文档，在等待合适的人。或许更重要的我觉得是需要和现实中的人说，因为网络上的人的交流，只要没有落在合同中的明文规定，都无法保证idea以及商业模式的落实以及著作权和归属，已经遇到了这种情况。如果你觉得真的想和我做一些事情并且可以来南京，欢迎给我发邮件：holothemixet@gmail.com，我随时期待你的邮件。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p>爱范儿旗下的MindTalk中的某一课，此处应有网页快照，因为已经下线了。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+<p>app.js：</p>
+<pre class="highlight"><code class="js">App(&#123;
+  <span class="hljs-attr">onLaunch</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; &#125;
+  
+  <span class="hljs-attr">globalData</span>:&#123; <span class="hljs-attr">userInfos</span>:<span class="hljs-literal">null</span> &#125; <span class="hljs-comment">/*定义全局变量userInfos，为了不与用户信息重叠，加了s*/</span>
+  
+&#125;)
+</code></pre>
+<p>在获取用户信息的登录页面（假设login.js）：</p>
+<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> app = getApp(); <span class="hljs-comment">//获取全局app</span>
+
+Page(&#123;
+
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">userInfos</span>:<span class="hljs-string">''</span>,  <span class="hljs-comment">//定义的全局变量</span>
+    <span class="hljs-attr">userInfo</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//使用新接口获得用户信息的两个方法，此处不展开</span>
+    <span class="hljs-attr">hasUserInfo</span>:<span class="hljs-literal">false</span>,
+  &#125;,
+  
+  getUserProfile()&#123; 
+    wx.getUserProfile(&#123;
+      <span class="hljs-attr">desc</span>:<span class="hljs-string">'请登录'</span>,
+      <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'获取用户信息成功'</span>,res)
+        <span class="hljs-keyword">let</span> userinfos = res.userInfo <span class="hljs-comment">//登录需要的用户信息</span>
+        <span class="hljs-keyword">var</span> globalUserInfos = app.globalData.userInfos <span class="hljs-comment">//全局变量的用户信息</span>
+        wx.setStorageSync(<span class="hljs-string">'userinfos'</span>, userinfos)
+        <span class="hljs-keyword">this</span>.setData(&#123;
+          <span class="hljs-attr">userInfos</span>:globalUserInfos,  <span class="hljs-comment">//使用globalUserInfos，目的为了用户信息赋值给全局变量</span>
+          <span class="hljs-attr">userInfo</span>:userinfos, <span class="hljs-comment">//登录需要的用户信息</span>
+          <span class="hljs-attr">hasUserInfo</span>:<span class="hljs-literal">true</span>
+        &#125;)
+      &#125;,
+      <span class="hljs-attr">fail</span>:<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'获取用户信息失败'</span>,res)
+      &#125;
+    &#125;)
+  &#125;,
+
+</code></pre>
+<p>在需要判断用户是否登录的页面（假设commit.js）：</p>
+<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> app = getApp(); <span class="hljs-comment">//获取全局app</span>
+
+Page(&#123;
+
+  <span class="hljs-attr">data</span>: &#123;
+    <span class="hljs-attr">userInfos</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//全局变量的用户信息:问题代码处</span>
+    <span class="hljs-attr">username</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//用户名</span>
+  &#125;,
+  
+  ......
+  
+  onLoad: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123; <span class="hljs-comment">//在onload方法中赋值给全局变量userInfos</span>
+    <span class="hljs-keyword">this</span>.setData(&#123;
+      <span class="hljs-attr">userInfos</span>:app.globalData.userInfos
+    &#125;)
+  &#125;,
+
+  getUserName()&#123;
+    <span class="hljs-keyword">this</span>.setData(&#123;
+      <span class="hljs-attr">username</span>:userInfos.nickName <span class="hljs-comment">//赋值给用户昵称</span>
+    &#125;)
+  &#125;,
+
+  commit()&#123;
+  <span class="hljs-keyword">if</span>( userInfos = <span class="hljs-literal">null</span>)&#123; <span class="hljs-comment">//如果GlobaluserInfo为空，提示需要登录</span>
+    wx.showModal(&#123;
+      <span class="hljs-attr">title</span>: <span class="hljs-string">'请登录'</span>,
+      <span class="hljs-attr">content</span>: <span class="hljs-string">'请登陆后再发表'</span>,
+    &#125;<span class="hljs-keyword">else</span>&#123; 
+     <span class="hljs-keyword">const</span> db = wx.cloud.database()
+    	db.collection(<span class="hljs-string">'Sayings'</span>).add(&#123; 
+      <span class="hljs-attr">data</span>:&#123;
+       ...
+       username:GlobaluserInfo <span class="hljs-comment">//把全局变量赋值给username</span>
+      &#125;, &#125;
+  	&#125;)
+  &#125;
+  
+&#125;
+</code></pre>
+<p>目前报错：userInfos is not defined</p>
 ]]></content>
       <categories>
         <category>编程开发</category>
-        <category>自学</category>
+        <category>前端</category>
+        <category>微信小程序</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>焦虑</tag>
-        <tag>自学</tag>
+        <tag>变量</tag>
       </tags>
   </entry>
   <entry>
@@ -6199,8 +6299,8 @@ zipAlignEnabled <span class="hljs-keyword">true</span>
       <tags>
         <tag>生活</tag>
         <tag>一个人</tag>
-        <tag>迷茫</tag>
         <tag>焦虑</tag>
+        <tag>迷茫</tag>
         <tag>求职</tag>
         <tag>南京</tag>
         <tag>开发</tag>
@@ -6917,6 +7017,77 @@ master分支储存生成的静态页面,repo分支储存源文件,这样可以�
       </tags>
   </entry>
   <entry>
+    <title>在高淳的公交车上</title>
+    <url>/2020/04/04/%E5%9C%A8%E9%AB%98%E6%B7%B3%E7%9A%84%E5%85%AC%E4%BA%A4%E8%BD%A6%E4%B8%8A/</url>
+    <content><![CDATA[<p>这一天还是来了——中华人民共和国把4月4日定为全国哀悼日。</p>
+<span id="more"></span>
+<p>国内平台灰的灰，黑的黑，形式感依旧。几个微信群里的朋友在讨论着，发着链接，冒着封号的风险：</p>
+<blockquote>
+<p><a href="https://www.fmprc.gov.cn/web/">外交部</a>的网站设计很有特色 / 配色很能说明问题。</p>
+</blockquote>
+<p>我很想当面给亲戚展示这个既荒诞又在现实中他们习以为常的行为，但如果在微信里直接发送，也是冒着被封号的风险。</p>
+<blockquote>
+<p>公交车是最长的，不过没有高铁和地铁长。</p>
+<p>一位高淳淳科公交上的小女孩乘客</p>
+</blockquote>
+<p>我打开了iPhone11的低电量模式，正坐在高淳的公交上。<br />
+午饭时，看到微信公众号人是最美的风景的《清明》文章，正好朋友圈有人分享了玛丽莲梦六的那篇微博，我也在朋友圈里分享了：</p>
+<p>群体哀悼不如看看普通公民的百态[ref]这条后续可能被证明是假的。[/ref]。</p>
+<p>可惜这里不能嵌入微信朋友圈内容。我希望这可以为我的好友们友们提个醒，隐喻且反思当下。由于是有共鸣，这条朋友圈也迅速得到了一些和我是好友的微信用户的回应等[ref]如果是别人或者异性，我这么回答一定会把我删了罢，索性还是算了（鲁迅口吻）。[/ref]，无论是真是假，我也进行了回复：</p>
+<blockquote>
+<p>这个不如，我给零分。</p>
+<p>曾经在广州一起共事的负责全栈的前同事说。</p>
+</blockquote>
+<blockquote>
+<p>如果那声哨子放出来，世界不会变成这样。</p>
+<p>我在朋友圈里回答他</p>
+</blockquote>
+<p>这么做的理由，也许就是希望社会稳定。但现实社会就是由各种职业各种性格不同个性的人组成，没有人，就没了社会。</p>
+<p>正值设置新到手的iPhone，先看了看象群，之后看了看推特。我之前的几条朋友圈的语气与口吻，正是看了以下的推：</p>
+<p><a href="https://twitter.com/dingyi/status/1246111298904965120?s=21">https://twitter.com/dingyi/status/1246111298904965120?s=21</a></p>
+<p>这里有可能需要导入我之前的文章了，是我第二次体会到WordPressCRM内容系统的好[ref]第一次是在<a href="https://felixxiong.github.io/2020/01/26/WordPress%E5%88%9D%E6%8E%A2/">初探</a>[/ref]。</p>
+<p>工作的不顺心与疫情的持续发展，带动了清明节我不去亲戚家，而是选择独自一人出门走走，在家里做了一点点工作之后，家人说自己不能最后一个出门，所以移动电源也没充满，我背上了空包就出门了–只带上一个充电宝[ref]关于我的edc，曾经有在same上发过，现在已经删除了。[/ref]。</p>
+<h2 id="又来高淳"><a class="markdownIt-Anchor" href="#又来高淳"></a> 又来高淳</h2>
+<p>记得之前去溧水的时候，我写了<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484164&amp;idx=1&amp;sn=7582569147189a01d92c96899082ca0e&amp;chksm=eb3fbb8bdc48329d36a81caa7469764e6e6ac9cf5592b3c831d481e96c22e36fd192aa25c45c&amp;scene=21#wechat_redirect">一篇游记</a>说我纵穿了溧水。而高淳，则是我除了南京某渡口与某沿江景区外继续“思考人生”与“发泄情绪”的地方。</p>
+<h3 id="这次来依旧没有应有的"><a class="markdownIt-Anchor" href="#这次来依旧没有应有的"></a> 这次来，依旧没有“应有的”</h3>
+<p>没有共享单车，政府的公用自行车依然是往市中心的方向，走了好久才有。尝试走到故固城湖公园，没有交通工具，又是清明节，晚上回家还得早。</p>
+<p>手机摄影依旧是我的喜好，我走着看着，哪里可以拍，哪里不能拍[ref]自己的限制与他人的看法[/ref]，毕竟BB的监控在看着你。不过戴着口罩解锁实在是太麻烦了。</p>
+<p>还有发送场景，即使现在我用的是国外的服务器，但依然不会发送关于国人经常见到的党旗的照片，上次朋友圈看到的单位买口罩前面的岗亭，这次则是救灾的安检帐篷。</p>
+<p>路上的风景将会在EyeEm与Instagram上（如果我手机可以上的话），少数则往same上发送，记得这是我之前独自去高淳时发的一组INS。</p>
+<p><a href="https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z">https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z</a></p>
+<h3 id="与之前的同学联系"><a class="markdownIt-Anchor" href="#与之前的同学联系"></a> 与之前的同学联系</h3>
+<p>抵达的时候她说正在吃饭，所以不能语音，比较遗憾，她们的话只能信一半，即使骗我也没什么好处。</p>
+<p>她之前在我现在做的肯德基做过兼职，我说，灰常勤劳的X哥，她仅仅回了一个“😂”。回去的路上才得知，她已经准备装修，今天在忙着量房了。</p>
+<blockquote>
+<p>那下次有机会再约吧。</p>
+<p>她说</p>
+</blockquote>
+<p>我们都知道，再见再见，再也不见，这个下次似乎是等同含义。<br />
+高淳的路上走着快到市中心时，人逐渐的多了起来，和同样焦虑的网友们打电话，几乎也都在外面。</p>
+<p>从地铁里开始居然就有人不戴口罩，近市中心居然也是这样…我也想脱，但为了个人的健康，还是戴起来为好。</p>
+<h2 id="后记与其他一些话题"><a class="markdownIt-Anchor" href="#后记与其他一些话题"></a> 后记与其他一些话题</h2>
+<p>在写博客这件事上，位可能只要手头有工作心事的情况下，文章也许都写不出之前的味儿了；疫情的文章依旧保存在便签里，最后一次写还是33天前。保存在了锤子便签，仅115字。</p>
+<p>iPhone的体验文章，也写不出什么，如果要写出一整篇。</p>
+<p>最终如你看到的一样，放在了后记里，后面有机会再写吧。</p>
+<h3 id="关于我的新iphone11"><a class="markdownIt-Anchor" href="#关于我的新iphone11"></a> 关于我的新iPhone11</h3>
+<p>在路上的时候特意选择了比较黑的图片与闪屏，又想让所有人只关注内容而不是手机的时间的位置。</p>
+<p>文章的话想过新写，但给我的感觉，最新版的iOS就三个字：“差不多”。但是国行safari会自动将你浏览的文章发送至腾讯服务器，还得自己做一些设置。</p>
+<p>亲戚打电话发微信去吃饭，不去。我更选择一个人出来走走，透透气，散散心。现在需要懂得拒绝了，做真实的自己。</p>
+<p>分享一下我的路途歌单：</p>
+<p><a href="https://music.163.com/#/playlist?id=1579766">https://music.163.com/#/playlist?id=1579766</a></p>
+<p>没想到世界迷雾打开后，耗电依旧是那么的快。</p>
+<p>上电梯时女性们的香水依旧非常的浓，隔着口罩依旧可以闻到，对我来说似乎依然是“可望而不可即”。在我之前博客文章说过很多次了。</p>
+<p>在回去的地铁里，应景的依旧是<a href="https://music.163.com/#/song?id=299258">王菲的《乘客》</a>。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>情绪泛滥</category>
+      </categories>
+      <tags>
+        <tag>疫情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在雨天，做一些该做的事</title>
     <url>/2019/06/01/%E5%9C%A8%E9%9B%A8%E5%A4%A9%EF%BC%8C%E5%81%9A%E4%B8%80%E4%BA%9B%E8%AF%A5%E5%81%9A%E7%9A%84%E4%BA%8B/</url>
     <content><![CDATA[<blockquote>
@@ -7013,77 +7184,6 @@ master分支储存生成的静态页面,repo分支储存源文件,这样可以�
       </categories>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在高淳的公交车上</title>
-    <url>/2020/04/04/%E5%9C%A8%E9%AB%98%E6%B7%B3%E7%9A%84%E5%85%AC%E4%BA%A4%E8%BD%A6%E4%B8%8A/</url>
-    <content><![CDATA[<p>这一天还是来了——中华人民共和国把4月4日定为全国哀悼日。</p>
-<span id="more"></span>
-<p>国内平台灰的灰，黑的黑，形式感依旧。几个微信群里的朋友在讨论着，发着链接，冒着封号的风险：</p>
-<blockquote>
-<p><a href="https://www.fmprc.gov.cn/web/">外交部</a>的网站设计很有特色 / 配色很能说明问题。</p>
-</blockquote>
-<p>我很想当面给亲戚展示这个既荒诞又在现实中他们习以为常的行为，但如果在微信里直接发送，也是冒着被封号的风险。</p>
-<blockquote>
-<p>公交车是最长的，不过没有高铁和地铁长。</p>
-<p>一位高淳淳科公交上的小女孩乘客</p>
-</blockquote>
-<p>我打开了iPhone11的低电量模式，正坐在高淳的公交上。<br />
-午饭时，看到微信公众号人是最美的风景的《清明》文章，正好朋友圈有人分享了玛丽莲梦六的那篇微博，我也在朋友圈里分享了：</p>
-<p>群体哀悼不如看看普通公民的百态[ref]这条后续可能被证明是假的。[/ref]。</p>
-<p>可惜这里不能嵌入微信朋友圈内容。我希望这可以为我的好友们友们提个醒，隐喻且反思当下。由于是有共鸣，这条朋友圈也迅速得到了一些和我是好友的微信用户的回应等[ref]如果是别人或者异性，我这么回答一定会把我删了罢，索性还是算了（鲁迅口吻）。[/ref]，无论是真是假，我也进行了回复：</p>
-<blockquote>
-<p>这个不如，我给零分。</p>
-<p>曾经在广州一起共事的负责全栈的前同事说。</p>
-</blockquote>
-<blockquote>
-<p>如果那声哨子放出来，世界不会变成这样。</p>
-<p>我在朋友圈里回答他</p>
-</blockquote>
-<p>这么做的理由，也许就是希望社会稳定。但现实社会就是由各种职业各种性格不同个性的人组成，没有人，就没了社会。</p>
-<p>正值设置新到手的iPhone，先看了看象群，之后看了看推特。我之前的几条朋友圈的语气与口吻，正是看了以下的推：</p>
-<p><a href="https://twitter.com/dingyi/status/1246111298904965120?s=21">https://twitter.com/dingyi/status/1246111298904965120?s=21</a></p>
-<p>这里有可能需要导入我之前的文章了，是我第二次体会到WordPressCRM内容系统的好[ref]第一次是在<a href="https://felixxiong.github.io/2020/01/26/WordPress%E5%88%9D%E6%8E%A2/">初探</a>[/ref]。</p>
-<p>工作的不顺心与疫情的持续发展，带动了清明节我不去亲戚家，而是选择独自一人出门走走，在家里做了一点点工作之后，家人说自己不能最后一个出门，所以移动电源也没充满，我背上了空包就出门了–只带上一个充电宝[ref]关于我的edc，曾经有在same上发过，现在已经删除了。[/ref]。</p>
-<h2 id="又来高淳"><a class="markdownIt-Anchor" href="#又来高淳"></a> 又来高淳</h2>
-<p>记得之前去溧水的时候，我写了<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484164&amp;idx=1&amp;sn=7582569147189a01d92c96899082ca0e&amp;chksm=eb3fbb8bdc48329d36a81caa7469764e6e6ac9cf5592b3c831d481e96c22e36fd192aa25c45c&amp;scene=21#wechat_redirect">一篇游记</a>说我纵穿了溧水。而高淳，则是我除了南京某渡口与某沿江景区外继续“思考人生”与“发泄情绪”的地方。</p>
-<h3 id="这次来依旧没有应有的"><a class="markdownIt-Anchor" href="#这次来依旧没有应有的"></a> 这次来，依旧没有“应有的”</h3>
-<p>没有共享单车，政府的公用自行车依然是往市中心的方向，走了好久才有。尝试走到故固城湖公园，没有交通工具，又是清明节，晚上回家还得早。</p>
-<p>手机摄影依旧是我的喜好，我走着看着，哪里可以拍，哪里不能拍[ref]自己的限制与他人的看法[/ref]，毕竟BB的监控在看着你。不过戴着口罩解锁实在是太麻烦了。</p>
-<p>还有发送场景，即使现在我用的是国外的服务器，但依然不会发送关于国人经常见到的党旗的照片，上次朋友圈看到的单位买口罩前面的岗亭，这次则是救灾的安检帐篷。</p>
-<p>路上的风景将会在EyeEm与Instagram上（如果我手机可以上的话），少数则往same上发送，记得这是我之前独自去高淳时发的一组INS。</p>
-<p><a href="https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z">https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z</a></p>
-<h3 id="与之前的同学联系"><a class="markdownIt-Anchor" href="#与之前的同学联系"></a> 与之前的同学联系</h3>
-<p>抵达的时候她说正在吃饭，所以不能语音，比较遗憾，她们的话只能信一半，即使骗我也没什么好处。</p>
-<p>她之前在我现在做的肯德基做过兼职，我说，灰常勤劳的X哥，她仅仅回了一个“😂”。回去的路上才得知，她已经准备装修，今天在忙着量房了。</p>
-<blockquote>
-<p>那下次有机会再约吧。</p>
-<p>她说</p>
-</blockquote>
-<p>我们都知道，再见再见，再也不见，这个下次似乎是等同含义。<br />
-高淳的路上走着快到市中心时，人逐渐的多了起来，和同样焦虑的网友们打电话，几乎也都在外面。</p>
-<p>从地铁里开始居然就有人不戴口罩，近市中心居然也是这样…我也想脱，但为了个人的健康，还是戴起来为好。</p>
-<h2 id="后记与其他一些话题"><a class="markdownIt-Anchor" href="#后记与其他一些话题"></a> 后记与其他一些话题</h2>
-<p>在写博客这件事上，位可能只要手头有工作心事的情况下，文章也许都写不出之前的味儿了；疫情的文章依旧保存在便签里，最后一次写还是33天前。保存在了锤子便签，仅115字。</p>
-<p>iPhone的体验文章，也写不出什么，如果要写出一整篇。</p>
-<p>最终如你看到的一样，放在了后记里，后面有机会再写吧。</p>
-<h3 id="关于我的新iphone11"><a class="markdownIt-Anchor" href="#关于我的新iphone11"></a> 关于我的新iPhone11</h3>
-<p>在路上的时候特意选择了比较黑的图片与闪屏，又想让所有人只关注内容而不是手机的时间的位置。</p>
-<p>文章的话想过新写，但给我的感觉，最新版的iOS就三个字：“差不多”。但是国行safari会自动将你浏览的文章发送至腾讯服务器，还得自己做一些设置。</p>
-<p>亲戚打电话发微信去吃饭，不去。我更选择一个人出来走走，透透气，散散心。现在需要懂得拒绝了，做真实的自己。</p>
-<p>分享一下我的路途歌单：</p>
-<p><a href="https://music.163.com/#/playlist?id=1579766">https://music.163.com/#/playlist?id=1579766</a></p>
-<p>没想到世界迷雾打开后，耗电依旧是那么的快。</p>
-<p>上电梯时女性们的香水依旧非常的浓，隔着口罩依旧可以闻到，对我来说似乎依然是“可望而不可即”。在我之前博客文章说过很多次了。</p>
-<p>在回去的地铁里，应景的依旧是<a href="https://music.163.com/#/song?id=299258">王菲的《乘客》</a>。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>情绪泛滥</category>
-      </categories>
-      <tags>
-        <tag>疫情</tag>
       </tags>
   </entry>
   <entry>
@@ -7576,6 +7676,46 @@ master分支储存生成的静态页面,repo分支储存源文件,这样可以�
       </tags>
   </entry>
   <entry>
+    <title>如何查看Git clone下载文件路径</title>
+    <url>/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/</url>
+    <content><![CDATA[<p>背景：由于手机不在身边，微信无法登陆，忍无可忍之后安装了一个插件。</p>
+<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS">WeChatTweak-macOS</a>，于是直接clone后，需要查找路径并安装。<br />
+关于这个插件的功能，后续可能会写文章进行描述，我主要用来“防撤回”、“双开”以及“长时间不用微信不用扫码登录”。</p>
+<span id="more"></span>
+<h2 id="git-笔记"><a class="markdownIt-Anchor" href="#git-笔记"></a> GIT 笔记</h2>
+<pre class="highlight"><code class="">% git clone https://github.com ……
+</code></pre>
+<p>直接clone，之后并成功，后续clone需要首先cd到相应文件夹后clone，此插件网站也是这么写：</p>
+<blockquote>
+<p>下载本插件有以下两种方式：<br />
+通过 <code>git clone https://github.com/Sunnyyoung/WeChatTweak-macOS.git</code> 命令下载到<strong>任意地方</strong></p>
+<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS/wiki">Sunnyyoung/<strong>WeChatTweak-macOS</strong>/Wiki</a></p>
+</blockquote>
+<pre class="highlight"><code class="">% ls
+</code></pre>
+<p>查看下载的文件，以列表形式呈现。<br />
+当我在Terminal中输入出现的列表，其实已经看出是/Users/yourusername/里的文档列表。</p>
+<pre class="highlight"><code class="">% cd
+</code></pre>
+<p>使用cd进入相应文件下载目录</p>
+<pre class="highlight"><code class="">% pwd
+</code></pre>
+<p>使用pwd显示文件路径。</p>
+<p>全部操作步骤</p>
+<p>后续则可以进行文件夹剪贴的操作步骤，后续进行安装使用了。</p>
+<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
+<p><a href="https://blog.csdn.net/Smile_Luckly/article/details/70677823">查看 Git Clone文件下载在哪里</a></p>
+<p><a href="https://medium.com/@picapro33/git-%E5%85%A5%E9%96%80%E5%90%8D%E8%A9%9E%E4%BB%8B%E7%B4%B9-43fe17481855">Git 入門名詞介紹</a></p>
+]]></content>
+      <categories>
+        <category>编程开发</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何跳出尴尬处境</title>
     <url>/2021/02/10/%E5%A6%82%E4%BD%95%E8%B7%B3%E5%87%BA%E5%B0%B4%E5%B0%AC%E5%A4%84%E5%A2%83/</url>
     <content><![CDATA[<p>每隔一个阶段，自己都会对自己的心理做一个总结。<br />
@@ -7858,46 +7998,6 @@ Kernel.exec &quot;/bin/bash&quot;, &quot;-c&quot;, '/bin/bash -c &quot;$(curl -f
       <tags>
         <tag>播客</tag>
         <tag>PodCast</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何查看Git clone下载文件路径</title>
-    <url>/2020/06/01/%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BGit%20clone%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/</url>
-    <content><![CDATA[<p>背景：由于手机不在身边，微信无法登陆，忍无可忍之后安装了一个插件。</p>
-<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS">WeChatTweak-macOS</a>，于是直接clone后，需要查找路径并安装。<br />
-关于这个插件的功能，后续可能会写文章进行描述，我主要用来“防撤回”、“双开”以及“长时间不用微信不用扫码登录”。</p>
-<span id="more"></span>
-<h2 id="git-笔记"><a class="markdownIt-Anchor" href="#git-笔记"></a> GIT 笔记</h2>
-<pre class="highlight"><code class="">% git clone https://github.com ……
-</code></pre>
-<p>直接clone，之后并成功，后续clone需要首先cd到相应文件夹后clone，此插件网站也是这么写：</p>
-<blockquote>
-<p>下载本插件有以下两种方式：<br />
-通过 <code>git clone https://github.com/Sunnyyoung/WeChatTweak-macOS.git</code> 命令下载到<strong>任意地方</strong></p>
-<p><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS/wiki">Sunnyyoung/<strong>WeChatTweak-macOS</strong>/Wiki</a></p>
-</blockquote>
-<pre class="highlight"><code class="">% ls
-</code></pre>
-<p>查看下载的文件，以列表形式呈现。<br />
-当我在Terminal中输入出现的列表，其实已经看出是/Users/yourusername/里的文档列表。</p>
-<pre class="highlight"><code class="">% cd
-</code></pre>
-<p>使用cd进入相应文件下载目录</p>
-<pre class="highlight"><code class="">% pwd
-</code></pre>
-<p>使用pwd显示文件路径。</p>
-<p>全部操作步骤</p>
-<p>后续则可以进行文件夹剪贴的操作步骤，后续进行安装使用了。</p>
-<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
-<p><a href="https://blog.csdn.net/Smile_Luckly/article/details/70677823">查看 Git Clone文件下载在哪里</a></p>
-<p><a href="https://medium.com/@picapro33/git-%E5%85%A5%E9%96%80%E5%90%8D%E8%A9%9E%E4%BB%8B%E7%B4%B9-43fe17481855">Git 入門名詞介紹</a></p>
-]]></content>
-      <categories>
-        <category>编程开发</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -8807,6 +8907,36 @@ npm install --save hexo-wordcount@6.0.1
       </tags>
   </entry>
   <entry>
+    <title>我参与了本科的毕业设计，我收获到了这些</title>
+    <url>/2018/05/06/%E6%88%91%E5%8F%82%E4%B8%8E%E4%BA%86%E6%9C%AC%E7%A7%91%E7%9A%84%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%EF%BC%8C%E6%88%91%E6%94%B6%E8%8E%B7%E5%88%B0%E4%BA%86%E8%BF%99%E4%BA%9B/</url>
+    <content><![CDATA[<p>现在在回南京的路上。</p>
+<p>最近为了赶毕业答辩，不知熬了几次夜，现在总结的一些经验教训，在这里记录下来。</p>
+<p>总计经历了两百天，不包括现在在废纸篓里的文件，总共（待计算）个文件。</p>
+<p>尤其是在最近忙活的时候，确实是桌面非常的乱，还好我不停地保持着拍照和记录的习惯，断断续续这些日子里将自己的想法和经历的状态在便签里以及在这里记录，这些都是我生活的真实写照。</p>
+<p>在这几篇的本科毕业设计的总结性文章中，我都会尽力查找那些我自己保留下来的照片以及截图。</p>
+<span id="more"></span>
+<p>原名：我参与了“专接本”直到毕业展，我收获到了这些</p>
+<h2 id="文章目录"><a class="markdownIt-Anchor" href="#文章目录"></a> 文章目录</h2>
+<p>现已按时间排序。</p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%89%8D%E4%B8%89%E5%91%A8%E7%9A%84%E6%89%80%E6%9C%89%E5%B7%A5%E4%BD%9C%E5%8F%8A%E7%BB%93%E6%9E%9C/">毕业设计前三周的所有工作及其结果</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E8%B0%83%E7%A0%94%EF%BC%88%E6%96%87%E6%A1%88%EF%BC%89%E5%92%8C%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5/">调研（文案）和问卷调查</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1UI-%E8%BF%AD%E4%BB%A3%EF%BC%9A%E9%80%89%E9%A2%98%E6%94%B9%E8%BF%9B%E4%BB%A5%E5%8F%8A%E7%94%B1%E6%9D%A5%202017.12.23-2018.4.4/">毕业设计UI-迭代：选题改进以及由来 2017.12.23-2018.4.4</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/">关于开发尝试</a></p>
+<p><a href="https://felixxiong.github.io/2018/06/04/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1UI-%E7%A1%AE%E7%AB%8B%EF%BC%9ALiveOS%E4%BB%8E%E6%99%AF%E7%82%B9%E8%87%B3%E5%B9%B3%E5%8F%B0%E5%8C%96%E7%9A%84%E8%AE%BE%E8%AE%A1%E8%BD%AC%E7%A7%BB%E5%8F%8A%E6%80%9D%E8%80%83/">毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E5%B9%B3%E9%9D%A2%E6%B5%B7%E6%8A%A5:%E5%AE%A3%E4%BC%A0%E7%81%AF%E7%AE%B1%E8%AE%BE%E8%AE%A1/">平面海报/宣传灯箱设计</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E5%AE%9E%E7%89%A9%E7%9A%84%E5%88%B6%E4%BD%9C%E4%B8%8E%E6%80%9D%E8%80%83/">实物的制作与思考</a></p>
+<p><a href="#">设计报告与展板（延迟撰写)</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%B9%BB%E7%81%AF%E7%89%87/">毕业设计幻灯片</a></p>
+<p><a href="https://felixxiong.github.io/2018/05/06/%EF%BC%88%E9%A2%84%EF%BC%89%E7%AD%94%E8%BE%A9%E5%92%8C%E6%AD%A3%E5%BC%8F%E7%9A%84%E5%B1%95%E8%A7%88/">（预）答辩和正式的展览</a></p>
+]]></content>
+      <categories>
+        <category>毕业设计（接本）</category>
+      </categories>
+      <tags>
+        <tag>目录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的播客之旅</title>
     <url>/2018/05/05/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/</url>
     <content><![CDATA[<p>答辩之间，就开始了听播客/电台。<br />
@@ -9330,6 +9460,56 @@ npm install --save hexo-wordcount@6.0.1
       </tags>
   </entry>
   <entry>
+    <title>抵触</title>
+    <url>/2018/04/17/%E6%8A%B5%E8%A7%A6/</url>
+    <content><![CDATA[<p>我对毕业设计的内心抵触过程，后来才发现似乎是因为压力过大而导致的抑郁以及失忆了。</p>
+<p>这是我毕业设计（接本）系列的第五篇。</p>
+<span id="more"></span>
+<p>这次毕业设计有着突如其来的抵触感，感觉自己像是患了一种病症，懒癌一般抵触。</p>
+<p>昨晚熬了一夜。</p>
+<p>之前总是给自己设置ddl，没想到还是老师发的话有用–甚至是想过，自己P个群的图片给自己看。<br />
+做着做着就不想做，是这次的原因。<br />
+次要原因为，时间都用在了其他方面。</p>
+<p>学习开发，在快要结束毕业设计的时候捣鼓博客的建立，尽管都是在晚上。<br />
+于是现在特别想睡觉，真的想写这篇文章的时候往往是快要来不及可是头脑里有很多想说的想写的，</p>
+<p>可是时间都来不及：或者觉得要用在毕业设计上。</p>
+<p>最近都在淘宝上切换不同的但意思相近的关键词搜索，在莱迪开始位置定位，最后出来的话都问了：南京有没有仓库。渐渐的这都可以写成一篇文章。</p>
+<p>名字大概就是为：“我用三天时间作出了实物”或者是“我发现了使用淘宝的这些方法”，现在看看有想法有灵感的自己可真是戏多啊。</p>
+<p>当时创作效果当然会更好，说不定都成文发表到博客上了。</p>
+<p>上午用了仅有的设计力创作了展板，还有定制抱枕。<br />
+去了浦口的仓库，联系到了经理。</p>
+<p>更新：</p>
+<h2 id="迷失了的自己"><a class="markdownIt-Anchor" href="#迷失了的自己"></a> 迷失了的自己</h2>
+<p>不知道是从什么时候开始，对做设计居然有了抵触。</p>
+<h2 id="现在"><a class="markdownIt-Anchor" href="#现在"></a> 现在</h2>
+<p>感觉自己是的了一种病症，不知道是不是大脑退化了的原因，就连吃饭刚开始几口有兴致，渐渐地就不想吃了，觉得淡而无味或者腻而无味。<br />
+更可怕的是之前是缺觉，说闹铃都没听见（在晚上我突然想起了是打开了防打扰）,然后一到家里来就松懈了，该休息休息该吃吃该喝喝，完全没有了紧张感，就连一天下午除了在学校像打了了鸡血的两个小时一样，那阵一过，便又开始松懈了。<br />
+在床上现在不是缺觉，而是翻来覆去。<br />
+心里依然存在着紧张感，依然有的是一做做很长时间，被家里人叫出来活动活动，现在是自己不想做了自己起来活动活动。<br />
+最近别人都在熬夜写着一百页（毕业设计的设计报告），自己仍然在和淘宝商家联系，仍然在做着拖了有将近一百五十多天仍未做完的UI，改了很多次到现在依然是线框图，即使已经有了一些交互上的测试。<br />
+设计的很理性，并不从视觉上为主，之前做的那些一百页、原型图，都没有用。而且也仅仅是排版，并不好看。</p>
+<h2 id="和淘宝"><a class="markdownIt-Anchor" href="#和淘宝"></a> 和淘宝</h2>
+<p>和淘宝商家联系，自己一会说上午给图，一会说下午给图，一会又说明天甚至是后天，一拖再拖。<br />
+现在当时觉得来不及的，其实当时下单都是可以来得及的，18日那是预答辩而已。<br />
+这里应该加一个&lt;在最后关头，我在淘宝发现了这些&gt;。<br />
+从去年做了一个选题之后到现在的不想做，今天21号，一觉又从12点睡到了早上6点，真的会好吗。<br />
+没有了往日的认真与兴趣，似乎渐渐变得对什么事都没有兴趣，真的是非常可怕。<br />
+变得越来越糟，觉是依然缺的。<br />
+记得之前做东西能做一天，可能是从一直做UI开始改改改，直到现在完全设计不出东西的时候，无法变得好看，iOS设计规范占了上风。真的不好看。<br />
+也几分钟就坐不住了。<br />
+想过要不要问一下春雨医生自己患了什么病，可能最后的建议也仅仅是去当地正规的医院去查，小程序仅仅是提建议而已。<br />
+想过写很多文章，都因为毕业设计当时觉得时间紧张而就没写，以至于灵感都流逝了，自己感到非常的遗憾与可惜。<br />
+如果成文，估计那也是上百字了。<br />
+失去了行动力与兴趣。</p>
+]]></content>
+      <categories>
+        <category>毕业设计（接本）</category>
+      </categories>
+      <tags>
+        <tag>熬夜</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>曹方的《等人》、生活中的音乐对我的特殊意义</title>
     <url>/2018/11/06/%E6%9B%B9%E6%96%B9%E7%9A%84%E3%80%8A%E7%AD%89%E4%BA%BA%E3%80%8B%E3%80%81%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E9%9F%B3%E4%B9%90%E5%AF%B9%E6%88%91%E7%9A%84%E7%89%B9%E6%AE%8A%E6%84%8F%E4%B9%89/</url>
     <content><![CDATA[<p>在北京的时候，当时是去一家知名大厂面试。</p>
@@ -9434,56 +9614,6 @@ npm install --save hexo-wordcount@6.0.1
         <tag>北京</tag>
         <tag>权利</tag>
         <tag>音乐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>抵触</title>
-    <url>/2018/04/17/%E6%8A%B5%E8%A7%A6/</url>
-    <content><![CDATA[<p>我对毕业设计的内心抵触过程，后来才发现似乎是因为压力过大而导致的抑郁以及失忆了。</p>
-<p>这是我毕业设计（接本）系列的第五篇。</p>
-<span id="more"></span>
-<p>这次毕业设计有着突如其来的抵触感，感觉自己像是患了一种病症，懒癌一般抵触。</p>
-<p>昨晚熬了一夜。</p>
-<p>之前总是给自己设置ddl，没想到还是老师发的话有用–甚至是想过，自己P个群的图片给自己看。<br />
-做着做着就不想做，是这次的原因。<br />
-次要原因为，时间都用在了其他方面。</p>
-<p>学习开发，在快要结束毕业设计的时候捣鼓博客的建立，尽管都是在晚上。<br />
-于是现在特别想睡觉，真的想写这篇文章的时候往往是快要来不及可是头脑里有很多想说的想写的，</p>
-<p>可是时间都来不及：或者觉得要用在毕业设计上。</p>
-<p>最近都在淘宝上切换不同的但意思相近的关键词搜索，在莱迪开始位置定位，最后出来的话都问了：南京有没有仓库。渐渐的这都可以写成一篇文章。</p>
-<p>名字大概就是为：“我用三天时间作出了实物”或者是“我发现了使用淘宝的这些方法”，现在看看有想法有灵感的自己可真是戏多啊。</p>
-<p>当时创作效果当然会更好，说不定都成文发表到博客上了。</p>
-<p>上午用了仅有的设计力创作了展板，还有定制抱枕。<br />
-去了浦口的仓库，联系到了经理。</p>
-<p>更新：</p>
-<h2 id="迷失了的自己"><a class="markdownIt-Anchor" href="#迷失了的自己"></a> 迷失了的自己</h2>
-<p>不知道是从什么时候开始，对做设计居然有了抵触。</p>
-<h2 id="现在"><a class="markdownIt-Anchor" href="#现在"></a> 现在</h2>
-<p>感觉自己是的了一种病症，不知道是不是大脑退化了的原因，就连吃饭刚开始几口有兴致，渐渐地就不想吃了，觉得淡而无味或者腻而无味。<br />
-更可怕的是之前是缺觉，说闹铃都没听见（在晚上我突然想起了是打开了防打扰）,然后一到家里来就松懈了，该休息休息该吃吃该喝喝，完全没有了紧张感，就连一天下午除了在学校像打了了鸡血的两个小时一样，那阵一过，便又开始松懈了。<br />
-在床上现在不是缺觉，而是翻来覆去。<br />
-心里依然存在着紧张感，依然有的是一做做很长时间，被家里人叫出来活动活动，现在是自己不想做了自己起来活动活动。<br />
-最近别人都在熬夜写着一百页（毕业设计的设计报告），自己仍然在和淘宝商家联系，仍然在做着拖了有将近一百五十多天仍未做完的UI，改了很多次到现在依然是线框图，即使已经有了一些交互上的测试。<br />
-设计的很理性，并不从视觉上为主，之前做的那些一百页、原型图，都没有用。而且也仅仅是排版，并不好看。</p>
-<h2 id="和淘宝"><a class="markdownIt-Anchor" href="#和淘宝"></a> 和淘宝</h2>
-<p>和淘宝商家联系，自己一会说上午给图，一会说下午给图，一会又说明天甚至是后天，一拖再拖。<br />
-现在当时觉得来不及的，其实当时下单都是可以来得及的，18日那是预答辩而已。<br />
-这里应该加一个&lt;在最后关头，我在淘宝发现了这些&gt;。<br />
-从去年做了一个选题之后到现在的不想做，今天21号，一觉又从12点睡到了早上6点，真的会好吗。<br />
-没有了往日的认真与兴趣，似乎渐渐变得对什么事都没有兴趣，真的是非常可怕。<br />
-变得越来越糟，觉是依然缺的。<br />
-记得之前做东西能做一天，可能是从一直做UI开始改改改，直到现在完全设计不出东西的时候，无法变得好看，iOS设计规范占了上风。真的不好看。<br />
-也几分钟就坐不住了。<br />
-想过要不要问一下春雨医生自己患了什么病，可能最后的建议也仅仅是去当地正规的医院去查，小程序仅仅是提建议而已。<br />
-想过写很多文章，都因为毕业设计当时觉得时间紧张而就没写，以至于灵感都流逝了，自己感到非常的遗憾与可惜。<br />
-如果成文，估计那也是上百字了。<br />
-失去了行动力与兴趣。</p>
-]]></content>
-      <categories>
-        <category>毕业设计（接本）</category>
-      </categories>
-      <tags>
-        <tag>熬夜</tag>
       </tags>
   </entry>
   <entry>
@@ -10205,6 +10335,252 @@ npm install --save hexo-wordcount@6.0.1
       </tags>
   </entry>
   <entry>
+    <title>毕业设计UI-迭代：选题改进以及由来 2017.12.23-2018.4.4</title>
+    <url>/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1UI-%E8%BF%AD%E4%BB%A3%EF%BC%9A%E9%80%89%E9%A2%98%E6%94%B9%E8%BF%9B%E4%BB%A5%E5%8F%8A%E7%94%B1%E6%9D%A5%202017.12.23-2018.4.4/</url>
+    <content><![CDATA[<p>此篇文章为我主要做的毕业设计的详细思考过程以及制作的想法，此为第一篇迭代。</p>
+<p>在之前的选题制作中，一些设计的手稿的最终都是在为这个最后的设计做准备。</p>
+<p>其中包括几个想法：在路上、梧桐树下、TravelNanking、LiveRoute以及最终的LiveOS。</p>
+<p>我是如何从旅游应用扩展到平台化的，并却在这个设计过程里中从产品和开发层面考虑导致的设计感的缺失以及设计的结果，在数个制作的过程中，最紧迫的是时间，以及心理上的压力。将在文中阐述。</p>
+<p>如果您对其中任何一个想法有意，欢迎联系我或者在下方评论留言。</p>
+<span id="more"></span>
+<p>制作一个毕业设计，经历了很多，同时也修改了很多。</p>
+<p>在制作这个毕业设计中，起初根据一位同学的建议，为“毕业设计中制作这个民宿非常适合出效果”。</p>
+<hr />
+<p>其中和老师交流的对话，可以看<a href="https://felixxiong.github.io/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/">关于开发尝试</a>中的<a href="https://felixxiong.github.io/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/#%E4%B8%8E%E5%AF%BC%E5%B8%88%E4%BA%A4%E6%B5%81">与导师交流</a>这一段。</p>
+<p>在设计景点应用时，在之前的版本中尝试了几个不同的方案，也是之前的一些版本迭代。</p>
+<h2 id="在路上-20171223"><a class="markdownIt-Anchor" href="#在路上-20171223"></a> 在路上 2017.12.23</h2>
+<p>这个毕业设计是最初自己花一些时间制作的第一个想法。</p>
+<p>最后被否决的原因是：导航的软件比较难制作的出彩。</p>
+<p>即使在这个过程中给老师看了Waze的软件截图。</p>
+<h3 id="产品"><a class="markdownIt-Anchor" href="#产品"></a> 产品</h3>
+<p>使用产品的角度来说：在什么样的场景下解决了什么问题。</p>
+<p>我的回答就是，在用户进行上下班通勤途中，解决了同时查看便签、任务、要去的地方、听音乐以及社交的各种需求都可以在这一个软件中进行实现的问题。</p>
+<h3 id="设计"><a class="markdownIt-Anchor" href="#设计"></a> 设计</h3>
+<p>关于整体的截图</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b98bac6f18.jpeg" alt="" /></p>
+<p>由于非常的遵循iOS设计规范，故这个被否决，但成为了我的<a href="">想法文档</a>其中的一个想法，当然还需要更多的设计感才行，不然真的可以给Apple进行系统软件的设计了。</p>
+<p>当时完成给老师看之后，时间我清晰的记得是12月28日左右，说如果是这样的话就差一个配色之后便结束了，这里缺乏设计感。</p>
+<p>想法：</p>
+<ul>
+<li>风格：是卡片式，其中 该拟物化就拟物化，该扁平化就扁平化（学习的锤子的风格）</li>
+<li>颜色： 配色在播放音乐的时候会有体现（颜色<a href="#%E9%9F%B3%E4%B9%90%E4%BB%A5%E5%8F%8A%E8%AF%AD%E9%9F%B3">最终到了下方</a>展现）</li>
+<li>LOGO：使用AI制作，软件方向是地图，导航类软件。</li>
+</ul>
+<h3 id="demo"><a class="markdownIt-Anchor" href="#demo"></a> Demo</h3>
+<p>之前这个我也制作了Demo，并且进行我当时开发上的尝试。</p>
+<p>目前并未放进GitHub，如果有可能以及精力和时间，我会去实现它。</p>
+<h2 id="梧桐树下-20171229"><a class="markdownIt-Anchor" href="#梧桐树下-20171229"></a> 梧桐树下 2017.12.29</h2>
+<p>想法：</p>
+<ul>
+<li>
+<p>名称：梧桐树下，由于是当地的旅游应用，南京同时又有很多的法国梧桐，故因此得名。</p>
+</li>
+<li>
+<p>功能：包含生活服务，公交线路以及地铁线路，用平面（图）的形式进行展现各区域的位置。</p>
+<p>城市：包含市中心 深巷 同样是介绍发展的信息，突出 现代南京的新潮生活方式 以及 新潮文化</p>
+</li>
+<li>
+<p>文化历史：仅包含照片以及名称和一句话介绍（因为现代的年轻人也许不喜欢历史）</p>
+<p>历史的展现方式：也可以使用画报的形式展现。</p>
+</li>
+</ul>
+<p>在开始上机之前写了一个想法文档，主要从以下方面展开：</p>
+<pre class="highlight"><code class="">想法
+ 发现产品需求
+  网上调研、现场调研：制作调研问卷
+  调研地点
+ 交通信息
+   在路上
+界面设计
+ 视觉、交互设计
+软件开发
+</code></pre>
+<h3 id="设计-2"><a class="markdownIt-Anchor" href="#设计-2"></a> <a href="#%E8%AE%BE%E8%AE%A1">设计</a></h3>
+<p>上机的部分效果图：</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b98c1769dc.jpeg" alt="" /></p>
+<p>后方没有继续做，因为在地图的设计方面需要查找路线图。总是容易往开发的方面想，所以在segmentfault上提了以下的问题：</p>
+<p><a href="https://segmentfault.com/q/1010000012630252">如何获得国内地图公交线路与地铁线路库信息？</a></p>
+<p>至于其中的南京大屠杀的界面，我参考的是Flipboard应用的显示样式。</p>
+<p>想到历史，我首先想到的就是这个。</p>
+<h2 id="travel-nanking-2018113"><a class="markdownIt-Anchor" href="#travel-nanking-2018113"></a> Travel Nanking 2018.1.13</h2>
+<p>这个版本中自己想了很多，最终也是成为自己一个非常全面的想法的。</p>
+<h3 id="思维导图-122思维导图-122"><a class="markdownIt-Anchor" href="#思维导图-122思维导图-122"></a> [思维导图 1.22](#思维导图 1.22)</h3>
+<p>在制作的过程中制作了一个思维导图。</p>
+<p><img src="https://i.loli.net/2018/06/14/5b21ea408a591.jpeg" alt="" /></p>
+<p>手绘稿(暂时隐藏)：</p>
+<pre class="highlight"><code class="">[](https://i.loli.net/2018/05/28/5b0b9c7a002af.jpeg)
+</code></pre>
+<p>颜色：首先不清楚应该用什么色调作为主色调，因为<a href="#%E8%AE%BE%E8%AE%A1">梧桐树下</a>的的上机稿子主体就是灰色的，其余左上角仅仅是一小块红点，是导航栏的按钮色。</p>
+<p>功能：其中的探索界面使用三维模型制作，主色调为白色，各种品牌颜色为相应的颜色。</p>
+<p>最下方的Tab栏可以自定义以及移动顺序。</p>
+<h3 id="设计-3"><a class="markdownIt-Anchor" href="#设计-3"></a> 设计</h3>
+<p>上机的效果图：</p>
+<p>引导页也是非常的简单，开头提过，主要当时总是考虑开发层面以及设计的层面，所以设计感似乎很少。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b9b87081a0.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/06/04/5b14520e6358b.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/06/04/5b145211b401d.jpeg" alt="" /></p>
+<h3 id="制作细节"><a class="markdownIt-Anchor" href="#制作细节"></a> 制作细节</h3>
+<p>下一图为使用Sketch临摹图片联系并在设计中进行使用，下二图为制作优惠券拟物界面，作为我临摹以及制作图标的一些能力。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b9937e431f.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b995c16a7d.jpeg" alt="" /></p>
+<h3 id="草稿"><a class="markdownIt-Anchor" href="#草稿"></a> 草稿</h3>
+<p>在设计的时候当时其实是有些无脑的，所以配色什么的几乎都比较随意——或者说脑海里知道应该怎么做，最后却无法在设计中体现。</p>
+<h2 id="确立正式名称"><a class="markdownIt-Anchor" href="#确立正式名称"></a> 确立正式名称</h2>
+<p>由于时间需要最终确定，之前的迭代尝试过与规范，最终需要确定一个正式的标题。</p>
+<p>确定APP UI时以及起名尝试时，自己列出了这个思维导图；</p>
+<p>进行应用软件起名尝试的思维发散。</p>
+<h4 id="思维导图-130思维导图-130"><a class="markdownIt-Anchor" href="#思维导图-130思维导图-130"></a> [思维导图 1.30](#思维导图 1.30)</h4>
+<p><img src="https://i.loli.net/2018/06/14/5b21eb2953ffb.png" alt="" /></p>
+<h2 id="liveroute景点发现应用-2018225"><a class="markdownIt-Anchor" href="#liveroute景点发现应用-2018225"></a> LiveRoute景点发现应用 2018.2.25</h2>
+<p>这个版本最初的选题为LIVE Route，即“景点应用发现设计”。</p>
+<p>但为什么我要在这里将每一个设计的想法以及界面都展现出来，有两个原因：</p>
+<ol>
+<li>可能是因为在这里并不能截整图，而是快到提交时间了，每个功能全都是分页面进行制作的。</li>
+<li>这个过程里撰文的时间比较近，以及和正式的有着比之前的想法要更强的联系（最后的毕业设计名字就是这个）。</li>
+</ol>
+<p>即使最后旅游仅仅是一个拓展点，这里做的设计最后也只能成为想法进行展现，也确实是包含以及延续了我之前在城市化应用设计的探索的部分成果了。</p>
+<p>本部分从整体框架到每个界面的设计阐述，其中包括每个界面的设计想法以及草稿。</p>
+<p>在制作应用APP UI的时候，根据之前的一些设计成果进行演化而来。</p>
+<h3 id="第一版-225"><a class="markdownIt-Anchor" href="#第一版-225"></a> 第一版 2.25</h3>
+<h4 id="整体框架"><a class="markdownIt-Anchor" href="#整体框架"></a> 整体框架</h4>
+<p>从界面的整体功能考虑，所以刚开始的版本迭代就是基于这样一个主框架进行设计的：</p>
+<p>因为平常似乎压抑自己的太久，以及在做毕业设计的时候有些捉襟见肘，所以从整体的设计上来说是逃离不掉iOS设计规范的。</p>
+<h4 id="当前地点与景点"><a class="markdownIt-Anchor" href="#当前地点与景点"></a> 当前地点与景点</h4>
+<p>当前地点，总体是遵循设计规范的，大标题为当前地点，其次是搜索，下方为“看你想看”功能栏。</p>
+<p>其中的辅助功能有夜间模式和定位button。</p>
+<p>这个功能栏是可以点击之后选择并且自由滑动选择的。点击之后选中状态为紫色，否则背景为白色。</p>
+<p>关于页面切换：采取的是底部可以滑动的元素，因为这种似乎可以进行快捷地切换。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b97ee1bb1e.jpeg" alt="" /></p>
+<p>景点设计同样非常的简单，点击景区之后，当前位置出现在上方变大，右方为搜索，下方为当前所在景区。</p>
+<h4 id="看你想看"><a class="markdownIt-Anchor" href="#看你想看"></a> 看你想看</h4>
+<p>当时有考虑为点击看你想看其中一个功能的时候，便会在栏目下方出现一个设计框，其次内容在内部进行展现。</p>
+<p>界面如左图所示。右方为草稿，采用了更加轻盈的颜色进行设计，尝试进行饱和度的降低。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b97f129e5a.jpeg" alt="" /></p>
+<p>为了便于展现和展板的设计，使用下图进行展现。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b989a17b63.jpeg" alt="" /></p>
+<h4 id="交通"><a class="markdownIt-Anchor" href="#交通"></a> 交通</h4>
+<p>交通界面中的交通方式一致，不过缩短了功能栏的长度而已。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0b9830e7548.jpeg" alt="" /></p>
+<h4 id="搜索与缩放和设置界面"><a class="markdownIt-Anchor" href="#搜索与缩放和设置界面"></a> 搜索与缩放和设置界面</h4>
+<p>缩放状态下背景高斯模糊，地图中心出现动态数字缩放倍数大小。</p>
+<p>设置界面同样，捉襟见肘。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0ba1ed5b1fe.jpeg" alt="" /></p>
+<h4 id="草稿-2"><a class="markdownIt-Anchor" href="#草稿-2"></a> 草稿</h4>
+<p>此为选定主题的草稿以及引导页的雏形。</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0ba1f03dc7d.jpeg" alt="" /></p>
+<h4 id="版本迭代"><a class="markdownIt-Anchor" href="#版本迭代"></a> 版本迭代</h4>
+<h5 id="思维导图-35思维导图-35"><a class="markdownIt-Anchor" href="#思维导图-35思维导图-35"></a> [思维导图 3.5](#思维导图 3.5)</h5>
+<p>设计第一个旧版本的时候便和之前的同学一起讨论这个关于旅游的界面应该有什么。</p>
+<p>最初我们讨论的结果是这样，因为是基于旅游的一款应用。</p>
+<p><img src="https://i.loli.net/2018/06/14/5b21e7ba11e43.jpeg" alt="" /></p>
+<p>最初的时候我写了界面构思的文档，用于确定界面的引导页。</p>
+<p>同意也是更换了指导教师之后的命令，写一个创作动机。</p>
+<p><img src="https://i.loli.net/2018/07/11/5b44e47cad8d7.png" alt="" /></p>
+<h3 id="第二版-331"><a class="markdownIt-Anchor" href="#第二版-331"></a> 第二版 3.31</h3>
+<p>决定重构。</p>
+<p>在这里我也与同学一起讨论主界面内应该要有什么，似乎也成为了改版的主要内容。</p>
+<p>一起讨论的图片</p>
+<p>思维导图图片</p>
+<p>想法：</p>
+<ul>
+<li><strong>从探索城市到即时社交</strong>，所有功能调整为顶Tab中点击切换，延续第一版设计中功能栏，转化为竖形侧栏。</li>
+<li>颜色：使用第一版的主题中的渐变蓝色。</li>
+</ul>
+<p>设计效果图：</p>
+<p><img src="https://i.loli.net/2018/05/28/5b0ba5e7d49fb.jpeg" alt="" /></p>
+<h4 id="思维导图-思维导图"><a class="markdownIt-Anchor" href="#思维导图-思维导图"></a> [思维导图](# 思维导图)</h4>
+<h5 id="331"><a class="markdownIt-Anchor" href="#331"></a> <a href="#3.31">3.31</a></h5>
+<p>此思维导图为左方是海报的制作构思与思路，自己在思维发散上的优势。</p>
+<p><img src="https://i.loli.net/2018/06/14/5b21e6642e90a.jpeg" alt="" /></p>
+<h5 id="410"><a class="markdownIt-Anchor" href="#410"></a> <a href="#4.10">4.10</a></h5>
+<p>继续延续之前的所有想法，此时列出的思维导图为之前所有想到的一些功能点的集合以及沿用可以沿用的功能，以下是我当时的思维导图。</p>
+<p><img src="https://i.loli.net/2018/06/14/5b21e376d5a66.jpeg" alt="" /></p>
+<h4 id="引导"><a class="markdownIt-Anchor" href="#引导"></a> 引导</h4>
+<p>非常简单的引导页，即使到最后展现用的是选择主题的方法，此时已经将要确定了引导页的样式。</p>
+<p><img src="https://i.loli.net/2018/06/14/5b21e517963f3.jpeg" alt="" /></p>
+<h4 id="整体框架-2"><a class="markdownIt-Anchor" href="#整体框架-2"></a> 整体框架</h4>
+<p>这里有一个夜间模式（4.9），但设计稿的效果不是很好，还是使用白天模式（4.11）进行展示。</p>
+<h4 id="主页-当前"><a class="markdownIt-Anchor" href="#主页-当前"></a> 主页、当前</h4>
+<p>主页采取了从右侧向左滑动的功能栏。</p>
+<p><img src="https://i.loli.net/2018/06/04/5b145686bb49c.jpeg" alt="" /></p>
+<h4 id="音乐以及语音"><a class="markdownIt-Anchor" href="#音乐以及语音"></a> <a href="#%E9%9F%B3%E4%B9%90%E4%BB%A5%E5%8F%8A%E8%AF%AD%E9%9F%B3">音乐以及语音</a></h4>
+<p>音乐部分包括周边动态点击了音乐播放器的界面，滑动切换CD盘。</p>
+<p><img src="https://i.loli.net/2018/06/04/5b145689cf322.jpeg" alt="" /></p>
+<h3 id="交通-2"><a class="markdownIt-Anchor" href="#交通-2"></a> 交通</h3>
+<p>交通北京之前考虑添加下方的地图，由于考虑到展示效果，故删减重复结构界面。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20d124c1c97.jpeg" alt="" /></p>
+<h3 id="城市"><a class="markdownIt-Anchor" href="#城市"></a> 城市</h3>
+<p>城市界面包括信息、去处、现代、人口、方言、地理以及阅读。</p>
+<p><img src="https://i.loli.net/2018/06/13/5b20d12db99f3.jpeg" alt="" /></p>
+<h4 id="制作地图"><a class="markdownIt-Anchor" href="#制作地图"></a> 制作地图</h4>
+<h5 id="地点的选择"><a class="markdownIt-Anchor" href="#地点的选择"></a> 地点的选择</h5>
+<p><strong>一个关于地图的细节，产品设计里的小心机。</strong></p>
+<p>希望在这个方面可以突出我的认真吧。</p>
+<p>考虑的点有：北京的西直门，望京SOHO，南京的鼓楼、南京艺术学院。</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e1d1ba1f67.jpeg" alt="" /></p>
+<p>目标学校是南京艺术学院，决定地图地点使用南京艺术学院进行设计。</p>
+<p>其次当时通知为展览的院校是苏州工艺美院，同时也比较担心当评分的教师看到地图居然是这个，是不是到最后的时候是赶出来的，也没有采用。</p>
+<p>使用北京的西直门因为是“世界第七大奇迹”，望京SOHO也是自己非常喜欢的一个地点。</p>
+<h5 id="使用sketch临摹"><a class="markdownIt-Anchor" href="#使用sketch临摹"></a> 使用Sketch临摹</h5>
+<p>为突出“毕业设计”中的认真，同时应用内使用了地图的元素，故使用Sketch进行临摹。</p>
+<p>群里的设计师都觉得我是不是疯了。</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e1234a0154.jpeg" alt="" /></p>
+<p>最后在一些交流的群内讨论，之后使用了这个在线生成的地图工具：</p>
+<p><a href="https://www.mapbox.com/">Mapbox</a></p>
+<p>不过因为南京艺术学院之前尝试选取的地图类型很空，最后选用了卡利地形以及晓庄立交进行设计。</p>
+<h4 id="产品原型"><a class="markdownIt-Anchor" href="#产品原型"></a> <a href="#%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B">产品原型</a></h4>
+<p>在制作毕业设计的时候，同样想着一次可以使用自己想在大学生创新项目以及制作产品的思维做一个APP产品。</p>
+<h5 id="axure"><a class="markdownIt-Anchor" href="#axure"></a> Axure</h5>
+<p>使用了Axure进行原型的制作。</p>
+<p>在制作过程中当时考虑着做一个非常完整的原型，结果只能做一个大概，后来也知道这并不是一个真正的产出物，仅仅是一个思维草稿而已——毕竟还是以设计为主。</p>
+<p>制作的截图：</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e123a678d1.jpeg" alt="" /></p>
+<p>以下是制作的所有原型的预览截图。</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e123b457cd.jpeg" alt="" /></p>
+<p>这里应该有发布的可操作的链接。</p>
+<h5 id="墨刀"><a class="markdownIt-Anchor" href="#墨刀"></a> 墨刀</h5>
+<p>LiveRoute于墨刀中放置的截图与交互制作：</p>
+<p><img src="https://i.loli.net/2018/06/16/5b247cbcea1a4.jpeg" alt="" /></p>
+<p>在这里尝试使用墨刀进行交互原型的制作，可是怎么着都觉得有点怪：</p>
+<p>1：界面中，<strong>套（选择）手机壳是在创建项目时而不是在预览之中进行手机壳的选择</strong>；</p>
+<p>2： 更改界面大小需要在之前的创建的界面进行更改。</p>
+<h6 id="在路上墨刀全部预览计划"><a class="markdownIt-Anchor" href="#在路上墨刀全部预览计划"></a> 在路上墨刀全部预览计划</h6>
+<p>在路上于墨刀中放置的截图与交互制作：</p>
+<p><img src="https://i.loli.net/2018/06/16/5b247cb75dc01.jpeg" alt="" /></p>
+<p>在目前的墨刀版本中尝试将所有的使用sketch制作的具有iOS规范的在路上的全部界面导入墨刀，出现的问题：</p>
+<p>1：是不能使用单一控件进行拖拽。</p>
+<p>解决方案为：选择区域进行动画的拖拽。</p>
+<h4 id="遇到的问题"><a class="markdownIt-Anchor" href="#遇到的问题"></a> 遇到的问题</h4>
+<p>对于产品原型上的疑问以及毕业设计中是否需要有的东西，和一位产品进行交流（有删减）</p>
+<blockquote>
+<p>用例样式和创建链接有区别么= = ,感觉链接就是很简单的跳转</p>
+</blockquote>
+<blockquote>
+<p>现在很少用了，因为开发不会自己点</p>
+</blockquote>
+<blockquote>
+<p>如果毕业设计是不是也需要这个(大地图)，还是先做高保真，就是后者需要花的精力更多，先做原型的话也可以调理清晰</p>
+</blockquote>
+<blockquote>
+<p>具体的就一个个页面说 ,毕业设计直接高保真就可以,不需要写开发需要看的东西,只需要页面和 “说明这个页面是用来干嘛的”文字介绍就可以</p>
+<p>个人觉得如果是毕设，逻辑清晰 功能明确 页面美观就可以了，不必要写字段说明和过多的解释,有原型图了的话就直接sketch ps 出设计稿就好了，axure主要还是原型图。</p>
+<p>毕设的话重点是结果，也就是设计稿。所以原型图的存在只是能帮你的论文更长一点而已，顺便也能展示你们是有思考过程的</p>
+<p>其实到最后只要页面完整完整，设计尽力就好</p>
+</blockquote>
+<h3 id="live-route所有草稿"><a class="markdownIt-Anchor" href="#live-route所有草稿"></a> Live Route所有草稿</h3>
+<p>在设计中依旧保持着一个习惯，<strong>将之前的灵感全部记录进行保存而不丢弃。</strong></p>
+<p>在准备keynote幻灯片中进行动画的制作，最后也没有呈现。</p>
+<p><img src="https://i.loli.net/2018/06/18/5b27561a6e641.jpeg" alt="" /></p>
+]]></content>
+      <categories>
+        <category>毕业设计（接本）</category>
+      </categories>
+      <tags>
+        <tag>原型</tag>
+        <tag>Sketch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>毕业设计前三周的所有工作及其结果</title>
     <url>/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%89%8D%E4%B8%89%E5%91%A8%E7%9A%84%E6%89%80%E6%9C%89%E5%B7%A5%E4%BD%9C%E5%8F%8A%E7%BB%93%E6%9E%9C/</url>
     <content><![CDATA[<p>从最初的毕业设计开始选题，为了保证全过程记录，我便从2017年11月9日开始开始制作幻灯片进行全过程的记录。</p>
@@ -10290,6 +10666,143 @@ npm install --save hexo-wordcount@6.0.1
       </categories>
       <tags>
         <tag>Keynote页面展示</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>毕业设计幻灯片</title>
+    <url>/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%B9%BB%E7%81%AF%E7%89%87/</url>
+    <content><![CDATA[<p>在本次的毕业设计过程当中，总共只做了两个幻灯片当然衍生出的草稿非常之多。</p>
+<p>最终稿首先第一次是毕业设计前三周的汇报，还有一个则为最后的总汇报。</p>
+<p>以下是我制作这两个幻灯片的总结以及特色分享，即使在最后的时候没能展现给南艺的老师，可以在这里给读者展现也是很高兴的。</p>
+<p>在这个总结内，可以得出我制作<strong>工作汇报</strong>的幻灯片的分析、<strong>总结性分析</strong>的以及思考方法，以及在 keynote制作动画效果上的制作考虑。</p>
+<span id="more"></span>
+<h2 id="毕业设计第三周汇报"><a class="markdownIt-Anchor" href="#毕业设计第三周汇报"></a> 毕业设计第三周汇报</h2>
+<p>在第三周的时候，群里通知在第三和第四周之间会有南京艺术学院的老师过来，以及将会召开一次会进行毕业设计之前的选题回报的总结。</p>
+<p>以下是我汇报时候的想法。</p>
+<p>根据当时的指导教师CJ老师的说法：</p>
+<p>12月19日难以的老师开会，12月20日进行碰面的开会。</p>
+<h3 id="关于周总结工作的汇报"><a class="markdownIt-Anchor" href="#关于周总结工作的汇报"></a> 关于周总结工作的汇报</h3>
+<p>在汇报中，我大体的大纲也是目录：</p>
+<p><img src="https://i.loli.net/2018/05/21/5b025a35d882b.jpeg" alt="" /></p>
+<h4 id="时间"><a class="markdownIt-Anchor" href="#时间"></a> 时间</h4>
+<p>为了不错过每一次的会议以及时间，清晰地记录下每一次开会的内容以及布置的任务。</p>
+<p>完成使用绿色，未完成使用红色。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b025a1f0dd17.jpeg" alt="" /></p>
+<h3 id="毕业设计方向的选择"><a class="markdownIt-Anchor" href="#毕业设计方向的选择"></a> （毕业设计）方向的选择</h3>
+<p>这里建议和下方毕业答辩中之前的和正式的这一段一起看。</p>
+<p>因为有过很多次更名，使用透明度以及字号大小进行展示。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b0259fce6719.jpeg" alt="" /></p>
+<h4 id="工作内容展示"><a class="markdownIt-Anchor" href="#工作内容展示"></a> 工作内容展示</h4>
+<h5 id="调研与查阅资料"><a class="markdownIt-Anchor" href="#调研与查阅资料"></a> 调研与查阅资料</h5>
+<p>其中包括的内容</p>
+<ul>
+<li>标题</li>
+<li>资料与文档网页链接或者截图</li>
+<li>数据来源</li>
+</ul>
+<p>同一主题的资料目前找到的最好的显示方式就是上方为标题，下方为网页截图。</p>
+<p>这里的思考：尝试过使用很多弹幕的形式，最终弃用了。</p>
+<p>当然，在需要表明数据来源的时候我也会采用维基百科里相关网页或者公司的LOGO图片。</p>
+<p>其实在这里完全可以不用注明图片来源，因为首先没有强制要求，第二会被同学使用各种方式的利用（毕竟后面是竞争对手）。</p>
+<p>在主要是图片展示的页面，图片为主要背景，降低全部透明度或者在上方添加一层遮罩，主要标题为白色。</p>
+<p>之后进行动画上的滚动。</p>
+<h5 id="软件截图"><a class="markdownIt-Anchor" href="#软件截图"></a> 软件截图</h5>
+<p>使用软件截图之前考虑截图为全部图片，在隐私当中需要考虑添加遮罩。</p>
+<p>当时确实没有想的这么多。</p>
+<p>为突出重点，依然上方为标题，下方为重点截图（Eagle的侧边栏）。</p>
+<h3 id="看片台一览"><a class="markdownIt-Anchor" href="#看片台一览"></a> 看片台一览</h3>
+<p>以下是我全部的第三周汇报的幻灯片看片台一览作为快速展示。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b025ac11530f.jpeg" alt="" /></p>
+<h2 id="毕业答辩"><a class="markdownIt-Anchor" href="#毕业答辩"></a> 毕业答辩</h2>
+<p>诚然，我一直是如果制作幻灯片就会一直制作的无法停下来的那种，原本限定只需要制作30页的幻灯片，我一直做到了93页，如果可以，还会继续往下做，直到深夜十一二点，会做到一百多页。</p>
+<p>因为其中目前只有一些特色的点以及制作方法，我在这里进行介绍与我的思考和分享。</p>
+<h3 id="这四个版本"><a class="markdownIt-Anchor" href="#这四个版本"></a> 这四个版本</h3>
+<p>制作毕业设计答辩的幻灯片，也有四个版本。</p>
+<ol>
+<li>完全版：93页版本，其中部分效果摘自《新》。</li>
+<li>新：当时觉得多，尝试精简之后却没有用上的版本，17页的版本。</li>
+<li>简化版：目录和简化版一致，当时重新开的一个精简版本。</li>
+<li>正式版：经过完全版精简之后，答辩使用的的44页的版本。</li>
+</ol>
+<p>这三个版本可以说是一个很全面，一个进行了简化，我很感谢我自己没有将简化的版本删除——因为这可以为我考虑得更加全面进行加分。</p>
+<p>以下是三个版本的目录截图（由于简化版和简化版新目录一致，所以放一个。）</p>
+<p><img src="https://i.loli.net/2018/05/21/5b0259dd50012.jpeg" alt="" /></p>
+<h3 id="动画"><a class="markdownIt-Anchor" href="#动画"></a> 动画</h3>
+<p>由于只有三分钟的时间，将一些动画给砍掉了，虽然觉得自己极为可惜，但不得不参照现实的规定进行制作。</p>
+<h3 id="完全版的制作"><a class="markdownIt-Anchor" href="#完全版的制作"></a> 完全版的制作</h3>
+<p>制作过程中，有两个时间段。这里重点说完全版和正式版，其中涵盖草稿和简化版，会标出。</p>
+<h3 id="3月31日完全版的初制作"><a class="markdownIt-Anchor" href="#3月31日完全版的初制作"></a> 3月31日：完全版的初制作</h3>
+<h4 id="之前的和正式的"><a class="markdownIt-Anchor" href="#之前的和正式的"></a> 之前的和正式的</h4>
+<h5 id="确立所有的制作时间"><a class="markdownIt-Anchor" href="#确立所有的制作时间"></a> 确立所有的制作时间</h5>
+<p>最初初的想法是，确立所有的制作时间，以最实诚的方式进行展现，</p>
+<p><strong>摘自4月22日重新创建的《毕业设计答辩幻灯片草稿》。</strong></p>
+<p>这里的时间有些问题，因为当时和指导教师的记录为3月31日。</p>
+<p>效果图如下：</p>
+<p>这是keynote效果图：</p>
+<p><img src="https://i.loli.net/2018/05/21/5b02599bbd581.jpeg" alt="" /></p>
+<p>这是视频演示：</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04635330ffe.gif" alt="" /></p>
+<p>由于这种原因如果给答辩老师们看，一定会说：</p>
+<blockquote>
+<p>不专注，不同的改选题，没有明确一个方向去制作。</p>
+</blockquote>
+<p>故最后便弃用了这个方案，所以在之后以下的幻灯片制作样式也未采取。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b025c54cb0d0.jpeg" alt="" /></p>
+<h3 id="4月24日正式版的想法以及动画"><a class="markdownIt-Anchor" href="#4月24日正式版的想法以及动画"></a> 4月24日：正式版的想法以及动画</h3>
+<p>当天晚上在苏州制作幻灯片。</p>
+<p>(此处应该有照片)</p>
+<p>下面分享一些当时在毕业答辩时期特别想展示的一些动画以及幻灯片的特色。<br />
+以下次序根据上方目录进行排列。</p>
+<h4 id="应用的产品信息架构思维导图"><a class="markdownIt-Anchor" href="#应用的产品信息架构思维导图"></a> 应用的产品信息架构思维导图</h4>
+<p>我准备说，</p>
+<blockquote>
+<p>这是我当时的思维导图，其中左边是关于海报的思维导图。我们放大看一下。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2018/05/21/5b0258bdb3fed.gif" alt="" /></p>
+<p>这里同样，学校的指导教师说，</p>
+<blockquote>
+<p>南艺老师没这么多时间看你的这些动画，这些都不需要。</p>
+</blockquote>
+<h5 id="制作过程"><a class="markdownIt-Anchor" href="#制作过程"></a> <a href="#%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B">制作过程</a></h5>
+<p>这是我当时的想法：</p>
+<blockquote>
+<p>这是我的设计路线图。由于我设计的工作众多，我重点讲这几个部分，首先是，然后是，还有这个，以及最后是……</p>
+</blockquote>
+<p>这里的动画使用keynote的线条制作。最后将不重要的部分降低透明度进行表现。</p>
+<p>这是视频演示。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b0259121125f.gif" alt="" /></p>
+<h5 id="logo的演变"><a class="markdownIt-Anchor" href="#logo的演变"></a> LOGO的演变</h5>
+<p>关于logo的演变，我参考的是锤子发布会上LOGO演变的过程。</p>
+<p>转送门：<a href="https://www.bilibili.com/video/av9389275/">锤子智能手机操作系统发布会完整版</a>里的116:18秒。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b02610ddfd84.png" alt="" /></p>
+<p>这是我的幻灯片的视频演示，主要描述的为“健康模块”以及“主要LOGO”的演变。</p>
+<p>主要LOGO：</p>
+<p><img src="https://i.loli.net/2018/05/20/5b00fbeb60706.gif" alt="" /></p>
+<p>健康模块LOGO：</p>
+<p><img src="https://i.loli.net/2018/05/21/5b025821214f2.gif" alt="" /></p>
+<h5 id="次要logo的演变以及组件扩散"><a class="markdownIt-Anchor" href="#次要logo的演变以及组件扩散"></a> 次要LOGO的演变以及组件扩散</h5>
+<p><strong>摘自《新》</strong>（简化版本，由于当时需要快速制作好进行提交，所以将这个动画放在这里，即使这是简化版本）</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04e2a9d29a6.gif" alt="" /></p>
+<p>这里不需要说如何进行制作，总结性文章掌握的技能我都掌握，并不是对Keynote小白用户进行科普的文章。</p>
+<p>在制作的过程中尝试将里面的动画迁移至简化版，将以上内容进行保留，得到如下错误图示。</p>
+<p>在此过程中，一些元素复制到其他的Keynote中会出现问号，目前暂未找到解决方案以及原因。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b0257349765f.jpeg" alt="" /></p>
+<h5 id="动态效果组建展示"><a class="markdownIt-Anchor" href="#动态效果组建展示"></a> 动态效果组建展示</h5>
+<p>在这里当时的回忆是希望可以现场演示给老师看我制作的交互。</p>
+<p>于是在这里就牵扯到PPT文件夹中包含GIF的事情，不知是否符合要求。</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04e7ab5dfaf.gif" alt="" /></p>
+<h3 id="看片台一览-2"><a class="markdownIt-Anchor" href="#看片台一览-2"></a> 看片台一览</h3>
+<p>以下是之前初始完全版本的以及实际的毕业答辩幻灯片的看片台一览，新以及简化版本的因为未成形就没有放于其中。</p>
+<p><img src="https://i.loli.net/2018/05/21/5b025761eb96c.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/05/21/5b025771b5817.jpeg" alt="" /></p>
+]]></content>
+      <categories>
+        <category>毕业设计（接本）</category>
+      </categories>
+      <tags>
+        <tag>Keynote页面展示</tag>
+        <tag>总结</tag>
+        <tag>幻灯片</tag>
       </tags>
   </entry>
   <entry>
@@ -11439,252 +11952,6 @@ rss:
       </tags>
   </entry>
   <entry>
-    <title>毕业设计UI-迭代：选题改进以及由来 2017.12.23-2018.4.4</title>
-    <url>/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1UI-%E8%BF%AD%E4%BB%A3%EF%BC%9A%E9%80%89%E9%A2%98%E6%94%B9%E8%BF%9B%E4%BB%A5%E5%8F%8A%E7%94%B1%E6%9D%A5%202017.12.23-2018.4.4/</url>
-    <content><![CDATA[<p>此篇文章为我主要做的毕业设计的详细思考过程以及制作的想法，此为第一篇迭代。</p>
-<p>在之前的选题制作中，一些设计的手稿的最终都是在为这个最后的设计做准备。</p>
-<p>其中包括几个想法：在路上、梧桐树下、TravelNanking、LiveRoute以及最终的LiveOS。</p>
-<p>我是如何从旅游应用扩展到平台化的，并却在这个设计过程里中从产品和开发层面考虑导致的设计感的缺失以及设计的结果，在数个制作的过程中，最紧迫的是时间，以及心理上的压力。将在文中阐述。</p>
-<p>如果您对其中任何一个想法有意，欢迎联系我或者在下方评论留言。</p>
-<span id="more"></span>
-<p>制作一个毕业设计，经历了很多，同时也修改了很多。</p>
-<p>在制作这个毕业设计中，起初根据一位同学的建议，为“毕业设计中制作这个民宿非常适合出效果”。</p>
-<hr />
-<p>其中和老师交流的对话，可以看<a href="https://felixxiong.github.io/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/">关于开发尝试</a>中的<a href="https://felixxiong.github.io/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/#%E4%B8%8E%E5%AF%BC%E5%B8%88%E4%BA%A4%E6%B5%81">与导师交流</a>这一段。</p>
-<p>在设计景点应用时，在之前的版本中尝试了几个不同的方案，也是之前的一些版本迭代。</p>
-<h2 id="在路上-20171223"><a class="markdownIt-Anchor" href="#在路上-20171223"></a> 在路上 2017.12.23</h2>
-<p>这个毕业设计是最初自己花一些时间制作的第一个想法。</p>
-<p>最后被否决的原因是：导航的软件比较难制作的出彩。</p>
-<p>即使在这个过程中给老师看了Waze的软件截图。</p>
-<h3 id="产品"><a class="markdownIt-Anchor" href="#产品"></a> 产品</h3>
-<p>使用产品的角度来说：在什么样的场景下解决了什么问题。</p>
-<p>我的回答就是，在用户进行上下班通勤途中，解决了同时查看便签、任务、要去的地方、听音乐以及社交的各种需求都可以在这一个软件中进行实现的问题。</p>
-<h3 id="设计"><a class="markdownIt-Anchor" href="#设计"></a> 设计</h3>
-<p>关于整体的截图</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b98bac6f18.jpeg" alt="" /></p>
-<p>由于非常的遵循iOS设计规范，故这个被否决，但成为了我的<a href="">想法文档</a>其中的一个想法，当然还需要更多的设计感才行，不然真的可以给Apple进行系统软件的设计了。</p>
-<p>当时完成给老师看之后，时间我清晰的记得是12月28日左右，说如果是这样的话就差一个配色之后便结束了，这里缺乏设计感。</p>
-<p>想法：</p>
-<ul>
-<li>风格：是卡片式，其中 该拟物化就拟物化，该扁平化就扁平化（学习的锤子的风格）</li>
-<li>颜色： 配色在播放音乐的时候会有体现（颜色<a href="#%E9%9F%B3%E4%B9%90%E4%BB%A5%E5%8F%8A%E8%AF%AD%E9%9F%B3">最终到了下方</a>展现）</li>
-<li>LOGO：使用AI制作，软件方向是地图，导航类软件。</li>
-</ul>
-<h3 id="demo"><a class="markdownIt-Anchor" href="#demo"></a> Demo</h3>
-<p>之前这个我也制作了Demo，并且进行我当时开发上的尝试。</p>
-<p>目前并未放进GitHub，如果有可能以及精力和时间，我会去实现它。</p>
-<h2 id="梧桐树下-20171229"><a class="markdownIt-Anchor" href="#梧桐树下-20171229"></a> 梧桐树下 2017.12.29</h2>
-<p>想法：</p>
-<ul>
-<li>
-<p>名称：梧桐树下，由于是当地的旅游应用，南京同时又有很多的法国梧桐，故因此得名。</p>
-</li>
-<li>
-<p>功能：包含生活服务，公交线路以及地铁线路，用平面（图）的形式进行展现各区域的位置。</p>
-<p>城市：包含市中心 深巷 同样是介绍发展的信息，突出 现代南京的新潮生活方式 以及 新潮文化</p>
-</li>
-<li>
-<p>文化历史：仅包含照片以及名称和一句话介绍（因为现代的年轻人也许不喜欢历史）</p>
-<p>历史的展现方式：也可以使用画报的形式展现。</p>
-</li>
-</ul>
-<p>在开始上机之前写了一个想法文档，主要从以下方面展开：</p>
-<pre class="highlight"><code class="">想法
- 发现产品需求
-  网上调研、现场调研：制作调研问卷
-  调研地点
- 交通信息
-   在路上
-界面设计
- 视觉、交互设计
-软件开发
-</code></pre>
-<h3 id="设计-2"><a class="markdownIt-Anchor" href="#设计-2"></a> <a href="#%E8%AE%BE%E8%AE%A1">设计</a></h3>
-<p>上机的部分效果图：</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b98c1769dc.jpeg" alt="" /></p>
-<p>后方没有继续做，因为在地图的设计方面需要查找路线图。总是容易往开发的方面想，所以在segmentfault上提了以下的问题：</p>
-<p><a href="https://segmentfault.com/q/1010000012630252">如何获得国内地图公交线路与地铁线路库信息？</a></p>
-<p>至于其中的南京大屠杀的界面，我参考的是Flipboard应用的显示样式。</p>
-<p>想到历史，我首先想到的就是这个。</p>
-<h2 id="travel-nanking-2018113"><a class="markdownIt-Anchor" href="#travel-nanking-2018113"></a> Travel Nanking 2018.1.13</h2>
-<p>这个版本中自己想了很多，最终也是成为自己一个非常全面的想法的。</p>
-<h3 id="思维导图-122思维导图-122"><a class="markdownIt-Anchor" href="#思维导图-122思维导图-122"></a> [思维导图 1.22](#思维导图 1.22)</h3>
-<p>在制作的过程中制作了一个思维导图。</p>
-<p><img src="https://i.loli.net/2018/06/14/5b21ea408a591.jpeg" alt="" /></p>
-<p>手绘稿(暂时隐藏)：</p>
-<pre class="highlight"><code class="">[](https://i.loli.net/2018/05/28/5b0b9c7a002af.jpeg)
-</code></pre>
-<p>颜色：首先不清楚应该用什么色调作为主色调，因为<a href="#%E8%AE%BE%E8%AE%A1">梧桐树下</a>的的上机稿子主体就是灰色的，其余左上角仅仅是一小块红点，是导航栏的按钮色。</p>
-<p>功能：其中的探索界面使用三维模型制作，主色调为白色，各种品牌颜色为相应的颜色。</p>
-<p>最下方的Tab栏可以自定义以及移动顺序。</p>
-<h3 id="设计-3"><a class="markdownIt-Anchor" href="#设计-3"></a> 设计</h3>
-<p>上机的效果图：</p>
-<p>引导页也是非常的简单，开头提过，主要当时总是考虑开发层面以及设计的层面，所以设计感似乎很少。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b9b87081a0.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/06/04/5b14520e6358b.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/06/04/5b145211b401d.jpeg" alt="" /></p>
-<h3 id="制作细节"><a class="markdownIt-Anchor" href="#制作细节"></a> 制作细节</h3>
-<p>下一图为使用Sketch临摹图片联系并在设计中进行使用，下二图为制作优惠券拟物界面，作为我临摹以及制作图标的一些能力。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b9937e431f.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b995c16a7d.jpeg" alt="" /></p>
-<h3 id="草稿"><a class="markdownIt-Anchor" href="#草稿"></a> 草稿</h3>
-<p>在设计的时候当时其实是有些无脑的，所以配色什么的几乎都比较随意——或者说脑海里知道应该怎么做，最后却无法在设计中体现。</p>
-<h2 id="确立正式名称"><a class="markdownIt-Anchor" href="#确立正式名称"></a> 确立正式名称</h2>
-<p>由于时间需要最终确定，之前的迭代尝试过与规范，最终需要确定一个正式的标题。</p>
-<p>确定APP UI时以及起名尝试时，自己列出了这个思维导图；</p>
-<p>进行应用软件起名尝试的思维发散。</p>
-<h4 id="思维导图-130思维导图-130"><a class="markdownIt-Anchor" href="#思维导图-130思维导图-130"></a> [思维导图 1.30](#思维导图 1.30)</h4>
-<p><img src="https://i.loli.net/2018/06/14/5b21eb2953ffb.png" alt="" /></p>
-<h2 id="liveroute景点发现应用-2018225"><a class="markdownIt-Anchor" href="#liveroute景点发现应用-2018225"></a> LiveRoute景点发现应用 2018.2.25</h2>
-<p>这个版本最初的选题为LIVE Route，即“景点应用发现设计”。</p>
-<p>但为什么我要在这里将每一个设计的想法以及界面都展现出来，有两个原因：</p>
-<ol>
-<li>可能是因为在这里并不能截整图，而是快到提交时间了，每个功能全都是分页面进行制作的。</li>
-<li>这个过程里撰文的时间比较近，以及和正式的有着比之前的想法要更强的联系（最后的毕业设计名字就是这个）。</li>
-</ol>
-<p>即使最后旅游仅仅是一个拓展点，这里做的设计最后也只能成为想法进行展现，也确实是包含以及延续了我之前在城市化应用设计的探索的部分成果了。</p>
-<p>本部分从整体框架到每个界面的设计阐述，其中包括每个界面的设计想法以及草稿。</p>
-<p>在制作应用APP UI的时候，根据之前的一些设计成果进行演化而来。</p>
-<h3 id="第一版-225"><a class="markdownIt-Anchor" href="#第一版-225"></a> 第一版 2.25</h3>
-<h4 id="整体框架"><a class="markdownIt-Anchor" href="#整体框架"></a> 整体框架</h4>
-<p>从界面的整体功能考虑，所以刚开始的版本迭代就是基于这样一个主框架进行设计的：</p>
-<p>因为平常似乎压抑自己的太久，以及在做毕业设计的时候有些捉襟见肘，所以从整体的设计上来说是逃离不掉iOS设计规范的。</p>
-<h4 id="当前地点与景点"><a class="markdownIt-Anchor" href="#当前地点与景点"></a> 当前地点与景点</h4>
-<p>当前地点，总体是遵循设计规范的，大标题为当前地点，其次是搜索，下方为“看你想看”功能栏。</p>
-<p>其中的辅助功能有夜间模式和定位button。</p>
-<p>这个功能栏是可以点击之后选择并且自由滑动选择的。点击之后选中状态为紫色，否则背景为白色。</p>
-<p>关于页面切换：采取的是底部可以滑动的元素，因为这种似乎可以进行快捷地切换。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b97ee1bb1e.jpeg" alt="" /></p>
-<p>景点设计同样非常的简单，点击景区之后，当前位置出现在上方变大，右方为搜索，下方为当前所在景区。</p>
-<h4 id="看你想看"><a class="markdownIt-Anchor" href="#看你想看"></a> 看你想看</h4>
-<p>当时有考虑为点击看你想看其中一个功能的时候，便会在栏目下方出现一个设计框，其次内容在内部进行展现。</p>
-<p>界面如左图所示。右方为草稿，采用了更加轻盈的颜色进行设计，尝试进行饱和度的降低。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b97f129e5a.jpeg" alt="" /></p>
-<p>为了便于展现和展板的设计，使用下图进行展现。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b989a17b63.jpeg" alt="" /></p>
-<h4 id="交通"><a class="markdownIt-Anchor" href="#交通"></a> 交通</h4>
-<p>交通界面中的交通方式一致，不过缩短了功能栏的长度而已。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0b9830e7548.jpeg" alt="" /></p>
-<h4 id="搜索与缩放和设置界面"><a class="markdownIt-Anchor" href="#搜索与缩放和设置界面"></a> 搜索与缩放和设置界面</h4>
-<p>缩放状态下背景高斯模糊，地图中心出现动态数字缩放倍数大小。</p>
-<p>设置界面同样，捉襟见肘。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0ba1ed5b1fe.jpeg" alt="" /></p>
-<h4 id="草稿-2"><a class="markdownIt-Anchor" href="#草稿-2"></a> 草稿</h4>
-<p>此为选定主题的草稿以及引导页的雏形。</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0ba1f03dc7d.jpeg" alt="" /></p>
-<h4 id="版本迭代"><a class="markdownIt-Anchor" href="#版本迭代"></a> 版本迭代</h4>
-<h5 id="思维导图-35思维导图-35"><a class="markdownIt-Anchor" href="#思维导图-35思维导图-35"></a> [思维导图 3.5](#思维导图 3.5)</h5>
-<p>设计第一个旧版本的时候便和之前的同学一起讨论这个关于旅游的界面应该有什么。</p>
-<p>最初我们讨论的结果是这样，因为是基于旅游的一款应用。</p>
-<p><img src="https://i.loli.net/2018/06/14/5b21e7ba11e43.jpeg" alt="" /></p>
-<p>最初的时候我写了界面构思的文档，用于确定界面的引导页。</p>
-<p>同意也是更换了指导教师之后的命令，写一个创作动机。</p>
-<p><img src="https://i.loli.net/2018/07/11/5b44e47cad8d7.png" alt="" /></p>
-<h3 id="第二版-331"><a class="markdownIt-Anchor" href="#第二版-331"></a> 第二版 3.31</h3>
-<p>决定重构。</p>
-<p>在这里我也与同学一起讨论主界面内应该要有什么，似乎也成为了改版的主要内容。</p>
-<p>一起讨论的图片</p>
-<p>思维导图图片</p>
-<p>想法：</p>
-<ul>
-<li><strong>从探索城市到即时社交</strong>，所有功能调整为顶Tab中点击切换，延续第一版设计中功能栏，转化为竖形侧栏。</li>
-<li>颜色：使用第一版的主题中的渐变蓝色。</li>
-</ul>
-<p>设计效果图：</p>
-<p><img src="https://i.loli.net/2018/05/28/5b0ba5e7d49fb.jpeg" alt="" /></p>
-<h4 id="思维导图-思维导图"><a class="markdownIt-Anchor" href="#思维导图-思维导图"></a> [思维导图](# 思维导图)</h4>
-<h5 id="331"><a class="markdownIt-Anchor" href="#331"></a> <a href="#3.31">3.31</a></h5>
-<p>此思维导图为左方是海报的制作构思与思路，自己在思维发散上的优势。</p>
-<p><img src="https://i.loli.net/2018/06/14/5b21e6642e90a.jpeg" alt="" /></p>
-<h5 id="410"><a class="markdownIt-Anchor" href="#410"></a> <a href="#4.10">4.10</a></h5>
-<p>继续延续之前的所有想法，此时列出的思维导图为之前所有想到的一些功能点的集合以及沿用可以沿用的功能，以下是我当时的思维导图。</p>
-<p><img src="https://i.loli.net/2018/06/14/5b21e376d5a66.jpeg" alt="" /></p>
-<h4 id="引导"><a class="markdownIt-Anchor" href="#引导"></a> 引导</h4>
-<p>非常简单的引导页，即使到最后展现用的是选择主题的方法，此时已经将要确定了引导页的样式。</p>
-<p><img src="https://i.loli.net/2018/06/14/5b21e517963f3.jpeg" alt="" /></p>
-<h4 id="整体框架-2"><a class="markdownIt-Anchor" href="#整体框架-2"></a> 整体框架</h4>
-<p>这里有一个夜间模式（4.9），但设计稿的效果不是很好，还是使用白天模式（4.11）进行展示。</p>
-<h4 id="主页-当前"><a class="markdownIt-Anchor" href="#主页-当前"></a> 主页、当前</h4>
-<p>主页采取了从右侧向左滑动的功能栏。</p>
-<p><img src="https://i.loli.net/2018/06/04/5b145686bb49c.jpeg" alt="" /></p>
-<h4 id="音乐以及语音"><a class="markdownIt-Anchor" href="#音乐以及语音"></a> <a href="#%E9%9F%B3%E4%B9%90%E4%BB%A5%E5%8F%8A%E8%AF%AD%E9%9F%B3">音乐以及语音</a></h4>
-<p>音乐部分包括周边动态点击了音乐播放器的界面，滑动切换CD盘。</p>
-<p><img src="https://i.loli.net/2018/06/04/5b145689cf322.jpeg" alt="" /></p>
-<h3 id="交通-2"><a class="markdownIt-Anchor" href="#交通-2"></a> 交通</h3>
-<p>交通北京之前考虑添加下方的地图，由于考虑到展示效果，故删减重复结构界面。</p>
-<p><img src="https://i.loli.net/2018/06/13/5b20d124c1c97.jpeg" alt="" /></p>
-<h3 id="城市"><a class="markdownIt-Anchor" href="#城市"></a> 城市</h3>
-<p>城市界面包括信息、去处、现代、人口、方言、地理以及阅读。</p>
-<p><img src="https://i.loli.net/2018/06/13/5b20d12db99f3.jpeg" alt="" /></p>
-<h4 id="制作地图"><a class="markdownIt-Anchor" href="#制作地图"></a> 制作地图</h4>
-<h5 id="地点的选择"><a class="markdownIt-Anchor" href="#地点的选择"></a> 地点的选择</h5>
-<p><strong>一个关于地图的细节，产品设计里的小心机。</strong></p>
-<p>希望在这个方面可以突出我的认真吧。</p>
-<p>考虑的点有：北京的西直门，望京SOHO，南京的鼓楼、南京艺术学院。</p>
-<p><img src="https://i.loli.net/2018/06/11/5b1e1d1ba1f67.jpeg" alt="" /></p>
-<p>目标学校是南京艺术学院，决定地图地点使用南京艺术学院进行设计。</p>
-<p>其次当时通知为展览的院校是苏州工艺美院，同时也比较担心当评分的教师看到地图居然是这个，是不是到最后的时候是赶出来的，也没有采用。</p>
-<p>使用北京的西直门因为是“世界第七大奇迹”，望京SOHO也是自己非常喜欢的一个地点。</p>
-<h5 id="使用sketch临摹"><a class="markdownIt-Anchor" href="#使用sketch临摹"></a> 使用Sketch临摹</h5>
-<p>为突出“毕业设计”中的认真，同时应用内使用了地图的元素，故使用Sketch进行临摹。</p>
-<p>群里的设计师都觉得我是不是疯了。</p>
-<p><img src="https://i.loli.net/2018/06/11/5b1e1234a0154.jpeg" alt="" /></p>
-<p>最后在一些交流的群内讨论，之后使用了这个在线生成的地图工具：</p>
-<p><a href="https://www.mapbox.com/">Mapbox</a></p>
-<p>不过因为南京艺术学院之前尝试选取的地图类型很空，最后选用了卡利地形以及晓庄立交进行设计。</p>
-<h4 id="产品原型"><a class="markdownIt-Anchor" href="#产品原型"></a> <a href="#%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B">产品原型</a></h4>
-<p>在制作毕业设计的时候，同样想着一次可以使用自己想在大学生创新项目以及制作产品的思维做一个APP产品。</p>
-<h5 id="axure"><a class="markdownIt-Anchor" href="#axure"></a> Axure</h5>
-<p>使用了Axure进行原型的制作。</p>
-<p>在制作过程中当时考虑着做一个非常完整的原型，结果只能做一个大概，后来也知道这并不是一个真正的产出物，仅仅是一个思维草稿而已——毕竟还是以设计为主。</p>
-<p>制作的截图：</p>
-<p><img src="https://i.loli.net/2018/06/11/5b1e123a678d1.jpeg" alt="" /></p>
-<p>以下是制作的所有原型的预览截图。</p>
-<p><img src="https://i.loli.net/2018/06/11/5b1e123b457cd.jpeg" alt="" /></p>
-<p>这里应该有发布的可操作的链接。</p>
-<h5 id="墨刀"><a class="markdownIt-Anchor" href="#墨刀"></a> 墨刀</h5>
-<p>LiveRoute于墨刀中放置的截图与交互制作：</p>
-<p><img src="https://i.loli.net/2018/06/16/5b247cbcea1a4.jpeg" alt="" /></p>
-<p>在这里尝试使用墨刀进行交互原型的制作，可是怎么着都觉得有点怪：</p>
-<p>1：界面中，<strong>套（选择）手机壳是在创建项目时而不是在预览之中进行手机壳的选择</strong>；</p>
-<p>2： 更改界面大小需要在之前的创建的界面进行更改。</p>
-<h6 id="在路上墨刀全部预览计划"><a class="markdownIt-Anchor" href="#在路上墨刀全部预览计划"></a> 在路上墨刀全部预览计划</h6>
-<p>在路上于墨刀中放置的截图与交互制作：</p>
-<p><img src="https://i.loli.net/2018/06/16/5b247cb75dc01.jpeg" alt="" /></p>
-<p>在目前的墨刀版本中尝试将所有的使用sketch制作的具有iOS规范的在路上的全部界面导入墨刀，出现的问题：</p>
-<p>1：是不能使用单一控件进行拖拽。</p>
-<p>解决方案为：选择区域进行动画的拖拽。</p>
-<h4 id="遇到的问题"><a class="markdownIt-Anchor" href="#遇到的问题"></a> 遇到的问题</h4>
-<p>对于产品原型上的疑问以及毕业设计中是否需要有的东西，和一位产品进行交流（有删减）</p>
-<blockquote>
-<p>用例样式和创建链接有区别么= = ,感觉链接就是很简单的跳转</p>
-</blockquote>
-<blockquote>
-<p>现在很少用了，因为开发不会自己点</p>
-</blockquote>
-<blockquote>
-<p>如果毕业设计是不是也需要这个(大地图)，还是先做高保真，就是后者需要花的精力更多，先做原型的话也可以调理清晰</p>
-</blockquote>
-<blockquote>
-<p>具体的就一个个页面说 ,毕业设计直接高保真就可以,不需要写开发需要看的东西,只需要页面和 “说明这个页面是用来干嘛的”文字介绍就可以</p>
-<p>个人觉得如果是毕设，逻辑清晰 功能明确 页面美观就可以了，不必要写字段说明和过多的解释,有原型图了的话就直接sketch ps 出设计稿就好了，axure主要还是原型图。</p>
-<p>毕设的话重点是结果，也就是设计稿。所以原型图的存在只是能帮你的论文更长一点而已，顺便也能展示你们是有思考过程的</p>
-<p>其实到最后只要页面完整完整，设计尽力就好</p>
-</blockquote>
-<h3 id="live-route所有草稿"><a class="markdownIt-Anchor" href="#live-route所有草稿"></a> Live Route所有草稿</h3>
-<p>在设计中依旧保持着一个习惯，<strong>将之前的灵感全部记录进行保存而不丢弃。</strong></p>
-<p>在准备keynote幻灯片中进行动画的制作，最后也没有呈现。</p>
-<p><img src="https://i.loli.net/2018/06/18/5b27561a6e641.jpeg" alt="" /></p>
-]]></content>
-      <categories>
-        <category>毕业设计（接本）</category>
-      </categories>
-      <tags>
-        <tag>原型</tag>
-        <tag>Sketch</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记一次Mac数据恢复</title>
     <url>/2020/02/29/%E8%AE%B0%E4%B8%80%E6%AC%A1Mac%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/</url>
     <content><![CDATA[<p>可能是和飞书有仇(笑)，第一次是在做流程图的时候断电没保存，这次是桌面功能预览图和截图照片太像，误删了我司功能预览图的Sketch源文件。</p>
@@ -11751,33 +12018,87 @@ rss:
       </tags>
   </entry>
   <entry>
-    <title>我参与了本科的毕业设计，我收获到了这些</title>
-    <url>/2018/05/06/%E6%88%91%E5%8F%82%E4%B8%8E%E4%BA%86%E6%9C%AC%E7%A7%91%E7%9A%84%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%EF%BC%8C%E6%88%91%E6%94%B6%E8%8E%B7%E5%88%B0%E4%BA%86%E8%BF%99%E4%BA%9B/</url>
-    <content><![CDATA[<p>现在在回南京的路上。</p>
-<p>最近为了赶毕业答辩，不知熬了几次夜，现在总结的一些经验教训，在这里记录下来。</p>
-<p>总计经历了两百天，不包括现在在废纸篓里的文件，总共（待计算）个文件。</p>
-<p>尤其是在最近忙活的时候，确实是桌面非常的乱，还好我不停地保持着拍照和记录的习惯，断断续续这些日子里将自己的想法和经历的状态在便签里以及在这里记录，这些都是我生活的真实写照。</p>
-<p>在这几篇的本科毕业设计的总结性文章中，我都会尽力查找那些我自己保留下来的照片以及截图。</p>
+    <title>记一次接到滴滴平台电话之后</title>
+    <url>/2018/10/24/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8E%A5%E5%88%B0%E6%BB%B4%E6%BB%B4%E5%B9%B3%E5%8F%B0%E7%94%B5%E8%AF%9D%E4%B9%8B%E5%90%8E/</url>
+    <content><![CDATA[<p>之前滴滴打车安全事件频出，这里记录一下自己遇到的事情。</p>
+<p>发生在10月24日，和大学同学社交，下车的时候他发现之前有一个乘客的钱包在座位上。</p>
 <span id="more"></span>
-<p>原名：我参与了“专接本”直到毕业展，我收获到了这些</p>
-<h2 id="文章目录"><a class="markdownIt-Anchor" href="#文章目录"></a> 文章目录</h2>
-<p>现已按时间排序。</p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%89%8D%E4%B8%89%E5%91%A8%E7%9A%84%E6%89%80%E6%9C%89%E5%B7%A5%E4%BD%9C%E5%8F%8A%E7%BB%93%E6%9E%9C/">毕业设计前三周的所有工作及其结果</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E8%B0%83%E7%A0%94%EF%BC%88%E6%96%87%E6%A1%88%EF%BC%89%E5%92%8C%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5/">调研（文案）和问卷调查</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1UI-%E8%BF%AD%E4%BB%A3%EF%BC%9A%E9%80%89%E9%A2%98%E6%94%B9%E8%BF%9B%E4%BB%A5%E5%8F%8A%E7%94%B1%E6%9D%A5%202017.12.23-2018.4.4/">毕业设计UI-迭代：选题改进以及由来 2017.12.23-2018.4.4</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/">关于开发尝试</a></p>
-<p><a href="https://felixxiong.github.io/2018/06/04/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1UI-%E7%A1%AE%E7%AB%8B%EF%BC%9ALiveOS%E4%BB%8E%E6%99%AF%E7%82%B9%E8%87%B3%E5%B9%B3%E5%8F%B0%E5%8C%96%E7%9A%84%E8%AE%BE%E8%AE%A1%E8%BD%AC%E7%A7%BB%E5%8F%8A%E6%80%9D%E8%80%83/">毕业设计UI-确立：LiveOS从景点至平台化的设计转移及思考 2018.4.4-2018.4.22</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E5%B9%B3%E9%9D%A2%E6%B5%B7%E6%8A%A5:%E5%AE%A3%E4%BC%A0%E7%81%AF%E7%AE%B1%E8%AE%BE%E8%AE%A1/">平面海报/宣传灯箱设计</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E5%AE%9E%E7%89%A9%E7%9A%84%E5%88%B6%E4%BD%9C%E4%B8%8E%E6%80%9D%E8%80%83/">实物的制作与思考</a></p>
-<p><a href="#">设计报告与展板（延迟撰写)</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%B9%BB%E7%81%AF%E7%89%87/">毕业设计幻灯片</a></p>
-<p><a href="https://felixxiong.github.io/2018/05/06/%EF%BC%88%E9%A2%84%EF%BC%89%E7%AD%94%E8%BE%A9%E5%92%8C%E6%AD%A3%E5%BC%8F%E7%9A%84%E5%B1%95%E8%A7%88/">（预）答辩和正式的展览</a></p>
+<p>在23.04的时候，我接到了电话，电话里一直说平台，并没有说是什么平台。</p>
+<p>后续说到上一位乘客和后续乘客时，才反应过来，原来是滴滴打车。</p>
+<p>号码：95066</p>
+<h2 id="电话"><a class="markdownIt-Anchor" href="#电话"></a> 电话</h2>
+<p>电话中我说：</p>
+<blockquote>
+<p>我看到我同学将钱包给司机了，就这样。</p>
+</blockquote>
+<p>关于滴滴的联系方式，是需通过对方是否同意，之后便与平台无关。</p>
+<p>同学说，平台不可能打电话给客户，或许确实是他缺乏了这个意识。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h2 id="事发经过"><a class="markdownIt-Anchor" href="#事发经过"></a> 事发经过</h2>
+<p>下车的时候我和同学在车内发现一个棕色的钱包，后面我同学当即将钱包给了司机，之后我们便乘坐地铁了。</p>
+<h2 id="心理"><a class="markdownIt-Anchor" href="#心理"></a> 心理</h2>
+<p>聊天记录以及电话里说，司机一口咬定没有拿钱包。</p>
+<p>为什么我们当时第一时间就交给司机而不是警察——或许是我们当时觉得司机会承认而交还给乘客。</p>
+<p>不过在国内这样的大环境下，“利”字当头，何况其中还有乘客的贵重物品。</p>
+<p>作为平台监管方，</p>
+<h3 id="如果需要找证据还可以找得回吗"><a class="markdownIt-Anchor" href="#如果需要找证据还可以找得回吗"></a> 如果需要找证据，还可以找得回吗</h3>
+<p>目前已经装了录音，但因为当时是在鼓楼<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>的大转盘上，之前的录音也关闭了。</p>
+<p>于是我和同学说：</p>
+<blockquote>
+<p>现在看来录音不行 还要监控</p>
+</blockquote>
+<h2 id="同学的反应"><a class="markdownIt-Anchor" href="#同学的反应"></a> 同学的反应</h2>
+<p>接到电话之后和同学说，同学当然是半开玩笑的口吻半认真地和口吻和我说（文明起见不好听的话就用*表示：）</p>
+<p>部分摘录：</p>
+<blockquote>
+<p>爱信不信 说了不听<br />
+跟他说一下还特么咬人</p>
+<p>跟你讲被司机吞了不听，md也不是正常人吧你是不是新的敲诈手断啊？</p>
+<p>不用解释了 没有就是没有拉黑</p>
+<p>骗钱的 新套路</p>
+<p>你回他************一边去</p>
+</blockquote>
+<p>和我说：</p>
+<blockquote>
+<p>不要透露我们的信息，平台也不会给的</p>
+</blockquote>
+<h3 id="失主反应"><a class="markdownIt-Anchor" href="#失主反应"></a> 失主反应</h3>
+<p>失主的反应却表现的有些<strong>好为人师</strong>以及<strong>有问题</strong>。</p>
+<blockquote>
+<p>我希望你能帮帮我</p>
+</blockquote>
+<blockquote>
+<p>钱我可以拿走，但钱包可以交给警察。</p>
+</blockquote>
+<p>这确实是失主加我微信后说的话，这里就不放上截图了。</p>
+<p>而且确实不是我们拿的。</p>
+<hr />
+<p>话又说回来，我已经联系上了同学，还要我怎么帮？</p>
+<p>给他现金还是供着养着他？</p>
+<p>自己没保管好的东西司机也不承认，反倒是为下一位乘客（在留联系方式后）而提供了教育的渠道以及希望帮助的渠道，个人觉得这是非常极为不正常的事。</p>
+<p>在交谈的过程中，同学说，这是诈骗的新套路，因为他之前也接到过类似的电话：</p>
+<blockquote>
+<p>号码肯定对<br />
+我被骗的时候也这样<br />
+只是被代码包装了</p>
+</blockquote>
+<p>直到今天也没有关于失主任何的消息了，当然也不希望有任何的消息。从微信上看，他是一位设计师。</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>我相信在一些时候平台确实会打电话给用户进行回访等情况，或许是当时同学没反应过来，尤其是之前的乘客掉了东西。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>江苏省南京市的鼓楼，因为去过北京的鼓楼大街，所以这里必须要做区分。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
-        <category>毕业设计（接本）</category>
+        <category>生活</category>
+        <category>出行</category>
       </categories>
       <tags>
-        <tag>目录</tag>
+        <tag>安全</tag>
+        <tag>滴滴</tag>
       </tags>
   </entry>
   <entry>
@@ -11901,90 +12222,6 @@ rss:
       <tags>
         <tag>InDesign</tag>
         <tag>indesign</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记一次接到滴滴平台电话之后</title>
-    <url>/2018/10/24/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8E%A5%E5%88%B0%E6%BB%B4%E6%BB%B4%E5%B9%B3%E5%8F%B0%E7%94%B5%E8%AF%9D%E4%B9%8B%E5%90%8E/</url>
-    <content><![CDATA[<p>之前滴滴打车安全事件频出，这里记录一下自己遇到的事情。</p>
-<p>发生在10月24日，和大学同学社交，下车的时候他发现之前有一个乘客的钱包在座位上。</p>
-<span id="more"></span>
-<p>在23.04的时候，我接到了电话，电话里一直说平台，并没有说是什么平台。</p>
-<p>后续说到上一位乘客和后续乘客时，才反应过来，原来是滴滴打车。</p>
-<p>号码：95066</p>
-<h2 id="电话"><a class="markdownIt-Anchor" href="#电话"></a> 电话</h2>
-<p>电话中我说：</p>
-<blockquote>
-<p>我看到我同学将钱包给司机了，就这样。</p>
-</blockquote>
-<p>关于滴滴的联系方式，是需通过对方是否同意，之后便与平台无关。</p>
-<p>同学说，平台不可能打电话给客户，或许确实是他缺乏了这个意识。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<h2 id="事发经过"><a class="markdownIt-Anchor" href="#事发经过"></a> 事发经过</h2>
-<p>下车的时候我和同学在车内发现一个棕色的钱包，后面我同学当即将钱包给了司机，之后我们便乘坐地铁了。</p>
-<h2 id="心理"><a class="markdownIt-Anchor" href="#心理"></a> 心理</h2>
-<p>聊天记录以及电话里说，司机一口咬定没有拿钱包。</p>
-<p>为什么我们当时第一时间就交给司机而不是警察——或许是我们当时觉得司机会承认而交还给乘客。</p>
-<p>不过在国内这样的大环境下，“利”字当头，何况其中还有乘客的贵重物品。</p>
-<p>作为平台监管方，</p>
-<h3 id="如果需要找证据还可以找得回吗"><a class="markdownIt-Anchor" href="#如果需要找证据还可以找得回吗"></a> 如果需要找证据，还可以找得回吗</h3>
-<p>目前已经装了录音，但因为当时是在鼓楼<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>的大转盘上，之前的录音也关闭了。</p>
-<p>于是我和同学说：</p>
-<blockquote>
-<p>现在看来录音不行 还要监控</p>
-</blockquote>
-<h2 id="同学的反应"><a class="markdownIt-Anchor" href="#同学的反应"></a> 同学的反应</h2>
-<p>接到电话之后和同学说，同学当然是半开玩笑的口吻半认真地和口吻和我说（文明起见不好听的话就用*表示：）</p>
-<p>部分摘录：</p>
-<blockquote>
-<p>爱信不信 说了不听<br />
-跟他说一下还特么咬人</p>
-<p>跟你讲被司机吞了不听，md也不是正常人吧你是不是新的敲诈手断啊？</p>
-<p>不用解释了 没有就是没有拉黑</p>
-<p>骗钱的 新套路</p>
-<p>你回他************一边去</p>
-</blockquote>
-<p>和我说：</p>
-<blockquote>
-<p>不要透露我们的信息，平台也不会给的</p>
-</blockquote>
-<h3 id="失主反应"><a class="markdownIt-Anchor" href="#失主反应"></a> 失主反应</h3>
-<p>失主的反应却表现的有些<strong>好为人师</strong>以及<strong>有问题</strong>。</p>
-<blockquote>
-<p>我希望你能帮帮我</p>
-</blockquote>
-<blockquote>
-<p>钱我可以拿走，但钱包可以交给警察。</p>
-</blockquote>
-<p>这确实是失主加我微信后说的话，这里就不放上截图了。</p>
-<p>而且确实不是我们拿的。</p>
-<hr />
-<p>话又说回来，我已经联系上了同学，还要我怎么帮？</p>
-<p>给他现金还是供着养着他？</p>
-<p>自己没保管好的东西司机也不承认，反倒是为下一位乘客（在留联系方式后）而提供了教育的渠道以及希望帮助的渠道，个人觉得这是非常极为不正常的事。</p>
-<p>在交谈的过程中，同学说，这是诈骗的新套路，因为他之前也接到过类似的电话：</p>
-<blockquote>
-<p>号码肯定对<br />
-我被骗的时候也这样<br />
-只是被代码包装了</p>
-</blockquote>
-<p>直到今天也没有关于失主任何的消息了，当然也不希望有任何的消息。从微信上看，他是一位设计师。</p>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>我相信在一些时候平台确实会打电话给用户进行回访等情况，或许是当时同学没反应过来，尤其是之前的乘客掉了东西。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>江苏省南京市的鼓楼，因为去过北京的鼓楼大街，所以这里必须要做区分。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>出行</category>
-      </categories>
-      <tags>
-        <tag>安全</tag>
-        <tag>滴滴</tag>
       </tags>
   </entry>
   <entry>
@@ -12128,272 +12365,6 @@ rss:
         <tag>一个人</tag>
         <tag>人性</tag>
         <tag>诚实</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果</title>
-    <url>/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/</url>
-    <content><![CDATA[<p>2020年，MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)，Hexo。</p>
-<h2 id="迁移具体步骤"><a class="markdownIt-Anchor" href="#迁移具体步骤"></a> 迁移具体步骤</h2>
-<h3 id="新计算机"><a class="markdownIt-Anchor" href="#新计算机"></a> 新计算机</h3>
-<h4 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h4>
-<h4 id="git"><a class="markdownIt-Anchor" href="#git"></a> Git</h4>
-<p>下载Git（官网），直接下载地址：<a href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">git-osx-installer</a></p>
-<p>打开终端<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，用户主目录<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>运行：</p>
-<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;，</code>将邮箱更换为你的邮箱。</p>
-<p>由于是新计算机，之前未生成过SSH key，可以回车。直到出现：</p>
-<pre class="highlight"><code class="bash">Your identification has been saved <span class="hljs-keyword">in</span> /Users/……/.ssh/id_rsa.
-Your public key has been saved <span class="hljs-keyword">in</span> /Users/……/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:
-The key’s randomart image is:
-</code></pre>
-<p>即可。id_rsa.pub为公钥，在下方进行粘贴。id_rsa为私钥，暂时不用管。</p>
-<p>进入Github，Settings，SSH and GPG keys，new SSH key。</p>
-<p><img src="https://sm.ms/image/CyjgU9dkMEZqeIb" alt="博客迁移.003.jpeg" /></p>
-<p><img src="https://i.loli.net/2020/01/28/wqDf1hKWz8RHip6.jpg" alt="博客迁移.004.jpeg" /></p>
-<h5 id="寻找id_rsapub"><a class="markdownIt-Anchor" href="#寻找id_rsapub"></a> 寻找id_rsa.pub</h5>
-<p>Finder-前往-文件夹，/Users/……/，出现id_rsa与id_rsa.pub两个文件，后者使用文本编辑[3]打开。</p>
-<p><img src="https://i.loli.net/2020/01/28/7uYn6OBLoywRiS9.jpg" alt="博客迁移.002.jpeg" /></p>
-<p>点击Add new提交，即可查看相应Key。</p>
-<h4 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> node.js</h4>
-<p>下载<a href="https://nodejs.org/en/">node.js</a>安装。</p>
-<p>输入<code>npm install hexo-cli -g</code>安装hexo。</p>
-<h3 id="报错"><a class="markdownIt-Anchor" href="#报错"></a> 报错</h3>
-<p>使用以下代码，详细参考链接可参考我之前文章：[Mac下重新部署博客记录<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>](<a href="https://felixxiong.github.io/2018/09/26/Mac%E4%B8%8B%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/">https://felixxiong.github.io/2018/09/26/Mac下重新部署博客记录/</a>)相应段落。</p>
-<p>可用：<code>sudo npm install -g hexo-cli</code></p>
-<p>不可用：<code>npm install hexo-cli -g</code>、<code>sudo npm install hexo-cli -g</code>，皆会报错。</p>
-<h2 id="旧计算机"><a class="markdownIt-Anchor" href="#旧计算机"></a> 旧计算机</h2>
-<p>拷贝<code>_config.yml，theme/，source/，scaffolds/，package.json，.gitignore</code>文件。</p>
-<p>此处我在个人文件夹里新建了Hexo的文件夹。</p>
-<h2 id="新计算机-2"><a class="markdownIt-Anchor" href="#新计算机-2"></a> 新计算机</h2>
-<p>终端，cd到新建的hexo文件夹内，进行npm的所需模块安装。此处步骤均为Hexo文件夹内操作。</p>
-<h3 id="npm模块安装"><a class="markdownIt-Anchor" href="#npm模块安装"></a> npm模块安装</h3>
-<p>根据知乎的参考链接，使用npm install进行安装，此处过程中出现安装下载Xcodebuild命令行工具。</p>
-<p>此时经历了一番波折（详见下面“问题”段落）且“洁癖发作”，使用命令进行卸载：<code>sudo npm uninstall npm -g</code>。</p>
-<p><img src="https://i.loli.net/2020/01/28/31gDP4vLNeGHpiX.png" alt="image.png" /></p>
-<p>之后再次安装node.js（目的为安装全局node里的npm？<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup>）。</p>
-<p>并进入Hexo文件夹，进行npm模块的安装：<code>sudo npm install</code>，后续确认npm版本，安装完毕。</p>
-<p><img src="https://i.loli.net/2020/01/28/Flc5gy6kOdMzWJL.png" alt="image.png" /></p>
-<h3 id="安装必要组件"><a class="markdownIt-Anchor" href="#安装必要组件"></a> 安装必要组件</h3>
-<p>使用hexo d来部署到Git：<code>npm install hexo-deployer-git --save</code>，稍后进行部署。</p>
-<p>使用RSS订阅：<code>npm install hexo-generator-feed --save</code></p>
-<p>建立站点地图：<code>npm install hexo-generator-sitemap --save</code></p>
-<p><img src="https://i.loli.net/2020/01/28/3GHfWeVkjyUIlLZ.png" alt="image.png" /></p>
-<p>配置组件相关，需要在GitHub上进行相应说明查找。</p>
-<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
-<p>熟悉的hexo g -d，需最后要输入GitHub账号与密码。</p>
-<p>若未开代理，相关错误详见下方段落。</p>
-<p><img src="https://i.loli.net/2020/01/28/5BVT6EqZCW8UHOA.jpg" alt="博客迁移.014.jpeg" /></p>
-<h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
-<h3 id="hexo文件夹的npm安装与卸载"><a class="markdownIt-Anchor" href="#hexo文件夹的npm安装与卸载"></a> Hexo文件夹的npm安装与卸载</h3>
-<p>根据知乎的参考链接，使用npm install进行安装（我们称为第一次安装），此处过程中出现安装下载Xcodebuild命令行工具。</p>
-<p>之后出现了一些问题，如下图所示。</p>
-<p><img src="https://i.loli.net/2020/01/28/ewjZ39bLkxQUsEa.jpg" alt="博客迁移.008.jpeg" /></p>
-<p>在粘贴尝试fix时发现了手误多粘贴了“fix them”，之后我不知如何退出bquote<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>，故重新打开终端进行修复。</p>
-<p>此处经历三个命令：<code>npm install</code>、<code>npm audit fix</code>、<code>npm audit fix —force</code>。</p>
-<p>卸载：这里使用的一个命令：<code>npm uninstall -g</code>，卸载失败，命令来源：如何卸载全局安装的包</p>
-<p><img src="https://i.loli.net/2020/01/28/Tn4l7hQLSmVsaYw.png" alt="image.png" /></p>
-<p>第二次安装：</p>
-<p>此时应该就安装完毕，但查看Hexo文件夹路径内无npm文件夹，以及没有核实npm版本，准备再次卸载。</p>
-<p>命令：<code>npm install</code></p>
-<p>最终卸载：</p>
-<p>命令：<code>sudo npm uninstall npm -g</code>，详见参考链接。</p>
-<p>此时进行<code>sudo npm install</code>，会出现sudo: npm: command not found，</p>
-<p>解决方案：查看相应路径/重新安装node.js，我这里选择了后者。</p>
-<p>再次安装node.js与npm：<code>sudo npm install</code>，之后检查npm版本，确认安装。</p>
-<h3 id="部署至github"><a class="markdownIt-Anchor" href="#部署至github"></a> 部署至GitHub</h3>
-<p>自动绑定的作者信息</p>
-<p>部署时出现以下信息，暂未知需要在哪里进行设置。</p>
-<pre><code>Your name and email address were configured automatically based on your username and hostname. Please check that they are accurate.
-
-You can suppress this message by setting them explicitly.
-
-Run the following command and follow the instructions in your editor to edit your configuration file: git config --global --edit
-
-After doing this, you may fix the identity used for this commit with:
-
-git commit --amend --reset-author
-</code></pre>
-<p>问题</p>
-<p>部署至GitHub时出现此错误，挂代理即可解决。</p>
-<pre class="highlight"><code class="bash">Username <span class="hljs-keyword">for</span> <span class="hljs-string">'https://github.com'</span>: FelixXiong
-Password <span class="hljs-keyword">for</span> <span class="hljs-string">'https://FelixXiong@github.com'</span>: 
-remote: Invalid username or password.
-fatal: Authentication failed <span class="hljs-keyword">for</span> <span class="hljs-string">'https://github.com/FelixXiong/FelixXiong.github.io/'</span>
-FATAL Something<span class="hljs-string">'s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
-Error: Spawn failed
-    at ChildProcess.&lt;anonymous&gt; (/Users/felixxiong/FelixXiongHexo/node_modules/hexo-deployer-git/node_modules/hexo-util/lib/spawn.js:51:21)
-    at ChildProcess.emit (events.js:223:5)
-    at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
-</span></code></pre>
-<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
-<h3 id="hexo迁移与搭建"><a class="markdownIt-Anchor" href="#hexo迁移与搭建"></a> hexo迁移与搭建</h3>
-<p>知乎：<a href="https://www.zhihu.com/question/21193762/answer/103097754">使用hexo，如果换了电脑怎么更新博客？-skycrown的回答</a></p>
-<p>我的博客：<a href="https://felixxiong.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/">博客探索</a>分类</p>
-<h3 id="npm的卸载与安装"><a class="markdownIt-Anchor" href="#npm的卸载与安装"></a> npm的卸载与安装</h3>
-<p>卸载npm-简书：<a href="https://felixxiong.github.io/2020/01/28/2020%E5%B9%B4%EF%BC%8C%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4/">卸载再重装了npm</a></p>
-<p>安装npm-npm文档：<a href="https://www.npmjs.cn/getting-started/installing-node/">如何安装 npm 并管理 npm 版本</a></p>
-<p>Starkoverflow：<a href="https://stackoverflow.com/questions/31472755/sudo-npm-command-not-found">sudo: npm: command not found</a></p>
-<h3 id="hexo部署至github"><a class="markdownIt-Anchor" href="#hexo部署至github"></a> hexo部署至GitHub</h3>
-<p>CSDN：<a href="https://blog.csdn.net/zhangqqjuly/article/details/91446830">hexo d 部署报错求解决</a></p>
-<hr />
-<blockquote>
-<p>Last login: Sun Jan 19 20:23:06 on console</p>
-<p>example@ExampleMacBook-Pro-2 ~ %</p>
-</blockquote>
-<hr />
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>如果你是英文系统，叫做Termial。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>用户主目录，此版本计算机为： <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>如果您了解，欢迎在下方进行留言。 <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>终端如何退出bquote成了我的待学事项。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>博客探索</category>
-        <category>Hexo</category>
-        <category>迁移</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>调研（文案）和问卷调查</title>
-    <url>/2018/05/06/%E8%B0%83%E7%A0%94%EF%BC%88%E6%96%87%E6%A1%88%EF%BC%89%E5%92%8C%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5/</url>
-    <content><![CDATA[<p>在本次的毕业设计中，我总共做了三项调研。</p>
-<p>使用的平台为问卷星和腾讯问卷。</p>
-<p>名称分别为：</p>
-<p>《书籍与书架装置的摆放与环境的氛围感受》</p>
-<p>《工作者的放松方式及个人情感行为：视觉感官符号的体验调查》</p>
-<p>下面为思考和总结回顾。</p>
-<span id="more"></span>
-<h2 id="选题的调研文案"><a class="markdownIt-Anchor" href="#选题的调研文案"></a> 选题的调研文案</h2>
-<p>他们的文案稿子，使用的是锤子便签进行制作：锤子便签 2018年4月2日：</p>
-<p>这里既有可能是修改时间，不过这是最早版本。</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04f4bc9b611.jpeg" alt="" /></p>
-<h3 id="文案"><a class="markdownIt-Anchor" href="#文案"></a> 文案</h3>
-<p>名称为文案调研邀请。</p>
-<p>我觉得“邀请”，可以体现出让别人感受到一种知乎里”泻药“的感觉，以及可以让填写的用户感受到一种欣喜的感觉，所以使用“邀请”。</p>
-<p>在听《一天世界》的博客之前写的文案，后来觉得在听完了某一集之后，对文案（尤其是Apple的）有了更加深刻的理解。</p>
-<p>以下分别是他们最终的文案。</p>
-<h4 id="撰写与迭代"><a class="markdownIt-Anchor" href="#撰写与迭代"></a> 撰写与迭代</h4>
-<p>由于时间间隔较久，</p>
-<p>目前这里写的是锤子便签-微信公众号-最终的三个版本以及幻灯片版本的相同文案的不同迭代。</p>
-<p><img src="https://i.loli.net/2018/05/23/5b0456b53f69b.jpeg" alt="" /><img src="https://i.loli.net/2018/05/23/5b0456bbc42e1.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/05/23/5b0456e147bc5.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/05/23/5b0456eda2f46.jpeg" alt="" /></p>
-<ul>
-<li>
-<p>锤子便签版本：</p>
-<p>手机上最初的文案撰写，微信公众号版本似乎保留了这个版本的格式，仅仅为一些空行的合并。</p>
-</li>
-<li>
-<p>最终发布版本：</p>
-<p>调查问卷的最终版本，只保留重要的问券开头以及邀请内容。</p>
-<p>最后一个调研在腾讯问卷的基础上修改，可见最后一句话并不是我的风格：）</p>
-</li>
-<li>
-<p>微信公众号版本：</p>
-<p>于2017年11月14日发布文章，所以前面两个调查已经发布，仅仅是修改里面的内容格式，确保内容一致。而关于视障人士的调查，并未发布因为缺乏障碍人数的数据调研，最后暂未开放。</p>
-<p>和锤子便签版本相同的事突出了《再一次，毕业设计》的调研。</p>
-</li>
-<li>
-<p>毕业设计第三周幻灯片汇报版本：</p>
-<p>在会议中尝试宣传自己的问卷调查结果的版本。</p>
-</li>
-</ul>
-<p>注：为空的就是没有撰写的以及发布的。</p>
-<h2 id="平台的选择"><a class="markdownIt-Anchor" href="#平台的选择"></a> 平台的选择</h2>
-<p>首先我使用的是问卷星，其次是腾讯问卷。</p>
-<p>由于腾讯问卷当时使用的是页面的原因，所以使用时候遇到了几个问题，以下是答案，也可以在读者访问的时候帮到读者。</p>
-<p>在保存问卷的时候，问卷是自动保存的，可以离开页面。</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04f567ef882.jpeg" alt="" /></p>
-<p>在这里我和我小学的同学曾经有过交流，她当时也在制作一个关乎化妆品的调研，这是我的对话。</p>
-<h3 id="关于化妆品调研的角度"><a class="markdownIt-Anchor" href="#关于化妆品调研的角度"></a> 关于化妆品调研的角度</h3>
-<blockquote>
-<p>做调研问卷，你也可以把它看作为是一个产品</p>
-<p>化妆品的调研问卷就可以从两个角度（虽然调研问卷主体是大学生，但你同样可以从多的角度去制作）</p>
-<p>从自己想获得信息的角度，从大学生（用户）的角度，从消费者的角度…</p>
-</blockquote>
-<p>当然现实不出我所料，他们现在都有个自己的圈子，交流沟通的也都比自己要少，所以这里只有我的对话。</p>
-<h2 id="关于调研问题的设置"><a class="markdownIt-Anchor" href="#关于调研问题的设置"></a> 关于调研问题的设置</h2>
-<p>前两次的调研中，在调研的结果下年龄以及行业信息居于问卷最后的位置，因为大部分互联网行业问卷都是这么去做的。</p>
-<p>之后，问卷的设置都根据内容进行发散，必要时可以添加图片。</p>
-<p>在第四次的调研中，诚然当时已经4月2日，由于时间的关系也有些来不及，所以问题设置的确实非常的多。</p>
-<p>于是尝试在一个问卷中设置多个问题，其实按道理来说是需要进行拆分去做的，当时也非常的有抵触感以及心烦意乱。</p>
-<p>这就是我尝试在一个调研问卷中获得的问题，一共有以下几类：</p>
-<ol>
-<li>
-<p>城市类型问题：</p>
-<p>是否工作在目前的城市、留下的原因、是否喜欢以及原因，对城市和学习考虑的要素</p>
-</li>
-<li>
-<p>旅游类型问题：</p>
-<p>是否喜欢、限制的因素、经常浏览的网站与App</p>
-</li>
-<li>
-<p>历史类型问题：</p>
-<p>去过的城市中最喜欢的以及城市、印象最深、最喜欢与做讨厌的设计</p>
-</li>
-<li>
-<p>信息与媒体类型问题：</p>
-<p>了解其他城市的信息、通过什么方式</p>
-<p>是否浏览媒体、浏览那些媒体、哪一个板块以及设计印象深刻及其截图</p>
-</li>
-<li>
-<p>对本问卷的建议</p>
-</li>
-</ol>
-<p>目前来看完全可以拆分成6个来给用户做。</p>
-<h2 id="宣传过程"><a class="markdownIt-Anchor" href="#宣传过程"></a> 宣传过程</h2>
-<p>调研在《毕业设计前三周keynote》的体现：</p>
-<p>微信公众号里的文章：</p>
-<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484233&amp;idx=3&amp;sn=5661a4a8c2ba5528c976cf31d50972ec&amp;chksm=eb3fbbc6dc4832d0af6026ccc38c6894f4bff85a8a3f308d3b29dda2eb49a8827ef297ebe21f&amp;scene=21#wechat_redirect">最近我正在做的调研</a>，其中有我的所有的之前使用锤子便签的文案,可以结合上述迭代进行反馈。</p>
-<h2 id="调研结果与总结"><a class="markdownIt-Anchor" href="#调研结果与总结"></a> 调研结果与总结</h2>
-<p>总结的文稿在幻灯片里使用了docx进行展现，效果很普通：上面是大标题，下面是小标题。</p>
-<p>第四次的调研结果尝试去写文章，由于当时时间的原因难以持续，以下是截图。</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04f5110fd38.jpeg" alt="" /></p>
-<p>在其他的平台：</p>
-<p>知乎上我撰写的关于我做过的调研的文章：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/32719040">象限的小屋 用研微信群诚邀加入</a></p>
-<p>调研在设计报告的体现：</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04f4dbec900.jpeg" alt="" /></p>
-<h3 id="通过这几次调研我学到的"><a class="markdownIt-Anchor" href="#通过这几次调研我学到的"></a> 通过这几次调研我学到的</h3>
-<h4 id="前两次"><a class="markdownIt-Anchor" href="#前两次"></a> 前两次</h4>
-<h4 id="第四次"><a class="markdownIt-Anchor" href="#第四次"></a> 第四次</h4>
-<p>腾讯问卷的文案，其中告诉了我应该如何制作一个调研问卷以及需要注意的点。</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04f4f5b7835.jpeg" alt="" /></p>
-<p>关于第四次调研结果的人为反馈，最多，这里自己概括一下：</p>
-<ol>
-<li>问卷太长了</li>
-<li>目的不明确</li>
-<li>信息太杂了</li>
-<li>很多选项可做成多项选择，就是说可不回答可不回答。现有的是所有东西全部回答，很多东西的话就是说没有接触过，没了解的话也解答不了，并且会给你的用户造成一定的烦恼。甚至想放弃的决定。</li>
-<li>像调查东西其实是你用户自己选择去帮你还是不帮你做。既然被调研者已经帮你去做这决定了，那么你需要把自己当成一个用户，考虑目的性。这一块儿需要就是是不是在身份的角度稍微的思考一下。</li>
-</ol>
-<p>填写者Cary：</p>
-<blockquote>
-<p>在我答调查卷儿的时候，一直不清楚你为什么,做这个事情的目的性是什么，就是你里边儿的信息牵扯太广。包括你去过哪儿，喜欢在城市的哪些，很多的设计的人来说是一圈儿宅男。很少有个人就是说经常满天飞。</p>
-</blockquote>
-<h2 id="后续的利用"><a class="markdownIt-Anchor" href="#后续的利用"></a> 后续的利用</h2>
-<p>在后续事件非常的紧张时，我便直接使用这三个调研问卷的结果进行。</p>
-<p>即使后面我还准备进行几个调研，当时或许是对自己的压力过大，以及时间确实很紧张，所以便放弃了。</p>
-]]></content>
-      <categories>
-        <category>毕业设计（接本）</category>
-      </categories>
-      <tags>
-        <tag>文案</tag>
-        <tag>用户调研</tag>
       </tags>
   </entry>
   <entry>
@@ -12576,6 +12547,272 @@ Error: Spawn failed
         <tag>职场</tag>
         <tag>冷暴力</tag>
         <tag>霸凌</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>调研（文案）和问卷调查</title>
+    <url>/2018/05/06/%E8%B0%83%E7%A0%94%EF%BC%88%E6%96%87%E6%A1%88%EF%BC%89%E5%92%8C%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5/</url>
+    <content><![CDATA[<p>在本次的毕业设计中，我总共做了三项调研。</p>
+<p>使用的平台为问卷星和腾讯问卷。</p>
+<p>名称分别为：</p>
+<p>《书籍与书架装置的摆放与环境的氛围感受》</p>
+<p>《工作者的放松方式及个人情感行为：视觉感官符号的体验调查》</p>
+<p>下面为思考和总结回顾。</p>
+<span id="more"></span>
+<h2 id="选题的调研文案"><a class="markdownIt-Anchor" href="#选题的调研文案"></a> 选题的调研文案</h2>
+<p>他们的文案稿子，使用的是锤子便签进行制作：锤子便签 2018年4月2日：</p>
+<p>这里既有可能是修改时间，不过这是最早版本。</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04f4bc9b611.jpeg" alt="" /></p>
+<h3 id="文案"><a class="markdownIt-Anchor" href="#文案"></a> 文案</h3>
+<p>名称为文案调研邀请。</p>
+<p>我觉得“邀请”，可以体现出让别人感受到一种知乎里”泻药“的感觉，以及可以让填写的用户感受到一种欣喜的感觉，所以使用“邀请”。</p>
+<p>在听《一天世界》的博客之前写的文案，后来觉得在听完了某一集之后，对文案（尤其是Apple的）有了更加深刻的理解。</p>
+<p>以下分别是他们最终的文案。</p>
+<h4 id="撰写与迭代"><a class="markdownIt-Anchor" href="#撰写与迭代"></a> 撰写与迭代</h4>
+<p>由于时间间隔较久，</p>
+<p>目前这里写的是锤子便签-微信公众号-最终的三个版本以及幻灯片版本的相同文案的不同迭代。</p>
+<p><img src="https://i.loli.net/2018/05/23/5b0456b53f69b.jpeg" alt="" /><img src="https://i.loli.net/2018/05/23/5b0456bbc42e1.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/05/23/5b0456e147bc5.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/05/23/5b0456eda2f46.jpeg" alt="" /></p>
+<ul>
+<li>
+<p>锤子便签版本：</p>
+<p>手机上最初的文案撰写，微信公众号版本似乎保留了这个版本的格式，仅仅为一些空行的合并。</p>
+</li>
+<li>
+<p>最终发布版本：</p>
+<p>调查问卷的最终版本，只保留重要的问券开头以及邀请内容。</p>
+<p>最后一个调研在腾讯问卷的基础上修改，可见最后一句话并不是我的风格：）</p>
+</li>
+<li>
+<p>微信公众号版本：</p>
+<p>于2017年11月14日发布文章，所以前面两个调查已经发布，仅仅是修改里面的内容格式，确保内容一致。而关于视障人士的调查，并未发布因为缺乏障碍人数的数据调研，最后暂未开放。</p>
+<p>和锤子便签版本相同的事突出了《再一次，毕业设计》的调研。</p>
+</li>
+<li>
+<p>毕业设计第三周幻灯片汇报版本：</p>
+<p>在会议中尝试宣传自己的问卷调查结果的版本。</p>
+</li>
+</ul>
+<p>注：为空的就是没有撰写的以及发布的。</p>
+<h2 id="平台的选择"><a class="markdownIt-Anchor" href="#平台的选择"></a> 平台的选择</h2>
+<p>首先我使用的是问卷星，其次是腾讯问卷。</p>
+<p>由于腾讯问卷当时使用的是页面的原因，所以使用时候遇到了几个问题，以下是答案，也可以在读者访问的时候帮到读者。</p>
+<p>在保存问卷的时候，问卷是自动保存的，可以离开页面。</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04f567ef882.jpeg" alt="" /></p>
+<p>在这里我和我小学的同学曾经有过交流，她当时也在制作一个关乎化妆品的调研，这是我的对话。</p>
+<h3 id="关于化妆品调研的角度"><a class="markdownIt-Anchor" href="#关于化妆品调研的角度"></a> 关于化妆品调研的角度</h3>
+<blockquote>
+<p>做调研问卷，你也可以把它看作为是一个产品</p>
+<p>化妆品的调研问卷就可以从两个角度（虽然调研问卷主体是大学生，但你同样可以从多的角度去制作）</p>
+<p>从自己想获得信息的角度，从大学生（用户）的角度，从消费者的角度…</p>
+</blockquote>
+<p>当然现实不出我所料，他们现在都有个自己的圈子，交流沟通的也都比自己要少，所以这里只有我的对话。</p>
+<h2 id="关于调研问题的设置"><a class="markdownIt-Anchor" href="#关于调研问题的设置"></a> 关于调研问题的设置</h2>
+<p>前两次的调研中，在调研的结果下年龄以及行业信息居于问卷最后的位置，因为大部分互联网行业问卷都是这么去做的。</p>
+<p>之后，问卷的设置都根据内容进行发散，必要时可以添加图片。</p>
+<p>在第四次的调研中，诚然当时已经4月2日，由于时间的关系也有些来不及，所以问题设置的确实非常的多。</p>
+<p>于是尝试在一个问卷中设置多个问题，其实按道理来说是需要进行拆分去做的，当时也非常的有抵触感以及心烦意乱。</p>
+<p>这就是我尝试在一个调研问卷中获得的问题，一共有以下几类：</p>
+<ol>
+<li>
+<p>城市类型问题：</p>
+<p>是否工作在目前的城市、留下的原因、是否喜欢以及原因，对城市和学习考虑的要素</p>
+</li>
+<li>
+<p>旅游类型问题：</p>
+<p>是否喜欢、限制的因素、经常浏览的网站与App</p>
+</li>
+<li>
+<p>历史类型问题：</p>
+<p>去过的城市中最喜欢的以及城市、印象最深、最喜欢与做讨厌的设计</p>
+</li>
+<li>
+<p>信息与媒体类型问题：</p>
+<p>了解其他城市的信息、通过什么方式</p>
+<p>是否浏览媒体、浏览那些媒体、哪一个板块以及设计印象深刻及其截图</p>
+</li>
+<li>
+<p>对本问卷的建议</p>
+</li>
+</ol>
+<p>目前来看完全可以拆分成6个来给用户做。</p>
+<h2 id="宣传过程"><a class="markdownIt-Anchor" href="#宣传过程"></a> 宣传过程</h2>
+<p>调研在《毕业设计前三周keynote》的体现：</p>
+<p>微信公众号里的文章：</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484233&amp;idx=3&amp;sn=5661a4a8c2ba5528c976cf31d50972ec&amp;chksm=eb3fbbc6dc4832d0af6026ccc38c6894f4bff85a8a3f308d3b29dda2eb49a8827ef297ebe21f&amp;scene=21#wechat_redirect">最近我正在做的调研</a>，其中有我的所有的之前使用锤子便签的文案,可以结合上述迭代进行反馈。</p>
+<h2 id="调研结果与总结"><a class="markdownIt-Anchor" href="#调研结果与总结"></a> 调研结果与总结</h2>
+<p>总结的文稿在幻灯片里使用了docx进行展现，效果很普通：上面是大标题，下面是小标题。</p>
+<p>第四次的调研结果尝试去写文章，由于当时时间的原因难以持续，以下是截图。</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04f5110fd38.jpeg" alt="" /></p>
+<p>在其他的平台：</p>
+<p>知乎上我撰写的关于我做过的调研的文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/32719040">象限的小屋 用研微信群诚邀加入</a></p>
+<p>调研在设计报告的体现：</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04f4dbec900.jpeg" alt="" /></p>
+<h3 id="通过这几次调研我学到的"><a class="markdownIt-Anchor" href="#通过这几次调研我学到的"></a> 通过这几次调研我学到的</h3>
+<h4 id="前两次"><a class="markdownIt-Anchor" href="#前两次"></a> 前两次</h4>
+<h4 id="第四次"><a class="markdownIt-Anchor" href="#第四次"></a> 第四次</h4>
+<p>腾讯问卷的文案，其中告诉了我应该如何制作一个调研问卷以及需要注意的点。</p>
+<p><img src="https://i.loli.net/2018/05/23/5b04f4f5b7835.jpeg" alt="" /></p>
+<p>关于第四次调研结果的人为反馈，最多，这里自己概括一下：</p>
+<ol>
+<li>问卷太长了</li>
+<li>目的不明确</li>
+<li>信息太杂了</li>
+<li>很多选项可做成多项选择，就是说可不回答可不回答。现有的是所有东西全部回答，很多东西的话就是说没有接触过，没了解的话也解答不了，并且会给你的用户造成一定的烦恼。甚至想放弃的决定。</li>
+<li>像调查东西其实是你用户自己选择去帮你还是不帮你做。既然被调研者已经帮你去做这决定了，那么你需要把自己当成一个用户，考虑目的性。这一块儿需要就是是不是在身份的角度稍微的思考一下。</li>
+</ol>
+<p>填写者Cary：</p>
+<blockquote>
+<p>在我答调查卷儿的时候，一直不清楚你为什么,做这个事情的目的性是什么，就是你里边儿的信息牵扯太广。包括你去过哪儿，喜欢在城市的哪些，很多的设计的人来说是一圈儿宅男。很少有个人就是说经常满天飞。</p>
+</blockquote>
+<h2 id="后续的利用"><a class="markdownIt-Anchor" href="#后续的利用"></a> 后续的利用</h2>
+<p>在后续事件非常的紧张时，我便直接使用这三个调研问卷的结果进行。</p>
+<p>即使后面我还准备进行几个调研，当时或许是对自己的压力过大，以及时间确实很紧张，所以便放弃了。</p>
+]]></content>
+      <categories>
+        <category>毕业设计（接本）</category>
+      </categories>
+      <tags>
+        <tag>文案</tag>
+        <tag>用户调研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果</title>
+    <url>/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/</url>
+    <content><![CDATA[<p>2020年，MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)，Hexo。</p>
+<h2 id="迁移具体步骤"><a class="markdownIt-Anchor" href="#迁移具体步骤"></a> 迁移具体步骤</h2>
+<h3 id="新计算机"><a class="markdownIt-Anchor" href="#新计算机"></a> 新计算机</h3>
+<h4 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h4>
+<h4 id="git"><a class="markdownIt-Anchor" href="#git"></a> Git</h4>
+<p>下载Git（官网），直接下载地址：<a href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">git-osx-installer</a></p>
+<p>打开终端<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，用户主目录<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>运行：</p>
+<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;，</code>将邮箱更换为你的邮箱。</p>
+<p>由于是新计算机，之前未生成过SSH key，可以回车。直到出现：</p>
+<pre class="highlight"><code class="bash">Your identification has been saved <span class="hljs-keyword">in</span> /Users/……/.ssh/id_rsa.
+Your public key has been saved <span class="hljs-keyword">in</span> /Users/……/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:
+The key’s randomart image is:
+</code></pre>
+<p>即可。id_rsa.pub为公钥，在下方进行粘贴。id_rsa为私钥，暂时不用管。</p>
+<p>进入Github，Settings，SSH and GPG keys，new SSH key。</p>
+<p><img src="https://sm.ms/image/CyjgU9dkMEZqeIb" alt="博客迁移.003.jpeg" /></p>
+<p><img src="https://i.loli.net/2020/01/28/wqDf1hKWz8RHip6.jpg" alt="博客迁移.004.jpeg" /></p>
+<h5 id="寻找id_rsapub"><a class="markdownIt-Anchor" href="#寻找id_rsapub"></a> 寻找id_rsa.pub</h5>
+<p>Finder-前往-文件夹，/Users/……/，出现id_rsa与id_rsa.pub两个文件，后者使用文本编辑[3]打开。</p>
+<p><img src="https://i.loli.net/2020/01/28/7uYn6OBLoywRiS9.jpg" alt="博客迁移.002.jpeg" /></p>
+<p>点击Add new提交，即可查看相应Key。</p>
+<h4 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> node.js</h4>
+<p>下载<a href="https://nodejs.org/en/">node.js</a>安装。</p>
+<p>输入<code>npm install hexo-cli -g</code>安装hexo。</p>
+<h3 id="报错"><a class="markdownIt-Anchor" href="#报错"></a> 报错</h3>
+<p>使用以下代码，详细参考链接可参考我之前文章：[Mac下重新部署博客记录<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>](<a href="https://felixxiong.github.io/2018/09/26/Mac%E4%B8%8B%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/">https://felixxiong.github.io/2018/09/26/Mac下重新部署博客记录/</a>)相应段落。</p>
+<p>可用：<code>sudo npm install -g hexo-cli</code></p>
+<p>不可用：<code>npm install hexo-cli -g</code>、<code>sudo npm install hexo-cli -g</code>，皆会报错。</p>
+<h2 id="旧计算机"><a class="markdownIt-Anchor" href="#旧计算机"></a> 旧计算机</h2>
+<p>拷贝<code>_config.yml，theme/，source/，scaffolds/，package.json，.gitignore</code>文件。</p>
+<p>此处我在个人文件夹里新建了Hexo的文件夹。</p>
+<h2 id="新计算机-2"><a class="markdownIt-Anchor" href="#新计算机-2"></a> 新计算机</h2>
+<p>终端，cd到新建的hexo文件夹内，进行npm的所需模块安装。此处步骤均为Hexo文件夹内操作。</p>
+<h3 id="npm模块安装"><a class="markdownIt-Anchor" href="#npm模块安装"></a> npm模块安装</h3>
+<p>根据知乎的参考链接，使用npm install进行安装，此处过程中出现安装下载Xcodebuild命令行工具。</p>
+<p>此时经历了一番波折（详见下面“问题”段落）且“洁癖发作”，使用命令进行卸载：<code>sudo npm uninstall npm -g</code>。</p>
+<p><img src="https://i.loli.net/2020/01/28/31gDP4vLNeGHpiX.png" alt="image.png" /></p>
+<p>之后再次安装node.js（目的为安装全局node里的npm？<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup>）。</p>
+<p>并进入Hexo文件夹，进行npm模块的安装：<code>sudo npm install</code>，后续确认npm版本，安装完毕。</p>
+<p><img src="https://i.loli.net/2020/01/28/Flc5gy6kOdMzWJL.png" alt="image.png" /></p>
+<h3 id="安装必要组件"><a class="markdownIt-Anchor" href="#安装必要组件"></a> 安装必要组件</h3>
+<p>使用hexo d来部署到Git：<code>npm install hexo-deployer-git --save</code>，稍后进行部署。</p>
+<p>使用RSS订阅：<code>npm install hexo-generator-feed --save</code></p>
+<p>建立站点地图：<code>npm install hexo-generator-sitemap --save</code></p>
+<p><img src="https://i.loli.net/2020/01/28/3GHfWeVkjyUIlLZ.png" alt="image.png" /></p>
+<p>配置组件相关，需要在GitHub上进行相应说明查找。</p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<p>熟悉的hexo g -d，需最后要输入GitHub账号与密码。</p>
+<p>若未开代理，相关错误详见下方段落。</p>
+<p><img src="https://i.loli.net/2020/01/28/5BVT6EqZCW8UHOA.jpg" alt="博客迁移.014.jpeg" /></p>
+<h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
+<h3 id="hexo文件夹的npm安装与卸载"><a class="markdownIt-Anchor" href="#hexo文件夹的npm安装与卸载"></a> Hexo文件夹的npm安装与卸载</h3>
+<p>根据知乎的参考链接，使用npm install进行安装（我们称为第一次安装），此处过程中出现安装下载Xcodebuild命令行工具。</p>
+<p>之后出现了一些问题，如下图所示。</p>
+<p><img src="https://i.loli.net/2020/01/28/ewjZ39bLkxQUsEa.jpg" alt="博客迁移.008.jpeg" /></p>
+<p>在粘贴尝试fix时发现了手误多粘贴了“fix them”，之后我不知如何退出bquote<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>，故重新打开终端进行修复。</p>
+<p>此处经历三个命令：<code>npm install</code>、<code>npm audit fix</code>、<code>npm audit fix —force</code>。</p>
+<p>卸载：这里使用的一个命令：<code>npm uninstall -g</code>，卸载失败，命令来源：如何卸载全局安装的包</p>
+<p><img src="https://i.loli.net/2020/01/28/Tn4l7hQLSmVsaYw.png" alt="image.png" /></p>
+<p>第二次安装：</p>
+<p>此时应该就安装完毕，但查看Hexo文件夹路径内无npm文件夹，以及没有核实npm版本，准备再次卸载。</p>
+<p>命令：<code>npm install</code></p>
+<p>最终卸载：</p>
+<p>命令：<code>sudo npm uninstall npm -g</code>，详见参考链接。</p>
+<p>此时进行<code>sudo npm install</code>，会出现sudo: npm: command not found，</p>
+<p>解决方案：查看相应路径/重新安装node.js，我这里选择了后者。</p>
+<p>再次安装node.js与npm：<code>sudo npm install</code>，之后检查npm版本，确认安装。</p>
+<h3 id="部署至github"><a class="markdownIt-Anchor" href="#部署至github"></a> 部署至GitHub</h3>
+<p>自动绑定的作者信息</p>
+<p>部署时出现以下信息，暂未知需要在哪里进行设置。</p>
+<pre><code>Your name and email address were configured automatically based on your username and hostname. Please check that they are accurate.
+
+You can suppress this message by setting them explicitly.
+
+Run the following command and follow the instructions in your editor to edit your configuration file: git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+git commit --amend --reset-author
+</code></pre>
+<p>问题</p>
+<p>部署至GitHub时出现此错误，挂代理即可解决。</p>
+<pre class="highlight"><code class="bash">Username <span class="hljs-keyword">for</span> <span class="hljs-string">'https://github.com'</span>: FelixXiong
+Password <span class="hljs-keyword">for</span> <span class="hljs-string">'https://FelixXiong@github.com'</span>: 
+remote: Invalid username or password.
+fatal: Authentication failed <span class="hljs-keyword">for</span> <span class="hljs-string">'https://github.com/FelixXiong/FelixXiong.github.io/'</span>
+FATAL Something<span class="hljs-string">'s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.&lt;anonymous&gt; (/Users/felixxiong/FelixXiongHexo/node_modules/hexo-deployer-git/node_modules/hexo-util/lib/spawn.js:51:21)
+    at ChildProcess.emit (events.js:223:5)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+</span></code></pre>
+<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
+<h3 id="hexo迁移与搭建"><a class="markdownIt-Anchor" href="#hexo迁移与搭建"></a> hexo迁移与搭建</h3>
+<p>知乎：<a href="https://www.zhihu.com/question/21193762/answer/103097754">使用hexo，如果换了电脑怎么更新博客？-skycrown的回答</a></p>
+<p>我的博客：<a href="https://felixxiong.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/">博客探索</a>分类</p>
+<h3 id="npm的卸载与安装"><a class="markdownIt-Anchor" href="#npm的卸载与安装"></a> npm的卸载与安装</h3>
+<p>卸载npm-简书：<a href="https://felixxiong.github.io/2020/01/28/2020%E5%B9%B4%EF%BC%8C%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4/">卸载再重装了npm</a></p>
+<p>安装npm-npm文档：<a href="https://www.npmjs.cn/getting-started/installing-node/">如何安装 npm 并管理 npm 版本</a></p>
+<p>Starkoverflow：<a href="https://stackoverflow.com/questions/31472755/sudo-npm-command-not-found">sudo: npm: command not found</a></p>
+<h3 id="hexo部署至github"><a class="markdownIt-Anchor" href="#hexo部署至github"></a> hexo部署至GitHub</h3>
+<p>CSDN：<a href="https://blog.csdn.net/zhangqqjuly/article/details/91446830">hexo d 部署报错求解决</a></p>
+<hr />
+<blockquote>
+<p>Last login: Sun Jan 19 20:23:06 on console</p>
+<p>example@ExampleMacBook-Pro-2 ~ %</p>
+</blockquote>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>如果你是英文系统，叫做Termial。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>用户主目录，此版本计算机为： <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>如果您了解，欢迎在下方进行留言。 <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>终端如何退出bquote成了我的待学事项。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>博客探索</category>
+        <category>Hexo</category>
+        <category>迁移</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -13476,143 +13713,6 @@ pip-autoremove jupyter -y
       <tags>
         <tag>一个人</tag>
         <tag>淘宝</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>毕业设计幻灯片</title>
-    <url>/2018/05/06/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%B9%BB%E7%81%AF%E7%89%87/</url>
-    <content><![CDATA[<p>在本次的毕业设计过程当中，总共只做了两个幻灯片当然衍生出的草稿非常之多。</p>
-<p>最终稿首先第一次是毕业设计前三周的汇报，还有一个则为最后的总汇报。</p>
-<p>以下是我制作这两个幻灯片的总结以及特色分享，即使在最后的时候没能展现给南艺的老师，可以在这里给读者展现也是很高兴的。</p>
-<p>在这个总结内，可以得出我制作<strong>工作汇报</strong>的幻灯片的分析、<strong>总结性分析</strong>的以及思考方法，以及在 keynote制作动画效果上的制作考虑。</p>
-<span id="more"></span>
-<h2 id="毕业设计第三周汇报"><a class="markdownIt-Anchor" href="#毕业设计第三周汇报"></a> 毕业设计第三周汇报</h2>
-<p>在第三周的时候，群里通知在第三和第四周之间会有南京艺术学院的老师过来，以及将会召开一次会进行毕业设计之前的选题回报的总结。</p>
-<p>以下是我汇报时候的想法。</p>
-<p>根据当时的指导教师CJ老师的说法：</p>
-<p>12月19日难以的老师开会，12月20日进行碰面的开会。</p>
-<h3 id="关于周总结工作的汇报"><a class="markdownIt-Anchor" href="#关于周总结工作的汇报"></a> 关于周总结工作的汇报</h3>
-<p>在汇报中，我大体的大纲也是目录：</p>
-<p><img src="https://i.loli.net/2018/05/21/5b025a35d882b.jpeg" alt="" /></p>
-<h4 id="时间"><a class="markdownIt-Anchor" href="#时间"></a> 时间</h4>
-<p>为了不错过每一次的会议以及时间，清晰地记录下每一次开会的内容以及布置的任务。</p>
-<p>完成使用绿色，未完成使用红色。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b025a1f0dd17.jpeg" alt="" /></p>
-<h3 id="毕业设计方向的选择"><a class="markdownIt-Anchor" href="#毕业设计方向的选择"></a> （毕业设计）方向的选择</h3>
-<p>这里建议和下方毕业答辩中之前的和正式的这一段一起看。</p>
-<p>因为有过很多次更名，使用透明度以及字号大小进行展示。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b0259fce6719.jpeg" alt="" /></p>
-<h4 id="工作内容展示"><a class="markdownIt-Anchor" href="#工作内容展示"></a> 工作内容展示</h4>
-<h5 id="调研与查阅资料"><a class="markdownIt-Anchor" href="#调研与查阅资料"></a> 调研与查阅资料</h5>
-<p>其中包括的内容</p>
-<ul>
-<li>标题</li>
-<li>资料与文档网页链接或者截图</li>
-<li>数据来源</li>
-</ul>
-<p>同一主题的资料目前找到的最好的显示方式就是上方为标题，下方为网页截图。</p>
-<p>这里的思考：尝试过使用很多弹幕的形式，最终弃用了。</p>
-<p>当然，在需要表明数据来源的时候我也会采用维基百科里相关网页或者公司的LOGO图片。</p>
-<p>其实在这里完全可以不用注明图片来源，因为首先没有强制要求，第二会被同学使用各种方式的利用（毕竟后面是竞争对手）。</p>
-<p>在主要是图片展示的页面，图片为主要背景，降低全部透明度或者在上方添加一层遮罩，主要标题为白色。</p>
-<p>之后进行动画上的滚动。</p>
-<h5 id="软件截图"><a class="markdownIt-Anchor" href="#软件截图"></a> 软件截图</h5>
-<p>使用软件截图之前考虑截图为全部图片，在隐私当中需要考虑添加遮罩。</p>
-<p>当时确实没有想的这么多。</p>
-<p>为突出重点，依然上方为标题，下方为重点截图（Eagle的侧边栏）。</p>
-<h3 id="看片台一览"><a class="markdownIt-Anchor" href="#看片台一览"></a> 看片台一览</h3>
-<p>以下是我全部的第三周汇报的幻灯片看片台一览作为快速展示。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b025ac11530f.jpeg" alt="" /></p>
-<h2 id="毕业答辩"><a class="markdownIt-Anchor" href="#毕业答辩"></a> 毕业答辩</h2>
-<p>诚然，我一直是如果制作幻灯片就会一直制作的无法停下来的那种，原本限定只需要制作30页的幻灯片，我一直做到了93页，如果可以，还会继续往下做，直到深夜十一二点，会做到一百多页。</p>
-<p>因为其中目前只有一些特色的点以及制作方法，我在这里进行介绍与我的思考和分享。</p>
-<h3 id="这四个版本"><a class="markdownIt-Anchor" href="#这四个版本"></a> 这四个版本</h3>
-<p>制作毕业设计答辩的幻灯片，也有四个版本。</p>
-<ol>
-<li>完全版：93页版本，其中部分效果摘自《新》。</li>
-<li>新：当时觉得多，尝试精简之后却没有用上的版本，17页的版本。</li>
-<li>简化版：目录和简化版一致，当时重新开的一个精简版本。</li>
-<li>正式版：经过完全版精简之后，答辩使用的的44页的版本。</li>
-</ol>
-<p>这三个版本可以说是一个很全面，一个进行了简化，我很感谢我自己没有将简化的版本删除——因为这可以为我考虑得更加全面进行加分。</p>
-<p>以下是三个版本的目录截图（由于简化版和简化版新目录一致，所以放一个。）</p>
-<p><img src="https://i.loli.net/2018/05/21/5b0259dd50012.jpeg" alt="" /></p>
-<h3 id="动画"><a class="markdownIt-Anchor" href="#动画"></a> 动画</h3>
-<p>由于只有三分钟的时间，将一些动画给砍掉了，虽然觉得自己极为可惜，但不得不参照现实的规定进行制作。</p>
-<h3 id="完全版的制作"><a class="markdownIt-Anchor" href="#完全版的制作"></a> 完全版的制作</h3>
-<p>制作过程中，有两个时间段。这里重点说完全版和正式版，其中涵盖草稿和简化版，会标出。</p>
-<h3 id="3月31日完全版的初制作"><a class="markdownIt-Anchor" href="#3月31日完全版的初制作"></a> 3月31日：完全版的初制作</h3>
-<h4 id="之前的和正式的"><a class="markdownIt-Anchor" href="#之前的和正式的"></a> 之前的和正式的</h4>
-<h5 id="确立所有的制作时间"><a class="markdownIt-Anchor" href="#确立所有的制作时间"></a> 确立所有的制作时间</h5>
-<p>最初初的想法是，确立所有的制作时间，以最实诚的方式进行展现，</p>
-<p><strong>摘自4月22日重新创建的《毕业设计答辩幻灯片草稿》。</strong></p>
-<p>这里的时间有些问题，因为当时和指导教师的记录为3月31日。</p>
-<p>效果图如下：</p>
-<p>这是keynote效果图：</p>
-<p><img src="https://i.loli.net/2018/05/21/5b02599bbd581.jpeg" alt="" /></p>
-<p>这是视频演示：</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04635330ffe.gif" alt="" /></p>
-<p>由于这种原因如果给答辩老师们看，一定会说：</p>
-<blockquote>
-<p>不专注，不同的改选题，没有明确一个方向去制作。</p>
-</blockquote>
-<p>故最后便弃用了这个方案，所以在之后以下的幻灯片制作样式也未采取。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b025c54cb0d0.jpeg" alt="" /></p>
-<h3 id="4月24日正式版的想法以及动画"><a class="markdownIt-Anchor" href="#4月24日正式版的想法以及动画"></a> 4月24日：正式版的想法以及动画</h3>
-<p>当天晚上在苏州制作幻灯片。</p>
-<p>(此处应该有照片)</p>
-<p>下面分享一些当时在毕业答辩时期特别想展示的一些动画以及幻灯片的特色。<br />
-以下次序根据上方目录进行排列。</p>
-<h4 id="应用的产品信息架构思维导图"><a class="markdownIt-Anchor" href="#应用的产品信息架构思维导图"></a> 应用的产品信息架构思维导图</h4>
-<p>我准备说，</p>
-<blockquote>
-<p>这是我当时的思维导图，其中左边是关于海报的思维导图。我们放大看一下。</p>
-</blockquote>
-<p><img src="https://i.loli.net/2018/05/21/5b0258bdb3fed.gif" alt="" /></p>
-<p>这里同样，学校的指导教师说，</p>
-<blockquote>
-<p>南艺老师没这么多时间看你的这些动画，这些都不需要。</p>
-</blockquote>
-<h5 id="制作过程"><a class="markdownIt-Anchor" href="#制作过程"></a> <a href="#%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B">制作过程</a></h5>
-<p>这是我当时的想法：</p>
-<blockquote>
-<p>这是我的设计路线图。由于我设计的工作众多，我重点讲这几个部分，首先是，然后是，还有这个，以及最后是……</p>
-</blockquote>
-<p>这里的动画使用keynote的线条制作。最后将不重要的部分降低透明度进行表现。</p>
-<p>这是视频演示。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b0259121125f.gif" alt="" /></p>
-<h5 id="logo的演变"><a class="markdownIt-Anchor" href="#logo的演变"></a> LOGO的演变</h5>
-<p>关于logo的演变，我参考的是锤子发布会上LOGO演变的过程。</p>
-<p>转送门：<a href="https://www.bilibili.com/video/av9389275/">锤子智能手机操作系统发布会完整版</a>里的116:18秒。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b02610ddfd84.png" alt="" /></p>
-<p>这是我的幻灯片的视频演示，主要描述的为“健康模块”以及“主要LOGO”的演变。</p>
-<p>主要LOGO：</p>
-<p><img src="https://i.loli.net/2018/05/20/5b00fbeb60706.gif" alt="" /></p>
-<p>健康模块LOGO：</p>
-<p><img src="https://i.loli.net/2018/05/21/5b025821214f2.gif" alt="" /></p>
-<h5 id="次要logo的演变以及组件扩散"><a class="markdownIt-Anchor" href="#次要logo的演变以及组件扩散"></a> 次要LOGO的演变以及组件扩散</h5>
-<p><strong>摘自《新》</strong>（简化版本，由于当时需要快速制作好进行提交，所以将这个动画放在这里，即使这是简化版本）</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04e2a9d29a6.gif" alt="" /></p>
-<p>这里不需要说如何进行制作，总结性文章掌握的技能我都掌握，并不是对Keynote小白用户进行科普的文章。</p>
-<p>在制作的过程中尝试将里面的动画迁移至简化版，将以上内容进行保留，得到如下错误图示。</p>
-<p>在此过程中，一些元素复制到其他的Keynote中会出现问号，目前暂未找到解决方案以及原因。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b0257349765f.jpeg" alt="" /></p>
-<h5 id="动态效果组建展示"><a class="markdownIt-Anchor" href="#动态效果组建展示"></a> 动态效果组建展示</h5>
-<p>在这里当时的回忆是希望可以现场演示给老师看我制作的交互。</p>
-<p>于是在这里就牵扯到PPT文件夹中包含GIF的事情，不知是否符合要求。</p>
-<p><img src="https://i.loli.net/2018/05/23/5b04e7ab5dfaf.gif" alt="" /></p>
-<h3 id="看片台一览-2"><a class="markdownIt-Anchor" href="#看片台一览-2"></a> 看片台一览</h3>
-<p>以下是之前初始完全版本的以及实际的毕业答辩幻灯片的看片台一览，新以及简化版本的因为未成形就没有放于其中。</p>
-<p><img src="https://i.loli.net/2018/05/21/5b025761eb96c.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/05/21/5b025771b5817.jpeg" alt="" /></p>
-]]></content>
-      <categories>
-        <category>毕业设计（接本）</category>
-      </categories>
-      <tags>
-        <tag>Keynote页面展示</tag>
-        <tag>总结</tag>
-        <tag>幻灯片</tag>
       </tags>
   </entry>
   <entry>
@@ -16619,106 +16719,6 @@ dependencies </span>&#123;
         <tag>设计</tag>
         <tag>广州</tag>
         <tag>毕业展</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用全局变量判断用户是否登录</title>
-    <url>/2021/05/08/%E4%BD%BF%E7%94%A8%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="判断用户是否登录"><a class="markdownIt-Anchor" href="#判断用户是否登录"></a> 判断用户是否登录</h2>
-<p>在项目中有这样的需求，类似于小鸡辞典小程序的显示用户昵称。</p>
-<p>目前使用全局变量来实现，最终会使用其他方式实现。</p>
-<p>在这里记录下自己的尝试方案，但目前暂未解决，后续要填补这个坑。</p>
-<span id="more"></span>
-<p>app.js：</p>
-<pre class="highlight"><code class="js">App(&#123;
-  <span class="hljs-attr">onLaunch</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; &#125;
-  
-  <span class="hljs-attr">globalData</span>:&#123; <span class="hljs-attr">userInfos</span>:<span class="hljs-literal">null</span> &#125; <span class="hljs-comment">/*定义全局变量userInfos，为了不与用户信息重叠，加了s*/</span>
-  
-&#125;)
-</code></pre>
-<p>在获取用户信息的登录页面（假设login.js）：</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> app = getApp(); <span class="hljs-comment">//获取全局app</span>
-
-Page(&#123;
-
-  <span class="hljs-attr">data</span>: &#123;
-    <span class="hljs-attr">userInfos</span>:<span class="hljs-string">''</span>,  <span class="hljs-comment">//定义的全局变量</span>
-    <span class="hljs-attr">userInfo</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//使用新接口获得用户信息的两个方法，此处不展开</span>
-    <span class="hljs-attr">hasUserInfo</span>:<span class="hljs-literal">false</span>,
-  &#125;,
-  
-  getUserProfile()&#123; 
-    wx.getUserProfile(&#123;
-      <span class="hljs-attr">desc</span>:<span class="hljs-string">'请登录'</span>,
-      <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'获取用户信息成功'</span>,res)
-        <span class="hljs-keyword">let</span> userinfos = res.userInfo <span class="hljs-comment">//登录需要的用户信息</span>
-        <span class="hljs-keyword">var</span> globalUserInfos = app.globalData.userInfos <span class="hljs-comment">//全局变量的用户信息</span>
-        wx.setStorageSync(<span class="hljs-string">'userinfos'</span>, userinfos)
-        <span class="hljs-keyword">this</span>.setData(&#123;
-          <span class="hljs-attr">userInfos</span>:globalUserInfos,  <span class="hljs-comment">//使用globalUserInfos，目的为了用户信息赋值给全局变量</span>
-          <span class="hljs-attr">userInfo</span>:userinfos, <span class="hljs-comment">//登录需要的用户信息</span>
-          <span class="hljs-attr">hasUserInfo</span>:<span class="hljs-literal">true</span>
-        &#125;)
-      &#125;,
-      <span class="hljs-attr">fail</span>:<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'获取用户信息失败'</span>,res)
-      &#125;
-    &#125;)
-  &#125;,
-
-</code></pre>
-<p>在需要判断用户是否登录的页面（假设commit.js）：</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> app = getApp(); <span class="hljs-comment">//获取全局app</span>
-
-Page(&#123;
-
-  <span class="hljs-attr">data</span>: &#123;
-    <span class="hljs-attr">userInfos</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//全局变量的用户信息:问题代码处</span>
-    <span class="hljs-attr">username</span>:<span class="hljs-string">''</span>, <span class="hljs-comment">//用户名</span>
-  &#125;,
-  
-  ......
-  
-  onLoad: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123; <span class="hljs-comment">//在onload方法中赋值给全局变量userInfos</span>
-    <span class="hljs-keyword">this</span>.setData(&#123;
-      <span class="hljs-attr">userInfos</span>:app.globalData.userInfos
-    &#125;)
-  &#125;,
-
-  getUserName()&#123;
-    <span class="hljs-keyword">this</span>.setData(&#123;
-      <span class="hljs-attr">username</span>:userInfos.nickName <span class="hljs-comment">//赋值给用户昵称</span>
-    &#125;)
-  &#125;,
-
-  commit()&#123;
-  <span class="hljs-keyword">if</span>( userInfos = <span class="hljs-literal">null</span>)&#123; <span class="hljs-comment">//如果GlobaluserInfo为空，提示需要登录</span>
-    wx.showModal(&#123;
-      <span class="hljs-attr">title</span>: <span class="hljs-string">'请登录'</span>,
-      <span class="hljs-attr">content</span>: <span class="hljs-string">'请登陆后再发表'</span>,
-    &#125;<span class="hljs-keyword">else</span>&#123; 
-     <span class="hljs-keyword">const</span> db = wx.cloud.database()
-    	db.collection(<span class="hljs-string">'Sayings'</span>).add(&#123; 
-      <span class="hljs-attr">data</span>:&#123;
-       ...
-       username:GlobaluserInfo <span class="hljs-comment">//把全局变量赋值给username</span>
-      &#125;, &#125;
-  	&#125;)
-  &#125;
-  
-&#125;
-</code></pre>
-<p>目前报错：userInfos is not defined</p>
-]]></content>
-      <categories>
-        <category>编程开发</category>
-        <category>前端</category>
-        <category>微信小程序</category>
-      </categories>
-      <tags>
-        <tag>变量</tag>
       </tags>
   </entry>
 </search>
