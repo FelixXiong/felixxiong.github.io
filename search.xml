@@ -776,6 +776,97 @@ mRecycleView.setLayoutManager(linearLayoutManager);
       </tags>
   </entry>
   <entry>
+    <title>Automator(自动操作)入门和网站导航</title>
+    <url>/2018/10/04/Automator(%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C)%E5%85%A5%E9%97%A8%E5%92%8C%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</url>
+    <content><![CDATA[<p>自工作以来就在做着重复的活，想着无比需要提升效率，不然做着一眼望得到头的死的工作以及工资。</p>
+<p>拒绝重复劳动，在DELL M4040卡成翔的同时，想起了Mac中的”其他“文件夹里的Automator。</p>
+<p>同workflow一样，可以提升工作效率的我都会毫不犹豫的研究，此为入门记录。</p>
+<span id="more"></span>
+<h2 id="打造工作时可以使用的workflow"><a class="markdownIt-Anchor" href="#打造工作时可以使用的workflow"></a> 打造工作时可以使用的workflow</h2>
+<p>培训的过程当中就发现可以有很多步骤可以进行自动化操作，终于在10月的时候进行流程上的制作了。</p>
+<p>如果根据我以往的文章以及写微信公众号的思路，首先给大家介绍一下什么是自动操作，他和workflow的关系何在。因为是博客，所以便是自己过程的一个记录了。</p>
+<h2 id="automator"><a class="markdownIt-Anchor" href="#automator"></a> Automator</h2>
+<p>根据自己工作笔记以及实际操作，发现了非常多的可以自动化的操作。</p>
+<h3 id="相关入门以及功能展示链接"><a class="markdownIt-Anchor" href="#相关入门以及功能展示链接"></a> 相关入门以及功能展示链接</h3>
+<ol>
+<li><a href="https://sspai.com/post/36667">Automator 简单介绍及入门玩法 | Matrix 精选</a></li>
+<li><a href="https://sspai.com/post/27601">瞬间提升效率的三个 Automator 流程：加密 PDF 文档、生成图片缩略图、自动开启 VPN</a></li>
+<li><a href="https://bbs.feng.com/forum.php?mod=viewthread&amp;tid=8045539&amp;extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1">【Automator】炮筒机器人流程实例</a></li>
+</ol>
+<h3 id="自己在工作流里会用到的"><a class="markdownIt-Anchor" href="#自己在工作流里会用到的"></a> 自己在工作流里会用到的</h3>
+<ol>
+<li>
+<p>创建缩略图</p>
+<p>涉及操作：创建缩略图图像（规定了标准的图像像素要求）、缩放图像（更精确的缩放需求）</p>
+</li>
+<li>
+<p>批量重命名照片</p>
+<p>涉及操作：获得文件夹内容（选取文件夹）、给 Finder 项目重新命名-连续编号</p>
+</li>
+</ol>
+<h2 id="基础"><a class="markdownIt-Anchor" href="#基础"></a> 基础</h2>
+<p>参阅了不少文章以及链接，</p>
+<p>新建自动操作流程的时候大概会有几大类，以下是目前看文章多提到的。</p>
+<ol>
+<li>应用程序：双击可自动运行的流程</li>
+<li>文件夹操作：将文件拖到指定文件夹上自动进行的操作</li>
+<li>工作流程：自己只喜欢新建这个，因为可直接进行编辑以及手动运行</li>
+</ol>
+<h2 id="交互"><a class="markdownIt-Anchor" href="#交互"></a> 交互</h2>
+<p>和workflow一样，仅仅需要拖拽即可实现自动化操作，我轻而易举的就制作出了工作中的第一个步骤。</p>
+<h2 id="值得注意的地方"><a class="markdownIt-Anchor" href="#值得注意的地方"></a> 值得注意的地方</h2>
+<p>分类中“互联网”：没有ftp的选项，该选项位于“开发者”。</p>
+<h3 id="关于第三方应用程序"><a class="markdownIt-Anchor" href="#关于第三方应用程序"></a> 关于第三方应用程序</h3>
+<p>第三方应用，目前只安装了Kaleidoscope（一个文稿对比应用，macOS）支持。</p>
+<p>文稿应用：不可插入Microsoft Office以及pages、numbers文件，但keynote演示文稿却可以。</p>
+<p>资源中也只可以插入媒体。</p>
+<p>根据评论得知，如果有这样的需求<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，则可以考虑使用Excel里的VBA。</p>
+<h2 id="可能出现的错误"><a class="markdownIt-Anchor" href="#可能出现的错误"></a> 可能出现的错误</h2>
+<ol>
+<li>
+<p>未获得数据</p>
+<p>此错误通常会在指定某项目（访达、邮件）中无法获得时出现。</p>
+</li>
+<li>
+<p>OsState</p>
+<p>结合Applescript时出现。</p>
+</li>
+</ol>
+<p>后续会更新。如果你有更好的扛炮使用的方法，欢迎评论留言。</p>
+<hr />
+<blockquote>
+<p>想请教一下，关于重命名文件，能否使用 Automator 将 Excel 文件中的一列文本数据，批量命名给一批文件呢？我看到只有批量加日期、编号之类的，而项目名要么统一不变要么就统一变为相同的，不知道可不可以？</p>
+<p>Excel上用VBA就好了啊。<a href="https://sspai.com/user/832574">Mayland</a></p>
+</blockquote>
+<p>此评论来源第一条链接。</p>
+<h2 id="网站导航"><a class="markdownIt-Anchor" href="#网站导航"></a> 网站导航</h2>
+<p>Apple Script的网站导航请参见：</p>
+<p>苹果的官方支持链接：</p>
+<p><a href="https://support.apple.com/en-us/HT202905">Use AppleScript to automate tasks in iWork for Mac</a></p>
+<p>第三方网站：</p>
+<p><a href="https://iworkautomation.com/index.html">iWork Automation</a></p>
+<p><a href="http://macosxautomation.com/">Mac OS X Automation</a></p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这样的需求： <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>工作流</category>
+        <category>Automator</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+        <tag>入门</tag>
+        <tag>效率</tag>
+        <tag>导航</tag>
+        <tag>自动操作/Automator</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AppleScript使用实例及参考</title>
     <url>/2018/11/08/Apple-Script%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%E5%8F%8A%E5%8F%82%E8%80%83/</url>
     <content><![CDATA[<p>此为Apple Script实例以及参考，欢迎评论留言添加你所知道的AppleScript实例以及网站。</p>
@@ -919,100 +1010,9 @@ end tell
         <category>Apple Script</category>
       </categories>
       <tags>
+        <tag>入门</tag>
+        <tag>导航</tag>
         <tag>Script脚本</tag>
-        <tag>入门</tag>
-        <tag>导航</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Automator(自动操作)入门和网站导航</title>
-    <url>/2018/10/04/Automator(%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C)%E5%85%A5%E9%97%A8%E5%92%8C%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</url>
-    <content><![CDATA[<p>自工作以来就在做着重复的活，想着无比需要提升效率，不然做着一眼望得到头的死的工作以及工资。</p>
-<p>拒绝重复劳动，在DELL M4040卡成翔的同时，想起了Mac中的”其他“文件夹里的Automator。</p>
-<p>同workflow一样，可以提升工作效率的我都会毫不犹豫的研究，此为入门记录。</p>
-<span id="more"></span>
-<h2 id="打造工作时可以使用的workflow"><a class="markdownIt-Anchor" href="#打造工作时可以使用的workflow"></a> 打造工作时可以使用的workflow</h2>
-<p>培训的过程当中就发现可以有很多步骤可以进行自动化操作，终于在10月的时候进行流程上的制作了。</p>
-<p>如果根据我以往的文章以及写微信公众号的思路，首先给大家介绍一下什么是自动操作，他和workflow的关系何在。因为是博客，所以便是自己过程的一个记录了。</p>
-<h2 id="automator"><a class="markdownIt-Anchor" href="#automator"></a> Automator</h2>
-<p>根据自己工作笔记以及实际操作，发现了非常多的可以自动化的操作。</p>
-<h3 id="相关入门以及功能展示链接"><a class="markdownIt-Anchor" href="#相关入门以及功能展示链接"></a> 相关入门以及功能展示链接</h3>
-<ol>
-<li><a href="https://sspai.com/post/36667">Automator 简单介绍及入门玩法 | Matrix 精选</a></li>
-<li><a href="https://sspai.com/post/27601">瞬间提升效率的三个 Automator 流程：加密 PDF 文档、生成图片缩略图、自动开启 VPN</a></li>
-<li><a href="https://bbs.feng.com/forum.php?mod=viewthread&amp;tid=8045539&amp;extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1">【Automator】炮筒机器人流程实例</a></li>
-</ol>
-<h3 id="自己在工作流里会用到的"><a class="markdownIt-Anchor" href="#自己在工作流里会用到的"></a> 自己在工作流里会用到的</h3>
-<ol>
-<li>
-<p>创建缩略图</p>
-<p>涉及操作：创建缩略图图像（规定了标准的图像像素要求）、缩放图像（更精确的缩放需求）</p>
-</li>
-<li>
-<p>批量重命名照片</p>
-<p>涉及操作：获得文件夹内容（选取文件夹）、给 Finder 项目重新命名-连续编号</p>
-</li>
-</ol>
-<h2 id="基础"><a class="markdownIt-Anchor" href="#基础"></a> 基础</h2>
-<p>参阅了不少文章以及链接，</p>
-<p>新建自动操作流程的时候大概会有几大类，以下是目前看文章多提到的。</p>
-<ol>
-<li>应用程序：双击可自动运行的流程</li>
-<li>文件夹操作：将文件拖到指定文件夹上自动进行的操作</li>
-<li>工作流程：自己只喜欢新建这个，因为可直接进行编辑以及手动运行</li>
-</ol>
-<h2 id="交互"><a class="markdownIt-Anchor" href="#交互"></a> 交互</h2>
-<p>和workflow一样，仅仅需要拖拽即可实现自动化操作，我轻而易举的就制作出了工作中的第一个步骤。</p>
-<h2 id="值得注意的地方"><a class="markdownIt-Anchor" href="#值得注意的地方"></a> 值得注意的地方</h2>
-<p>分类中“互联网”：没有ftp的选项，该选项位于“开发者”。</p>
-<h3 id="关于第三方应用程序"><a class="markdownIt-Anchor" href="#关于第三方应用程序"></a> 关于第三方应用程序</h3>
-<p>第三方应用，目前只安装了Kaleidoscope（一个文稿对比应用，macOS）支持。</p>
-<p>文稿应用：不可插入Microsoft Office以及pages、numbers文件，但keynote演示文稿却可以。</p>
-<p>资源中也只可以插入媒体。</p>
-<p>根据评论得知，如果有这样的需求<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，则可以考虑使用Excel里的VBA。</p>
-<h2 id="可能出现的错误"><a class="markdownIt-Anchor" href="#可能出现的错误"></a> 可能出现的错误</h2>
-<ol>
-<li>
-<p>未获得数据</p>
-<p>此错误通常会在指定某项目（访达、邮件）中无法获得时出现。</p>
-</li>
-<li>
-<p>OsState</p>
-<p>结合Applescript时出现。</p>
-</li>
-</ol>
-<p>后续会更新。如果你有更好的扛炮使用的方法，欢迎评论留言。</p>
-<hr />
-<blockquote>
-<p>想请教一下，关于重命名文件，能否使用 Automator 将 Excel 文件中的一列文本数据，批量命名给一批文件呢？我看到只有批量加日期、编号之类的，而项目名要么统一不变要么就统一变为相同的，不知道可不可以？</p>
-<p>Excel上用VBA就好了啊。<a href="https://sspai.com/user/832574">Mayland</a></p>
-</blockquote>
-<p>此评论来源第一条链接。</p>
-<h2 id="网站导航"><a class="markdownIt-Anchor" href="#网站导航"></a> 网站导航</h2>
-<p>Apple Script的网站导航请参见：</p>
-<p>苹果的官方支持链接：</p>
-<p><a href="https://support.apple.com/en-us/HT202905">Use AppleScript to automate tasks in iWork for Mac</a></p>
-<p>第三方网站：</p>
-<p><a href="https://iworkautomation.com/index.html">iWork Automation</a></p>
-<p><a href="http://macosxautomation.com/">Mac OS X Automation</a></p>
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>这样的需求： <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>工作流</category>
-        <category>Automator</category>
-      </categories>
-      <tags>
-        <tag>软件</tag>
-        <tag>入门</tag>
-        <tag>导航</tag>
-        <tag>效率</tag>
-        <tag>自动操作/Automator</tag>
       </tags>
   </entry>
   <entry>
@@ -1048,8 +1048,8 @@ end tell
         <category>Automator</category>
       </categories>
       <tags>
-        <tag>Script脚本</tag>
         <tag>自动操作/Automator</tag>
+        <tag>Script脚本</tag>
         <tag>工作流</tag>
         <tag>目录</tag>
       </tags>
@@ -2124,6 +2124,68 @@ hexo d //使用此命令进行部署
       </tags>
   </entry>
   <entry>
+    <title>Pixel 1代PE系统降级至Android 10</title>
+    <url>/2021/06/08/Pixel-1%E4%BB%A3PE%E7%B3%BB%E7%BB%9F%E9%99%8D%E7%BA%A7%E8%87%B3Android-10/</url>
+    <content><![CDATA[<p>为了做Android开发（这个话题已经说了很久了，谁知我又因为一名异性网友而回到了iOS），在闲鱼购买了Nexus 5X与Pixel 1。</p>
+<p>Nexus 5X有虚焊（bootloop）的问题，Pixel有无法连接上网络的问题。</p>
+<p>Nexus 5X挂上了闲鱼后较为顺利的卖出后，我寄期望于后者，开始回退Android 10。</p>
+<h2 id="pe不香么"><a class="markdownIt-Anchor" href="#pe不香么"></a> PE不香么？</h2>
+<p>有人脸识别，主菜单还有近期/预测应用等功能。</p>
+<p>为了连接上Wi-Fi使用基础的手机功能，这也是我不得已而牺牲更多的体验。</p>
+<h2 id="回退过程"><a class="markdownIt-Anchor" href="#回退过程"></a> 回退过程</h2>
+<p>整个过程很简单，需要下载相应的官方包：<a href="https://developers.google.cn/android/images">Factory Images for Nexus and Pixel Devices</a></p>
+<p>之后将手机连接电脑，开启USB调试。</p>
+<p>官方提供了网页上的<a href="https://flash.android.com/">Android Flash Tool</a>，很遗憾在<a href="https://source.android.google.cn/setup/contribute/flash#device-requirements">Device requirements</a>页面看到，不支持Pixel 1。</p>
+<p>于是得通过adb命令进行降级。</p>
+<h3 id="安装adb调试桥"><a class="markdownIt-Anchor" href="#安装adb调试桥"></a> 安装adb调试桥</h3>
+<ol>
+<li>
+<p>两个系统相同的platform-tools文件夹，这个文件夹则是Android SDK必须的文件。</p>
+<p>之前使用Surface Go时，可以使用PowerShell，使用管理员权限打开，在文件夹内进行操作。（如果是PS,则需要添加<code>./adb</code>）</p>
+<p>在macOS上，则使用终端，cd定位到安全的platform-tools所在路径。</p>
+</li>
+<li>
+<p>安装调试桥</p>
+<p>如果安装了Android Studio，偏好设置-搜索sdk即可查看路径，添加到终端的环境变量中。</p>
+<p>如果没有安装Android Studio，则需要在<a href="">这个页面</a>下载上述的platform-tools文件。</p>
+</li>
+<li>
+<p>添加环境变量</p>
+<p>此处仅声明在Mac上的方法：</p>
+<ol>
+<li>如果你的终端是bash，则需要一个<code>.bash_profile</code>文件。</li>
+<li>如果你的终端是zch，需要<code>.zshrc</code>文件，这两个都是隐藏的。</li>
+</ol>
+</li>
+<li>
+<p>安装后检测adb</p>
+<pre class="highlight"><code class="bash">adb version
+</code></pre>
+<p>使用<code>adb device</code>查看是否开启设备调试，如果出现一些字符（设备编号等），则成功。</p>
+</li>
+</ol>
+<h2 id="回退踩坑"><a class="markdownIt-Anchor" href="#回退踩坑"></a> 回退踩坑</h2>
+<p>定位文件与执行flash.sh时，不应当使用双击打开运行，应当使用  路径+flash.sh运行。</p>
+<p>我的博客不太清楚确定使用哪一家的图床，之前使用的是sm.ms的服务，由于数据安全性与倾诉欲的丧失，后续的文章可能不会有更多的图片。</p>
+<h2 id="回退完毕"><a class="markdownIt-Anchor" href="#回退完毕"></a> 回退完毕</h2>
+<p>由于购买的已经解锁了BL（bootloader），但自己刷好之后还没有使用下列命令锁上：</p>
+<pre class="highlight"><code class="bash">fastboot flashing lock
+</code></pre>
+<hr />
+<p><a href="https://juejin.cn/post/6844903645289398280">ADB 操作命令详解及用法大全</a></p>
+<p><a href="https://qastack.cn/programming/34532063/finding-android-sdk-on-mac-and-adding-to-path">在Mac上找到Android SDK并添加到PATH</a></p>
+]]></content>
+      <categories>
+        <category>产品</category>
+        <category>折腾与探索</category>
+        <category>Google Pixel</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Pixel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python爬虫初见</title>
     <url>/2019/05/24/Python%E7%88%AC%E8%99%AB%E5%88%9D%E8%A7%81/</url>
     <content><![CDATA[<p>继之前做新媒体运营实习的更新小视频开始研究AppleScript，</p>
@@ -3097,81 +3159,6 @@ adapter.finishUpdate(container);
       </categories>
   </entry>
   <entry>
-    <title>W0rdPre$$的安全问题</title>
-    <url>/2020/04/12/W0rdPre$$%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>昨晚整理博客插件，使用joplin撰写笔记时，发现了入侵的迹象——通过Wordfence查看攻击。</p>
-<p>我第一感受是，真的有这么多“闲人“或机器人暴力破解吗？其中还有阿里云，在杭州。</p>
-<span id="more"></span>
-<h2 id="关于xmlrpcphp"><a class="markdownIt-Anchor" href="#关于xmlrpcphp"></a> 关于xmlrpc.php</h2>
-<p>这个接口的作用在<a href="https://www.hostinger.com/tutorials/xmlrpc-wordpress">这个链接</a>中说很清楚：</p>
-<blockquote>
-<p>XML-RPC is a feature of WordPress that enables data to be  transmitted, with HTTP acting as the transport mechanism and XML as the  encoding mechanism. Since WordPress isn’t a self-enclosed system and  occasionally needs to communicate with other systems, this was sought to handle that job.</p>
-<p>What Is Xmlrpc.php in WordPress and Why You Should Disable It</p>
-</blockquote>
-<p>黑客可通过这个接口，反复尝试账号及密码进行暴力破解并访问站点。</p>
-<h2 id="查看历史"><a class="markdownIt-Anchor" href="#查看历史"></a> 查看历史</h2>
-<p>通过Wordfence[ref]关于检测安全的插件有很多，我此处不一一列举[/ref]。查看被入侵的历史，入口为：Wordfence-Tools-LiveTraffic。</p>
-<p>屏蔽之后的IP可在Firewall-blocking中找到。</p>
-<h2 id="防卫与解决"><a class="markdownIt-Anchor" href="#防卫与解决"></a> 防卫与解决</h2>
-<p>根据网友和搜索结果提供的解决方案：</p>
-<ol>
-<li>完全禁用此接口：安装 Disable XML-RPC WP插件。</li>
-<li>部分禁用此接口，可正常使用相关插件：添加代码，参考 链接1。</li>
-<li>安装**<a href="http://wordpress.org/plugins/login-security-solution/">Login Security Solutin</a>**插件</li>
-<li>启用WordPress二次验证</li>
-</ol>
-<h3 id="防卫正确屏蔽ipip段"><a class="markdownIt-Anchor" href="#防卫正确屏蔽ipip段"></a> 防卫：“正确”屏蔽IP/IP段</h3>
-<p>通过Whois域名查询[ref]：关于什么是Whois，我写在了我的笔记里[/ref]，发现相应的地理位置，便于进行适当IP段的屏蔽：</p>
-<blockquote>
-<p>有大量翻墙用户的梯子都是服务器段IP，这些翻墙用户就看不了</p>
-</blockquote>
-<blockquote>
-<p>我说的是被屏蔽攻击我的那些-xmlrpc.php</p>
-</blockquote>
-<blockquote>
-<p>那最好还是先查清楚IP，不要屏蔽IP段，因为你说不定就把某服务器的翻墙用户全屏蔽了</p>
-</blockquote>
-<h3 id="解决"><a class="markdownIt-Anchor" href="#解决"></a> 解决</h3>
-<p>我决定完全禁用xmlrpc.php。</p>
-<h3 id="安装插件前先检测是否启用"><a class="markdownIt-Anchor" href="#安装插件前先检测是否启用"></a> 安装插件前，先检测是否启用</h3>
-<p>参考链接1中给出了一个检测网址，如果您收到成功的消息，则说明已经启用：<br />
-<a href="https://xmlrpc.eritreo.it/">https://xmlrpc.eritreo.it/</a></p>
-<p>我的带了通过的结果，直接安装插件。</p>
-<h3 id="http-response-503"><a class="markdownIt-Anchor" href="#http-response-503"></a> HTTP Response 503</h3>
-<p>在部分操作中，我访问我的站点与插件界面，被此安全工具阻止，看起来正是“别人攻击我”出现的页面，但无法确定。</p>
-<p><img src="http://felixxiong.com/wp-content/uploads/2020/04/WordPress%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.001-2-1024x576.jpeg" alt="img" /></p>
-<p>我访问站点时被阻止的画面</p>
-<p>点击提供的链接，其中关于屏蔽的描述段落：</p>
-<blockquote>
-<p><strong>The following instructions are for site owners. If you are  trying to regain access to a site that you do not manage, please contact the site owner or access.</strong></p>
-<p>If you locked yourself out</p>
-</blockquote>
-<h2 id="except-xmlrpcphp-attacks"><a class="markdownIt-Anchor" href="#except-xmlrpcphp-attacks"></a> Except xmlrpc.php attacks</h2>
-<p>撰写本文的时候已经安装了解决方案里的第一个完全禁用的插件，再次发现了其他的“攻击“：</p>
-<p>wp-json/trx_addons/v2/get/sc_layout?sc=wp_insert_user&amp;role=administrator&amp;user_login…</p>
-<p>但点进去是登陆页。</p>
-<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
-<p>Xmlrpc.php攻击</p>
-<ol>
-<li><a href="https://www.hostinger.com/tutorials/xmlrpc-wordpress">What Is Xmlrpc.php in WordPress and Why You Should Disable It</a></li>
-<li><a href="https://blog.tigertech.net/posts/blocking-wordpress-xmlrpc-password-attempts/">Blocking more WordPress xmlrpc.php attacks</a></li>
-<li><a href="https://www.freebuf.com/articles/web/38861.html">利用xmlrpc.php对WordPress进行暴力破解攻击</a></li>
-</ol>
-<p>Wordfence</p>
-<ol>
-<li><a href="https://www.wordfence.com/help/blocking/troubleshooting/#if-you-locked-yourself-out">Troubleshooting</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客探索</category>
-        <category>WordPress</category>
-      </categories>
-      <tags>
-        <tag>安全</tag>
-        <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows7忘记登陆密码进入系统方法总结</title>
     <url>/2018/11/26/Windows7%E5%BF%98%E8%AE%B0%E7%99%BB%E9%99%86%E5%AF%86%E7%A0%81%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>这篇文章是我去老家做客，临时接到的需求，在V2EX上我发的回顾帖子：</p>
@@ -3311,10 +3298,85 @@ adapter.finishUpdate(container);
         <category>计算机日常操作解决办法</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>Mac</tag>
         <tag>Windows</tag>
         <tag>Windows7</tag>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>W0rdPre$$的安全问题</title>
+    <url>/2020/04/12/W0rdPre$$%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>昨晚整理博客插件，使用joplin撰写笔记时，发现了入侵的迹象——通过Wordfence查看攻击。</p>
+<p>我第一感受是，真的有这么多“闲人“或机器人暴力破解吗？其中还有阿里云，在杭州。</p>
+<span id="more"></span>
+<h2 id="关于xmlrpcphp"><a class="markdownIt-Anchor" href="#关于xmlrpcphp"></a> 关于xmlrpc.php</h2>
+<p>这个接口的作用在<a href="https://www.hostinger.com/tutorials/xmlrpc-wordpress">这个链接</a>中说很清楚：</p>
+<blockquote>
+<p>XML-RPC is a feature of WordPress that enables data to be  transmitted, with HTTP acting as the transport mechanism and XML as the  encoding mechanism. Since WordPress isn’t a self-enclosed system and  occasionally needs to communicate with other systems, this was sought to handle that job.</p>
+<p>What Is Xmlrpc.php in WordPress and Why You Should Disable It</p>
+</blockquote>
+<p>黑客可通过这个接口，反复尝试账号及密码进行暴力破解并访问站点。</p>
+<h2 id="查看历史"><a class="markdownIt-Anchor" href="#查看历史"></a> 查看历史</h2>
+<p>通过Wordfence[ref]关于检测安全的插件有很多，我此处不一一列举[/ref]。查看被入侵的历史，入口为：Wordfence-Tools-LiveTraffic。</p>
+<p>屏蔽之后的IP可在Firewall-blocking中找到。</p>
+<h2 id="防卫与解决"><a class="markdownIt-Anchor" href="#防卫与解决"></a> 防卫与解决</h2>
+<p>根据网友和搜索结果提供的解决方案：</p>
+<ol>
+<li>完全禁用此接口：安装 Disable XML-RPC WP插件。</li>
+<li>部分禁用此接口，可正常使用相关插件：添加代码，参考 链接1。</li>
+<li>安装**<a href="http://wordpress.org/plugins/login-security-solution/">Login Security Solutin</a>**插件</li>
+<li>启用WordPress二次验证</li>
+</ol>
+<h3 id="防卫正确屏蔽ipip段"><a class="markdownIt-Anchor" href="#防卫正确屏蔽ipip段"></a> 防卫：“正确”屏蔽IP/IP段</h3>
+<p>通过Whois域名查询[ref]：关于什么是Whois，我写在了我的笔记里[/ref]，发现相应的地理位置，便于进行适当IP段的屏蔽：</p>
+<blockquote>
+<p>有大量翻墙用户的梯子都是服务器段IP，这些翻墙用户就看不了</p>
+</blockquote>
+<blockquote>
+<p>我说的是被屏蔽攻击我的那些-xmlrpc.php</p>
+</blockquote>
+<blockquote>
+<p>那最好还是先查清楚IP，不要屏蔽IP段，因为你说不定就把某服务器的翻墙用户全屏蔽了</p>
+</blockquote>
+<h3 id="解决"><a class="markdownIt-Anchor" href="#解决"></a> 解决</h3>
+<p>我决定完全禁用xmlrpc.php。</p>
+<h3 id="安装插件前先检测是否启用"><a class="markdownIt-Anchor" href="#安装插件前先检测是否启用"></a> 安装插件前，先检测是否启用</h3>
+<p>参考链接1中给出了一个检测网址，如果您收到成功的消息，则说明已经启用：<br />
+<a href="https://xmlrpc.eritreo.it/">https://xmlrpc.eritreo.it/</a></p>
+<p>我的带了通过的结果，直接安装插件。</p>
+<h3 id="http-response-503"><a class="markdownIt-Anchor" href="#http-response-503"></a> HTTP Response 503</h3>
+<p>在部分操作中，我访问我的站点与插件界面，被此安全工具阻止，看起来正是“别人攻击我”出现的页面，但无法确定。</p>
+<p><img src="http://felixxiong.com/wp-content/uploads/2020/04/WordPress%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.001-2-1024x576.jpeg" alt="img" /></p>
+<p>我访问站点时被阻止的画面</p>
+<p>点击提供的链接，其中关于屏蔽的描述段落：</p>
+<blockquote>
+<p><strong>The following instructions are for site owners. If you are  trying to regain access to a site that you do not manage, please contact the site owner or access.</strong></p>
+<p>If you locked yourself out</p>
+</blockquote>
+<h2 id="except-xmlrpcphp-attacks"><a class="markdownIt-Anchor" href="#except-xmlrpcphp-attacks"></a> Except xmlrpc.php attacks</h2>
+<p>撰写本文的时候已经安装了解决方案里的第一个完全禁用的插件，再次发现了其他的“攻击“：</p>
+<p>wp-json/trx_addons/v2/get/sc_layout?sc=wp_insert_user&amp;role=administrator&amp;user_login…</p>
+<p>但点进去是登陆页。</p>
+<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
+<p>Xmlrpc.php攻击</p>
+<ol>
+<li><a href="https://www.hostinger.com/tutorials/xmlrpc-wordpress">What Is Xmlrpc.php in WordPress and Why You Should Disable It</a></li>
+<li><a href="https://blog.tigertech.net/posts/blocking-wordpress-xmlrpc-password-attempts/">Blocking more WordPress xmlrpc.php attacks</a></li>
+<li><a href="https://www.freebuf.com/articles/web/38861.html">利用xmlrpc.php对WordPress进行暴力破解攻击</a></li>
+</ol>
+<p>Wordfence</p>
+<ol>
+<li><a href="https://www.wordfence.com/help/blocking/troubleshooting/#if-you-locked-yourself-out">Troubleshooting</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客探索</category>
+        <category>WordPress</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
@@ -4752,248 +4814,6 @@ zipAlignEnabled <span class="hljs-keyword">true</span>
       </tags>
   </entry>
   <entry>
-    <title>关于住宿：旅社、宾馆，再到小区</title>
-    <url>/2018/07/01/%E5%85%B3%E4%BA%8E%E4%BD%8F%E5%AE%BF%EF%BC%9A%E6%97%85%E7%A4%BE%E3%80%81%E5%AE%BE%E9%A6%86%EF%BC%8C%E5%86%8D%E5%88%B0%E5%B0%8F%E5%8C%BA/</url>
-    <content><![CDATA[<p>2018年10月7日恢复此文章时更新</p>
-<blockquote>
-<p>这是关于北漂日记的住宿篇，此篇仅仅为前三周。</p>
-<p>至于为什么么有每篇都记录，或许这不是自己的日记，而是开放的博客，日记可以给自己看，而博客则应当是总结。</p>
-<p>此篇仅为6.22-7.5，当时迫于生存压力，后续关于北漂的住宿文章会抽空撰写。</p>
-</blockquote>
-<p>原简介：</p>
-<p>来到北京的日子里，住宿问题是每一个北漂人最需要考虑的问题。</p>
-<p>我目前的做法，青旅-宾馆-旅社，下一个可要体验体验长安街的地下通道了，</p>
-<p>这不是说着玩儿——每天不随意吃小型的中餐店里的食物，依旧坚持吃永和大王、麦当劳等中西式快餐。</p>
-<p>原本自己是在讲故事的口吻，后来发现太简单也太随意，写着写着就理性起来了，增加了格式。</p>
-<p>规范真的是可以消磨人的个性的东西渐渐的的我盯着拥有设施和缺乏设施，差点都要做一个表格了。</p>
-<span id="more"></span>
-<h2 id="住宿明细"><a class="markdownIt-Anchor" href="#住宿明细"></a> 住宿明细</h2>
-<h3 id="一-旅社-622-627"><a class="markdownIt-Anchor" href="#一-旅社-622-627"></a> 一 旅社 6.22-6.27</h3>
-<h4 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h4>
-<p>地点：位于青年路附近的倾城国际旅社</p>
-<p>详细位置：48号院1607室</p>
-<p>不足：<strong>有门禁</strong>且不方便进出，且由于小区的大，一到晚上整个人很容易迷路。</p>
-<p>交通：靠近朝阳大悦城，夜间很热闹与繁华。</p>
-<p>度过天数：5</p>
-<p>价格花费：74/晚，共378元</p>
-<h4 id="自言自语"><a class="markdownIt-Anchor" href="#自言自语"></a> 自言自语</h4>
-<p>床位的话因为自己没有铺床单，所以最后更换了床位而导致当天晚上被空调吹了一夜，所幸没有感冒发烧，第二晚便调换了枕头的位置。</p>
-<h4 id="设施以及评价"><a class="markdownIt-Anchor" href="#设施以及评价"></a> 设施以及评价</h4>
-<p>拥有设施：门口的晾衣架并且提供晾衣架，公共卫浴。</p>
-<p>缺乏设施：洗浴缺洗发露和沐浴液。</p>
-<p>宿舍一样的床，上下铺，完整的冰箱、烧水壶和厨房。</p>
-<h4 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h4>
-<p>人必须需要有私人空间。</p>
-<p>尽管可以有人说话，但防备之心必须得有——快要走的时候，帮一个老外打了滴滴，到现在仍未归还73.46元。</p>
-<p>必须适应进门之后的公共空间包含任何杂乱元素的空气，这是公共空间必须付出的代价。</p>
-<h3 id="二-宾馆-628-630"><a class="markdownIt-Anchor" href="#二-宾馆-628-630"></a> 二 宾馆 6.28-6.30</h3>
-<h4 id="简介-2"><a class="markdownIt-Anchor" href="#简介-2"></a> 简介</h4>
-<p>地点：位于南楼梓庄地铁站附近的百时欢乐谷店</p>
-<p>不足：这家宾馆比自己想象的样子还要糟：床占了整个房间的三分之一，剩下的则是浴室加卫生间。</p>
-<p>交通：绕过小区便是南楼梓庄地铁站，交通非常方便。</p>
-<p>度过天数：3</p>
-<p>价格花费：175/晚，共450元（驴妈妈预订）（不含20元钥匙押金，需现付）</p>
-<h4 id="自言自语-2"><a class="markdownIt-Anchor" href="#自言自语-2"></a> 自言自语</h4>
-<p>一天晚上为了节约交通费，一直骑单车有六公里。</p>
-<p>那天晚上我对自己说，“到啦。”</p>
-<p>我翻翻微信群和高德地图，是从华贸商业街15号楼一直骑到南楼梓庄的。</p>
-<h4 id="设施以及评价-2"><a class="markdownIt-Anchor" href="#设施以及评价-2"></a> 设施以及评价</h4>
-<p>拥有设施：房间并不是无窗，可以由里至外开启45度的那种窗，也包含纱窗。</p>
-<p>缺乏设施：无床头柜，因为活动免费的牙膏和牙刷。</p>
-<p>开窗后蚊子特别多，但房间提供小型的驱蚊器，插上插座即可。</p>
-<p>后续自己可以购买此进行常用的必备物品进行驱蚊。</p>
-<h4 id="小结-2"><a class="markdownIt-Anchor" href="#小结-2"></a> 小结</h4>
-<p>利用可见的浴室和卫生间之间的栏杆，进行衣服的晾晒。</p>
-<h3 id="三-小区-630-75"><a class="markdownIt-Anchor" href="#三-小区-630-75"></a> 三 小区 6.30-7.5</h3>
-<h4 id="简介-3"><a class="markdownIt-Anchor" href="#简介-3"></a> 简介</h4>
-<p>地点：安贞里小区</p>
-<p>详细位置：7号楼</p>
-<p>不足：与房东电话沟通，等了将近40分钟。</p>
-<p>交通：需要骑行约4分钟则到安贞里地铁站。</p>
-<p>度过天数：5</p>
-<p>价格花费：50/晚，250元（不含50元钥匙押金）</p>
-<h4 id="自言自语-3"><a class="markdownIt-Anchor" href="#自言自语-3"></a> 自言自语</h4>
-<p>我住的第三个小区，是安贞里里面的一个小区。</p>
-<p>跟着房东上四楼，”纯楼梯“这几个字映在我的脑海里——尽管南京的家里也是楼梯，而且还是六楼。</p>
-<p>这是一个老小区，上楼梯，办证下面是电话号码的牛皮癣几乎侵占了整个墙面，一眼望去没有尽头。</p>
-<p>进房之后只有一个很简单的床位。</p>
-<h4 id="设施设施以及评价"><a class="markdownIt-Anchor" href="#设施设施以及评价"></a> 设施设施以及评价</h4>
-<p>拥有设施：简单的床位，公共卫浴，已被用作挂电线的墙壁挂钩。</p>
-<p>缺乏设施：客厅无拖鞋，浴室无拖鞋，无法调节水温，无水槽，自己购买位置无厨房。</p>
-<p>我住的这一件是一进门之后仅有一张床，对面有一个立着的低着头的电扇。</p>
-<p>可以说是非常简陋了。</p>
-<h4 id="小结-3"><a class="markdownIt-Anchor" href="#小结-3"></a> 小结</h4>
-<p>需要自备拖鞋以及晾衣架，还好自己都有。</p>
-<p>在外生存，必须住的踏实。</p>
-<p>在外生存，钱永远是第一位的，可以提升自己的生活质量。</p>
-<h1 id="小结-4"><a class="markdownIt-Anchor" href="#小结-4"></a> 小结</h1>
-<p>当找到工作并长住之后，白天利用休息时间知悉小区路线图并且记录标注以下元素：</p>
-<ol>
-<li>图文店的位置</li>
-<li>洗浴店的位置</li>
-<li>公交站以及地铁站的抵达时间以及所有线路早末班时间。</li>
-<li>开关门时间以及是否有门禁及密码</li>
-<li>夜间从各个小区门通往所在楼幢的线路</li>
-</ol>
-<p>想到再补充了。</p>
-]]></content>
-      <categories>
-        <category>城漂</category>
-        <category>北漂日记</category>
-      </categories>
-      <tags>
-        <tag>住宿</tag>
-        <tag>北京</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于（北漂）租房的一些总结(上)</title>
-    <url>/2018/12/30/%E5%85%B3%E4%BA%8E%E5%8C%97%E6%BC%82%E7%A7%9F%E6%88%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93(%E4%B8%8A)/</url>
-    <content><![CDATA[<p>关于租房看房（不仅限于北京但本文主要说的是北京），</p>
-<p>如果从分析一个产品的角度以及根据现有产品的角度来说，</p>
-<p>必要的信息有几个方面：价格、区位、房屋图片、租房时间（长租、短租）。</p>
-<p>文章为自己总结的以及通过聊天记录发现出现的一些问题。</p>
-<p>这个社会是非常现实的——信用再高，钱足够，就认。</p>
-<p>以下内容为个人总结感想以及聊天记录摘录（2019微信公开课上都没提到“复盘”二字，so…），</p>
-<p>若侵犯到您或您公司的权益，则请第一时间留言申明，我会及时删除相应段落。</p>
-<p>此处仅仅为租房产品，不包含Airbnb以及缤客Booking的经历。</p>
-<p>希望对你在北上广深漂的时候有帮助，欢迎点击文末打赏，生活不易，互相帮助嘛。</p>
-<blockquote>
-<p>为什么是（上）：因为目前的开发实践，后续同样于此文中更新，届时会去掉”（上）“字样。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="一些基础问题"><a class="markdownIt-Anchor" href="#一些基础问题"></a> 一些基础问题</h2>
-<h3 id="预算与区位"><a class="markdownIt-Anchor" href="#预算与区位"></a> 预算与区位</h3>
-<h4 id="预算"><a class="markdownIt-Anchor" href="#预算"></a> 预算</h4>
-<p>根据不同的租房预算，会有不同的档次：目前可知由高到底：</p>
-<p>整组-非整租（以下包含合租）-主卧-次卧-单间-隔断-地下室</p>
-<p>（隔断和）单间的价格在我考虑的时候，最低为七八百至一千二上下。</p>
-<h4 id="区位"><a class="markdownIt-Anchor" href="#区位"></a> 区位</h4>
-<p>离上班路地点进，也需要考虑。</p>
-<h3 id="押金问题与付款方式"><a class="markdownIt-Anchor" href="#押金问题与付款方式"></a> 押金问题与付款方式</h3>
-<h4 id="押金"><a class="markdownIt-Anchor" href="#押金"></a> 押金</h4>
-<p>往往，如果资金不足，押金通常是不可以晚点交的（有时押金直接给中介）。</p>
-<p>有的时候第一个月（首月）相应平台有活动，例如蛋壳公寓在7月的活动，可以便宜1000人民币；</p>
-<p>首月也有几百的。</p>
-<h4 id="付款方式"><a class="markdownIt-Anchor" href="#付款方式"></a> 付款方式</h4>
-<p>通常是押一付三，或者是押一付一、押一付二，不知道这个规矩是哪里定的。</p>
-<p>如果押一付一，可能会有百分之五的手续费。</p>
-<p>相关知乎链接：</p>
-<p><a href="https://www.zhihu.com/question/30097063/answer/88540052">为什么租房都是押一付三呢？</a></p>
-<blockquote>
-<p>好可怕的原因，我不懂法，也还没去查，不懂是不是法律为了保障房东权益而定下的规矩。但是从中介支支吾吾不知道咋回答的态度来看，估计没有什么大政策明文规定支撑。那 凭什么…?！</p>
-<p><strong>房子都要租出去了，既然是一场买卖，我不一口气给你三个月房租，不代表我不会按时付，不代表我会是个超级糟糕的房客…</strong></p>
-<p>为啥这个一定要订的这么死，理想化了一点，但是自然双赢最好，感觉自己好委屈，稍微问问都不行嘛…<br />
-………</p>
-<p>凭良心说，押金的意义我理解，以免损坏，作为警示，钱在房东手里，不能乱来。但是为什么是付三，一般来说，要租房的人们，一口气拿出三个月租金都是会有那么些纠结，甚至很困难的。为什么要让一个付钱的先后，成为自己出租房子的阻碍？其实最后房东收到的钱是一样的。如果说，舍得一口气拿出这笔钱的才是真爱，是淘汰机制，那我…无话可说…嗷，还是珍惜没钱但有寝室住的日子吧。</p>
-</blockquote>
-<h3 id="中介费与服务费"><a class="markdownIt-Anchor" href="#中介费与服务费"></a> 中介费与服务费</h3>
-<h4 id="中介费"><a class="markdownIt-Anchor" href="#中介费"></a> 中介费</h4>
-<p>有的时候，租房需要一个月房租的中介费，但有时可能可以打折，也有可能是500人民币。</p>
-<p>有时可以和中介谈，例如过半个月交一个月。</p>
-<h4 id="服务费"><a class="markdownIt-Anchor" href="#服务费"></a> 服务费</h4>
-<p>服务费的组成包括：卫生、网费、垃圾费等，因不同规则而异。</p>
-<p>水电网若是合租，则需要住户平摊。</p>
-<p>服务费有时可能是月房租的百分之七十。</p>
-<h4 id="管理费"><a class="markdownIt-Anchor" href="#管理费"></a> 管理费</h4>
-<p>有的平台涉及一个管理费。</p>
-<h3 id="租期与类型"><a class="markdownIt-Anchor" href="#租期与类型"></a> 租期与类型</h3>
-<h4 id="长-短租与日租"><a class="markdownIt-Anchor" href="#长-短租与日租"></a> 长、短租与日租</h4>
-<h5 id="短租"><a class="markdownIt-Anchor" href="#短租"></a> 短租</h5>
-<h6 id="最低期限"><a class="markdownIt-Anchor" href="#最低期限"></a> 最低期限</h6>
-<p>通常不能低于一个月。</p>
-<p>特殊情况：当地租住快到期，或者即将换工作，则可以有此类情况，对于刚北漂的人来说可以过渡一段时间。</p>
-<h5 id="特殊日租"><a class="markdownIt-Anchor" href="#特殊日租"></a> 特殊：日租</h5>
-<p>可能会得知现在住青年旅舍的话，会推荐日租。</p>
-<h4 id="合同"><a class="markdownIt-Anchor" href="#合同"></a> 合同</h4>
-<p>有的一年，有的半年。</p>
-<h4 id="类型"><a class="markdownIt-Anchor" href="#类型"></a> 类型</h4>
-<h5 id="直租与分租"><a class="markdownIt-Anchor" href="#直租与分租"></a> 直租与分租</h5>
-<p>房东<strong>可能</strong>是直租。</p>
-<h3 id="住房人数"><a class="markdownIt-Anchor" href="#住房人数"></a> 住房人数</h3>
-<p>和同学一起找房子，有的可以住两个人。</p>
-<h4 id="租房配置"><a class="markdownIt-Anchor" href="#租房配置"></a> 租房配置</h4>
-<p>没有被子很正常，有一些都有，例如蛋壳和自如。</p>
-<h3 id="一些想法"><a class="markdownIt-Anchor" href="#一些想法"></a> 一些想法</h3>
-<p>面试住的地方是暂时的，找到了工作以后再租房子。</p>
-<h2 id="关于青旅"><a class="markdownIt-Anchor" href="#关于青旅"></a> 关于青旅</h2>
-<p>青旅可以算是过渡，如果进去之后的担心，则是：</p>
-<ol>
-<li>里面的人处不好</li>
-<li>如果是宾馆，一晚价格也贵。</li>
-</ol>
-<h2 id="关于租房的那些人"><a class="markdownIt-Anchor" href="#关于租房的那些人"></a> 关于租房的那些人</h2>
-<h4 id="可能是同住的人"><a class="markdownIt-Anchor" href="#可能是同住的人"></a> 可能是同住的人</h4>
-<p>以下两种人可能是和你一起住的人，可以考虑他们的角度。</p>
-<h5 id="网上求租的人"><a class="markdownIt-Anchor" href="#网上求租的人"></a> 网上求租的人</h5>
-<p>在豆瓣租房，有的人没删帖子的原因可能是找房子，以及找人合租。</p>
-<p>有的时候可能是已经打算和同学合租，这一点要考虑到。</p>
-<h5 id="一起看房的人"><a class="markdownIt-Anchor" href="#一起看房的人"></a> 一起看房的人</h5>
-<p>对方可能会提出一个屋子，以及再购置其他物品。</p>
-<p>对方可能会在其他平台看房，需要考虑到其他人的建议和生活方式。</p>
-<h4 id="自己住"><a class="markdownIt-Anchor" href="#自己住"></a> 自己住</h4>
-<p>如果自己住的话，可以考虑自己的隐私生活是否受影响，以及房间的隔音效果。</p>
-<h3 id="托管人"><a class="markdownIt-Anchor" href="#托管人"></a> 托管人</h3>
-<p>托管的定义：统一管理一个小区的XX套房子。</p>
-<p>可能托管人（或者代理）会忘记你看的是哪一个，所以需要准备好自己找房子的需求表，直接发一下就得，这也是除了钱和行李之外必要准备的一个东西。</p>
-<h3 id="后期服务"><a class="markdownIt-Anchor" href="#后期服务"></a> 后期服务</h3>
-<p>除了开始的中介或代理，还有做后期服务的</p>
-<h3 id="转租者二房东"><a class="markdownIt-Anchor" href="#转租者二房东"></a> 转租者（二房东）</h3>
-<p><strong>转租的问题</strong></p>
-<p>介绍具体位置，关于房子的信息，需查看相关付款方式。</p>
-<p>如果更换付款方式，可能需要和其他卧的人谈。</p>
-<p>可能需要给转租者的资金（具体可能有变，可能收款者以及看房为其他卧的人）：</p>
-<ol>
-<li>一个月押金</li>
-<li>首租者的新办以及水电网费等。</li>
-</ol>
-<p>此处可能会有收获到首租者之前没有用完的一些物品等。</p>
-<p>可以了解下其他同住的人。</p>
-<h3 id="可能出现的短转租者"><a class="markdownIt-Anchor" href="#可能出现的短转租者"></a> 可能出现的短转租者</h3>
-<p>也许只可以租一个月，但如果你押金非常的少，那么这个可以是很好的转机，以及如果可以和另一个人合租的话。</p>
-<h2 id="不同产品的租房套路以及可能出现的问题"><a class="markdownIt-Anchor" href="#不同产品的租房套路以及可能出现的问题"></a> 不同产品的租房套路以及可能出现的问题</h2>
-<p>在以下列举的套路中，需求很简单：价格实惠且符合心意的租房。</p>
-<h3 id="支付宝免押金租房"><a class="markdownIt-Anchor" href="#支付宝免押金租房"></a> 支付宝免押金租房</h3>
-<h4 id="公司涨幅平台信息未修改"><a class="markdownIt-Anchor" href="#公司涨幅平台信息未修改"></a> 公司涨幅，平台信息未修改</h4>
-<p>相应公司定的涨幅，可能在支付宝中没有及时调整，这将会给即将可以免押金或者押金减半的用户造成困扰。</p>
-<p>例如：公司定的是芝麻信用750免押金，700减半。</p>
-<p>所以有时即使看到合适的，需要问清楚公司的减半要求以及免押金的要求，支付宝可能未改——看到的是最初的。</p>
-<h4 id="咨询在线客服可能的结果"><a class="markdownIt-Anchor" href="#咨询在线客服可能的结果"></a> 咨询在线客服可能的结果</h4>
-<p>提交信息即可减免：需要信用分够，这很正常。</p>
-<h4 id="最终目的吸引流量"><a class="markdownIt-Anchor" href="#最终目的吸引流量"></a> 最终目的：吸引流量</h4>
-<p>或者写得很低，或者没有修改，只是为了增加更多的关注度，或者是一种宣传噱头。如果当时去看房，告知价格，则会给租房者带来路途以及时间的损失，更重要的还有行李箱的安检排队时间。</p>
-<h3 id="豆瓣租房"><a class="markdownIt-Anchor" href="#豆瓣租房"></a> 豆瓣租房</h3>
-<h4 id="所谓房东直租更多还是"><a class="markdownIt-Anchor" href="#所谓房东直租更多还是"></a> 所谓“房东直租”，更多还是……</h4>
-<p>实际上，不可以轻信所谓的“房东直租”：到头来和你聊天的，还是中介以及房屋代理商。</p>
-<h3 id="安居客"><a class="markdownIt-Anchor" href="#安居客"></a> 安居客</h3>
-<p>在安居客看到的房源，结果联系的是蛋壳公寓的人，</p>
-<p>可能性只有一点，发布在多平台上。</p>
-<h3 id="自如"><a class="markdownIt-Anchor" href="#自如"></a> 自如</h3>
-<p>这里仅仅为截稿前，具体规定按照相应平台最新规则开始计算，此处仅仅为2018年7月规则记录。</p>
-<h5 id="平台"><a class="markdownIt-Anchor" href="#平台"></a> 平台</h5>
-<p>由于平台限制，会有为看房就签约的情况，支付方式（押几付几）可以选择</p>
-<h4 id="抢房"><a class="markdownIt-Anchor" href="#抢房"></a> 抢房</h4>
-<p>如果看房人多，原租主出来后房源“会被抢”。</p>
-<h4 id="房租以及维修"><a class="markdownIt-Anchor" href="#房租以及维修"></a> 房租以及维修</h4>
-<p>没有中介费，只收服务费。屋内非人为损坏，免费维修。</p>
-<p>一般租期为一年，住不够可以转租。</p>
-<h4 id="短租房价涨幅规则"><a class="markdownIt-Anchor" href="#短租房价涨幅规则"></a> 短租房价涨幅规则</h4>
-<p>短租上涨15%，末尾进到9：79 89 99 109 119 129等</p>
-<h4 id="退租"><a class="markdownIt-Anchor" href="#退租"></a> 退租</h4>
-<p>流程需要4天，其中保洁、配东西等等。</p>
-<h3 id="蛋壳公寓"><a class="markdownIt-Anchor" href="#蛋壳公寓"></a> 蛋壳公寓</h3>
-<h4 id="活动价"><a class="markdownIt-Anchor" href="#活动价"></a> 活动价</h4>
-<p>2018年7月的活动，</p>
-<h4 id="如果把行李先放进去"><a class="markdownIt-Anchor" href="#如果把行李先放进去"></a> 如果把行李先放进去</h4>
-<p>会被处罚并通告，之前看过一幅图片，但现在似乎不方便在这里发。</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-        <tag>北漂</tag>
-        <tag>租房</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于开发尝试</title>
     <url>/2018/05/06/%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E5%B0%9D%E8%AF%95/</url>
     <content><![CDATA[<p>在某种必要的时候，之前就开始有一些好的点子。</p>
@@ -5257,6 +5077,248 @@ zipAlignEnabled <span class="hljs-keyword">true</span>
       </tags>
   </entry>
   <entry>
+    <title>关于（北漂）租房的一些总结(上)</title>
+    <url>/2018/12/30/%E5%85%B3%E4%BA%8E%E5%8C%97%E6%BC%82%E7%A7%9F%E6%88%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93(%E4%B8%8A)/</url>
+    <content><![CDATA[<p>关于租房看房（不仅限于北京但本文主要说的是北京），</p>
+<p>如果从分析一个产品的角度以及根据现有产品的角度来说，</p>
+<p>必要的信息有几个方面：价格、区位、房屋图片、租房时间（长租、短租）。</p>
+<p>文章为自己总结的以及通过聊天记录发现出现的一些问题。</p>
+<p>这个社会是非常现实的——信用再高，钱足够，就认。</p>
+<p>以下内容为个人总结感想以及聊天记录摘录（2019微信公开课上都没提到“复盘”二字，so…），</p>
+<p>若侵犯到您或您公司的权益，则请第一时间留言申明，我会及时删除相应段落。</p>
+<p>此处仅仅为租房产品，不包含Airbnb以及缤客Booking的经历。</p>
+<p>希望对你在北上广深漂的时候有帮助，欢迎点击文末打赏，生活不易，互相帮助嘛。</p>
+<blockquote>
+<p>为什么是（上）：因为目前的开发实践，后续同样于此文中更新，届时会去掉”（上）“字样。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="一些基础问题"><a class="markdownIt-Anchor" href="#一些基础问题"></a> 一些基础问题</h2>
+<h3 id="预算与区位"><a class="markdownIt-Anchor" href="#预算与区位"></a> 预算与区位</h3>
+<h4 id="预算"><a class="markdownIt-Anchor" href="#预算"></a> 预算</h4>
+<p>根据不同的租房预算，会有不同的档次：目前可知由高到底：</p>
+<p>整组-非整租（以下包含合租）-主卧-次卧-单间-隔断-地下室</p>
+<p>（隔断和）单间的价格在我考虑的时候，最低为七八百至一千二上下。</p>
+<h4 id="区位"><a class="markdownIt-Anchor" href="#区位"></a> 区位</h4>
+<p>离上班路地点进，也需要考虑。</p>
+<h3 id="押金问题与付款方式"><a class="markdownIt-Anchor" href="#押金问题与付款方式"></a> 押金问题与付款方式</h3>
+<h4 id="押金"><a class="markdownIt-Anchor" href="#押金"></a> 押金</h4>
+<p>往往，如果资金不足，押金通常是不可以晚点交的（有时押金直接给中介）。</p>
+<p>有的时候第一个月（首月）相应平台有活动，例如蛋壳公寓在7月的活动，可以便宜1000人民币；</p>
+<p>首月也有几百的。</p>
+<h4 id="付款方式"><a class="markdownIt-Anchor" href="#付款方式"></a> 付款方式</h4>
+<p>通常是押一付三，或者是押一付一、押一付二，不知道这个规矩是哪里定的。</p>
+<p>如果押一付一，可能会有百分之五的手续费。</p>
+<p>相关知乎链接：</p>
+<p><a href="https://www.zhihu.com/question/30097063/answer/88540052">为什么租房都是押一付三呢？</a></p>
+<blockquote>
+<p>好可怕的原因，我不懂法，也还没去查，不懂是不是法律为了保障房东权益而定下的规矩。但是从中介支支吾吾不知道咋回答的态度来看，估计没有什么大政策明文规定支撑。那 凭什么…?！</p>
+<p><strong>房子都要租出去了，既然是一场买卖，我不一口气给你三个月房租，不代表我不会按时付，不代表我会是个超级糟糕的房客…</strong></p>
+<p>为啥这个一定要订的这么死，理想化了一点，但是自然双赢最好，感觉自己好委屈，稍微问问都不行嘛…<br />
+………</p>
+<p>凭良心说，押金的意义我理解，以免损坏，作为警示，钱在房东手里，不能乱来。但是为什么是付三，一般来说，要租房的人们，一口气拿出三个月租金都是会有那么些纠结，甚至很困难的。为什么要让一个付钱的先后，成为自己出租房子的阻碍？其实最后房东收到的钱是一样的。如果说，舍得一口气拿出这笔钱的才是真爱，是淘汰机制，那我…无话可说…嗷，还是珍惜没钱但有寝室住的日子吧。</p>
+</blockquote>
+<h3 id="中介费与服务费"><a class="markdownIt-Anchor" href="#中介费与服务费"></a> 中介费与服务费</h3>
+<h4 id="中介费"><a class="markdownIt-Anchor" href="#中介费"></a> 中介费</h4>
+<p>有的时候，租房需要一个月房租的中介费，但有时可能可以打折，也有可能是500人民币。</p>
+<p>有时可以和中介谈，例如过半个月交一个月。</p>
+<h4 id="服务费"><a class="markdownIt-Anchor" href="#服务费"></a> 服务费</h4>
+<p>服务费的组成包括：卫生、网费、垃圾费等，因不同规则而异。</p>
+<p>水电网若是合租，则需要住户平摊。</p>
+<p>服务费有时可能是月房租的百分之七十。</p>
+<h4 id="管理费"><a class="markdownIt-Anchor" href="#管理费"></a> 管理费</h4>
+<p>有的平台涉及一个管理费。</p>
+<h3 id="租期与类型"><a class="markdownIt-Anchor" href="#租期与类型"></a> 租期与类型</h3>
+<h4 id="长-短租与日租"><a class="markdownIt-Anchor" href="#长-短租与日租"></a> 长、短租与日租</h4>
+<h5 id="短租"><a class="markdownIt-Anchor" href="#短租"></a> 短租</h5>
+<h6 id="最低期限"><a class="markdownIt-Anchor" href="#最低期限"></a> 最低期限</h6>
+<p>通常不能低于一个月。</p>
+<p>特殊情况：当地租住快到期，或者即将换工作，则可以有此类情况，对于刚北漂的人来说可以过渡一段时间。</p>
+<h5 id="特殊日租"><a class="markdownIt-Anchor" href="#特殊日租"></a> 特殊：日租</h5>
+<p>可能会得知现在住青年旅舍的话，会推荐日租。</p>
+<h4 id="合同"><a class="markdownIt-Anchor" href="#合同"></a> 合同</h4>
+<p>有的一年，有的半年。</p>
+<h4 id="类型"><a class="markdownIt-Anchor" href="#类型"></a> 类型</h4>
+<h5 id="直租与分租"><a class="markdownIt-Anchor" href="#直租与分租"></a> 直租与分租</h5>
+<p>房东<strong>可能</strong>是直租。</p>
+<h3 id="住房人数"><a class="markdownIt-Anchor" href="#住房人数"></a> 住房人数</h3>
+<p>和同学一起找房子，有的可以住两个人。</p>
+<h4 id="租房配置"><a class="markdownIt-Anchor" href="#租房配置"></a> 租房配置</h4>
+<p>没有被子很正常，有一些都有，例如蛋壳和自如。</p>
+<h3 id="一些想法"><a class="markdownIt-Anchor" href="#一些想法"></a> 一些想法</h3>
+<p>面试住的地方是暂时的，找到了工作以后再租房子。</p>
+<h2 id="关于青旅"><a class="markdownIt-Anchor" href="#关于青旅"></a> 关于青旅</h2>
+<p>青旅可以算是过渡，如果进去之后的担心，则是：</p>
+<ol>
+<li>里面的人处不好</li>
+<li>如果是宾馆，一晚价格也贵。</li>
+</ol>
+<h2 id="关于租房的那些人"><a class="markdownIt-Anchor" href="#关于租房的那些人"></a> 关于租房的那些人</h2>
+<h4 id="可能是同住的人"><a class="markdownIt-Anchor" href="#可能是同住的人"></a> 可能是同住的人</h4>
+<p>以下两种人可能是和你一起住的人，可以考虑他们的角度。</p>
+<h5 id="网上求租的人"><a class="markdownIt-Anchor" href="#网上求租的人"></a> 网上求租的人</h5>
+<p>在豆瓣租房，有的人没删帖子的原因可能是找房子，以及找人合租。</p>
+<p>有的时候可能是已经打算和同学合租，这一点要考虑到。</p>
+<h5 id="一起看房的人"><a class="markdownIt-Anchor" href="#一起看房的人"></a> 一起看房的人</h5>
+<p>对方可能会提出一个屋子，以及再购置其他物品。</p>
+<p>对方可能会在其他平台看房，需要考虑到其他人的建议和生活方式。</p>
+<h4 id="自己住"><a class="markdownIt-Anchor" href="#自己住"></a> 自己住</h4>
+<p>如果自己住的话，可以考虑自己的隐私生活是否受影响，以及房间的隔音效果。</p>
+<h3 id="托管人"><a class="markdownIt-Anchor" href="#托管人"></a> 托管人</h3>
+<p>托管的定义：统一管理一个小区的XX套房子。</p>
+<p>可能托管人（或者代理）会忘记你看的是哪一个，所以需要准备好自己找房子的需求表，直接发一下就得，这也是除了钱和行李之外必要准备的一个东西。</p>
+<h3 id="后期服务"><a class="markdownIt-Anchor" href="#后期服务"></a> 后期服务</h3>
+<p>除了开始的中介或代理，还有做后期服务的</p>
+<h3 id="转租者二房东"><a class="markdownIt-Anchor" href="#转租者二房东"></a> 转租者（二房东）</h3>
+<p><strong>转租的问题</strong></p>
+<p>介绍具体位置，关于房子的信息，需查看相关付款方式。</p>
+<p>如果更换付款方式，可能需要和其他卧的人谈。</p>
+<p>可能需要给转租者的资金（具体可能有变，可能收款者以及看房为其他卧的人）：</p>
+<ol>
+<li>一个月押金</li>
+<li>首租者的新办以及水电网费等。</li>
+</ol>
+<p>此处可能会有收获到首租者之前没有用完的一些物品等。</p>
+<p>可以了解下其他同住的人。</p>
+<h3 id="可能出现的短转租者"><a class="markdownIt-Anchor" href="#可能出现的短转租者"></a> 可能出现的短转租者</h3>
+<p>也许只可以租一个月，但如果你押金非常的少，那么这个可以是很好的转机，以及如果可以和另一个人合租的话。</p>
+<h2 id="不同产品的租房套路以及可能出现的问题"><a class="markdownIt-Anchor" href="#不同产品的租房套路以及可能出现的问题"></a> 不同产品的租房套路以及可能出现的问题</h2>
+<p>在以下列举的套路中，需求很简单：价格实惠且符合心意的租房。</p>
+<h3 id="支付宝免押金租房"><a class="markdownIt-Anchor" href="#支付宝免押金租房"></a> 支付宝免押金租房</h3>
+<h4 id="公司涨幅平台信息未修改"><a class="markdownIt-Anchor" href="#公司涨幅平台信息未修改"></a> 公司涨幅，平台信息未修改</h4>
+<p>相应公司定的涨幅，可能在支付宝中没有及时调整，这将会给即将可以免押金或者押金减半的用户造成困扰。</p>
+<p>例如：公司定的是芝麻信用750免押金，700减半。</p>
+<p>所以有时即使看到合适的，需要问清楚公司的减半要求以及免押金的要求，支付宝可能未改——看到的是最初的。</p>
+<h4 id="咨询在线客服可能的结果"><a class="markdownIt-Anchor" href="#咨询在线客服可能的结果"></a> 咨询在线客服可能的结果</h4>
+<p>提交信息即可减免：需要信用分够，这很正常。</p>
+<h4 id="最终目的吸引流量"><a class="markdownIt-Anchor" href="#最终目的吸引流量"></a> 最终目的：吸引流量</h4>
+<p>或者写得很低，或者没有修改，只是为了增加更多的关注度，或者是一种宣传噱头。如果当时去看房，告知价格，则会给租房者带来路途以及时间的损失，更重要的还有行李箱的安检排队时间。</p>
+<h3 id="豆瓣租房"><a class="markdownIt-Anchor" href="#豆瓣租房"></a> 豆瓣租房</h3>
+<h4 id="所谓房东直租更多还是"><a class="markdownIt-Anchor" href="#所谓房东直租更多还是"></a> 所谓“房东直租”，更多还是……</h4>
+<p>实际上，不可以轻信所谓的“房东直租”：到头来和你聊天的，还是中介以及房屋代理商。</p>
+<h3 id="安居客"><a class="markdownIt-Anchor" href="#安居客"></a> 安居客</h3>
+<p>在安居客看到的房源，结果联系的是蛋壳公寓的人，</p>
+<p>可能性只有一点，发布在多平台上。</p>
+<h3 id="自如"><a class="markdownIt-Anchor" href="#自如"></a> 自如</h3>
+<p>这里仅仅为截稿前，具体规定按照相应平台最新规则开始计算，此处仅仅为2018年7月规则记录。</p>
+<h5 id="平台"><a class="markdownIt-Anchor" href="#平台"></a> 平台</h5>
+<p>由于平台限制，会有为看房就签约的情况，支付方式（押几付几）可以选择</p>
+<h4 id="抢房"><a class="markdownIt-Anchor" href="#抢房"></a> 抢房</h4>
+<p>如果看房人多，原租主出来后房源“会被抢”。</p>
+<h4 id="房租以及维修"><a class="markdownIt-Anchor" href="#房租以及维修"></a> 房租以及维修</h4>
+<p>没有中介费，只收服务费。屋内非人为损坏，免费维修。</p>
+<p>一般租期为一年，住不够可以转租。</p>
+<h4 id="短租房价涨幅规则"><a class="markdownIt-Anchor" href="#短租房价涨幅规则"></a> 短租房价涨幅规则</h4>
+<p>短租上涨15%，末尾进到9：79 89 99 109 119 129等</p>
+<h4 id="退租"><a class="markdownIt-Anchor" href="#退租"></a> 退租</h4>
+<p>流程需要4天，其中保洁、配东西等等。</p>
+<h3 id="蛋壳公寓"><a class="markdownIt-Anchor" href="#蛋壳公寓"></a> 蛋壳公寓</h3>
+<h4 id="活动价"><a class="markdownIt-Anchor" href="#活动价"></a> 活动价</h4>
+<p>2018年7月的活动，</p>
+<h4 id="如果把行李先放进去"><a class="markdownIt-Anchor" href="#如果把行李先放进去"></a> 如果把行李先放进去</h4>
+<p>会被处罚并通告，之前看过一幅图片，但现在似乎不方便在这里发。</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>北漂</tag>
+        <tag>租房</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于住宿：旅社、宾馆，再到小区</title>
+    <url>/2018/07/01/%E5%85%B3%E4%BA%8E%E4%BD%8F%E5%AE%BF%EF%BC%9A%E6%97%85%E7%A4%BE%E3%80%81%E5%AE%BE%E9%A6%86%EF%BC%8C%E5%86%8D%E5%88%B0%E5%B0%8F%E5%8C%BA/</url>
+    <content><![CDATA[<p>2018年10月7日恢复此文章时更新</p>
+<blockquote>
+<p>这是关于北漂日记的住宿篇，此篇仅仅为前三周。</p>
+<p>至于为什么么有每篇都记录，或许这不是自己的日记，而是开放的博客，日记可以给自己看，而博客则应当是总结。</p>
+<p>此篇仅为6.22-7.5，当时迫于生存压力，后续关于北漂的住宿文章会抽空撰写。</p>
+</blockquote>
+<p>原简介：</p>
+<p>来到北京的日子里，住宿问题是每一个北漂人最需要考虑的问题。</p>
+<p>我目前的做法，青旅-宾馆-旅社，下一个可要体验体验长安街的地下通道了，</p>
+<p>这不是说着玩儿——每天不随意吃小型的中餐店里的食物，依旧坚持吃永和大王、麦当劳等中西式快餐。</p>
+<p>原本自己是在讲故事的口吻，后来发现太简单也太随意，写着写着就理性起来了，增加了格式。</p>
+<p>规范真的是可以消磨人的个性的东西渐渐的的我盯着拥有设施和缺乏设施，差点都要做一个表格了。</p>
+<span id="more"></span>
+<h2 id="住宿明细"><a class="markdownIt-Anchor" href="#住宿明细"></a> 住宿明细</h2>
+<h3 id="一-旅社-622-627"><a class="markdownIt-Anchor" href="#一-旅社-622-627"></a> 一 旅社 6.22-6.27</h3>
+<h4 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h4>
+<p>地点：位于青年路附近的倾城国际旅社</p>
+<p>详细位置：48号院1607室</p>
+<p>不足：<strong>有门禁</strong>且不方便进出，且由于小区的大，一到晚上整个人很容易迷路。</p>
+<p>交通：靠近朝阳大悦城，夜间很热闹与繁华。</p>
+<p>度过天数：5</p>
+<p>价格花费：74/晚，共378元</p>
+<h4 id="自言自语"><a class="markdownIt-Anchor" href="#自言自语"></a> 自言自语</h4>
+<p>床位的话因为自己没有铺床单，所以最后更换了床位而导致当天晚上被空调吹了一夜，所幸没有感冒发烧，第二晚便调换了枕头的位置。</p>
+<h4 id="设施以及评价"><a class="markdownIt-Anchor" href="#设施以及评价"></a> 设施以及评价</h4>
+<p>拥有设施：门口的晾衣架并且提供晾衣架，公共卫浴。</p>
+<p>缺乏设施：洗浴缺洗发露和沐浴液。</p>
+<p>宿舍一样的床，上下铺，完整的冰箱、烧水壶和厨房。</p>
+<h4 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h4>
+<p>人必须需要有私人空间。</p>
+<p>尽管可以有人说话，但防备之心必须得有——快要走的时候，帮一个老外打了滴滴，到现在仍未归还73.46元。</p>
+<p>必须适应进门之后的公共空间包含任何杂乱元素的空气，这是公共空间必须付出的代价。</p>
+<h3 id="二-宾馆-628-630"><a class="markdownIt-Anchor" href="#二-宾馆-628-630"></a> 二 宾馆 6.28-6.30</h3>
+<h4 id="简介-2"><a class="markdownIt-Anchor" href="#简介-2"></a> 简介</h4>
+<p>地点：位于南楼梓庄地铁站附近的百时欢乐谷店</p>
+<p>不足：这家宾馆比自己想象的样子还要糟：床占了整个房间的三分之一，剩下的则是浴室加卫生间。</p>
+<p>交通：绕过小区便是南楼梓庄地铁站，交通非常方便。</p>
+<p>度过天数：3</p>
+<p>价格花费：175/晚，共450元（驴妈妈预订）（不含20元钥匙押金，需现付）</p>
+<h4 id="自言自语-2"><a class="markdownIt-Anchor" href="#自言自语-2"></a> 自言自语</h4>
+<p>一天晚上为了节约交通费，一直骑单车有六公里。</p>
+<p>那天晚上我对自己说，“到啦。”</p>
+<p>我翻翻微信群和高德地图，是从华贸商业街15号楼一直骑到南楼梓庄的。</p>
+<h4 id="设施以及评价-2"><a class="markdownIt-Anchor" href="#设施以及评价-2"></a> 设施以及评价</h4>
+<p>拥有设施：房间并不是无窗，可以由里至外开启45度的那种窗，也包含纱窗。</p>
+<p>缺乏设施：无床头柜，因为活动免费的牙膏和牙刷。</p>
+<p>开窗后蚊子特别多，但房间提供小型的驱蚊器，插上插座即可。</p>
+<p>后续自己可以购买此进行常用的必备物品进行驱蚊。</p>
+<h4 id="小结-2"><a class="markdownIt-Anchor" href="#小结-2"></a> 小结</h4>
+<p>利用可见的浴室和卫生间之间的栏杆，进行衣服的晾晒。</p>
+<h3 id="三-小区-630-75"><a class="markdownIt-Anchor" href="#三-小区-630-75"></a> 三 小区 6.30-7.5</h3>
+<h4 id="简介-3"><a class="markdownIt-Anchor" href="#简介-3"></a> 简介</h4>
+<p>地点：安贞里小区</p>
+<p>详细位置：7号楼</p>
+<p>不足：与房东电话沟通，等了将近40分钟。</p>
+<p>交通：需要骑行约4分钟则到安贞里地铁站。</p>
+<p>度过天数：5</p>
+<p>价格花费：50/晚，250元（不含50元钥匙押金）</p>
+<h4 id="自言自语-3"><a class="markdownIt-Anchor" href="#自言自语-3"></a> 自言自语</h4>
+<p>我住的第三个小区，是安贞里里面的一个小区。</p>
+<p>跟着房东上四楼，”纯楼梯“这几个字映在我的脑海里——尽管南京的家里也是楼梯，而且还是六楼。</p>
+<p>这是一个老小区，上楼梯，办证下面是电话号码的牛皮癣几乎侵占了整个墙面，一眼望去没有尽头。</p>
+<p>进房之后只有一个很简单的床位。</p>
+<h4 id="设施设施以及评价"><a class="markdownIt-Anchor" href="#设施设施以及评价"></a> 设施设施以及评价</h4>
+<p>拥有设施：简单的床位，公共卫浴，已被用作挂电线的墙壁挂钩。</p>
+<p>缺乏设施：客厅无拖鞋，浴室无拖鞋，无法调节水温，无水槽，自己购买位置无厨房。</p>
+<p>我住的这一件是一进门之后仅有一张床，对面有一个立着的低着头的电扇。</p>
+<p>可以说是非常简陋了。</p>
+<h4 id="小结-3"><a class="markdownIt-Anchor" href="#小结-3"></a> 小结</h4>
+<p>需要自备拖鞋以及晾衣架，还好自己都有。</p>
+<p>在外生存，必须住的踏实。</p>
+<p>在外生存，钱永远是第一位的，可以提升自己的生活质量。</p>
+<h1 id="小结-4"><a class="markdownIt-Anchor" href="#小结-4"></a> 小结</h1>
+<p>当找到工作并长住之后，白天利用休息时间知悉小区路线图并且记录标注以下元素：</p>
+<ol>
+<li>图文店的位置</li>
+<li>洗浴店的位置</li>
+<li>公交站以及地铁站的抵达时间以及所有线路早末班时间。</li>
+<li>开关门时间以及是否有门禁及密码</li>
+<li>夜间从各个小区门通往所在楼幢的线路</li>
+</ol>
+<p>想到再补充了。</p>
+]]></content>
+      <categories>
+        <category>城漂</category>
+        <category>北漂日记</category>
+      </categories>
+      <tags>
+        <tag>住宿</tag>
+        <tag>北京</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于微信跨平台迁移聊天记录的问题</title>
     <url>/2021/01/22/%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1%E8%B7%A8%E5%B9%B3%E5%8F%B0%E8%BF%81%E7%A7%BB%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>在中国被神化了的微信，总有很多槽点，迁移微信聊天记录也是其中之一。</p>
@@ -5317,72 +5379,55 @@ zipAlignEnabled <span class="hljs-keyword">true</span>
       </tags>
   </entry>
   <entry>
-    <title>初探个人Wiki</title>
-    <url>/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/</url>
-    <content><![CDATA[<p>回家之后打算为我的博客增加加密功能，于是蹦出了一个npm的报错。</p>
-<p>于是，我又学习到了新知识，打算去找一个地进行记录。</p>
+    <title>北京，一座很难找到当地人的城市</title>
+    <url>/2018/06/29/%E5%8C%97%E4%BA%AC%EF%BC%8C%E4%B8%80%E5%BA%A7%E5%BE%88%E9%9A%BE%E6%89%BE%E5%88%B0%E5%BD%93%E5%9C%B0%E4%BA%BA%E7%9A%84%E5%9F%8E%E5%B8%82/</url>
+    <content><![CDATA[<p>都说普通话，每当听到有儿化音的时候，那应该是真的北京人没错了，那也有假，因为我。</p>
+<p>目前为止发现的似乎是正统的北京人，则是在北京展览馆附近的麦当劳里的一点点白头的点餐员，一个地方（可能是华贸）的小孩子和老年人，还有我面前的人们——当地小区的住户。</p>
+<p>中午的麦当劳内，有一群老年人在打牌。</p>
+<p>那么多人涌入北京，实在是难以分辨。</p>
+<p>以下是我总结出来的几点，不确保你都掌握了就能说出一口流利的北京话，但确保你可以假装自己是北京人，以及在地铁和公交车站里说几句。</p>
 <span id="more"></span>
-<h2 id="为何使用-wiki"><a class="markdownIt-Anchor" href="#为何使用-wiki"></a> 为何使用 Wiki</h2>
-<p>最近在整理Java的笔记，使用语雀。</p>
-<p>我经常和面试的人说：</p>
+<h3 id="渐渐的我学会了北京的说话方式但不是北京话"><a class="markdownIt-Anchor" href="#渐渐的我学会了北京的说话方式但不是北京话"></a> 渐渐的，我学会了北京的说话方式，但不是北京话</h3>
+<p>慢慢的我似乎学会了北京话的发音，不仅仅是带着儿化音——</p>
+<h4 id="您"><a class="markdownIt-Anchor" href="#您"></a> 您</h4>
 <blockquote>
-<p>我使用语雀进行知识的管理与沉淀。</p>
+<p>下一站下吗您</p>
 </blockquote>
-<p>话虽这么说，其实现在看这并不是一个特别专业的知识管理的方法。</p>
-<p>作为普通人，一般的Evernote等笔记类应用已经足够，在<a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%9A%84%E5%8F%98%E8%BF%81%E5%8F%B2">下文</a>中会提到。</p>
-<p>但作为一名开发，且各种团队与协作都附带有“团队Wiki”的一项功能<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，可见“wiki”作为知识管理工具的重要性与专业性。</p>
-<p>以及一些面试的职位需求，会搭建Wiki也是一个必要的加分项，这也是我做Wiki的动力之一。</p>
-<h3 id="之前的输入输出方法"><a class="markdownIt-Anchor" href="#之前的输入输出方法"></a> 之前的输入输出方法</h3>
-<p>关于我学生时代的阅读与输出，沿用到现在的微Evernote-Instapaper-pocket，之后是Google Keep记录一些书摘<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
-<h2 id="个人知识管理的变迁史"><a class="markdownIt-Anchor" href="#个人知识管理的变迁史"></a> <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%9A%84%E5%8F%98%E8%BF%81%E5%8F%B2">个人知识管理的变迁史</a></h2>
-<p>之后一段时间，我使用joplin几个月，似乎只是因为保护我的数据不被第三方侵入。由于双栏的markdown编辑器，如果TOC很长，则不是很便于查看与增添。</p>
-<p>如果使用国内笔记应用：语雀、有道云笔记、为知笔记甚至是微软的OneNote,都不可避免的因为会审核其中的内容,或者被其他用户分享不合法的内容而导致平台整改，自己的全部输出都会消失<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>,而并不考虑使用这种方法。</p>
-<p>随后，这段时间我的知识管理与技术踩坑几乎都是在我的个人博客里，导致这样也和我的生活经历相结合，其实并不是一个很好的现象。</p>
-<p>后来在家的两个月，尝试将Joplin迁移到Notion中，同样是也是因为担心账号被Ban而放弃。</p>
-<h2 id="对wiki的需求"><a class="markdownIt-Anchor" href="#对wiki的需求"></a> 对Wiki的需求</h2>
-<p>关于知识管理，我参考了参考链接V2的链接，也整理了自己的需求List：</p>
-<ol>
-<li>支持全部Markdown</li>
-<li>支持分类、且分类支持子集（作为产品的分类僻）</li>
-<li>无需使用服务器（可以节省下软妹币，这也是我为什么不继续使用WP作为个人博客的原因<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>）</li>
-<li>有极客范，可以进行语言的学习与搭建，但学习成本不高（这点好像和第3点冲突了）</li>
-<li>界面上的整洁与优雅</li>
-<li>如果可以支持搜索则更好</li>
-<li>不与我已经使用的服务相冲突（目前已经有一个Hexo）</li>
-</ol>
-<h3 id="挑选与筛选"><a class="markdownIt-Anchor" href="#挑选与筛选"></a> 挑选与筛选</h3>
-<p>目前最合适的，似乎仅仅是在我的另一个电脑里再次搭建一个Hexo。</p>
-<p><a href="https://www.dokuwiki.org/dokuwiki">DokuWiki</a>的话，PHP语言，  插件丰富，但需要购买网站空间，弃。</p>
-<p><a href="https://github.com/hexojs/hexo">Hexo</a>+theme-<a href="https://github.com/zthxxx/hexo-theme-Wikitten">Wikitten</a>：需要再次搭建一个Hexo,之后可以<a href="https://blog.zthxxx.me/post/build-hexo-blog-by-travis-ci/#github-pages">使用Travis自动构建Hexo到GitHub</a>,但暂不考虑。</p>
-<p><a href="https://orgmode.org/index.html">OrgMode</a>：一种Emacs的编辑模式，语言需要学习一段时间，但在当下看并不是一个很好的方式，以及他的<a href="https://wiki.geekplux.com/#org0e1ae5e">显示目录</a><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>特别像Joplin。</p>
-<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
-<p>V2EX：<a href="https://www.v2ex.com/t/347176?p=1">用 Hexo 做个人 Wiki 知识管理系统</a></p>
-<p>知乎：</p>
-<p><a href="https://www.zhihu.com/question/20317929/answer/37268688">适合小团队的知识库软件有哪些？</a></p>
-<p><a href="https://www.zhihu.com/question/366856912/answer/985976776">什么wiki系统界面好看，中文的，功能强大，且是php的？</a></p>
-<hr />
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>例如在线文档平台语雀、敏捷开发软件Ping Code。 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref1">↩︎</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>详见我大学时代的微信公众号文章：<a href="https://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484023&amp;idx=1&amp;sn=7761a1353c4ddfd5f80a2a31721fbd3c&amp;chksm=eb3fbaf8dc4833eef1fde3dcd2faa652d63f5cba0f45c029bcea7755bd91e08041c8a58cd482&amp;scene=21#wechat_redirect">那些被遗忘的阅读角落——我之前的阅读梳理</a> <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref2">↩︎</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>虽然在我的2020年终总结中写过需要认清这样的现实，但这一就是一个不可避免的“沉没成本”的问题 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref3">↩︎</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>我也知道从这点上对自己的“投资”是必要的，但还是需要花钱花在刀口上。 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref4">↩︎</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p>这里使用了一个网友@GeekPlux的Wiki做展示。 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref5">↩︎</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+<p>这句话是我一次在地铁里问一个老年人的语气。</p>
+<blockquote>
+<p>给您让座</p>
+</blockquote>
+<p>在北京，“您”这个字可能是我目前为止听得最多的汉字之一，并且很多人喜欢用“您”。</p>
+<p>在第一次来北京的时候适合父母一起来的，因为当时正值新年，公交车上一位中年女性对比较年长的女性说“……祝您新年快乐——”其中“乐”字拖得非常的长，当然也是带儿化音，</p>
+<p>所以这句话给我的印象特别的深。</p>
+<h4 id="咱"><a class="markdownIt-Anchor" href="#咱"></a> 咱</h4>
+<blockquote>
+<p>咱北京人儿</p>
+<p>咱们</p>
+</blockquote>
+<p>第一个“咱”是我在西单大悦城的Apple Store里听来的，有一个人准备和店员动手了，要找店的经理。</p>
+<p>那位五十多岁的大爷可能是对着他的女儿说，“您是经理吗”，之后转过身边哈哈大笑。</p>
+<blockquote>
+<p>咱北京人不动手～</p>
+</blockquote>
+<p>随后他对旁边的店员说。</p>
+<h4 id="~儿"><a class="markdownIt-Anchor" href="#~儿"></a> ～儿</h4>
+<blockquote>
+<p>ming(er)zi,名字</p>
+</blockquote>
+<blockquote>
+<p>Kuaidian(er),快点儿</p>
+</blockquote>
+<p>随着在北京（儿）的天数越待越长，也会慢慢补充。欢迎评论留言您接触的北京人说的话，以及您接触过的北京人的性格特征。</p>
 ]]></content>
       <categories>
-        <category>个人沉淀</category>
-        <category>知识管理</category>
+        <category>城漂</category>
+        <category>北漂日记</category>
       </categories>
       <tags>
-        <tag>Wiki</tag>
+        <tag>北京</tag>
+        <tag>文化</tag>
+        <tag>城市</tag>
       </tags>
   </entry>
   <entry>
@@ -5613,55 +5658,72 @@ zipAlignEnabled <span class="hljs-keyword">true</span>
       </tags>
   </entry>
   <entry>
-    <title>北京，一座很难找到当地人的城市</title>
-    <url>/2018/06/29/%E5%8C%97%E4%BA%AC%EF%BC%8C%E4%B8%80%E5%BA%A7%E5%BE%88%E9%9A%BE%E6%89%BE%E5%88%B0%E5%BD%93%E5%9C%B0%E4%BA%BA%E7%9A%84%E5%9F%8E%E5%B8%82/</url>
-    <content><![CDATA[<p>都说普通话，每当听到有儿化音的时候，那应该是真的北京人没错了，那也有假，因为我。</p>
-<p>目前为止发现的似乎是正统的北京人，则是在北京展览馆附近的麦当劳里的一点点白头的点餐员，一个地方（可能是华贸）的小孩子和老年人，还有我面前的人们——当地小区的住户。</p>
-<p>中午的麦当劳内，有一群老年人在打牌。</p>
-<p>那么多人涌入北京，实在是难以分辨。</p>
-<p>以下是我总结出来的几点，不确保你都掌握了就能说出一口流利的北京话，但确保你可以假装自己是北京人，以及在地铁和公交车站里说几句。</p>
+    <title>初探个人Wiki</title>
+    <url>/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/</url>
+    <content><![CDATA[<p>回家之后打算为我的博客增加加密功能，于是蹦出了一个npm的报错。</p>
+<p>于是，我又学习到了新知识，打算去找一个地进行记录。</p>
 <span id="more"></span>
-<h3 id="渐渐的我学会了北京的说话方式但不是北京话"><a class="markdownIt-Anchor" href="#渐渐的我学会了北京的说话方式但不是北京话"></a> 渐渐的，我学会了北京的说话方式，但不是北京话</h3>
-<p>慢慢的我似乎学会了北京话的发音，不仅仅是带着儿化音——</p>
-<h4 id="您"><a class="markdownIt-Anchor" href="#您"></a> 您</h4>
+<h2 id="为何使用-wiki"><a class="markdownIt-Anchor" href="#为何使用-wiki"></a> 为何使用 Wiki</h2>
+<p>最近在整理Java的笔记，使用语雀。</p>
+<p>我经常和面试的人说：</p>
 <blockquote>
-<p>下一站下吗您</p>
+<p>我使用语雀进行知识的管理与沉淀。</p>
 </blockquote>
-<p>这句话是我一次在地铁里问一个老年人的语气。</p>
-<blockquote>
-<p>给您让座</p>
-</blockquote>
-<p>在北京，“您”这个字可能是我目前为止听得最多的汉字之一，并且很多人喜欢用“您”。</p>
-<p>在第一次来北京的时候适合父母一起来的，因为当时正值新年，公交车上一位中年女性对比较年长的女性说“……祝您新年快乐——”其中“乐”字拖得非常的长，当然也是带儿化音，</p>
-<p>所以这句话给我的印象特别的深。</p>
-<h4 id="咱"><a class="markdownIt-Anchor" href="#咱"></a> 咱</h4>
-<blockquote>
-<p>咱北京人儿</p>
-<p>咱们</p>
-</blockquote>
-<p>第一个“咱”是我在西单大悦城的Apple Store里听来的，有一个人准备和店员动手了，要找店的经理。</p>
-<p>那位五十多岁的大爷可能是对着他的女儿说，“您是经理吗”，之后转过身边哈哈大笑。</p>
-<blockquote>
-<p>咱北京人不动手～</p>
-</blockquote>
-<p>随后他对旁边的店员说。</p>
-<h4 id="~儿"><a class="markdownIt-Anchor" href="#~儿"></a> ～儿</h4>
-<blockquote>
-<p>ming(er)zi,名字</p>
-</blockquote>
-<blockquote>
-<p>Kuaidian(er),快点儿</p>
-</blockquote>
-<p>随着在北京（儿）的天数越待越长，也会慢慢补充。欢迎评论留言您接触的北京人说的话，以及您接触过的北京人的性格特征。</p>
+<p>话虽这么说，其实现在看这并不是一个特别专业的知识管理的方法。</p>
+<p>作为普通人，一般的Evernote等笔记类应用已经足够，在<a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%9A%84%E5%8F%98%E8%BF%81%E5%8F%B2">下文</a>中会提到。</p>
+<p>但作为一名开发，且各种团队与协作都附带有“团队Wiki”的一项功能<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，可见“wiki”作为知识管理工具的重要性与专业性。</p>
+<p>以及一些面试的职位需求，会搭建Wiki也是一个必要的加分项，这也是我做Wiki的动力之一。</p>
+<h3 id="之前的输入输出方法"><a class="markdownIt-Anchor" href="#之前的输入输出方法"></a> 之前的输入输出方法</h3>
+<p>关于我学生时代的阅读与输出，沿用到现在的微Evernote-Instapaper-pocket，之后是Google Keep记录一些书摘<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
+<h2 id="个人知识管理的变迁史"><a class="markdownIt-Anchor" href="#个人知识管理的变迁史"></a> <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E7%9A%84%E5%8F%98%E8%BF%81%E5%8F%B2">个人知识管理的变迁史</a></h2>
+<p>之后一段时间，我使用joplin几个月，似乎只是因为保护我的数据不被第三方侵入。由于双栏的markdown编辑器，如果TOC很长，则不是很便于查看与增添。</p>
+<p>如果使用国内笔记应用：语雀、有道云笔记、为知笔记甚至是微软的OneNote,都不可避免的因为会审核其中的内容,或者被其他用户分享不合法的内容而导致平台整改，自己的全部输出都会消失<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>,而并不考虑使用这种方法。</p>
+<p>随后，这段时间我的知识管理与技术踩坑几乎都是在我的个人博客里，导致这样也和我的生活经历相结合，其实并不是一个很好的现象。</p>
+<p>后来在家的两个月，尝试将Joplin迁移到Notion中，同样是也是因为担心账号被Ban而放弃。</p>
+<h2 id="对wiki的需求"><a class="markdownIt-Anchor" href="#对wiki的需求"></a> 对Wiki的需求</h2>
+<p>关于知识管理，我参考了参考链接V2的链接，也整理了自己的需求List：</p>
+<ol>
+<li>支持全部Markdown</li>
+<li>支持分类、且分类支持子集（作为产品的分类僻）</li>
+<li>无需使用服务器（可以节省下软妹币，这也是我为什么不继续使用WP作为个人博客的原因<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>）</li>
+<li>有极客范，可以进行语言的学习与搭建，但学习成本不高（这点好像和第3点冲突了）</li>
+<li>界面上的整洁与优雅</li>
+<li>如果可以支持搜索则更好</li>
+<li>不与我已经使用的服务相冲突（目前已经有一个Hexo）</li>
+</ol>
+<h3 id="挑选与筛选"><a class="markdownIt-Anchor" href="#挑选与筛选"></a> 挑选与筛选</h3>
+<p>目前最合适的，似乎仅仅是在我的另一个电脑里再次搭建一个Hexo。</p>
+<p><a href="https://www.dokuwiki.org/dokuwiki">DokuWiki</a>的话，PHP语言，  插件丰富，但需要购买网站空间，弃。</p>
+<p><a href="https://github.com/hexojs/hexo">Hexo</a>+theme-<a href="https://github.com/zthxxx/hexo-theme-Wikitten">Wikitten</a>：需要再次搭建一个Hexo,之后可以<a href="https://blog.zthxxx.me/post/build-hexo-blog-by-travis-ci/#github-pages">使用Travis自动构建Hexo到GitHub</a>,但暂不考虑。</p>
+<p><a href="https://orgmode.org/index.html">OrgMode</a>：一种Emacs的编辑模式，语言需要学习一段时间，但在当下看并不是一个很好的方式，以及他的<a href="https://wiki.geekplux.com/#org0e1ae5e">显示目录</a><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>特别像Joplin。</p>
+<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
+<p>V2EX：<a href="https://www.v2ex.com/t/347176?p=1">用 Hexo 做个人 Wiki 知识管理系统</a></p>
+<p>知乎：</p>
+<p><a href="https://www.zhihu.com/question/20317929/answer/37268688">适合小团队的知识库软件有哪些？</a></p>
+<p><a href="https://www.zhihu.com/question/366856912/answer/985976776">什么wiki系统界面好看，中文的，功能强大，且是php的？</a></p>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>例如在线文档平台语雀、敏捷开发软件Ping Code。 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref1">↩︎</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>详见我大学时代的微信公众号文章：<a href="https://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484023&amp;idx=1&amp;sn=7761a1353c4ddfd5f80a2a31721fbd3c&amp;chksm=eb3fbaf8dc4833eef1fde3dcd2faa652d63f5cba0f45c029bcea7755bd91e08041c8a58cd482&amp;scene=21#wechat_redirect">那些被遗忘的阅读角落——我之前的阅读梳理</a> <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref2">↩︎</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>虽然在我的2020年终总结中写过需要认清这样的现实，但这一就是一个不可避免的“沉没成本”的问题 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref3">↩︎</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>我也知道从这点上对自己的“投资”是必要的，但还是需要花钱花在刀口上。 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref4">↩︎</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>这里使用了一个网友@GeekPlux的Wiki做展示。 <a href="https://felixxiong.github.io/2021/01/19/%E5%88%9D%E6%8E%A2%E4%B8%AA%E4%BA%BAWiki/#fnref5">↩︎</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
       <categories>
-        <category>城漂</category>
-        <category>北漂日记</category>
+        <category>个人沉淀</category>
+        <category>知识管理</category>
       </categories>
       <tags>
-        <tag>北京</tag>
-        <tag>文化</tag>
-        <tag>城市</tag>
+        <tag>Wiki</tag>
       </tags>
   </entry>
   <entry>
@@ -6396,77 +6458,6 @@ master分支储存生成的静态页面,repo分支储存源文件,这样可以�
       </tags>
   </entry>
   <entry>
-    <title>在高淳的公交车上</title>
-    <url>/2020/04/04/%E5%9C%A8%E9%AB%98%E6%B7%B3%E7%9A%84%E5%85%AC%E4%BA%A4%E8%BD%A6%E4%B8%8A/</url>
-    <content><![CDATA[<p>这一天还是来了——中华人民共和国把4月4日定为全国哀悼日。</p>
-<span id="more"></span>
-<p>国内平台灰的灰，黑的黑，形式感依旧。几个微信群里的朋友在讨论着，发着链接，冒着封号的风险：</p>
-<blockquote>
-<p><a href="https://www.fmprc.gov.cn/web/">外交部</a>的网站设计很有特色 / 配色很能说明问题。</p>
-</blockquote>
-<p>我很想当面给亲戚展示这个既荒诞又在现实中他们习以为常的行为，但如果在微信里直接发送，也是冒着被封号的风险。</p>
-<blockquote>
-<p>公交车是最长的，不过没有高铁和地铁长。</p>
-<p>一位高淳淳科公交上的小女孩乘客</p>
-</blockquote>
-<p>我打开了iPhone11的低电量模式，正坐在高淳的公交上。<br />
-午饭时，看到微信公众号人是最美的风景的《清明》文章，正好朋友圈有人分享了玛丽莲梦六的那篇微博，我也在朋友圈里分享了：</p>
-<p>群体哀悼不如看看普通公民的百态[ref]这条后续可能被证明是假的。[/ref]。</p>
-<p>可惜这里不能嵌入微信朋友圈内容。我希望这可以为我的好友们友们提个醒，隐喻且反思当下。由于是有共鸣，这条朋友圈也迅速得到了一些和我是好友的微信用户的回应等[ref]如果是别人或者异性，我这么回答一定会把我删了罢，索性还是算了（鲁迅口吻）。[/ref]，无论是真是假，我也进行了回复：</p>
-<blockquote>
-<p>这个不如，我给零分。</p>
-<p>曾经在广州一起共事的负责全栈的前同事说。</p>
-</blockquote>
-<blockquote>
-<p>如果那声哨子放出来，世界不会变成这样。</p>
-<p>我在朋友圈里回答他</p>
-</blockquote>
-<p>这么做的理由，也许就是希望社会稳定。但现实社会就是由各种职业各种性格不同个性的人组成，没有人，就没了社会。</p>
-<p>正值设置新到手的iPhone，先看了看象群，之后看了看推特。我之前的几条朋友圈的语气与口吻，正是看了以下的推：</p>
-<p><a href="https://twitter.com/dingyi/status/1246111298904965120?s=21">https://twitter.com/dingyi/status/1246111298904965120?s=21</a></p>
-<p>这里有可能需要导入我之前的文章了，是我第二次体会到WordPressCRM内容系统的好[ref]第一次是在<a href="https://felixxiong.github.io/2020/01/26/WordPress%E5%88%9D%E6%8E%A2/">初探</a>[/ref]。</p>
-<p>工作的不顺心与疫情的持续发展，带动了清明节我不去亲戚家，而是选择独自一人出门走走，在家里做了一点点工作之后，家人说自己不能最后一个出门，所以移动电源也没充满，我背上了空包就出门了–只带上一个充电宝[ref]关于我的edc，曾经有在same上发过，现在已经删除了。[/ref]。</p>
-<h2 id="又来高淳"><a class="markdownIt-Anchor" href="#又来高淳"></a> 又来高淳</h2>
-<p>记得之前去溧水的时候，我写了<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484164&amp;idx=1&amp;sn=7582569147189a01d92c96899082ca0e&amp;chksm=eb3fbb8bdc48329d36a81caa7469764e6e6ac9cf5592b3c831d481e96c22e36fd192aa25c45c&amp;scene=21#wechat_redirect">一篇游记</a>说我纵穿了溧水。而高淳，则是我除了南京某渡口与某沿江景区外继续“思考人生”与“发泄情绪”的地方。</p>
-<h3 id="这次来依旧没有应有的"><a class="markdownIt-Anchor" href="#这次来依旧没有应有的"></a> 这次来，依旧没有“应有的”</h3>
-<p>没有共享单车，政府的公用自行车依然是往市中心的方向，走了好久才有。尝试走到故固城湖公园，没有交通工具，又是清明节，晚上回家还得早。</p>
-<p>手机摄影依旧是我的喜好，我走着看着，哪里可以拍，哪里不能拍[ref]自己的限制与他人的看法[/ref]，毕竟BB的监控在看着你。不过戴着口罩解锁实在是太麻烦了。</p>
-<p>还有发送场景，即使现在我用的是国外的服务器，但依然不会发送关于国人经常见到的党旗的照片，上次朋友圈看到的单位买口罩前面的岗亭，这次则是救灾的安检帐篷。</p>
-<p>路上的风景将会在EyeEm与Instagram上（如果我手机可以上的话），少数则往same上发送，记得这是我之前独自去高淳时发的一组INS。</p>
-<p><a href="https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z">https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z</a></p>
-<h3 id="与之前的同学联系"><a class="markdownIt-Anchor" href="#与之前的同学联系"></a> 与之前的同学联系</h3>
-<p>抵达的时候她说正在吃饭，所以不能语音，比较遗憾，她们的话只能信一半，即使骗我也没什么好处。</p>
-<p>她之前在我现在做的肯德基做过兼职，我说，灰常勤劳的X哥，她仅仅回了一个“😂”。回去的路上才得知，她已经准备装修，今天在忙着量房了。</p>
-<blockquote>
-<p>那下次有机会再约吧。</p>
-<p>她说</p>
-</blockquote>
-<p>我们都知道，再见再见，再也不见，这个下次似乎是等同含义。<br />
-高淳的路上走着快到市中心时，人逐渐的多了起来，和同样焦虑的网友们打电话，几乎也都在外面。</p>
-<p>从地铁里开始居然就有人不戴口罩，近市中心居然也是这样…我也想脱，但为了个人的健康，还是戴起来为好。</p>
-<h2 id="后记与其他一些话题"><a class="markdownIt-Anchor" href="#后记与其他一些话题"></a> 后记与其他一些话题</h2>
-<p>在写博客这件事上，位可能只要手头有工作心事的情况下，文章也许都写不出之前的味儿了；疫情的文章依旧保存在便签里，最后一次写还是33天前。保存在了锤子便签，仅115字。</p>
-<p>iPhone的体验文章，也写不出什么，如果要写出一整篇。</p>
-<p>最终如你看到的一样，放在了后记里，后面有机会再写吧。</p>
-<h3 id="关于我的新iphone11"><a class="markdownIt-Anchor" href="#关于我的新iphone11"></a> 关于我的新iPhone11</h3>
-<p>在路上的时候特意选择了比较黑的图片与闪屏，又想让所有人只关注内容而不是手机的时间的位置。</p>
-<p>文章的话想过新写，但给我的感觉，最新版的iOS就三个字：“差不多”。但是国行safari会自动将你浏览的文章发送至腾讯服务器，还得自己做一些设置。</p>
-<p>亲戚打电话发微信去吃饭，不去。我更选择一个人出来走走，透透气，散散心。现在需要懂得拒绝了，做真实的自己。</p>
-<p>分享一下我的路途歌单：</p>
-<p><a href="https://music.163.com/#/playlist?id=1579766">https://music.163.com/#/playlist?id=1579766</a></p>
-<p>没想到世界迷雾打开后，耗电依旧是那么的快。</p>
-<p>上电梯时女性们的香水依旧非常的浓，隔着口罩依旧可以闻到，对我来说似乎依然是“可望而不可即”。在我之前博客文章说过很多次了。</p>
-<p>在回去的地铁里，应景的依旧是<a href="https://music.163.com/#/song?id=299258">王菲的《乘客》</a>。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>情绪泛滥</category>
-      </categories>
-      <tags>
-        <tag>疫情</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在雨天，做一些该做的事</title>
     <url>/2019/06/01/%E5%9C%A8%E9%9B%A8%E5%A4%A9%EF%BC%8C%E5%81%9A%E4%B8%80%E4%BA%9B%E8%AF%A5%E5%81%9A%E7%9A%84%E4%BA%8B/</url>
     <content><![CDATA[<blockquote>
@@ -6612,6 +6603,77 @@ master分支储存生成的静态页面,repo分支储存源文件,这样可以�
       </categories>
       <tags>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在高淳的公交车上</title>
+    <url>/2020/04/04/%E5%9C%A8%E9%AB%98%E6%B7%B3%E7%9A%84%E5%85%AC%E4%BA%A4%E8%BD%A6%E4%B8%8A/</url>
+    <content><![CDATA[<p>这一天还是来了——中华人民共和国把4月4日定为全国哀悼日。</p>
+<span id="more"></span>
+<p>国内平台灰的灰，黑的黑，形式感依旧。几个微信群里的朋友在讨论着，发着链接，冒着封号的风险：</p>
+<blockquote>
+<p><a href="https://www.fmprc.gov.cn/web/">外交部</a>的网站设计很有特色 / 配色很能说明问题。</p>
+</blockquote>
+<p>我很想当面给亲戚展示这个既荒诞又在现实中他们习以为常的行为，但如果在微信里直接发送，也是冒着被封号的风险。</p>
+<blockquote>
+<p>公交车是最长的，不过没有高铁和地铁长。</p>
+<p>一位高淳淳科公交上的小女孩乘客</p>
+</blockquote>
+<p>我打开了iPhone11的低电量模式，正坐在高淳的公交上。<br />
+午饭时，看到微信公众号人是最美的风景的《清明》文章，正好朋友圈有人分享了玛丽莲梦六的那篇微博，我也在朋友圈里分享了：</p>
+<p>群体哀悼不如看看普通公民的百态[ref]这条后续可能被证明是假的。[/ref]。</p>
+<p>可惜这里不能嵌入微信朋友圈内容。我希望这可以为我的好友们友们提个醒，隐喻且反思当下。由于是有共鸣，这条朋友圈也迅速得到了一些和我是好友的微信用户的回应等[ref]如果是别人或者异性，我这么回答一定会把我删了罢，索性还是算了（鲁迅口吻）。[/ref]，无论是真是假，我也进行了回复：</p>
+<blockquote>
+<p>这个不如，我给零分。</p>
+<p>曾经在广州一起共事的负责全栈的前同事说。</p>
+</blockquote>
+<blockquote>
+<p>如果那声哨子放出来，世界不会变成这样。</p>
+<p>我在朋友圈里回答他</p>
+</blockquote>
+<p>这么做的理由，也许就是希望社会稳定。但现实社会就是由各种职业各种性格不同个性的人组成，没有人，就没了社会。</p>
+<p>正值设置新到手的iPhone，先看了看象群，之后看了看推特。我之前的几条朋友圈的语气与口吻，正是看了以下的推：</p>
+<p><a href="https://twitter.com/dingyi/status/1246111298904965120?s=21">https://twitter.com/dingyi/status/1246111298904965120?s=21</a></p>
+<p>这里有可能需要导入我之前的文章了，是我第二次体会到WordPressCRM内容系统的好[ref]第一次是在<a href="https://felixxiong.github.io/2020/01/26/WordPress%E5%88%9D%E6%8E%A2/">初探</a>[/ref]。</p>
+<p>工作的不顺心与疫情的持续发展，带动了清明节我不去亲戚家，而是选择独自一人出门走走，在家里做了一点点工作之后，家人说自己不能最后一个出门，所以移动电源也没充满，我背上了空包就出门了–只带上一个充电宝[ref]关于我的edc，曾经有在same上发过，现在已经删除了。[/ref]。</p>
+<h2 id="又来高淳"><a class="markdownIt-Anchor" href="#又来高淳"></a> 又来高淳</h2>
+<p>记得之前去溧水的时候，我写了<a href="http://mp.weixin.qq.com/s?__biz=MzI3MTYyNjcyMA==&amp;mid=2247484164&amp;idx=1&amp;sn=7582569147189a01d92c96899082ca0e&amp;chksm=eb3fbb8bdc48329d36a81caa7469764e6e6ac9cf5592b3c831d481e96c22e36fd192aa25c45c&amp;scene=21#wechat_redirect">一篇游记</a>说我纵穿了溧水。而高淳，则是我除了南京某渡口与某沿江景区外继续“思考人生”与“发泄情绪”的地方。</p>
+<h3 id="这次来依旧没有应有的"><a class="markdownIt-Anchor" href="#这次来依旧没有应有的"></a> 这次来，依旧没有“应有的”</h3>
+<p>没有共享单车，政府的公用自行车依然是往市中心的方向，走了好久才有。尝试走到故固城湖公园，没有交通工具，又是清明节，晚上回家还得早。</p>
+<p>手机摄影依旧是我的喜好，我走着看着，哪里可以拍，哪里不能拍[ref]自己的限制与他人的看法[/ref]，毕竟BB的监控在看着你。不过戴着口罩解锁实在是太麻烦了。</p>
+<p>还有发送场景，即使现在我用的是国外的服务器，但依然不会发送关于国人经常见到的党旗的照片，上次朋友圈看到的单位买口罩前面的岗亭，这次则是救灾的安检帐篷。</p>
+<p>路上的风景将会在EyeEm与Instagram上（如果我手机可以上的话），少数则往same上发送，记得这是我之前独自去高淳时发的一组INS。</p>
+<p><a href="https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z">https://www.instagram.com/p/Bd9oAy3Hx8M/?igshid=fyh50fx4us4z</a></p>
+<h3 id="与之前的同学联系"><a class="markdownIt-Anchor" href="#与之前的同学联系"></a> 与之前的同学联系</h3>
+<p>抵达的时候她说正在吃饭，所以不能语音，比较遗憾，她们的话只能信一半，即使骗我也没什么好处。</p>
+<p>她之前在我现在做的肯德基做过兼职，我说，灰常勤劳的X哥，她仅仅回了一个“😂”。回去的路上才得知，她已经准备装修，今天在忙着量房了。</p>
+<blockquote>
+<p>那下次有机会再约吧。</p>
+<p>她说</p>
+</blockquote>
+<p>我们都知道，再见再见，再也不见，这个下次似乎是等同含义。<br />
+高淳的路上走着快到市中心时，人逐渐的多了起来，和同样焦虑的网友们打电话，几乎也都在外面。</p>
+<p>从地铁里开始居然就有人不戴口罩，近市中心居然也是这样…我也想脱，但为了个人的健康，还是戴起来为好。</p>
+<h2 id="后记与其他一些话题"><a class="markdownIt-Anchor" href="#后记与其他一些话题"></a> 后记与其他一些话题</h2>
+<p>在写博客这件事上，位可能只要手头有工作心事的情况下，文章也许都写不出之前的味儿了；疫情的文章依旧保存在便签里，最后一次写还是33天前。保存在了锤子便签，仅115字。</p>
+<p>iPhone的体验文章，也写不出什么，如果要写出一整篇。</p>
+<p>最终如你看到的一样，放在了后记里，后面有机会再写吧。</p>
+<h3 id="关于我的新iphone11"><a class="markdownIt-Anchor" href="#关于我的新iphone11"></a> 关于我的新iPhone11</h3>
+<p>在路上的时候特意选择了比较黑的图片与闪屏，又想让所有人只关注内容而不是手机的时间的位置。</p>
+<p>文章的话想过新写，但给我的感觉，最新版的iOS就三个字：“差不多”。但是国行safari会自动将你浏览的文章发送至腾讯服务器，还得自己做一些设置。</p>
+<p>亲戚打电话发微信去吃饭，不去。我更选择一个人出来走走，透透气，散散心。现在需要懂得拒绝了，做真实的自己。</p>
+<p>分享一下我的路途歌单：</p>
+<p><a href="https://music.163.com/#/playlist?id=1579766">https://music.163.com/#/playlist?id=1579766</a></p>
+<p>没想到世界迷雾打开后，耗电依旧是那么的快。</p>
+<p>上电梯时女性们的香水依旧非常的浓，隔着口罩依旧可以闻到，对我来说似乎依然是“可望而不可即”。在我之前博客文章说过很多次了。</p>
+<p>在回去的地铁里，应景的依旧是<a href="https://music.163.com/#/song?id=299258">王菲的《乘客》</a>。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>情绪泛滥</category>
+      </categories>
+      <tags>
+        <tag>疫情</tag>
       </tags>
   </entry>
   <entry>
@@ -7362,11 +7424,11 @@ Kernel.exec &quot;/bin/bash&quot;, &quot;-c&quot;, '/bin/bash -c &quot;$(curl -f
         <category>方向</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>一个人</tag>
+        <tag>总结</tag>
         <tag>北京</tag>
-        <tag>交际</tag>
         <tag>人际关系</tag>
+        <tag>交际</tag>
       </tags>
   </entry>
   <entry>
@@ -7486,8 +7548,8 @@ Kernel.exec &quot;/bin/bash&quot;, &quot;-c&quot;, '/bin/bash -c &quot;$(curl -f
         <category>工作文章发表目录</category>
       </categories>
       <tags>
-        <tag>总结</tag>
         <tag>目录</tag>
+        <tag>总结</tag>
       </tags>
   </entry>
   <entry>
@@ -9052,9 +9114,9 @@ npm install --save hexo-wordcount@6.0.1
       </categories>
       <tags>
         <tag>一个人</tag>
-        <tag>心理</tag>
         <tag>文化</tag>
         <tag>广州</tag>
+        <tag>心理</tag>
       </tags>
   </entry>
   <entry>
@@ -11326,8 +11388,74 @@ rss:
       <tags>
         <tag>生活</tag>
         <tag>一个人</tag>
-        <tag>人性</tag>
         <tag>诚实</tag>
+        <tag>人性</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>说说近况</title>
+    <url>/2021/06/19/%E8%AF%B4%E8%AF%B4%E8%BF%91%E5%86%B5/</url>
+    <content><![CDATA[<p>由于现实因素，此博客日后仅输出思考与技术相关文章。</p>
+<p>已经撤下部分关于博主真实心境（到现在我说话还是这么含蓄，该改改了）相关的“丧”主题的历史心理活动文章。</p>
+<h2 id="现实"><a class="markdownIt-Anchor" href="#现实"></a> 现实</h2>
+<h3 id="诚实的相对面"><a class="markdownIt-Anchor" href="#诚实的相对面"></a> 诚实的相对面</h3>
+<p>由于在现实社会中，所谓“诚实”，需要对身边的人诚实，但是在社会上，有些时候确实不能诚实——</p>
+<p>有时候人与人之间要对刚认识的同性或者是异性保持好感，要保护自己的利益，要这要那过于复杂。否则，便是失去回忆或是离开。</p>
+<p>这样的社会环境下，很难做到做一个简简单单的人，被迫失去初心，变得多面化。</p>
+<h3 id="博客输出技能证明"><a class="markdownIt-Anchor" href="#博客输出技能证明"></a> 博客输出=技能证明</h3>
+<p>通常，我会和其他的程序员、产品经理 一样，将自己的个人思考放在简历中 ，作为我输出的证明。但因生活和我的个人经历情况并没有多么的顺利、值得宣扬，且随性、自由、焦虑、“丧“对于求职的HR、还是领导而言，在这样的大环境下这些并不是什么“值得被看重”的特质<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，更多的还是需要服从。</p>
+<p>所以，正如本文概述所说，博客日后仅输出思考与技术相关文章。</p>
+<h2 id="博客并不是牺身之所"><a class="markdownIt-Anchor" href="#博客并不是牺身之所"></a> 博客并不是牺身之所</h2>
+<p>在很早的时候，我会将我的真实生活动态在博客当中撰写，为了获得那么一丁点反馈，就发出自己的声音，在互联网的汪洋里。</p>
+<p>同时在现实生活中，当认识一个人的时候，我就会展示自己的博客，自己输出过的内容。</p>
+<p>当然，这也就意味着输出过的一切都展现在他人的面前。</p>
+<p>same里有一句我经常引用在我博客里的话：</p>
+<blockquote>
+<p>别人稍微一理你，你就敞开心扉，这就是孤独。</p>
+</blockquote>
+<p>很多人，完全就是看一个热闹，而并不是真正的想了解你——毕竟他们有自己的朋友圈，自己的圈子。</p>
+<p>有的人，或许就是想笑话。</p>
+<p>无法预测读者的心态，但我相信目前为止给我留言的读者都是很友好的那一类人，在此感谢你们。</p>
+<h3 id="前同学的电话"><a class="markdownIt-Anchor" href="#前同学的电话"></a> 前同学的电话</h3>
+<p>就像最近接到军训时认识的前同学，打电话来问有没有时间帮个忙挣一点外快一样。</p>
+<p>最后他说：</p>
+<blockquote>
+<p>我们也就是一面之缘，不好意思打扰到你，你也有自己的生活，自己的人际，自己的圈子。</p>
+</blockquote>
+<p>按照我以前来说，我不理解，同学之间就该友好的互相帮助<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
+<p>现在，我有点理解。</p>
+<p>因为，这就是人与人之间的界限，这就是另一个在我博客里出现的“同性”对我所说的“分寸感”。</p>
+<h2 id="值得与不值得"><a class="markdownIt-Anchor" href="#值得与不值得"></a> 值得与不值得</h2>
+<p>熬夜聊天，也是我希望和人可以有结果。</p>
+<p>现实的经历，或许是我还不够好，或许是对方特别势利，导致一些丧失，使我对”熬夜却伤自己身体，但为对方考虑“这样的行为感到自责。</p>
+<p>网络社会的一些话是极度不负责任的：</p>
+<blockquote>
+<p>叫你早睡的人，不如一个陪你熬夜的人。</p>
+</blockquote>
+<p>我陪她熬夜了，结果呢？</p>
+<p>最后要不自己身体熬坏，要不聊天窗口早就是一个红色的感叹号，要不就是被割韭菜。</p>
+<p>没有结果，不值得。</p>
+<p>早点睡比什么都强。</p>
+<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
+<p>网络并不是法外之地，那些自己真正想说的，还是写给自己看吧。</p>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>西方社会可能要好一些。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>但我想联系之前的同学聚一聚，有的拉黑有的直接删除，还有的质问我：“你想证明什么”。她们还是那么的幼稚，长不大，或者说我的思想过于超前了，他们还达不到。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>一段时间的心里话</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>一个人</tag>
       </tags>
   </entry>
   <entry>
@@ -15254,134 +15382,6 @@ dependencies </span>&#123;
         <tag>设计</tag>
         <tag>广州</tag>
         <tag>毕业展</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pixel 1代PE系统降级至Android 10</title>
-    <url>/2021/06/08/Pixel-1%E4%BB%A3PE%E7%B3%BB%E7%BB%9F%E9%99%8D%E7%BA%A7%E8%87%B3Android-10/</url>
-    <content><![CDATA[<p>为了做Android开发（这个话题已经说了很久了，谁知我又因为一名异性网友而回到了iOS），在闲鱼购买了Nexus 5X与Pixel 1。</p>
-<p>Nexus 5X有虚焊（bootloop）的问题，Pixel有无法连接上网络的问题。</p>
-<p>Nexus 5X挂上了闲鱼后较为顺利的卖出后，我寄期望于后者，开始回退Android 10。</p>
-<h2 id="pe不香么"><a class="markdownIt-Anchor" href="#pe不香么"></a> PE不香么？</h2>
-<p>有人脸识别，主菜单还有近期/预测应用等功能。</p>
-<p>为了连接上Wi-Fi使用基础的手机功能，这也是我不得已而牺牲更多的体验。</p>
-<h2 id="回退过程"><a class="markdownIt-Anchor" href="#回退过程"></a> 回退过程</h2>
-<p>整个过程很简单，需要下载相应的官方包：<a href="https://developers.google.cn/android/images">Factory Images for Nexus and Pixel Devices</a></p>
-<p>之后将手机连接电脑，开启USB调试。</p>
-<p>官方提供了网页上的<a href="https://flash.android.com/">Android Flash Tool</a>，很遗憾在<a href="https://source.android.google.cn/setup/contribute/flash#device-requirements">Device requirements</a>页面看到，不支持Pixel 1。</p>
-<p>于是得通过adb命令进行降级。</p>
-<h3 id="安装adb调试桥"><a class="markdownIt-Anchor" href="#安装adb调试桥"></a> 安装adb调试桥</h3>
-<ol>
-<li>
-<p>两个系统相同的platform-tools文件夹，这个文件夹则是Android SDK必须的文件。</p>
-<p>之前使用Surface Go时，可以使用PowerShell，使用管理员权限打开，在文件夹内进行操作。（如果是PS,则需要添加<code>./adb</code>）</p>
-<p>在macOS上，则使用终端，cd定位到安全的platform-tools所在路径。</p>
-</li>
-<li>
-<p>安装调试桥</p>
-<p>如果安装了Android Studio，偏好设置-搜索sdk即可查看路径，添加到终端的环境变量中。</p>
-<p>如果没有安装Android Studio，则需要在<a href="">这个页面</a>下载上述的platform-tools文件。</p>
-</li>
-<li>
-<p>添加环境变量</p>
-<p>此处仅声明在Mac上的方法：</p>
-<ol>
-<li>如果你的终端是bash，则需要一个<code>.bash_profile</code>文件。</li>
-<li>如果你的终端是zch，需要<code>.zshrc</code>文件，这两个都是隐藏的。</li>
-</ol>
-</li>
-<li>
-<p>安装后检测adb</p>
-<pre class="highlight"><code class="bash">adb version
-</code></pre>
-<p>使用<code>adb device</code>查看是否开启设备调试，如果出现一些字符（设备编号等），则成功。</p>
-</li>
-</ol>
-<h2 id="回退踩坑"><a class="markdownIt-Anchor" href="#回退踩坑"></a> 回退踩坑</h2>
-<p>定位文件与执行flash.sh时，不应当使用双击打开运行，应当使用  路径+flash.sh运行。</p>
-<p>我的博客不太清楚确定使用哪一家的图床，之前使用的是sm.ms的服务，由于数据安全性与倾诉欲的丧失，后续的文章可能不会有更多的图片。</p>
-<h2 id="回退完毕"><a class="markdownIt-Anchor" href="#回退完毕"></a> 回退完毕</h2>
-<p>由于购买的已经解锁了BL（bootloader），但自己刷好之后还没有使用下列命令锁上：</p>
-<pre class="highlight"><code class="bash">fastboot flashing lock
-</code></pre>
-<hr />
-<p><a href="https://juejin.cn/post/6844903645289398280">ADB 操作命令详解及用法大全</a></p>
-<p><a href="https://qastack.cn/programming/34532063/finding-android-sdk-on-mac-and-adding-to-path">在Mac上找到Android SDK并添加到PATH</a></p>
-]]></content>
-      <categories>
-        <category>产品</category>
-        <category>折腾与探索</category>
-        <category>Google Pixel</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>Pixel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>说说近况</title>
-    <url>/2021/06/19/%E8%AF%B4%E8%AF%B4%E8%BF%91%E5%86%B5/</url>
-    <content><![CDATA[<p>由于现实因素，此博客日后仅输出思考与技术相关文章。</p>
-<p>已经撤下部分关于博主真实心境（到现在我说话还是这么含蓄，该改改了）相关的“丧”主题的历史心理活动文章。</p>
-<h2 id="现实"><a class="markdownIt-Anchor" href="#现实"></a> 现实</h2>
-<h3 id="诚实的相对面"><a class="markdownIt-Anchor" href="#诚实的相对面"></a> 诚实的相对面</h3>
-<p>由于在现实社会中，所谓“诚实”，需要对身边的人诚实，但是在社会上，有些时候确实不能诚实——</p>
-<p>有时候人与人之间要对刚认识的同性或者是异性保持好感，要保护自己的利益，要这要那过于复杂。否则，便是失去回忆或是离开。</p>
-<p>这样的社会环境下，很难做到做一个简简单单的人，被迫失去初心，变得多面化。</p>
-<h3 id="博客输出技能证明"><a class="markdownIt-Anchor" href="#博客输出技能证明"></a> 博客输出=技能证明</h3>
-<p>通常，我会和其他的程序员、产品经理 一样，将自己的个人思考放在简历中 ，作为我输出的证明。但因生活和我的个人经历情况并没有多么的顺利、值得宣扬，且随性、自由、焦虑、“丧“对于求职的HR、还是领导而言，在这样的大环境下这些并不是什么“值得被看重”的特质<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，更多的还是需要服从。</p>
-<p>所以，正如本文概述所说，博客日后仅输出思考与技术相关文章。</p>
-<h2 id="博客并不是牺身之所"><a class="markdownIt-Anchor" href="#博客并不是牺身之所"></a> 博客并不是牺身之所</h2>
-<p>在很早的时候，我会将我的真实生活动态在博客当中撰写，为了获得那么一丁点反馈，就发出自己的声音，在互联网的汪洋里。</p>
-<p>同时在现实生活中，当认识一个人的时候，我就会展示自己的博客，自己输出过的内容。</p>
-<p>当然，这也就意味着输出过的一切都展现在他人的面前。</p>
-<p>same里有一句我经常引用在我博客里的话：</p>
-<blockquote>
-<p>别人稍微一理你，你就敞开心扉，这就是孤独。</p>
-</blockquote>
-<p>很多人，完全就是看一个热闹，而并不是真正的想了解你——毕竟他们有自己的朋友圈，自己的圈子。</p>
-<p>有的人，或许就是想笑话。</p>
-<p>无法预测读者的心态，但我相信目前为止给我留言的读者都是很友好的那一类人，在此感谢你们。</p>
-<h3 id="前同学的电话"><a class="markdownIt-Anchor" href="#前同学的电话"></a> 前同学的电话</h3>
-<p>就像最近接到军训时认识的前同学，打电话来问有没有时间帮个忙挣一点外快一样。</p>
-<p>最后他说：</p>
-<blockquote>
-<p>我们也就是一面之缘，不好意思打扰到你，你也有自己的生活，自己的人际，自己的圈子。</p>
-</blockquote>
-<p>按照我以前来说，我不理解，同学之间就该友好的互相帮助<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
-<p>现在，我有点理解。</p>
-<p>因为，这就是人与人之间的界限，这就是另一个在我博客里出现的“同性”对我所说的“分寸感”。</p>
-<h2 id="值得与不值得"><a class="markdownIt-Anchor" href="#值得与不值得"></a> 值得与不值得</h2>
-<p>熬夜聊天，也是我希望和人可以有结果。</p>
-<p>现实的经历，或许是我还不够好，或许是对方特别势利，导致一些丧失，使我对”熬夜却伤自己身体，但为对方考虑“这样的行为感到自责。</p>
-<p>网络社会的一些话是极度不负责任的：</p>
-<blockquote>
-<p>叫你早睡的人，不如一个陪你熬夜的人。</p>
-</blockquote>
-<p>我陪她熬夜了，结果呢？</p>
-<p>最后要不自己身体熬坏，要不聊天窗口早就是一个红色的感叹号，要不就是被割韭菜。</p>
-<p>没有结果，不值得。</p>
-<p>早点睡比什么都强。</p>
-<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
-<p>网络并不是法外之地，那些自己真正想说的，还是写给自己看吧。</p>
-<hr />
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>西方社会可能要好一些。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>但我想联系之前的同学聚一聚，有的拉黑有的直接删除，还有的质问我：“你想证明什么”。她们还是那么的幼稚，长不大，或者说我的思想过于超前了，他们还达不到。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>一段时间的心里话</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>一个人</tag>
       </tags>
   </entry>
 </search>
