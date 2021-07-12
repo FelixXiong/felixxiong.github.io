@@ -121,6 +121,62 @@
       </tags>
   </entry>
   <entry>
+    <title>AI常用操作总结</title>
+    <url>/2018/08/25/AI%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>这些是我在使用AI的时候经常使用到的操作以及排版的总结笔记。</p>
+<p>欢迎评论添加。</p>
+<span id="more"></span>
+<h2 id="画板管理"><a class="markdownIt-Anchor" href="#画板管理"></a> 画板管理</h2>
+<h3 id="删除画板"><a class="markdownIt-Anchor" href="#删除画板"></a> 删除画板</h3>
+<p>文件-文档设置-编辑画板</p>
+<p>File-Document Setup-Edit Artboards</p>
+<h2 id="栅格化"><a class="markdownIt-Anchor" href="#栅格化"></a> 栅格化</h2>
+<p>对象-栅格化</p>
+<p>Object-Rasterized</p>
+<h2 id="调节段前距及首行缩进"><a class="markdownIt-Anchor" href="#调节段前距及首行缩进"></a> 调节段前距及首行缩进</h2>
+<p>字：Character</p>
+<p>段落：Paragraph</p>
+<h2 id="将标点符号不位于句首"><a class="markdownIt-Anchor" href="#将标点符号不位于句首"></a> 将标点符号不位于句首</h2>
+<ol>
+<li>
+<p>“段落”找到“避头尾集”，选择“严格”。</p>
+</li>
+<li>
+<p>在“标点挤压集”里面选择“行尾挤压半角”。</p>
+</li>
+</ol>
+<h2 id="更改操作"><a class="markdownIt-Anchor" href="#更改操作"></a> 更改操作</h2>
+<h3 id="直线变虚线"><a class="markdownIt-Anchor" href="#直线变虚线"></a> 直线变虚线</h3>
+<p>窗口-描边-虚线</p>
+<p>Window-Stroke</p>
+<h3 id="从word复制文字"><a class="markdownIt-Anchor" href="#从word复制文字"></a> 从Word复制文字</h3>
+<p>新建文字选框，在其中粘贴文字（粘贴之后为清除格式）。</p>
+<h2 id="ai快速制作页码"><a class="markdownIt-Anchor" href="#ai快速制作页码"></a> AI快速制作页码</h2>
+<p>1.新建页码，复制一个</p>
+<p>2.编辑-在所有画板上粘贴（Edit-Paste on All Artboards）</p>
+<p>3.一致修改页码数字与位置</p>
+<p>使用串联的方式：参考链接：<a href="http://www.16xx8.com/photoshop/ruanjian/illustrator/2015/140380.html">AI教程，教你如何快速制作页码</a></p>
+<h2 id="排版总结"><a class="markdownIt-Anchor" href="#排版总结"></a> 排版总结</h2>
+<p>AI样式文件以及word文本文件的前提下，排版次序：</p>
+<ol>
+<li>新建画板，设置出血以及边距</li>
+<li>确定页码位置</li>
+<li>将word中的内容以文本形式粘贴到AI中，与AI进行大小比对</li>
+<li>缩放至合适大小，查看其字号</li>
+<li>拆分文章段落，统一左对齐</li>
+<li>设置文本格式（字号大小粗细、不同段落的缩进），确认缩进位置数值</li>
+<li>检查标点符号</li>
+</ol>
+]]></content>
+      <categories>
+        <category>职场</category>
+        <category>软件常用操作</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>22岁那年，我掉入了手机坑</title>
     <url>/2019/11/02/22%E5%B2%81%E9%82%A3%E5%B9%B4%EF%BC%8C%E6%88%91%E6%8E%89%E5%85%A5%E4%BA%86%E6%89%8B%E6%9C%BA%E5%9D%91/</url>
     <content><![CDATA[<p>原文名称：别人在发展的路上走了又走，我在换机的型号上愁了又愁</p>
@@ -227,182 +283,6 @@
         <tag>锤子</tag>
         <tag>生活</tag>
         <tag>一个人</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI常用操作总结</title>
-    <url>/2018/08/25/AI%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>这些是我在使用AI的时候经常使用到的操作以及排版的总结笔记。</p>
-<p>欢迎评论添加。</p>
-<span id="more"></span>
-<h2 id="画板管理"><a class="markdownIt-Anchor" href="#画板管理"></a> 画板管理</h2>
-<h3 id="删除画板"><a class="markdownIt-Anchor" href="#删除画板"></a> 删除画板</h3>
-<p>文件-文档设置-编辑画板</p>
-<p>File-Document Setup-Edit Artboards</p>
-<h2 id="栅格化"><a class="markdownIt-Anchor" href="#栅格化"></a> 栅格化</h2>
-<p>对象-栅格化</p>
-<p>Object-Rasterized</p>
-<h2 id="调节段前距及首行缩进"><a class="markdownIt-Anchor" href="#调节段前距及首行缩进"></a> 调节段前距及首行缩进</h2>
-<p>字：Character</p>
-<p>段落：Paragraph</p>
-<h2 id="将标点符号不位于句首"><a class="markdownIt-Anchor" href="#将标点符号不位于句首"></a> 将标点符号不位于句首</h2>
-<ol>
-<li>
-<p>“段落”找到“避头尾集”，选择“严格”。</p>
-</li>
-<li>
-<p>在“标点挤压集”里面选择“行尾挤压半角”。</p>
-</li>
-</ol>
-<h2 id="更改操作"><a class="markdownIt-Anchor" href="#更改操作"></a> 更改操作</h2>
-<h3 id="直线变虚线"><a class="markdownIt-Anchor" href="#直线变虚线"></a> 直线变虚线</h3>
-<p>窗口-描边-虚线</p>
-<p>Window-Stroke</p>
-<h3 id="从word复制文字"><a class="markdownIt-Anchor" href="#从word复制文字"></a> 从Word复制文字</h3>
-<p>新建文字选框，在其中粘贴文字（粘贴之后为清除格式）。</p>
-<h2 id="ai快速制作页码"><a class="markdownIt-Anchor" href="#ai快速制作页码"></a> AI快速制作页码</h2>
-<p>1.新建页码，复制一个</p>
-<p>2.编辑-在所有画板上粘贴（Edit-Paste on All Artboards）</p>
-<p>3.一致修改页码数字与位置</p>
-<p>使用串联的方式：参考链接：<a href="http://www.16xx8.com/photoshop/ruanjian/illustrator/2015/140380.html">AI教程，教你如何快速制作页码</a></p>
-<h2 id="排版总结"><a class="markdownIt-Anchor" href="#排版总结"></a> 排版总结</h2>
-<p>AI样式文件以及word文本文件的前提下，排版次序：</p>
-<ol>
-<li>新建画板，设置出血以及边距</li>
-<li>确定页码位置</li>
-<li>将word中的内容以文本形式粘贴到AI中，与AI进行大小比对</li>
-<li>缩放至合适大小，查看其字号</li>
-<li>拆分文章段落，统一左对齐</li>
-<li>设置文本格式（字号大小粗细、不同段落的缩进），确认缩进位置数值</li>
-<li>检查标点符号</li>
-</ol>
-]]></content>
-      <categories>
-        <category>职场</category>
-        <category>软件常用操作</category>
-      </categories>
-      <tags>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android keystore踩坑记录</title>
-    <url>/2021/01/16/Android%20keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>最近又在折腾我之前的Android项目了，再次重写，使用不同的控件，由浅入深，尝试转向开发岗<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
-<p>关于在百度地图上踩的keystore的坑以及解决方案，都在这里一并记录。希望可以节省你的时间。</p>
-<p>关于我练手项目的尝试经历，可以查看相关标签中关于地图与音乐的文章：<a href="https://felixxiong.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/">Android开发</a></p>
-<span id="more"></span>
-<p>场景：2020年7月，我创建过一个Keystore,今日通过如下命令<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>创建keystore，发生错误。</p>
-<p>以下的解决方案，<strong>其中部分整合</strong>了参考链接中的内容与相应软件的命令，我在此对原作者表示感谢。</p>
-<h2 id="报错"><a class="markdownIt-Anchor" href="#报错"></a> 报错</h2>
-<h3 id="密钥库不存在"><a class="markdownIt-Anchor" href="#密钥库不存在"></a> 密钥库不存在</h3>
-<p>Android的终端输入：<code>keytool -list -v -keystore debug.keystore</code></p>
-<p>提示：密钥库不存在，但在Mac路径<code>〜/.android/debug.keystore</code>中，有debug.keystore文件。</p>
-<h4 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h4>
-<p>在终端使用如下命令重建keystore：</p>
-<pre class="highlight"><code class="">keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -validity 10000
-</code></pre>
-<p>重建文件，则百度地图后台需要<strong>再次</strong>提交。</p>
-<h3 id="keystore-password-was-incorrect"><a class="markdownIt-Anchor" href="#keystore-password-was-incorrect"></a> keystore password was incorrect</h3>
-<blockquote>
-<p>Execution failed for task ‘:app:packageDebug’.</p>
-<blockquote>
-<p>A failure occurred while executing com.android.build.gradle.tasks.PackageAndroidArtifact$IncrementalSplitterRunnable<br />
-com.android.ide.common.signing.KeytoolException: Failed to read key  AndroidDebugKey from store  “/Users/felixxiong/.android/debug.keyst··ore”: keystore password was  incorrect</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Cause: failed to decrypt safe contents entry:  javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.</p>
-</blockquote>
-<p>原因：keystore密码错误</p>
-<p>场景：在Mac路径<code>〜/.android/debug.keystore</code>中，有debug.keystore文件，在Android运行时签名报错。</p>
-<h4 id="解决方案-2"><a class="markdownIt-Anchor" href="#解决方案-2"></a> 解决方案</h4>
-<p>使用以下三个命令可修改keystore参数(其中<code>my.keystore</code>为复制后的新keystore)：</p>
-<p>修改密码：<code>keytool -storepasswd -keystore android.keystore</code></p>
-<p>修改别名alias：<code>keytool -changealias -keystore android.keystore -alias my_name -destalias androiddebugkey</code></p>
-<p>修改alias密码：<code>keytool -keypasswd -keystore my.keystore -alias androiddebugkey</code></p>
-<h4 id="keystore的种类"><a class="markdownIt-Anchor" href="#keystore的种类"></a> keystore的种类</h4>
-<p>目前发现，keystore有PKCS12与SHA256withRSA两种。</p>
-<h5 id="如果-storetype-为-pkcs12"><a class="markdownIt-Anchor" href="#如果-storetype-为-pkcs12"></a> 如果 -storetype 为 PKCS12</h5>
-<p>尝试修改密码，继续报错：</p>
-<blockquote>
-<p>keytool 错误: java.lang.UnsupportedOperationException: 如果 -storetype 为 PKCS12, 则不支持 -keypasswd 命令</p>
-</blockquote>
-<p><strong>如果 -storetype 为 SHA256withRSA</strong></p>
-<p>此处我通过Android Studio - Build - Generate Singed -Bundle / APK创建的keystore。</p>
-<blockquote>
-<p>Warning:JKS 密钥库使用专用格式。建议使用 “keytool -importkeystore -srckeystore  debug.keystore -destkeystore debug.keystore -deststoretype pkcs12”  迁移到行业标准格式 PKCS12。</p>
-</blockquote>
-<p>便于复制的命令：</p>
-<blockquote>
-<p>keytool -importkeystore -srckeystore debug.keystore -destkeystore debug.keystore -deststoretype pkcs12</p>
-</blockquote>
-<p>此处经测试，当keystore的type为SHA256withRSA时，可以使用上述三个命令。</p>
-<h5 id="找回key相关"><a class="markdownIt-Anchor" href="#找回key相关"></a> 找回key相关</h5>
-<h6 id="日志找回"><a class="markdownIt-Anchor" href="#日志找回"></a> 日志找回</h6>
-<p>如果你使用AS生成过，则可通过log方式查看。</p>
-<p>Windows：C:\Users\UserName（当前系统的用户名），AndroidStudioX.X &gt; system &gt; log-idea.log-<strong>injected.signing.store</strong></p>
-<p>Mac：Terminal- ~/Library/Logs -&gt; AndroidStudioBeta -&gt;idea.log.1 (or any old log number)-<strong>injected.signing.store</strong></p>
-<h6 id="使用软件破解密码"><a class="markdownIt-Anchor" href="#使用软件破解密码"></a> 使用软件破解密码</h6>
-<ol>
-<li>
-<p>下载<a href="https://felixxiong.github.io/2021/01/16/Android-keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#more">Android-keystore-password-recover</a>,获得jar包，放置在桌面。</p>
-</li>
-<li>
-<p>创建你所熟悉的密码词表，以txt格式结尾，放置在桌面。</p>
-</li>
-<li>
-<p>使用字典破解或智能破解方式：</p>
-<pre class="highlight"><code class="">
-</code></pre>
-</li>
-<li>
-<pre class="highlight"><code class=""># 字典破解
-java -jar Android_Keystore_Password_Recover_1.07.jar -m 2 -k &quot;C:\\mykeystore.keystore&quot; -d &quot;passlib.txt&quot;
-
-#智能破解
-java -jar Android_Keystore_Password_Recover_1.07.jar -m 3 -k &quot;C:\\mykeystore.keystore&quot; -d &quot;passlib.txt&quot;
-
-# Android_Keystore_Password_Recover_1.07.jar 为软件名称
-# &quot;C:\\mykeystore.keystore&quot;为keystore路径
-# &quot;passlib.txt&quot;为你所熟悉的密码词表的txt文档的名称
-</code></pre>
-</li>
-</ol>
-<h5 id="报错-2"><a class="markdownIt-Anchor" href="#报错-2"></a> 报错</h5>
-<blockquote>
-<p>Exception in thread “main” java.io.FileNotFoundException:  Users/felixxiong/Desktop/mykeystore.keystore (No such file or directory)</p>
-</blockquote>
-<p>可能是Mac的文件编写路径错误。</p>
-<p>文件在桌面的终端路径写法为：<code>Users/youraccountname/Desktop/xxx.keystore</code></p>
-<blockquote>
-<p>java.io.IOException: not a JavaKeyStore</p>
-</blockquote>
-<p>后续更新。</p>
-<p>如果你有解决方案，欢迎在评论里留言~</p>
-<hr />
-<p>参考链接：</p>
-<p><a href="https://blog.csdn.net/fzkf9225/article/details/105197627">关于Android Studio打包出现错误</a></p>
-<p>[<a href="https://blog.blundellapps.co.uk/tut-change-alias-passwords-of-your-android-keystore/#comment-2408">TUT] Change alias passwords of your Android Keystore</a></p>
-<p><a href="https://www.jianshu.com/p/91f58b632848">Android 找回签名证书Key Alias 和 Key Password</a></p>
-<hr />
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>这个话我想了很多次了，但这一次我非技术（Android）不做。 <a href="https://felixxiong.github.io/2021/01/16/Android-keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#fnref1">↩︎</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>可通过终端或Android Studio终端输入命令 <a href="https://felixxiong.github.io/2021/01/16/Android-keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#fnref2">↩︎</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>编程开发</category>
-        <category>Android开发</category>
-        <category>踩坑记录</category>
-      </categories>
-      <tags>
-        <tag>密钥</tag>
       </tags>
   </entry>
   <entry>
@@ -646,6 +526,126 @@ AMap aMap;
         <tag>Android SDK</tag>
         <tag>地图</tag>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android keystore踩坑记录</title>
+    <url>/2021/01/16/Android%20keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>最近又在折腾我之前的Android项目了，再次重写，使用不同的控件，由浅入深，尝试转向开发岗<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<p>关于在百度地图上踩的keystore的坑以及解决方案，都在这里一并记录。希望可以节省你的时间。</p>
+<p>关于我练手项目的尝试经历，可以查看相关标签中关于地图与音乐的文章：<a href="https://felixxiong.github.io/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/">Android开发</a></p>
+<span id="more"></span>
+<p>场景：2020年7月，我创建过一个Keystore,今日通过如下命令<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>创建keystore，发生错误。</p>
+<p>以下的解决方案，<strong>其中部分整合</strong>了参考链接中的内容与相应软件的命令，我在此对原作者表示感谢。</p>
+<h2 id="报错"><a class="markdownIt-Anchor" href="#报错"></a> 报错</h2>
+<h3 id="密钥库不存在"><a class="markdownIt-Anchor" href="#密钥库不存在"></a> 密钥库不存在</h3>
+<p>Android的终端输入：<code>keytool -list -v -keystore debug.keystore</code></p>
+<p>提示：密钥库不存在，但在Mac路径<code>〜/.android/debug.keystore</code>中，有debug.keystore文件。</p>
+<h4 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h4>
+<p>在终端使用如下命令重建keystore：</p>
+<pre class="highlight"><code class="">keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -validity 10000
+</code></pre>
+<p>重建文件，则百度地图后台需要<strong>再次</strong>提交。</p>
+<h3 id="keystore-password-was-incorrect"><a class="markdownIt-Anchor" href="#keystore-password-was-incorrect"></a> keystore password was incorrect</h3>
+<blockquote>
+<p>Execution failed for task ‘:app:packageDebug’.</p>
+<blockquote>
+<p>A failure occurred while executing com.android.build.gradle.tasks.PackageAndroidArtifact$IncrementalSplitterRunnable<br />
+com.android.ide.common.signing.KeytoolException: Failed to read key  AndroidDebugKey from store  “/Users/felixxiong/.android/debug.keyst··ore”: keystore password was  incorrect</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Cause: failed to decrypt safe contents entry:  javax.crypto.BadPaddingException: Given final block not properly padded. Such issues can arise if a bad key is used during decryption.</p>
+</blockquote>
+<p>原因：keystore密码错误</p>
+<p>场景：在Mac路径<code>〜/.android/debug.keystore</code>中，有debug.keystore文件，在Android运行时签名报错。</p>
+<h4 id="解决方案-2"><a class="markdownIt-Anchor" href="#解决方案-2"></a> 解决方案</h4>
+<p>使用以下三个命令可修改keystore参数(其中<code>my.keystore</code>为复制后的新keystore)：</p>
+<p>修改密码：<code>keytool -storepasswd -keystore android.keystore</code></p>
+<p>修改别名alias：<code>keytool -changealias -keystore android.keystore -alias my_name -destalias androiddebugkey</code></p>
+<p>修改alias密码：<code>keytool -keypasswd -keystore my.keystore -alias androiddebugkey</code></p>
+<h4 id="keystore的种类"><a class="markdownIt-Anchor" href="#keystore的种类"></a> keystore的种类</h4>
+<p>目前发现，keystore有PKCS12与SHA256withRSA两种。</p>
+<h5 id="如果-storetype-为-pkcs12"><a class="markdownIt-Anchor" href="#如果-storetype-为-pkcs12"></a> 如果 -storetype 为 PKCS12</h5>
+<p>尝试修改密码，继续报错：</p>
+<blockquote>
+<p>keytool 错误: java.lang.UnsupportedOperationException: 如果 -storetype 为 PKCS12, 则不支持 -keypasswd 命令</p>
+</blockquote>
+<p><strong>如果 -storetype 为 SHA256withRSA</strong></p>
+<p>此处我通过Android Studio - Build - Generate Singed -Bundle / APK创建的keystore。</p>
+<blockquote>
+<p>Warning:JKS 密钥库使用专用格式。建议使用 “keytool -importkeystore -srckeystore  debug.keystore -destkeystore debug.keystore -deststoretype pkcs12”  迁移到行业标准格式 PKCS12。</p>
+</blockquote>
+<p>便于复制的命令：</p>
+<blockquote>
+<p>keytool -importkeystore -srckeystore debug.keystore -destkeystore debug.keystore -deststoretype pkcs12</p>
+</blockquote>
+<p>此处经测试，当keystore的type为SHA256withRSA时，可以使用上述三个命令。</p>
+<h5 id="找回key相关"><a class="markdownIt-Anchor" href="#找回key相关"></a> 找回key相关</h5>
+<h6 id="日志找回"><a class="markdownIt-Anchor" href="#日志找回"></a> 日志找回</h6>
+<p>如果你使用AS生成过，则可通过log方式查看。</p>
+<p>Windows：C:\Users\UserName（当前系统的用户名），AndroidStudioX.X &gt; system &gt; log-idea.log-<strong>injected.signing.store</strong></p>
+<p>Mac：Terminal- ~/Library/Logs -&gt; AndroidStudioBeta -&gt;idea.log.1 (or any old log number)-<strong>injected.signing.store</strong></p>
+<h6 id="使用软件破解密码"><a class="markdownIt-Anchor" href="#使用软件破解密码"></a> 使用软件破解密码</h6>
+<ol>
+<li>
+<p>下载<a href="https://felixxiong.github.io/2021/01/16/Android-keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#more">Android-keystore-password-recover</a>,获得jar包，放置在桌面。</p>
+</li>
+<li>
+<p>创建你所熟悉的密码词表，以txt格式结尾，放置在桌面。</p>
+</li>
+<li>
+<p>使用字典破解或智能破解方式：</p>
+<pre class="highlight"><code class="">
+</code></pre>
+</li>
+<li>
+<pre class="highlight"><code class=""># 字典破解
+java -jar Android_Keystore_Password_Recover_1.07.jar -m 2 -k &quot;C:\\mykeystore.keystore&quot; -d &quot;passlib.txt&quot;
+
+#智能破解
+java -jar Android_Keystore_Password_Recover_1.07.jar -m 3 -k &quot;C:\\mykeystore.keystore&quot; -d &quot;passlib.txt&quot;
+
+# Android_Keystore_Password_Recover_1.07.jar 为软件名称
+# &quot;C:\\mykeystore.keystore&quot;为keystore路径
+# &quot;passlib.txt&quot;为你所熟悉的密码词表的txt文档的名称
+</code></pre>
+</li>
+</ol>
+<h5 id="报错-2"><a class="markdownIt-Anchor" href="#报错-2"></a> 报错</h5>
+<blockquote>
+<p>Exception in thread “main” java.io.FileNotFoundException:  Users/felixxiong/Desktop/mykeystore.keystore (No such file or directory)</p>
+</blockquote>
+<p>可能是Mac的文件编写路径错误。</p>
+<p>文件在桌面的终端路径写法为：<code>Users/youraccountname/Desktop/xxx.keystore</code></p>
+<blockquote>
+<p>java.io.IOException: not a JavaKeyStore</p>
+</blockquote>
+<p>后续更新。</p>
+<p>如果你有解决方案，欢迎在评论里留言~</p>
+<hr />
+<p>参考链接：</p>
+<p><a href="https://blog.csdn.net/fzkf9225/article/details/105197627">关于Android Studio打包出现错误</a></p>
+<p>[<a href="https://blog.blundellapps.co.uk/tut-change-alias-passwords-of-your-android-keystore/#comment-2408">TUT] Change alias passwords of your Android Keystore</a></p>
+<p><a href="https://www.jianshu.com/p/91f58b632848">Android 找回签名证书Key Alias 和 Key Password</a></p>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这个话我想了很多次了，但这一次我非技术（Android）不做。 <a href="https://felixxiong.github.io/2021/01/16/Android-keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#fnref1">↩︎</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>可通过终端或Android Studio终端输入命令 <a href="https://felixxiong.github.io/2021/01/16/Android-keystore%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#fnref2">↩︎</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>编程开发</category>
+        <category>Android开发</category>
+        <category>踩坑记录</category>
+      </categories>
+      <tags>
+        <tag>密钥</tag>
       </tags>
   </entry>
   <entry>
@@ -1781,67 +1781,6 @@ leancloud_visitors:
       </tags>
   </entry>
   <entry>
-    <title>Mac下搭建Hexo并部署GitHubPages的步骤（直接重点）</title>
-    <url>/2018/05/04/Mac%E4%B8%8B%E6%90%AD%E5%BB%BAHexo%E5%B9%B6%E9%83%A8%E7%BD%B2GitHubPages%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%88%E7%9B%B4%E6%8E%A5%E9%87%8D%E7%82%B9%EF%BC%89/</url>
-    <content><![CDATA[<p>Mac下搭建Hexo并部署GitHubPages的步骤（直接重点）</p>
-<p>在已经完成nodeJs以及图形化git的前提下，本步骤请看：<a href="https://felixxiong.github.io/2018/04/10/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8GitHubPages%E5%92%8CHexo%E6%95%99%E7%A8%8B/">Mac下搭建GitHubPages和Hexo教程</a></p>
-<span id="more"></span>
-<h2 id="开始安装"><a class="markdownIt-Anchor" href="#开始安装"></a> 开始安装</h2>
-<h3 id="安装hexo"><a class="markdownIt-Anchor" href="#安装hexo"></a> 安装Hexo</h3>
-<pre class="highlight"><code class="">sudo npm install -g hexo-cli
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4d54192d3.jpeg" alt="" /></p>
-<h3 id="建站"><a class="markdownIt-Anchor" href="#建站"></a> 建站</h3>
-<pre class="highlight"><code class="">hexo init folder（folder为自己重新创建的文件夹）
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4d6bdd771.jpeg" alt="" /></p>
-<pre class="highlight"><code class="">cd （folder为自己重新创建的文件夹）
-
-npm install
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4dae73db7.jpeg" alt="" /></p>
-<h3 id="生成静态文件"><a class="markdownIt-Anchor" href="#生成静态文件"></a> 生成静态文件</h3>
-<pre class="highlight"><code class=""> hexo g
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4d8f99d81.jpeg" alt="" /></p>
-<h3 id="启动服务器预览"><a class="markdownIt-Anchor" href="#启动服务器预览"></a> 启动服务器/预览</h3>
-<pre class="highlight"><code class="">hexo s
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4dca0cda9.jpeg" alt="" /></p>
-<p>在安装中可能会遇到的问题请看：</p>
-<h2 id="开始部署"><a class="markdownIt-Anchor" href="#开始部署"></a> 开始部署</h2>
-<h3 id="修改_configyml"><a class="markdownIt-Anchor" href="#修改_configyml"></a> 修改_config.yml</h3>
-<pre class="highlight"><code class="">repository://这里是你新建的托管博客代码的仓库的地址。
-master://这里需要写你的分支
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4dd4aa04e.jpeg" alt="" /></p>
-<h3 id="depoly到仓库"><a class="markdownIt-Anchor" href="#depoly到仓库"></a> depoly到仓库</h3>
-<pre class="highlight"><code class="">hexo clean
-hexo generate
-hexo deploy
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4df585517.jpeg" alt="" /></p>
-<h3 id="修改github-git"><a class="markdownIt-Anchor" href="#修改github-git"></a> 修改GitHub-git:</h3>
-<p><img src="https://i.loli.net/2018/05/05/5aed4e05d1758.jpeg" alt="" /></p>
-<pre class="highlight"><code class="">npm install hexo-deployer-git --save
-hexo clean
-hexo generate
-hexo deploy
-</code></pre>
-<p><img src="https://i.loli.net/2018/05/05/5aed4e18eb074.jpeg" alt="" /></p>
-<p><img src="https://i.loli.net/2018/05/05/5aed4e2308951.jpeg" alt="" /></p>
-]]></content>
-      <categories>
-        <category>博客探索</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>hexo</tag>
-        <tag>Github</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac下搭建GitHubPages和Hexo教程</title>
     <url>/2018/04/10/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8GitHubPages%E5%92%8CHexo%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>这是用Mac下搭建Hexo并部署GitHubPages的教程以及我的步骤与遇到的问题。</p>
@@ -1963,6 +1902,67 @@ cd/folder
       </tags>
   </entry>
   <entry>
+    <title>Mac下搭建Hexo并部署GitHubPages的步骤（直接重点）</title>
+    <url>/2018/05/04/Mac%E4%B8%8B%E6%90%AD%E5%BB%BAHexo%E5%B9%B6%E9%83%A8%E7%BD%B2GitHubPages%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%88%E7%9B%B4%E6%8E%A5%E9%87%8D%E7%82%B9%EF%BC%89/</url>
+    <content><![CDATA[<p>Mac下搭建Hexo并部署GitHubPages的步骤（直接重点）</p>
+<p>在已经完成nodeJs以及图形化git的前提下，本步骤请看：<a href="https://felixxiong.github.io/2018/04/10/Mac%E4%B8%8B%E4%BD%BF%E7%94%A8GitHubPages%E5%92%8CHexo%E6%95%99%E7%A8%8B/">Mac下搭建GitHubPages和Hexo教程</a></p>
+<span id="more"></span>
+<h2 id="开始安装"><a class="markdownIt-Anchor" href="#开始安装"></a> 开始安装</h2>
+<h3 id="安装hexo"><a class="markdownIt-Anchor" href="#安装hexo"></a> 安装Hexo</h3>
+<pre class="highlight"><code class="">sudo npm install -g hexo-cli
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4d54192d3.jpeg" alt="" /></p>
+<h3 id="建站"><a class="markdownIt-Anchor" href="#建站"></a> 建站</h3>
+<pre class="highlight"><code class="">hexo init folder（folder为自己重新创建的文件夹）
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4d6bdd771.jpeg" alt="" /></p>
+<pre class="highlight"><code class="">cd （folder为自己重新创建的文件夹）
+
+npm install
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4dae73db7.jpeg" alt="" /></p>
+<h3 id="生成静态文件"><a class="markdownIt-Anchor" href="#生成静态文件"></a> 生成静态文件</h3>
+<pre class="highlight"><code class=""> hexo g
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4d8f99d81.jpeg" alt="" /></p>
+<h3 id="启动服务器预览"><a class="markdownIt-Anchor" href="#启动服务器预览"></a> 启动服务器/预览</h3>
+<pre class="highlight"><code class="">hexo s
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4dca0cda9.jpeg" alt="" /></p>
+<p>在安装中可能会遇到的问题请看：</p>
+<h2 id="开始部署"><a class="markdownIt-Anchor" href="#开始部署"></a> 开始部署</h2>
+<h3 id="修改_configyml"><a class="markdownIt-Anchor" href="#修改_configyml"></a> 修改_config.yml</h3>
+<pre class="highlight"><code class="">repository://这里是你新建的托管博客代码的仓库的地址。
+master://这里需要写你的分支
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4dd4aa04e.jpeg" alt="" /></p>
+<h3 id="depoly到仓库"><a class="markdownIt-Anchor" href="#depoly到仓库"></a> depoly到仓库</h3>
+<pre class="highlight"><code class="">hexo clean
+hexo generate
+hexo deploy
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4df585517.jpeg" alt="" /></p>
+<h3 id="修改github-git"><a class="markdownIt-Anchor" href="#修改github-git"></a> 修改GitHub-git:</h3>
+<p><img src="https://i.loli.net/2018/05/05/5aed4e05d1758.jpeg" alt="" /></p>
+<pre class="highlight"><code class="">npm install hexo-deployer-git --save
+hexo clean
+hexo generate
+hexo deploy
+</code></pre>
+<p><img src="https://i.loli.net/2018/05/05/5aed4e18eb074.jpeg" alt="" /></p>
+<p><img src="https://i.loli.net/2018/05/05/5aed4e2308951.jpeg" alt="" /></p>
+]]></content>
+      <categories>
+        <category>博客探索</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac下重新部署博客记录</title>
     <url>/2018/09/26/Mac%E4%B8%8B%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>因为之前电脑的权限问题以及电池突然出现了故障，今天终于学会了重新部署我的博客。</p>
@@ -2075,8 +2075,8 @@ hexo d //使用此命令进行部署
       </categories>
       <tags>
         <tag>Mac</tag>
-        <tag>hexo</tag>
         <tag>教程</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -3499,6 +3499,234 @@ MKCoordinateRegion.init(center: center, latitudinalMeters: 1000, longitudinalMet
       </categories>
       <tags>
         <tag>地图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iPad mini2降级iOS10.3.3</title>
+    <url>/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/</url>
+    <content><![CDATA[<p>我的iPad mini2由于更新到12.4后卡顿，犹豫前后终于进行降级操作。</p>
+<p>按照威锋网的一个帖子进行操作，本帖为我的踩坑贴汇总。</p>
+<span id="more"></span>
+<h2 id="安装环境报错"><a class="markdownIt-Anchor" href="#安装环境报错"></a> 安装环境报错</h2>
+<p>使用<code>pip3 install -r requirements.txt</code>进行安装</p>
+<h3 id="bsdiff4-setuppy-error"><a class="markdownIt-Anchor" href="#bsdiff4-setuppy-error"></a> bsdiff4 (<a href="http://setup.py">setup.py</a>) … error</h3>
+<pre class="highlight"><code class="bash">Requirement already satisfied: six==1.13.0 <span class="hljs-keyword">in</span> /Library/Python/3.8/site-packages (from -r requirements.txt (line 10)) (1.13.0)
+Building wheels <span class="hljs-keyword">for</span> collected packages: bsdiff4, pyusb
+Building wheel <span class="hljs-keyword">for</span> bsdiff4 (setup.py) ... error
+ERROR: Command errored out with <span class="hljs-built_in">exit</span> status 1:
+<span class="hljs-built_in">command</span>: /Library/Developer/CommandLineTools/usr/bin/python3 -u -c <span class="hljs-string">'import io, os, sys, setuptools, tokenize; sys.argv[0] = '</span><span class="hljs-string">"'"</span><span class="hljs-string">'/private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-install-bhzlo3bb/bsdiff4_cc62a057fa494a5b92e99f21441ab6d2/setup.py'</span><span class="hljs-string">"'"</span><span class="hljs-string">'; __file__='</span><span class="hljs-string">"'"</span><span class="hljs-string">'/private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-install-bhzlo3bb/bsdiff4_cc62a057fa494a5b92e99f21441ab6d2/setup.py'</span><span class="hljs-string">"'"</span><span class="hljs-string">';f = getattr(tokenize, '</span><span class="hljs-string">"'"</span><span class="hljs-string">'open'</span><span class="hljs-string">"'"</span><span class="hljs-string">', open)(__file__) if os.path.exists(__file__) else io.StringIO('</span><span class="hljs-string">"'"</span><span class="hljs-string">'from setuptools import setup; setup()'</span><span class="hljs-string">"'"</span><span class="hljs-string">');code = f.read().replace('</span><span class="hljs-string">"'"</span><span class="hljs-string">'\r\n'</span><span class="hljs-string">"'"</span><span class="hljs-string">', '</span><span class="hljs-string">"'"</span><span class="hljs-string">'\n'</span><span class="hljs-string">"'"</span><span class="hljs-string">');f.close();exec(compile(code, __file__, '</span><span class="hljs-string">"'"</span><span class="hljs-string">'exec'</span><span class="hljs-string">"'"</span><span class="hljs-string">'))'</span> bdist_wheel -d /private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-wheel-pm9ph9rp
+​    cwd: /private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-install-bhzlo3bb/bsdiff4_cc62a057fa494a5b92e99f21441ab6d2/
+ Complete output (114 lines):
+ running bdist_wheel
+ running build
+ running build_py
+ creating build
+ creating build/lib.macosx-10.14.6-x86_64-3.8
+ creating build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/test_all.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/__init__.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/format.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/cli.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ running build_ext
+ building <span class="hljs-string">'bsdiff4.core'</span> extension
+ creating build/temp.macosx-10.14.6-x86_64-3.8
+ creating build/temp.macosx-10.14.6-x86_64-3.8/bsdiff4
+ clang -Wno-unused-result -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -iwithsysroot/System/Library/Frameworks/System.framework/PrivateHeaders -iwithsysroot/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/Headers -arch arm64 -arch x86_64 -I/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8 -c bsdiff4/core.c -o build/temp.macosx-10.14.6-x86_64-3.8/bsdiff4/core.o
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:11:
+ In file included from /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/limits.h:21:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/limits.h:63:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/cdefs.h:807:2: error: Unsupported architecture
+ \<span class="hljs-comment">#error Unsupported architecture</span>
+  ^
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:11:
+ In file included from /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/limits.h:21:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/limits.h:64:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h:8:2: error: architecture not supported
+ \<span class="hljs-comment">#error architecture not supported</span>
+  ^
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:71:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types.h:27:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:33:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/machine/_types.h:34:2: error: architecture not supported
+ \<span class="hljs-comment">#error architecture not supported</span>
+  ^
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:71:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types.h:27:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:55:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int64_t'</span>
+ typedef __int64_t    __darwin_blkcnt_t;   /* total blocks */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:56:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_blksize_t;   /* preferred block size */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:57:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_dev_t;     /* dev_t */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:60:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_gid_t;     /* [???] process and group IDs */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:61:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_id_t;     /* [XSI] pid_t, uid_t, or gid_t*/
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:62:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint64_t'</span>
+ typedef __uint64_t   __darwin_ino64_t;    /* [???] Used <span class="hljs-keyword">for</span> 64 bit inodes */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:68:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__darwin_natural_t'</span>
+ typedef __darwin_natural_t __darwin_mach_port_name_t; /* Used by mach */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:70:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint16_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint16_t   __darwin_mode_t;    /* [???] Some file attributes */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:71:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int64_t'</span>
+ typedef __int64_t    __darwin_off_t;     /* [???] Used <span class="hljs-keyword">for</span> file sizes */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:72:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_pid_t;     /* [???] process and group IDs */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:73:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_sigset_t;   /* [???] signal <span class="hljs-built_in">set</span> */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:74:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_suseconds_t;  /* [???] microseconds */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:75:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_uid_t;     /* [???] user IDs */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:76:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_useconds_t;  /* [???] microseconds */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:71:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types.h:43:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_wctype_t;
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:75:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_va_list.h:31:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/machine/types.h:37:2: error: architecture not supported
+ \<span class="hljs-comment">#error architecture not supported</span>
+  ^
+ fatal error: too many errors emitted, stopping now [-ferror-limit=]
+ 20 errors generated.
+ error: <span class="hljs-built_in">command</span> <span class="hljs-string">'clang'</span> failed with <span class="hljs-built_in">exit</span> status 1
+   ...
+
+   Check the logs <span class="hljs-keyword">for</span> full <span class="hljs-built_in">command</span> output.
+</code></pre>
+<h3 id="修复"><a class="markdownIt-Anchor" href="#修复"></a> 修复</h3>
+<h4 id="sudo-h"><a class="markdownIt-Anchor" href="#sudo-h"></a> sudo -H</h4>
+<p>首个踩坑：</p>
+<pre class="highlight"><code class="bash">WARNING: The directory <span class="hljs-string">'/Users/xxx/Library/Caches/pip'</span> or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo<span class="hljs-string">'s -H flag.
+</span></code></pre>
+<h3 id="继续修复"><a class="markdownIt-Anchor" href="#继续修复"></a> 继续修复</h3>
+<p>参考：<a href="https://stackoverflow.com/questions/53204916/what-is-the-meaning-of-failed-building-wheel-for-x-in-pip-install">What is the meaning of “Failed building wheel for X” in pip install?</a></p>
+<p>使用<code>pip3 -v</code>,可见有pip3使用：pip install wheel，出现下列问题：</p>
+<h4 id="zshcommand-cannot-found-pip"><a class="markdownIt-Anchor" href="#zshcommand-cannot-found-pip"></a> zsh:command cannot found pip</h4>
+<p>参考：<a href="https://stackoverflow.com/questions/42870537/zsh-command-cannot-found-pip">zsh command cannot found pip</a></p>
+<p>要点：<strong><strong>创建pip3环境变量</strong></strong></p>
+<p>查找pip3的路径：<code>pip3 -V</code></p>
+<p>创建alias：<code>alias pip=/usr/bin/pip3</code>放在zshrc内，之后<code>source ~/.zshrc</code>。</p>
+<h4 id="user权限问题"><a class="markdownIt-Anchor" href="#user权限问题"></a> –user权限问题</h4>
+<p>在更新pip时，版本从19-21，报出权限问题：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<pre class="highlight"><code class="bash">Consider using the `--user` option or check the permissions.
+</code></pre>
+<p>参考：<a href="https://stackoverflow.com/questions/52949531/could-not-install-packages-due-to-an-environmenterror-errno-13">Could not install packages due to an EnvironmentError: Errno 13</a></p>
+<p>使用<code>pip3 install package_name --user</code>更新pip，成功。</p>
+<h4 id="找到了一个issue"><a class="markdownIt-Anchor" href="#找到了一个issue"></a> 找到了一个issue</h4>
+<p>参考GitHub issue：<a href="https://github.com/MatthewPierson/Vieux/issues/218">Running setup.py install for bsdiff4 … error</a></p>
+<p>–user应该放在后面，添加zchrc，当然之后也要source：</p>
+<pre class="highlight"><code class="bash"><span class="hljs-built_in">export</span> ARCHFLAGS=<span class="hljs-string">"-arch x86_64"</span>
+
+python3 -m pip install --user -r requirements.txt
+</code></pre>
+<p>使用以下命令安装成功：</p>
+<pre class="highlight"><code class="bash">python3 -m pip install --user -r requirements.txt
+</code></pre>
+<p>结果：</p>
+<pre class="highlight"><code class="bash">Requirement already satisfied: six==1.13.0 <span class="hljs-keyword">in</span> /Library/Python/3.8/site-packages (from -r requirements.txt (line 10)) (1.13.0)
+
+Building wheels <span class="hljs-keyword">for</span> collected packages: bsdiff4
+
+ Building wheel <span class="hljs-keyword">for</span> bsdiff4 (setup.py) ... <span class="hljs-keyword">done</span>
+
+ Created wheel <span class="hljs-keyword">for</span> bsdiff4: filename=bsdiff4-1.1.9-cp38-cp38-macosx_10_14_6_x86_64.whl size=12710 sha256=fe15fdacfe95ad6a085f38ac34c501937a582d632191b4053ede8afc76f0c938
+
+ Stored <span class="hljs-keyword">in</span> directory: /Users/penghaoxiong/Library/Caches/pip/wheels/94/a6/ac/6d5b7fdb7c73297adee2e9f7181664b33234cecfd1eb34280c
+
+Successfully built bsdiff4
+
+Installing collected packages: bsdiff4
+
+ WARNING: The scripts bsdiff4 and bspatch4 are installed <span class="hljs-keyword">in</span> <span class="hljs-string">'/Users/penghaoxiong/Library/Python/3.8/bin'</span> <span class="hljs-built_in">which</span> is not on PATH.
+
+ Consider adding this directory to PATH or, <span class="hljs-keyword">if</span> you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed bsdiff4-1.1.9
+</code></pre>
+<h2 id="开始降级"><a class="markdownIt-Anchor" href="#开始降级"></a> 开始降级</h2>
+<h4 id="catalina"><a class="markdownIt-Anchor" href="#catalina"></a> Catalina</h4>
+<p>在终端中输入<code>CatalinaFix.sh</code>，使用打开方式无效。</p>
+<h4 id="usbcorenobackenderror-no-backend-available"><a class="markdownIt-Anchor" href="#usbcorenobackenderror-no-backend-available"></a> usb.core.NoBackendError: No backend available</h4>
+<p>参考：<a href="https://blog.csdn.net/nexuszjq/article/details/117407380">iPad mini2 Vieux降级ios10.3.3 问题解决合集</a></p>
+<p>需要安装usbilb:<code>brew install libusb</code></p>
+<p>当前（2021年7月）下载，可能会提示：</p>
+<pre class="highlight"><code class="bash">Starting iBSS/iBEC patching
+Looks like you are downgrading an iPad Mini 2 to 10.3.3!
+Patched iBSS/iBEC
+About to re-build IPSW
+Entering PWNREC mode...
+Getting SHSH...
+Restoring...
+Note that errors about <span class="hljs-string">'BbSkeyId'</span>, <span class="hljs-string">'FDR Client'</span>, <span class="hljs-string">'BasebandFirmware Node'</span> and <span class="hljs-string">'ERROR: zip_name_locate: Firmware/all_flash/manifest'</span> are not important.
+Just ignore them and only report errors that actually stop the restore.
+Restoring without a baseband as your iPad4,4 doesn<span class="hljs-string">'t have cellular capabilities...
+WARNING: Unable to find BbChipID node
+WARNING: Unable to find BbChipID node
+Files cleaned.
+Finished! Enjoy your downgraded device :)
+penghaoxiong@PenghaoXiongs-MacBook-Pro Vieux-master %
+</span></code></pre>
+<p>便降级成功了。</p>
+<hr />
+<p><a href="https://ipsw.me/iPad4,4">Choose an IPSW for the iPad Mini 2 (WiFi)</a></p>
+<p><a href="https://github.com/MatthewPierson">MatthewPierson</a> / <a href="https://github.com/MatthewPierson/Vieux">Vieux</a></p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>此处由于安装完brew的python3之后总结，故报错信息不完整，但意思还是到了。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>产品</category>
+        <category>折腾与探索</category>
+        <category>iPad系列</category>
+      </categories>
+      <tags>
+        <tag>降级</tag>
       </tags>
   </entry>
   <entry>
@@ -8110,9 +8338,9 @@ npm install --save hexo-wordcount@6.0.1
       </categories>
       <tags>
         <tag>Mac</tag>
+        <tag>教程</tag>
         <tag>hexo</tag>
         <tag>Github</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -11394,6 +11622,73 @@ rss:
       </tags>
   </entry>
   <entry>
+    <title>说说近况</title>
+    <url>/2021/06/19/%E8%AF%B4%E8%AF%B4%E8%BF%91%E5%86%B5/</url>
+    <content><![CDATA[<p>由于现实因素，此博客日后仅输出思考与技术相关文章。</p>
+<p>已经撤下部分关于博主真实心境（到现在我说话还是这么含蓄，该改改了）相关的“丧”主题的历史心理活动文章。</p>
+<span id="more"></span>
+<h2 id="现实"><a class="markdownIt-Anchor" href="#现实"></a> 现实</h2>
+<h3 id="诚实的相对面"><a class="markdownIt-Anchor" href="#诚实的相对面"></a> 诚实的相对面</h3>
+<p>由于在现实社会中，所谓“诚实”，需要对身边的人诚实，但是在社会上，有些时候确实不能诚实——</p>
+<p>有时候人与人之间要对刚认识的同性或者是异性保持好感，要保护自己的利益，要这要那过于复杂。否则，便是失去回忆或是离开。</p>
+<p>这样的社会环境下，很难做到做一个简简单单的人，被迫失去初心，变得多面化。</p>
+<h3 id="博客输出技能证明"><a class="markdownIt-Anchor" href="#博客输出技能证明"></a> 博客输出=技能证明</h3>
+<p>通常，我会和其他的程序员、产品经理 一样，将自己的个人思考放在简历中 ，作为我输出的证明。但因生活和我的个人经历情况并没有多么的顺利、值得宣扬，且随性、自由、焦虑、“丧“对于求职的HR、还是领导而言，在这样的大环境下这些并不是什么“值得被看重”的特质<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，更多的还是需要服从。</p>
+<p>所以，正如本文概述所说，博客日后仅输出思考与技术相关文章。</p>
+<h2 id="博客并不是牺身之所"><a class="markdownIt-Anchor" href="#博客并不是牺身之所"></a> 博客并不是牺身之所</h2>
+<p>在很早的时候，我会将我的真实生活动态在博客当中撰写，为了获得那么一丁点反馈，就发出自己的声音，在互联网的汪洋里。</p>
+<p>同时在现实生活中，当认识一个人的时候，我就会展示自己的博客，自己输出过的内容。</p>
+<p>当然，这也就意味着输出过的一切都展现在他人的面前。</p>
+<p>same里有一句我经常引用在我博客里的话：</p>
+<blockquote>
+<p>别人稍微一理你，你就敞开心扉，这就是孤独。</p>
+</blockquote>
+<p>很多人，完全就是看一个热闹，而并不是真正的想了解你——毕竟他们有自己的朋友圈，自己的圈子。</p>
+<p>有的人，或许就是想笑话。</p>
+<p>无法预测读者的心态，但我相信目前为止给我留言的读者都是很友好的那一类人，在此感谢你们。</p>
+<h3 id="前同学的电话"><a class="markdownIt-Anchor" href="#前同学的电话"></a> 前同学的电话</h3>
+<p>就像最近接到军训时认识的前同学，打电话来问有没有时间帮个忙挣一点外快一样。</p>
+<p>最后他说：</p>
+<blockquote>
+<p>我们也就是一面之缘，不好意思打扰到你，你也有自己的生活，自己的人际，自己的圈子。</p>
+</blockquote>
+<p>按照我以前来说，我不理解，同学之间就该友好的互相帮助<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
+<p>现在，我有点理解。</p>
+<p>因为，这就是人与人之间的界限，这就是另一个在我博客里出现的“同性”对我所说的“分寸感”。</p>
+<h2 id="值得与不值得"><a class="markdownIt-Anchor" href="#值得与不值得"></a> 值得与不值得</h2>
+<p>熬夜聊天，也是我希望和人可以有结果。</p>
+<p>现实的经历，或许是我还不够好，或许是对方特别势利，导致一些丧失，使我对”熬夜却伤自己身体，但为对方考虑“这样的行为感到自责。</p>
+<p>网络社会的一些话是极度不负责任的：</p>
+<blockquote>
+<p>叫你早睡的人，不如一个陪你熬夜的人。</p>
+</blockquote>
+<p>我陪她熬夜了，结果呢？</p>
+<p>最后要不自己身体熬坏，要不聊天窗口早就是一个红色的感叹号，要不就是被割韭菜。</p>
+<p>没有结果，不值得。</p>
+<p>早点睡比什么都强。</p>
+<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
+<p>网络并不是法外之地，那些自己真正想说的，还是写给自己看吧。</p>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>西方社会可能要好一些。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>但我想联系之前的同学聚一聚，有的拉黑有的直接删除，还有的质问我：“你想证明什么”。她们还是那么的幼稚，长不大，或者说我的思想过于超前了，他们还达不到。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>一段时间的心里话</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>一个人</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>调研（文案）和问卷调查</title>
     <url>/2018/05/06/%E8%B0%83%E7%A0%94%EF%BC%88%E6%96%87%E6%A1%88%EF%BC%89%E5%92%8C%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5/</url>
     <content><![CDATA[<p>在本次的毕业设计中，我总共做了三项调研。</p>
@@ -11660,163 +11955,6 @@ Error: Spawn failed
       </tags>
   </entry>
   <entry>
-    <title>说说近况</title>
-    <url>/2021/06/19/%E8%AF%B4%E8%AF%B4%E8%BF%91%E5%86%B5/</url>
-    <content><![CDATA[<p>由于现实因素，此博客日后仅输出思考与技术相关文章。</p>
-<p>已经撤下部分关于博主真实心境（到现在我说话还是这么含蓄，该改改了）相关的“丧”主题的历史心理活动文章。</p>
-<span id="more"></span>
-<h2 id="现实"><a class="markdownIt-Anchor" href="#现实"></a> 现实</h2>
-<h3 id="诚实的相对面"><a class="markdownIt-Anchor" href="#诚实的相对面"></a> 诚实的相对面</h3>
-<p>由于在现实社会中，所谓“诚实”，需要对身边的人诚实，但是在社会上，有些时候确实不能诚实——</p>
-<p>有时候人与人之间要对刚认识的同性或者是异性保持好感，要保护自己的利益，要这要那过于复杂。否则，便是失去回忆或是离开。</p>
-<p>这样的社会环境下，很难做到做一个简简单单的人，被迫失去初心，变得多面化。</p>
-<h3 id="博客输出技能证明"><a class="markdownIt-Anchor" href="#博客输出技能证明"></a> 博客输出=技能证明</h3>
-<p>通常，我会和其他的程序员、产品经理 一样，将自己的个人思考放在简历中 ，作为我输出的证明。但因生活和我的个人经历情况并没有多么的顺利、值得宣扬，且随性、自由、焦虑、“丧“对于求职的HR、还是领导而言，在这样的大环境下这些并不是什么“值得被看重”的特质<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，更多的还是需要服从。</p>
-<p>所以，正如本文概述所说，博客日后仅输出思考与技术相关文章。</p>
-<h2 id="博客并不是牺身之所"><a class="markdownIt-Anchor" href="#博客并不是牺身之所"></a> 博客并不是牺身之所</h2>
-<p>在很早的时候，我会将我的真实生活动态在博客当中撰写，为了获得那么一丁点反馈，就发出自己的声音，在互联网的汪洋里。</p>
-<p>同时在现实生活中，当认识一个人的时候，我就会展示自己的博客，自己输出过的内容。</p>
-<p>当然，这也就意味着输出过的一切都展现在他人的面前。</p>
-<p>same里有一句我经常引用在我博客里的话：</p>
-<blockquote>
-<p>别人稍微一理你，你就敞开心扉，这就是孤独。</p>
-</blockquote>
-<p>很多人，完全就是看一个热闹，而并不是真正的想了解你——毕竟他们有自己的朋友圈，自己的圈子。</p>
-<p>有的人，或许就是想笑话。</p>
-<p>无法预测读者的心态，但我相信目前为止给我留言的读者都是很友好的那一类人，在此感谢你们。</p>
-<h3 id="前同学的电话"><a class="markdownIt-Anchor" href="#前同学的电话"></a> 前同学的电话</h3>
-<p>就像最近接到军训时认识的前同学，打电话来问有没有时间帮个忙挣一点外快一样。</p>
-<p>最后他说：</p>
-<blockquote>
-<p>我们也就是一面之缘，不好意思打扰到你，你也有自己的生活，自己的人际，自己的圈子。</p>
-</blockquote>
-<p>按照我以前来说，我不理解，同学之间就该友好的互相帮助<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
-<p>现在，我有点理解。</p>
-<p>因为，这就是人与人之间的界限，这就是另一个在我博客里出现的“同性”对我所说的“分寸感”。</p>
-<h2 id="值得与不值得"><a class="markdownIt-Anchor" href="#值得与不值得"></a> 值得与不值得</h2>
-<p>熬夜聊天，也是我希望和人可以有结果。</p>
-<p>现实的经历，或许是我还不够好，或许是对方特别势利，导致一些丧失，使我对”熬夜却伤自己身体，但为对方考虑“这样的行为感到自责。</p>
-<p>网络社会的一些话是极度不负责任的：</p>
-<blockquote>
-<p>叫你早睡的人，不如一个陪你熬夜的人。</p>
-</blockquote>
-<p>我陪她熬夜了，结果呢？</p>
-<p>最后要不自己身体熬坏，要不聊天窗口早就是一个红色的感叹号，要不就是被割韭菜。</p>
-<p>没有结果，不值得。</p>
-<p>早点睡比什么都强。</p>
-<h2 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h2>
-<p>网络并不是法外之地，那些自己真正想说的，还是写给自己看吧。</p>
-<hr />
-<hr class="footnotes-sep" />
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>西方社会可能要好一些。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>但我想联系之前的同学聚一聚，有的拉黑有的直接删除，还有的质问我：“你想证明什么”。她们还是那么的幼稚，长不大，或者说我的思想过于超前了，他们还达不到。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>一段时间的心里话</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>一个人</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逐渐走向封闭的独立博客</title>
-    <url>/2020/05/24/%E9%80%90%E6%B8%90%E8%B5%B0%E5%90%91%E5%B0%81%E9%97%AD%E7%9A%84%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>这一篇文章原本是在2020年4月26日发布。</p>
-<p>由于自身的因网络人际原因以及本身的“对人敏感”，原因，且最近去看了心理医生，回顾了下自己从小时候的经历，以及最近看了一本书，《为什么我们总是在逃避》，应该是对我的这一种行为有了更深一层的认识：这就是心理防御机制。</p>
-<span id="more"></span>
-<h2 id="行为"><a class="markdownIt-Anchor" href="#行为"></a> 行为</h2>
-<h3 id="首先我关闭了rss"><a class="markdownIt-Anchor" href="#首先我关闭了rss"></a> 首先，我关闭了RSS</h3>
-<p>两种简易方法：插件方法与代码方法，这在本文最后会提到[ref]相关文章：使用TablePlus+链接Vulr WP模版的PHPAdmin数据库[/ref]。</p>
-<h3 id="一些不想看到的人与不想让人看到"><a class="markdownIt-Anchor" href="#一些不想看到的人与不想让人看到"></a> 一些不想看到的人，与不想让人看到</h3>
-<p>由于自己最近很容易在网络上与人“杠”起来[ref]原本这也会有文章，但我就在本地写了，因即使设置私密，也难免有人暴力破解数据库[/ref]，所以产生了一些不想看到人，即使是微信。</p>
-<p>如果是普通且传统的文章，我不会选择加密，相反我会选择做好SEO，在网络上进行宣发，但目前看我的博客文章主要是进行批判，所以：</p>
-<h3 id="设为私密以及密码还不够吗"><a class="markdownIt-Anchor" href="#设为私密以及密码还不够吗"></a> “设为私密”以及密码，还不够吗？</h3>
-<p>也许可以了。但由于文章与隐私的特殊性，甚至连标题也不愿意让别人看到。</p>
-<p>虽然很想让前同事看，但是他们会进行密码尝试，使用各种方法，只要他们有黑客技术，或者有足够多的时间进行尝试。</p>
-<p>若设为私密，这与自己做输出，“渴望得到回馈”的想法正好是相悖的。</p>
-<h2 id="大浪淘沙"><a class="markdownIt-Anchor" href="#大浪淘沙"></a> 大浪淘沙</h2>
-<p>独立某群里也有人没将自己的博客放上来，于是当时就有人说了这样一句话。</p>
-<p>但是很遗憾，目前找不到聊天记录了。</p>
-<h2 id="应对"><a class="markdownIt-Anchor" href="#应对"></a> 应对</h2>
-<p>正如之前章节提到的，不仅仅是应对那些人（圈子太小了，你知道我在说什么），以及应对这些事，我目前的一些方法，但受制于环境限制，必须自己得调整心态，承认自己的不足，变得更加开放。</p>
-<h3 id="这件事上的心理防御机制"><a class="markdownIt-Anchor" href="#这件事上的心理防御机制"></a> 这件事上的心理防御机制</h3>
-<p>最近我在读《为什么我们总是在逃避》[ref]也会写出一篇读后感[/ref]，纸上得来终觉浅，绝知此事要躬行，所以还是在博客中进行自己的心理分析，才有用吧。</p>
-<p>在这个行为中，我目前似乎用了以下的心理防御机制：</p>
-<p>“压抑”自己的需求：文章的宣发需求、获得评论与反馈的需求，使用不提交、不写博客名称[ref]群里有开发者做了一个博客聚合；同样也有不成文的规定，将自己的博客昵称写在ID之后[/ref]的“拒绝合作”的方式进行心理防御，否定自己的意识；</p>
-<p>想了想可能还有“反向形成”：</p>
-<p>做了相反的行为，别人做好题图相关的RSS，我却关闭它，但相反的行为可能应该是：我把我的博客ID写上来，可能就是一种“反向形成”。</p>
-<p>如果你在读这歌书籍，欢迎与我进行交流与留言评论。</p>
-<h3 id="关于看心理医生"><a class="markdownIt-Anchor" href="#关于看心理医生"></a> 关于看心理医生</h3>
-<p>最近一段时间自己有去看心理医生，之后和家人陪同，以为可以解决心理问题，但是和他们说的“大同小异”。</p>
-<p>如果说要看关于我看心理医生的部分，这篇文章有可能不会在国内一众社区[ref]也许包括豆瓣[/ref]里写，可能会在海外的心理社区写：</p>
-<blockquote>
-<p>你不知道南京的心理医生有多“愚昧”</p>
-</blockquote>
-<h2 id="关闭rss的两种方法"><a class="markdownIt-Anchor" href="#关闭rss的两种方法"></a> 关闭RSS的两种方法</h2>
-<h3 id="插件"><a class="markdownIt-Anchor" href="#插件"></a> 插件</h3>
-<p>Disable Feeds，<a href="https://wordpress.org/plugins/disable-feeds/">WordPress插件页面</a></p>
-<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
-<p>以下操作需要在“functions.php”中操作[ref]查找本文的文章我会另写一篇。[/ref]</p>
-<p>网上提供关闭的代码，但地址仍然存在，不推荐：</p>
-<pre class="highlight"><code class="">function disable_all_feeds() &#123;
-   wp_die( '本站不提供feed' );
-&#125;
-add_action('do_feed', 'disable_all_feeds', 1);
-add_action('do_feed_rdf', 'disable_all_feeds', 1);
-add_action('do_feed_rss', 'disable_all_feeds', 1);
-add_action('do_feed_rss2', 'disable_all_feeds', 1);
-add_action('do_feed_atom', 'disable_all_feeds', 1);
-</code></pre>
-<p>Feed界面打开直接404:</p>
-<pre class="highlight"><code class="">// 删除 wp_head 输入到模板中的feed地址链接
-add_action( 'wp_head', 'wpse33072_wp_head', 1 );
-function wpse33072_wp_head() &#123;
-    remove_action( 'wp_head', 'feed_links', 2 );
-    remove_action( 'wp_head', 'feed_links_extra', 3 );
-&#125;
-
-foreach( array( 'rdf', 'rss', 'rss2', 'atom' ) as $feed ) &#123;
-    add_action( 'do_feed_' . $feed, 'wpse33072_remove_feeds', 1 );
-&#125;
-unset( $feed );
-
-// 当执行 do_feed action 时重定向到首页
-function wpse33072_remove_feeds() &#123;
-    wp_redirect( home_url(), 302 );
-    exit();
-&#125;
-
-// 删除feed的重定向规则
-add_action( 'init', 'wpse33072_kill_feed_endpoint', 99 );
-
-function wpse33072_kill_feed_endpoint() &#123;
-    global $wp_rewrite;
-    $wp_rewrite-&gt;feeds = array();
-    
-    // 运行一次后，记得删除下面的代码
-    flush_rewrite_rules();
-&#125;
-</code></pre>
-<h3 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h3>
-<p><a href="https://www.ludou.org/how-to-remove-feeds-from-wordpress-totally.html">如何彻底移除并关闭WordPress的RSS feed</a></p>
-]]></content>
-      <categories>
-        <category>博客探索</category>
-        <category>WordPress</category>
-      </categories>
-      <tags>
-        <tag>封闭</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>这次沪漂的结束，我也许亲手切断了所有未知</title>
     <url>/2021/01/22/%E8%BF%99%E6%AC%A1%E6%B2%AA%E6%BC%82%E7%9A%84%E7%BB%93%E6%9D%9F%EF%BC%8C%E6%88%91%E4%B9%9F%E8%AE%B8%E4%BA%B2%E6%89%8B%E5%88%87%E6%96%AD%E4%BA%86%E6%89%80%E6%9C%89%E6%9C%AA%E7%9F%A5/</url>
     <content><![CDATA[<p>内心强大但脆弱的我，最终还是输给了陌生人的舆论、输给了自己的盲目。</p>
@@ -11951,6 +12089,96 @@ function wpse33072_kill_feed_endpoint() &#123;
       </tags>
   </entry>
   <entry>
+    <title>逐渐走向封闭的独立博客</title>
+    <url>/2020/05/24/%E9%80%90%E6%B8%90%E8%B5%B0%E5%90%91%E5%B0%81%E9%97%AD%E7%9A%84%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>这一篇文章原本是在2020年4月26日发布。</p>
+<p>由于自身的因网络人际原因以及本身的“对人敏感”，原因，且最近去看了心理医生，回顾了下自己从小时候的经历，以及最近看了一本书，《为什么我们总是在逃避》，应该是对我的这一种行为有了更深一层的认识：这就是心理防御机制。</p>
+<span id="more"></span>
+<h2 id="行为"><a class="markdownIt-Anchor" href="#行为"></a> 行为</h2>
+<h3 id="首先我关闭了rss"><a class="markdownIt-Anchor" href="#首先我关闭了rss"></a> 首先，我关闭了RSS</h3>
+<p>两种简易方法：插件方法与代码方法，这在本文最后会提到[ref]相关文章：使用TablePlus+链接Vulr WP模版的PHPAdmin数据库[/ref]。</p>
+<h3 id="一些不想看到的人与不想让人看到"><a class="markdownIt-Anchor" href="#一些不想看到的人与不想让人看到"></a> 一些不想看到的人，与不想让人看到</h3>
+<p>由于自己最近很容易在网络上与人“杠”起来[ref]原本这也会有文章，但我就在本地写了，因即使设置私密，也难免有人暴力破解数据库[/ref]，所以产生了一些不想看到人，即使是微信。</p>
+<p>如果是普通且传统的文章，我不会选择加密，相反我会选择做好SEO，在网络上进行宣发，但目前看我的博客文章主要是进行批判，所以：</p>
+<h3 id="设为私密以及密码还不够吗"><a class="markdownIt-Anchor" href="#设为私密以及密码还不够吗"></a> “设为私密”以及密码，还不够吗？</h3>
+<p>也许可以了。但由于文章与隐私的特殊性，甚至连标题也不愿意让别人看到。</p>
+<p>虽然很想让前同事看，但是他们会进行密码尝试，使用各种方法，只要他们有黑客技术，或者有足够多的时间进行尝试。</p>
+<p>若设为私密，这与自己做输出，“渴望得到回馈”的想法正好是相悖的。</p>
+<h2 id="大浪淘沙"><a class="markdownIt-Anchor" href="#大浪淘沙"></a> 大浪淘沙</h2>
+<p>独立某群里也有人没将自己的博客放上来，于是当时就有人说了这样一句话。</p>
+<p>但是很遗憾，目前找不到聊天记录了。</p>
+<h2 id="应对"><a class="markdownIt-Anchor" href="#应对"></a> 应对</h2>
+<p>正如之前章节提到的，不仅仅是应对那些人（圈子太小了，你知道我在说什么），以及应对这些事，我目前的一些方法，但受制于环境限制，必须自己得调整心态，承认自己的不足，变得更加开放。</p>
+<h3 id="这件事上的心理防御机制"><a class="markdownIt-Anchor" href="#这件事上的心理防御机制"></a> 这件事上的心理防御机制</h3>
+<p>最近我在读《为什么我们总是在逃避》[ref]也会写出一篇读后感[/ref]，纸上得来终觉浅，绝知此事要躬行，所以还是在博客中进行自己的心理分析，才有用吧。</p>
+<p>在这个行为中，我目前似乎用了以下的心理防御机制：</p>
+<p>“压抑”自己的需求：文章的宣发需求、获得评论与反馈的需求，使用不提交、不写博客名称[ref]群里有开发者做了一个博客聚合；同样也有不成文的规定，将自己的博客昵称写在ID之后[/ref]的“拒绝合作”的方式进行心理防御，否定自己的意识；</p>
+<p>想了想可能还有“反向形成”：</p>
+<p>做了相反的行为，别人做好题图相关的RSS，我却关闭它，但相反的行为可能应该是：我把我的博客ID写上来，可能就是一种“反向形成”。</p>
+<p>如果你在读这歌书籍，欢迎与我进行交流与留言评论。</p>
+<h3 id="关于看心理医生"><a class="markdownIt-Anchor" href="#关于看心理医生"></a> 关于看心理医生</h3>
+<p>最近一段时间自己有去看心理医生，之后和家人陪同，以为可以解决心理问题，但是和他们说的“大同小异”。</p>
+<p>如果说要看关于我看心理医生的部分，这篇文章有可能不会在国内一众社区[ref]也许包括豆瓣[/ref]里写，可能会在海外的心理社区写：</p>
+<blockquote>
+<p>你不知道南京的心理医生有多“愚昧”</p>
+</blockquote>
+<h2 id="关闭rss的两种方法"><a class="markdownIt-Anchor" href="#关闭rss的两种方法"></a> 关闭RSS的两种方法</h2>
+<h3 id="插件"><a class="markdownIt-Anchor" href="#插件"></a> 插件</h3>
+<p>Disable Feeds，<a href="https://wordpress.org/plugins/disable-feeds/">WordPress插件页面</a></p>
+<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
+<p>以下操作需要在“functions.php”中操作[ref]查找本文的文章我会另写一篇。[/ref]</p>
+<p>网上提供关闭的代码，但地址仍然存在，不推荐：</p>
+<pre class="highlight"><code class="">function disable_all_feeds() &#123;
+   wp_die( '本站不提供feed' );
+&#125;
+add_action('do_feed', 'disable_all_feeds', 1);
+add_action('do_feed_rdf', 'disable_all_feeds', 1);
+add_action('do_feed_rss', 'disable_all_feeds', 1);
+add_action('do_feed_rss2', 'disable_all_feeds', 1);
+add_action('do_feed_atom', 'disable_all_feeds', 1);
+</code></pre>
+<p>Feed界面打开直接404:</p>
+<pre class="highlight"><code class="">// 删除 wp_head 输入到模板中的feed地址链接
+add_action( 'wp_head', 'wpse33072_wp_head', 1 );
+function wpse33072_wp_head() &#123;
+    remove_action( 'wp_head', 'feed_links', 2 );
+    remove_action( 'wp_head', 'feed_links_extra', 3 );
+&#125;
+
+foreach( array( 'rdf', 'rss', 'rss2', 'atom' ) as $feed ) &#123;
+    add_action( 'do_feed_' . $feed, 'wpse33072_remove_feeds', 1 );
+&#125;
+unset( $feed );
+
+// 当执行 do_feed action 时重定向到首页
+function wpse33072_remove_feeds() &#123;
+    wp_redirect( home_url(), 302 );
+    exit();
+&#125;
+
+// 删除feed的重定向规则
+add_action( 'init', 'wpse33072_kill_feed_endpoint', 99 );
+
+function wpse33072_kill_feed_endpoint() &#123;
+    global $wp_rewrite;
+    $wp_rewrite-&gt;feeds = array();
+    
+    // 运行一次后，记得删除下面的代码
+    flush_rewrite_rules();
+&#125;
+</code></pre>
+<h3 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h3>
+<p><a href="https://www.ludou.org/how-to-remove-feeds-from-wordpress-totally.html">如何彻底移除并关闭WordPress的RSS feed</a></p>
+]]></content>
+      <categories>
+        <category>博客探索</category>
+        <category>WordPress</category>
+      </categories>
+      <tags>
+        <tag>封闭</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>部署Hexo到GitHub</title>
     <url>/2018/04/10/%E9%83%A8%E7%BD%B2hexo%E5%88%B0GitHub/</url>
     <content><![CDATA[<p>这是用Mac下部署GitHubPages的教程以及我的步骤与遇到的问题。</p>
@@ -12008,9 +12236,9 @@ hexo deploy
       </categories>
       <tags>
         <tag>Mac</tag>
+        <tag>教程</tag>
         <tag>hexo</tag>
         <tag>Github</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
