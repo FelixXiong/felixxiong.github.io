@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://felixxiong.github.io/2022/02/15/NAS-%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2022-02-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://felixxiong.github.io/2022/02/14/%E6%9A%82%E7%BC%93%E5%9B%9E%E8%8B%8F/</loc>
     
     <lastmod>2022-02-13</lastmod>
@@ -2140,6 +2147,34 @@
   
   <url>
     <loc>https://felixxiong.github.io/tags/TEDx/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felixxiong.github.io/tags/NAS/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felixxiong.github.io/tags/%E5%AD%98%E5%82%A8/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felixxiong.github.io/tags/%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felixxiong.github.io/tags/%E5%A4%87%E4%BB%BD/</loc>
     <lastmod>2022-02-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
