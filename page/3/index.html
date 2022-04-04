@@ -332,6 +332,230 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事熊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" itemprop="url">iOS地图开发踩坑</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-21T00:00:00+08:00">
+                2020-06-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-24T21:38:57+08:00">
+                2021-03-24
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">编程开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" class="leancloud_visitors" data-flag-title="iOS地图开发踩坑">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  568
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近的项目中研究iOS地图已经有些时日了，这里记录下获得用户位置权限的基本步骤与参考资料。</p>
+<p>如文章有误或你的经验分享，欢迎指出与评论。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/21/iOS%E5%9C%B0%E5%9B%BE%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/06/14/%E7%A1%AC%E4%BB%B6%E5%9B%9E%E9%A1%BE%7C%E5%8D%8E%E4%B8%BAMediapad10FHD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2340,233 +2564,6 @@
 
       
     
-     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/04/09/%E5%AE%A1%E6%9F%A5%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E5%A6%82%E4%BD%95%E5%8A%AA%E5%8A%9B%E5%81%9A%E5%88%B0%E5%88%9B%E6%96%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事熊">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/09/%E5%AE%A1%E6%9F%A5%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E5%A6%82%E4%BD%95%E5%8A%AA%E5%8A%9B%E5%81%9A%E5%88%B0%E5%88%9B%E6%96%B0/" itemprop="url">审查环境下的产品如何努力做到创新</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-09T00:00:00+08:00">
-                2020-04-09
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-24T20:59:11+08:00">
-                2021-03-24
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
-                    <span itemprop="name">产品</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%A7%E5%93%81/%E6%8A%98%E8%85%BE%E4%B8%8E%E6%8E%A2%E7%B4%A2/" itemprop="url" rel="index">
-                    <span itemprop="name">折腾与探索</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/04/09/%E5%AE%A1%E6%9F%A5%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E5%A6%82%E4%BD%95%E5%8A%AA%E5%8A%9B%E5%81%9A%E5%88%B0%E5%88%9B%E6%96%B0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/09/%E5%AE%A1%E6%9F%A5%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E5%A6%82%E4%BD%95%E5%8A%AA%E5%8A%9B%E5%81%9A%E5%88%B0%E5%88%9B%E6%96%B0/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/04/09/%E5%AE%A1%E6%9F%A5%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E5%A6%82%E4%BD%95%E5%8A%AA%E5%8A%9B%E5%81%9A%E5%88%B0%E5%88%9B%E6%96%B0/" class="leancloud_visitors" data-flag-title="审查环境下的产品如何努力做到创新">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近一直在体验轻芒草稿版，发现剩余价值的播客依然榨的干净，同时对比的，还有小宇宙。</p>
-<p>下方左图这是我之前的聆听播客的方式，<a target="_blank" rel="noopener" href="https://passport.weibo.com/visitor/visitor?entry=miniblog&amp;a=enter&amp;url=https%3A%2F%2Fweibo.com%2F5210076054%2FIevkFfkwV&amp;domain=.weibo.com&amp;ua=php-sso_sdk_client-0.6.28&amp;_rand=1586570477.5059">原微博</a>。</p>
-<p>下方右图是轻芒草稿版的播客播放引导页。他还把播客的播放条竖过来了，会改变播客的聆听模式嘛？</p>
-<p>WordPress不能嵌入微博只能截图了，这样一来和我之前写hexo没什么区别。</p>
-<p>直到最近一段时间，我才明白，我之前记得所谓的“笔记”，在播客中，其实是叫Shownotes。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/09/%E5%AE%A1%E6%9F%A5%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E5%A6%82%E4%BD%95%E5%8A%AA%E5%8A%9B%E5%81%9A%E5%88%B0%E5%88%9B%E6%96%B0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -2617,7 +2614,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">129</span>
+                  <span class="site-state-item-count">130</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2639,7 +2636,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">164</span>
+                  <span class="site-state-item-count">165</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2759,7 +2756,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">194.2k</span>
+    <span title="Site words total count">195.5k</span>
   
 </div>
 
