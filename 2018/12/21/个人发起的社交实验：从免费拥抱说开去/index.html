@@ -428,7 +428,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/12/21/%E4%B8%AA%E4%BA%BA%E5%8F%91%E8%B5%B7%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%AE%9E%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%85%8D%E8%B4%B9%E6%8B%A5%E6%8A%B1%E8%AF%B4%E5%BC%80%E5%8E%BB/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/21/%E4%B8%AA%E4%BA%BA%E5%8F%91%E8%B5%B7%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%AE%9E%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%85%8D%E8%B4%B9%E6%8B%A5%E6%8A%B1%E8%AF%B4%E5%BC%80%E5%8E%BB/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/12/21/个人发起的社交实验：从免费拥抱说开去/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -436,18 +437,12 @@
 
           
           
-             <span id="/2018/12/21/%E4%B8%AA%E4%BA%BA%E5%8F%91%E8%B5%B7%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%AE%9E%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%85%8D%E8%B4%B9%E6%8B%A5%E6%8A%B1%E8%AF%B4%E5%BC%80%E5%8E%BB/" class="leancloud_visitors" data-flag-title="个人发起的社交实验：从免费拥抱说开去">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>阅读次数：
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -740,7 +735,14 @@
 
   
     <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
+
   
 
 
@@ -789,7 +791,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -947,7 +949,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">199.9k</span>
+    <span title="Site words total count">200.1k</span>
   
 </div>
 
@@ -1100,6 +1102,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://FelixXiong.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://felixxiong.github.io/2018/12/21/%E4%B8%AA%E4%BA%BA%E5%8F%91%E8%B5%B7%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%AE%9E%E9%AA%8C%EF%BC%9A%E4%BB%8E%E5%85%8D%E8%B4%B9%E6%8B%A5%E6%8A%B1%E8%AF%B4%E5%BC%80%E5%8E%BB/';
+          this.page.identifier = '2018/12/21/个人发起的社交实验：从免费拥抱说开去/';
+          this.page.title = '个人发起的社交实验：从免费拥抱说开去';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://FelixXiong.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -1115,40 +1137,12 @@
 
 
 
-  
 
 
 
 
 
 
-
-
-
-
-  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
-  <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'DQBKYNto8PW0Xx4jPlj43fg3-MdYXbMMI',
-        appKey: 'qoCDtmEwxwjGoXTskK0Da3k1',
-        visitor: 'false',
-        placeholder: 'Just go go',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-        serverURLs: 'https://dqbkynto.api.lncldglobal.com' ,
-    });
-  </script>
 
 
 
@@ -1476,113 +1470,6 @@
 
 
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("DQBKYNto8PW0Xx4jPlj43fg3-MdYXbMMI", "qoCDtmEwxwjGoXTskK0Da3k1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
   
 
