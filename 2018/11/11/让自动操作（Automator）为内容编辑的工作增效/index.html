@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="自动操作/Automator,工作流,运营," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="2019年检查博客标签时更新：  此篇文章当时需要修改之后可以上少数派首页，所以消失了当时第一次即兴撰写的影子， 自己觉得深表遗憾，原因是自己的博客，不能因为大众阅读与理解、妥协。有时间在Git中尝试找回。 文末我也使用删除线删除了平台中的&quot;经典语句&quot;。  原简介： 在日常的工作与生活中，我们绕不开那些十分繁琐以及必要的操作，例如一次性打开多个网页、在各种应用中来回切换。 作为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让自动操作（Automator）为内容编辑的工作增效">
+<meta property="og:url" content="https://felixxiong.github.io/2018/11/11/%E8%AE%A9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%EF%BC%88Automator%EF%BC%89%E4%B8%BA%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%A2%9E%E6%95%88/index.html">
+<meta property="og:site_name" content="故事熊">
+<meta property="og:description" content="2019年检查博客标签时更新：  此篇文章当时需要修改之后可以上少数派首页，所以消失了当时第一次即兴撰写的影子， 自己觉得深表遗憾，原因是自己的博客，不能因为大众阅读与理解、妥协。有时间在Git中尝试找回。 文末我也使用删除线删除了平台中的&quot;经典语句&quot;。  原简介： 在日常的工作与生活中，我们绕不开那些十分繁琐以及必要的操作，例如一次性打开多个网页、在各种应用中来回切换。 作为">
+<meta property="og:locale">
+<meta property="og:image" content="https://i.loli.net/2018/11/12/5be976198ec00.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/13/5bea79bcdaa27.gif">
+<meta property="og:image" content="https://i.loli.net/2018/11/12/5be977c54e7ee.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/13/5beab60b610eb.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/13/5beab5c8f1aa4.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/12/5be982c1087e8.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/14/5bebae361ffbd.gif">
+<meta property="og:image" content="https://i.loli.net/2018/11/14/5bebae7105cd6.gif">
+<meta property="og:image" content="https://i.loli.net/2018/11/13/5beabea7e9202.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/13/5beabd094fff7.png">
+<meta property="article:published_time" content="2018-11-11T09:25:00.000Z">
+<meta property="article:modified_time" content="2019-05-23T17:46:13.760Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="自动操作&#x2F;Automator">
+<meta property="article:tag" content="工作流">
+<meta property="article:tag" content="运营">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2018/11/12/5be976198ec00.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://felixxiong.github.io/2018/11/11/让自动操作（Automator）为内容编辑的工作增效/"/>
+
+
+
+
+
+  <title>让自动操作（Automator）为内容编辑的工作增效 | 故事熊</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126731684-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">故事熊</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">情绪泛滥 沉浸其中</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogmenorabilia">
+          <a href="/blogmenorabilia/" rel="section">
+            
+            博客大事记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wechatpublic">
+          <a href="/wechatpublic/" rel="section">
+            
+            微信公众账号
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-podcast">
+          <a href="/podcast/" rel="section">
+            
+            podcast
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume/" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-messageboard">
+          <a href="/messageboard/" rel="section">
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2018/11/11/%E8%AE%A9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%EF%BC%88Automator%EF%BC%89%E4%B8%BA%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%A2%9E%E6%95%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事熊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">让自动操作（Automator）为内容编辑的工作增效</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-11T17:25:00+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-24T01:46:13+08:00">
+                2019-05-24
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/" itemprop="url" rel="index">
+                    <span itemprop="name">工作流</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/Automator/" itemprop="url" rel="index">
+                    <span itemprop="name">Automator</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/11/%E8%AE%A9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%EF%BC%88Automator%EF%BC%89%E4%B8%BA%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%A2%9E%E6%95%88/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/11/让自动操作（Automator）为内容编辑的工作增效/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>阅读次数：
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2019年检查博客标签时更新：</p>
+<blockquote>
+<p>此篇文章当时需要修改之后可以上少数派首页，所以消失了当时第一次即兴撰写的影子，</p>
+<p>自己觉得深表遗憾，原因是自己的博客，不能因为大众阅读与理解、妥协。有时间在Git中尝试找回。</p>
+<p>文末我也使用删除线删除了平台中的&quot;经典语句&quot;。</p>
+</blockquote>
+<p>原简介：</p>
+<p>在日常的工作与生活中，我们绕不开那些十分繁琐以及必要的操作，例如一次性打开多个网页、在各种应用中来回切换。</p>
+<p>作为视频内容编辑与新媒体人，这些工作虽是必须的，但因为年轻，不愿意将宝贵的时间浪费在这些“无意义”的事情上，所以需要一个工作流进行完成，在Mac平台下最好的选择就是自动操作了。</p>
+<span id="more"></span>
+<h2 id="为什么是自动操作"><a class="markdownIt-Anchor" href="#为什么是自动操作"></a> 为什么是自动操作</h2>
+<p>Mac作为生产力工具，自动操作这个应用虽然被分类在了“其他”中，但是这并不妨碍释放他真正的威力：一些繁琐的事情可以交由他来完成。这对于每天的工作的人来说在工作开始就可以节省一大部分的精力。</p>
+<h2 id="关于目前的工作"><a class="markdownIt-Anchor" href="#关于目前的工作"></a> 关于目前的工作</h2>
+<p>新媒体运营的工作做了解，写公众号的。还有内容编辑，包括视频网站、客户端内容更新。</p>
+<p>视频更新上除了需要人工仔细筛选视频（这一步机器无可替代）之外，其余的时间完全可以节省以便进行文章撰写和资料收集，经常需要第二天交稿，<strong>在有限的时间里高效工作便成为了我的重要目标。</strong></p>
+<p>根据接手时的笔记以及工作中的分析，以下是我在工作中需要自动操作的步骤：</p>
+<ol>
+<li>多开网页</li>
+<li>自动打开视频存储目录</li>
+<li>记住各种各样的文件夹路径</li>
+<li>视频的封面制作与楼层图制作</li>
+<li>重命名不同文件名称</li>
+<li>退出应用程序</li>
+</ol>
+<h2 id="工作所需软件"><a class="markdownIt-Anchor" href="#工作所需软件"></a> 工作所需软件</h2>
+<p>这些是我工作中需要用到的软件，DownIe、Chrome、Safari以及Photoshop。</p>
+<p>Downle：下载视频首选，得益于Mac端优酷端没有转码功能，它可直接下载MP4并直接设置软件下载路径。</p>
+<p>双浏览器：公司后台兼容性问题，切换使用。</p>
+<p>PhotoShop：缩放图像大小以及批量重命名功能。</p>
+<h2 id="使用自动操作开始一天"><a class="markdownIt-Anchor" href="#使用自动操作开始一天"></a> 使用自动操作开始一天</h2>
+<p>首选当接到需求后使用多开网页进行热点的追寻。</p>
+<p><img src="https://i.loli.net/2018/11/12/5be976198ec00.png" alt="" /></p>
+<p>需要在追热点的同时筛选视频，所以我做了两个，分别与两个显示器上同时进行。</p>
+<p>多开网页的动图感受下：</p>
+<p><img src="https://i.loli.net/2018/11/13/5bea79bcdaa27.gif" alt="" /></p>
+<p>之前的代码是用来新建一个标签页，之后方便关闭用的，这里先不谈。</p>
+<p>随后开始进行人工筛选需要的视频，使用Downle设置好下载路径：</p>
+<p><img src="https://i.loli.net/2018/11/12/5be977c54e7ee.png" alt="" /></p>
+<p>这是第一个下载路径，好，我们记住他。</p>
+<p>下载完了之后需要制作封面图，就像我们在视频网站中看到的一样。</p>
+<p>在这里需要引入一个变量的概念。</p>
+<h3 id="什么是变量"><a class="markdownIt-Anchor" href="#什么是变量"></a> 什么是变量</h3>
+<p>自第一个文件路径开始，可与遇见的是工作流做完之后还需要将这些视频删除。由此可见到时候我们在制作工作流的过程中依然需要像这次一样设置路径。</p>
+<p>这便是在制作工作流的过程中保持“高效”的方法：将这个路径保存为变量。</p>
+<p>字面意思上可以得出，“变”，即不固定的。“量”，值，则是不固定的值。</p>
+<p>好的是在同一个工作流中可以有多个不固定的值，这为我们创作复杂的工作流程提供了方便。</p>
+<p>什么可以成为变量</p>
+<ol>
+<li>复杂的文件夹路径</li>
+<li>上一个操作更改之后的文件。</li>
+</ol>
+<p>在这里我仅用到第一个，即复杂的文件路径。</p>
+<p>使用“请求指定的访达项目”设置路径。</p>
+<p>动图</p>
+<p>最后，我们添加到变量中，之后可以调用。</p>
+<p>在添加变量时需要注意：</p>
+<ol>
+<li>在请求访达项目时之类的弹出框，可以使用变量。</li>
+<li>凡是手动选择路径的地方不可选择变量。（例如上一步操作“获取指定的”访达项目）</li>
+</ol>
+<p>所以这一步操作需要使用“请求指定的访达项目”，才可以添加路径。</p>
+<p>打开之后手动截取帧，使用QuickTime Player进行视频内容筛选，工作需要仅仅是跳着看，这里不多展开。</p>
+<h2 id="为什么我不考虑使用photoshop"><a class="markdownIt-Anchor" href="#为什么我不考虑使用photoshop"></a> 为什么我不考虑使用PhotoShop</h2>
+<p>因为PS打开后不仅吃内存，还可能因为可能导致系统速度缓慢，于是强大的自动操作也给我们提供了简单的图片操作：缩放图像以及裁剪图像。</p>
+<h3 id="设置缩放图像"><a class="markdownIt-Anchor" href="#设置缩放图像"></a> 设置缩放图像</h3>
+<p>缩放图像的步骤很简单，拖拽即可。</p>
+<p>不过拖拽前会有这样的一个小提示：你是否需要使用上一个输入源进行拷贝或者是粘贴——此步骤你可以选择不拷贝，也可以选择拷贝上一个操作的输出等。</p>
+<p><img src="https://i.loli.net/2018/11/13/5beab60b610eb.png" alt="" /></p>
+<p>如果选择添加，很简单，只需要设置图像缩放的像素。</p>
+<p><img src="https://i.loli.net/2018/11/13/5beab5c8f1aa4.png" alt="" /></p>
+<p>主要楼层设置好了，其他楼层也可以使用缩放，为了“图片规约”，使用裁剪。</p>
+<h3 id="裁剪图像"><a class="markdownIt-Anchor" href="#裁剪图像"></a> 裁剪图像</h3>
+<h4 id="引入快速操作"><a class="markdownIt-Anchor" href="#引入快速操作"></a> 引入快速操作</h4>
+<p>工作流很长，在这些小步骤的时候难免也会有一些差错或者需要临时打开一些文件的地方，这里可以单独创建一个自动操作，其中包括裁剪图像。</p>
+<p>裁剪图像可以设置特定的长、宽、高进行裁剪。</p>
+<p><img src="https://i.loli.net/2018/11/12/5be982c1087e8.png" alt="" /></p>
+<p>这个同样也适用在其他操作中（例如幻灯片的图像排列中），尤其适合需要相同尺寸的图像时。</p>
+<p>之前的工作中并没有想到使用自动操作，如果使用，则可以事半功倍；</p>
+<p>在生活中进行自动操作，除了可以提高我们的效率，让我们的时间更加集中于提升自己，更可以将我们的生活变得有质量以及有意义。</p>
+<p>制作快速操作也很简单，在开始时选择自动操作即可，也可以将现有的需要的单个工作流程新建成为“快速操作”，之后可以选中文件与文件夹时双指轻点呼出它，以下是一个演示。</p>
+<p>将“工作流程”转换为“快速操作”：</p>
+<p><img src="https://i.loli.net/2018/11/14/5bebae361ffbd.gif" alt="" /></p>
+<p>快速制作楼层图封面演示：</p>
+<p><img src="https://i.loli.net/2018/11/14/5bebae7105cd6.gif" alt="" /></p>
+<h2 id="关于第三方自动操作"><a class="markdownIt-Anchor" href="#关于第三方自动操作"></a> 关于第三方自动操作</h2>
+<p>自动操作是否同iPhone的workflow一样支持“多软件协同”呢？</p>
+<p>答案是肯定的。</p>
+<p>这就意味着我们可以发现越来越多的可协同工作的软件。</p>
+<p>文章之前也提到过需要用到PS，我这里之前使用<a href="">ROBOTPHOTOSHOP</a>。</p>
+<p>这是一款支持Automator的第三方个人开发者开发的一个PS自动操作的集合，安装时被分类在<strong>照片</strong>中而不是单独的名称或者一个组，如果你喜欢，也可以在左栏单独创建。</p>
+<p>为什么我不用PhotoShop进行操前台作而是使用自动操作扩展？前文提到过因为占用内存的原因，以及会导致拖慢速度。不过有扩展可以帮忙自动化，前提是你的电脑里仍然需要安装PS，这就类似于Chrome以及各种PWA一样。</p>
+<h3 id="robotphotoshop插件描述"><a class="markdownIt-Anchor" href="#robotphotoshop插件描述"></a> ROBOTPHOTOSHOP插件描述</h3>
+<p>兼容性：这个插件兼容：PhotoShop CS2至CS6、CC、CC2017以及2018。</p>
+<p>是否付费：分为免费版和付费版，我下载的是该扩展的免费版本。</p>
+<p>安装了后，其中主要包含着功能，因为篇幅有限，以下用表格列举我个人觉得比较有用同时也比较重要的：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能名称</th>
+<th style="text-align:left">功能作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Diptych_CC</td>
+<td style="text-align:left">允许您从两个图像创建Diptych。 输入页面大小和所需的边距，此操作将自动调整源图像的大小，并将它们放置在指定大小的新文档中。 请注意，已完成的diptych将作为PSD文件保存到桌面上，但新文件不会传递到工作流中的下一个操作。 如果您希望Automator使用diptych执行某些操作，请使用“使用当前打开的文档”操作执行“渲染”操作，然后从那里继续操作。）</td>
+</tr>
+<tr>
+<td style="text-align:left">Open_CC</td>
+<td style="text-align:left">在Photoshop中打开传递的文档。 您必须在执行任何其他Photoshop处理操作之前发出“打开”操作（或“使用当前打开的文档”或“还原原始列表”操作）。 这些操作必须后跟Render操作。</td>
+</tr>
+<tr>
+<td style="text-align:left">Rander_CC</td>
+<td style="text-align:left">渲染在工作流中放置的效果。 除非使用以下操作之一指定了要处理的文档，否则渲染将不起作用：打开，作为原始数据打开，使用当前打开的文档或还原原始文件列表。 除了处理指定的Photoshop动作外，Render还可以以多种格式保存文档。 选中“通过已保存的文件”以将保存的图像传递到工作流的其余部分。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.loli.net/2018/11/13/5beabea7e9202.png" alt="" /></p>
+<p>上图是此扩展的样式，可见UI同自动操作一致，同样有结果和选项，</p>
+<p>是否注意到那个save了？</p>
+<p>选项中的“工作流程显示此选项”即可在保存的过程中自定义名称。</p>
+<p>专业版中它包含的功能：</p>
+<p>更改按：位深度、模式、像素高宽比等。</p>
+<p>过滤按：宽高比、深度、颜色模式、EXIF、IPTC以及方向和尺寸等。</p>
+<p>锐化按：边缘、更多、智能锐化等。</p>
+<p>该扩展的完整功能列表可以在<a target="_blank" rel="noopener" href="http://www.robotphotoshop.com/?page_id=8">这里</a>找到。</p>
+<p>但在后续的工作流升级中发现，它们对我来说并不是很实用，在这里还是推荐一下。</p>
+<h2 id="回顾"><a class="markdownIt-Anchor" href="#回顾"></a> 回顾</h2>
+<p>因为是我在上班时间分析出的工作流，可以说是在有限的时间内制作，故在此分析当中可能有不到位的地方或者需要加强的地方，非常欢迎各位评论留言。一个内容编辑的工作流：主要讲解的是视频更新。</p>
+<p>一天起始，多开网页可以进行实时热点的追寻；</p>
+<p>同样是多开网页，开启不同栏目的页面人工审核视频并下载。</p>
+<p>中途遇到很多繁杂的路径，除了可以使用替身放置在桌面之外，还可以进行“请求访达项目”、“获得所选的访达项目”等等直接获得工作路径，也可通过变量的形式进行保存；</p>
+<p>关于第三方工作流，目前的推荐为RobotoPhotoShop。如果你还有更好的推荐，也欢迎你的留言。</p>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>这是一篇比较长的将自动操作真正用于实践当中的关于自动操作的文章。</p>
+<p>值得说明的是，这个工作流是我在上班时间思考出来的一套流程，其中值得推荐的一个重要操作，便是“等待用户操作”。</p>
+<p>一些当时并没有想出的地方我使用“等待用户操作”代替。</p>
+<p>这一步可以说几乎是在有限时间里制作流程中最有效的一步，即使当时并没有考虑好应该使用哪一种方式进行撰写——还可以让正在工作室的自己有更充足的时间制作流程以及测试，在更短的时间内制作更长的流程。</p>
+<p><img src="https://i.loli.net/2018/11/13/5beabd094fff7.png" alt="" /></p>
+<p>与此同时，这一步的提示窗口还可以提示自己上下文的操作（受限于自动操作没有Pages一样的注释功能）以及现在要干什么。</p>
+<p>此时这里也可以成为一个<strong>记录下一步操作</strong>的好方法，在此分享给大家。</p>
+<h3 id="关于应用洁癖"><a class="markdownIt-Anchor" href="#关于应用洁癖"></a> 关于应用洁癖</h3>
+<p>其中在说明优酷转码功能时提到的的应用洁癖。</p>
+<blockquote>
+<p>我使用过5台安卓机，初中经常钻研刷机，以及现在学习开发，发现Android上软件涉及众多权限以及后台互相唤醒，所以到手的Android手机都会如以往一样进行ROOT等操作与折腾，于是这样的习惯当然也顺延到了Mac上（尽管很安全，我也没有考虑用百度云盘以及迅雷客户端，我的做法是Aria2+百度云Chrome插件，这里不多讲）。</p>
+<p>其余的我选择是Chrome将网页作为网页应用安装，不占本地空间。</p>
+<p>限于国内的环境，我是用一部电子设备时都会考虑如何使用最轻量级的软件。</p>
+</blockquote>
+<p>在后续的工作中，我的工作流不断的升级，也正是因为此时间越来越省，加入了不少新的工作，需要用到Excel、Winzip等等。</p>
+<p>当然我会用到更加进阶的语法：AppleScript、JavaScript甚至是Shell进行工作流的升级。后续或许会开一个付费专栏进行工作流的更新甚至是写脚本，也或许进行其他的工作，毕竟生命要放在更有意义的事情上——例如电脑里安装了不止一个IDE（软件开发环境），在公司里学着更多的东西。</p>
+<p><s>如果你<strong>刚</strong>使用Automator，欢迎在评论区分享你<strong>想</strong>打造的的工作流程。</s></p>
+<p><s>如果你<strong>正在</strong>使用Automator，欢迎在评论区分享你<strong>正在用</strong>的工作流程。</s></p>
+<p><s>我在自动操作上的个人博客的文章目录：<a href="https://felixxiong.github.io/2018/11/08/Automator%E4%B8%8EAppleScript%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C%E7%A0%94%E7%A9%B6%E7%9B%AE%E5%BD%95/">Automator与AppleScript高效工作研究目录</a></s></p>
+<p><s>我的个人博客：<a href="https://felixxiong.github.io">故事熊</a></s></p>
+<p><s>欢迎来玩以及留言评论。</s></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你们的赞赏是我更新的动力～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    FelixXiong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://felixxiong.github.io/2018/11/11/%E8%AE%A9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%EF%BC%88Automator%EF%BC%89%E4%B8%BA%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%A2%9E%E6%95%88/" title="让自动操作（Automator）为内容编辑的工作增效">https://felixxiong.github.io/2018/11/11/%E8%AE%A9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%EF%BC%88Automator%EF%BC%89%E4%B8%BA%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%A2%9E%E6%95%88/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C-Automator/" rel="tag"># 自动操作/Automator</a>
+          
+            <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/" rel="tag"># 工作流</a>
+          
+            <a href="/tags/%E8%BF%90%E8%90%A5/" rel="tag"># 运营</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/10/HomeBrew%E5%88%9D%E8%A7%81/" rel="next" title="HomeBrew">
+                <i class="fa fa-chevron-left"></i> HomeBrew
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/26/Windows7%E5%BF%98%E8%AE%B0%E7%99%BB%E9%99%86%E5%AF%86%E7%A0%81%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="Windows7忘记登陆密码进入系统方法总结">
+                Windows7忘记登陆密码进入系统方法总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">167</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:holothemixet@gmail.com" target="_blank" title="E-Mail">
+                      
+                          <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/felixxiong" target="_blank" title="GitHub">
+                      
+                          <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                      
+                          <i class="iconfont icon-zhihu"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
+                      
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://i.youku.com/i/UNDQzNDczOTMzNg==?spm=a2hfu.20010077.uerCenter.5~5!2~A" target="_blank" title="Youku">
+                      
+                          <i class="iconfont icon-youku"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://dribbble.com/FelixXiong" target="_blank" title="Dribbble">
+                      
+                          <i class="fa fa-fw fa-dribbble"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
+            </div>
+          
+         
+          <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
+         </div>
+
+          <div id="podcast">
+            <a target="_blank" rel="noopener" href="https://pca.st/3ubc6ciz" border=0 src="https://www.pocketcasts.com/assets/images/badges/pocketcasts_large_light.svg" alt="PocketCast收听链接" width="auto" height="auto">
+            </a>
+         </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C"><span class="nav-text"> 为什么是自动操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%9B%AE%E5%89%8D%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="nav-text"> 关于目前的工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%89%80%E9%9C%80%E8%BD%AF%E4%BB%B6"><span class="nav-text"> 工作所需软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%E5%BC%80%E5%A7%8B%E4%B8%80%E5%A4%A9"><span class="nav-text"> 使用自动操作开始一天</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F"><span class="nav-text"> 什么是变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%B8%8D%E8%80%83%E8%99%91%E4%BD%BF%E7%94%A8photoshop"><span class="nav-text"> 为什么我不考虑使用PhotoShop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BC%A9%E6%94%BE%E5%9B%BE%E5%83%8F"><span class="nav-text"> 设置缩放图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%81%E5%89%AA%E5%9B%BE%E5%83%8F"><span class="nav-text"> 裁剪图像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E5%BF%AB%E9%80%9F%E6%93%8D%E4%BD%9C"><span class="nav-text"> 引入快速操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C"><span class="nav-text"> 关于第三方自动操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#robotphotoshop%E6%8F%92%E4%BB%B6%E6%8F%8F%E8%BF%B0"><span class="nav-text"> ROBOTPHOTOSHOP插件描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text"> 回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text"> 后记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%BA%94%E7%94%A8%E6%B4%81%E7%99%96"><span class="nav-text"> 关于应用洁癖</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FelixXiong</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">199.9k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次数
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://felixxiong-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://felixxiong.github.io/2018/11/11/%E8%AE%A9%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%EF%BC%88Automator%EF%BC%89%E4%B8%BA%E5%86%85%E5%AE%B9%E7%BC%96%E8%BE%91%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%A2%9E%E6%95%88/';
+          this.page.identifier = '2018/11/11/让自动操作（Automator）为内容编辑的工作增效/';
+          this.page.title = '让自动操作（Automator）为内容编辑的工作增效';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://felixxiong-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

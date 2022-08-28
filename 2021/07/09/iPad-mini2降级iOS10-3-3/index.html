@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="降级," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="我的iPad mini2由于更新到12.4后卡顿，犹豫前后终于进行降级操作。 按照威锋网的一个帖子进行操作，本帖为我的踩坑贴汇总。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPad mini2降级iOS10.3.3">
+<meta property="og:url" content="https://felixxiong.github.io/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/index.html">
+<meta property="og:site_name" content="故事熊">
+<meta property="og:description" content="我的iPad mini2由于更新到12.4后卡顿，犹豫前后终于进行降级操作。 按照威锋网的一个帖子进行操作，本帖为我的踩坑贴汇总。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-07-08T23:36:00.000Z">
+<meta property="article:modified_time" content="2021-07-12T09:16:42.102Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="降级">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://felixxiong.github.io/2021/07/09/iPad-mini2降级iOS10-3-3/"/>
+
+
+
+
+
+  <title>iPad mini2降级iOS10.3.3 | 故事熊</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126731684-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">故事熊</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">情绪泛滥 沉浸其中</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogmenorabilia">
+          <a href="/blogmenorabilia/" rel="section">
+            
+            博客大事记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wechatpublic">
+          <a href="/wechatpublic/" rel="section">
+            
+            微信公众账号
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-podcast">
+          <a href="/podcast/" rel="section">
+            
+            podcast
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume/" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-messageboard">
+          <a href="/messageboard/" rel="section">
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事熊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">iPad mini2降级iOS10.3.3</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-09T07:36:00+08:00">
+                2021-07-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-07-12T17:16:42+08:00">
+                2021-07-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81/%E6%8A%98%E8%85%BE%E4%B8%8E%E6%8E%A2%E7%B4%A2/" itemprop="url" rel="index">
+                    <span itemprop="name">折腾与探索</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81/%E6%8A%98%E8%85%BE%E4%B8%8E%E6%8E%A2%E7%B4%A2/iPad%E7%B3%BB%E5%88%97/" itemprop="url" rel="index">
+                    <span itemprop="name">iPad系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/07/09/iPad-mini2降级iOS10-3-3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>阅读次数：
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我的iPad mini2由于更新到12.4后卡顿，犹豫前后终于进行降级操作。</p>
+<p>按照威锋网的一个帖子进行操作，本帖为我的踩坑贴汇总。</p>
+<span id="more"></span>
+<h2 id="安装环境报错"><a class="markdownIt-Anchor" href="#安装环境报错"></a> 安装环境报错</h2>
+<p>使用<code>pip3 install -r requirements.txt</code>进行安装</p>
+<h3 id="bsdiff4-setuppy-error"><a class="markdownIt-Anchor" href="#bsdiff4-setuppy-error"></a> bsdiff4 (<a target="_blank" rel="noopener" href="http://setup.py">setup.py</a>) … error</h3>
+<pre class="highlight"><code class="bash">Requirement already satisfied: six==1.13.0 <span class="hljs-keyword">in</span> /Library/Python/3.8/site-packages (from -r requirements.txt (line 10)) (1.13.0)
+Building wheels <span class="hljs-keyword">for</span> collected packages: bsdiff4, pyusb
+Building wheel <span class="hljs-keyword">for</span> bsdiff4 (setup.py) ... error
+ERROR: Command errored out with <span class="hljs-built_in">exit</span> status 1:
+<span class="hljs-built_in">command</span>: /Library/Developer/CommandLineTools/usr/bin/python3 -u -c <span class="hljs-string">'import io, os, sys, setuptools, tokenize; sys.argv[0] = '</span><span class="hljs-string">"'"</span><span class="hljs-string">'/private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-install-bhzlo3bb/bsdiff4_cc62a057fa494a5b92e99f21441ab6d2/setup.py'</span><span class="hljs-string">"'"</span><span class="hljs-string">'; __file__='</span><span class="hljs-string">"'"</span><span class="hljs-string">'/private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-install-bhzlo3bb/bsdiff4_cc62a057fa494a5b92e99f21441ab6d2/setup.py'</span><span class="hljs-string">"'"</span><span class="hljs-string">';f = getattr(tokenize, '</span><span class="hljs-string">"'"</span><span class="hljs-string">'open'</span><span class="hljs-string">"'"</span><span class="hljs-string">', open)(__file__) if os.path.exists(__file__) else io.StringIO('</span><span class="hljs-string">"'"</span><span class="hljs-string">'from setuptools import setup; setup()'</span><span class="hljs-string">"'"</span><span class="hljs-string">');code = f.read().replace('</span><span class="hljs-string">"'"</span><span class="hljs-string">'\r\n'</span><span class="hljs-string">"'"</span><span class="hljs-string">', '</span><span class="hljs-string">"'"</span><span class="hljs-string">'\n'</span><span class="hljs-string">"'"</span><span class="hljs-string">');f.close();exec(compile(code, __file__, '</span><span class="hljs-string">"'"</span><span class="hljs-string">'exec'</span><span class="hljs-string">"'"</span><span class="hljs-string">'))'</span> bdist_wheel -d /private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-wheel-pm9ph9rp
+​    cwd: /private/var/folders/53/1v8ykf513138zrvp2th76l640000gn/T/pip-install-bhzlo3bb/bsdiff4_cc62a057fa494a5b92e99f21441ab6d2/
+ Complete output (114 lines):
+ running bdist_wheel
+ running build
+ running build_py
+ creating build
+ creating build/lib.macosx-10.14.6-x86_64-3.8
+ creating build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/test_all.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/__init__.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/format.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ copying bsdiff4/cli.py -&gt; build/lib.macosx-10.14.6-x86_64-3.8/bsdiff4
+ running build_ext
+ building <span class="hljs-string">'bsdiff4.core'</span> extension
+ creating build/temp.macosx-10.14.6-x86_64-3.8
+ creating build/temp.macosx-10.14.6-x86_64-3.8/bsdiff4
+ clang -Wno-unused-result -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -iwithsysroot/System/Library/Frameworks/System.framework/PrivateHeaders -iwithsysroot/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/Headers -arch arm64 -arch x86_64 -I/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8 -c bsdiff4/core.c -o build/temp.macosx-10.14.6-x86_64-3.8/bsdiff4/core.o
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:11:
+ In file included from /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/limits.h:21:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/limits.h:63:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/cdefs.h:807:2: error: Unsupported architecture
+ \<span class="hljs-comment">#error Unsupported architecture</span>
+  ^
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:11:
+ In file included from /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/limits.h:21:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/limits.h:64:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h:8:2: error: architecture not supported
+ \<span class="hljs-comment">#error architecture not supported</span>
+  ^
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:71:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types.h:27:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:33:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/machine/_types.h:34:2: error: architecture not supported
+ \<span class="hljs-comment">#error architecture not supported</span>
+  ^
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:71:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types.h:27:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:55:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int64_t'</span>
+ typedef __int64_t    __darwin_blkcnt_t;   /* total blocks */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:56:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_blksize_t;   /* preferred block size */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:57:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_dev_t;     /* dev_t */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:60:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_gid_t;     /* [???] process and group IDs */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:61:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_id_t;     /* [XSI] pid_t, uid_t, or gid_t*/
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:62:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint64_t'</span>
+ typedef __uint64_t   __darwin_ino64_t;    /* [???] Used <span class="hljs-keyword">for</span> 64 bit inodes */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:68:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__darwin_natural_t'</span>
+ typedef __darwin_natural_t __darwin_mach_port_name_t; /* Used by mach */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:70:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint16_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint16_t   __darwin_mode_t;    /* [???] Some file attributes */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:71:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int64_t'</span>
+ typedef __int64_t    __darwin_off_t;     /* [???] Used <span class="hljs-keyword">for</span> file sizes */
+​     ^
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:72:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_pid_t;     /* [???] process and group IDs */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:73:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_sigset_t;   /* [???] signal <span class="hljs-built_in">set</span> */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:74:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__int32_t'</span>; did you mean <span class="hljs-string">'__int128_t'</span>?
+ typedef __int32_t    __darwin_suseconds_t;  /* [???] microseconds */
+​     ^
+ note: <span class="hljs-string">'__int128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:75:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_uid_t;     /* [???] user IDs */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types.h:76:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_useconds_t;  /* [???] microseconds */
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:71:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types.h:43:9: error: unknown <span class="hljs-built_in">type</span> name <span class="hljs-string">'__uint32_t'</span>; did you mean <span class="hljs-string">'__uint128_t'</span>?
+ typedef __uint32_t   __darwin_wctype_t;
+​     ^
+ note: <span class="hljs-string">'__uint128_t'</span> declared here
+ In file included from bsdiff4/core.c:9:
+ In file included from /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/include/python3.8/Python.h:25:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdio.h:64:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_stdio.h:75:
+ In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_va_list.h:31:
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/machine/types.h:37:2: error: architecture not supported
+ \<span class="hljs-comment">#error architecture not supported</span>
+  ^
+ fatal error: too many errors emitted, stopping now [-ferror-limit=]
+ 20 errors generated.
+ error: <span class="hljs-built_in">command</span> <span class="hljs-string">'clang'</span> failed with <span class="hljs-built_in">exit</span> status 1
+   ...
+
+   Check the logs <span class="hljs-keyword">for</span> full <span class="hljs-built_in">command</span> output.
+</code></pre>
+<h3 id="修复"><a class="markdownIt-Anchor" href="#修复"></a> 修复</h3>
+<h4 id="sudo-h"><a class="markdownIt-Anchor" href="#sudo-h"></a> sudo -H</h4>
+<p>首个踩坑：</p>
+<pre class="highlight"><code class="bash">WARNING: The directory <span class="hljs-string">'/Users/xxx/Library/Caches/pip'</span> or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo<span class="hljs-string">'s -H flag.
+</span></code></pre>
+<h3 id="继续修复"><a class="markdownIt-Anchor" href="#继续修复"></a> 继续修复</h3>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/53204916/what-is-the-meaning-of-failed-building-wheel-for-x-in-pip-install">What is the meaning of “Failed building wheel for X” in pip install?</a></p>
+<p>使用<code>pip3 -v</code>,可见有pip3使用：pip install wheel，出现下列问题：</p>
+<h4 id="zshcommand-cannot-found-pip"><a class="markdownIt-Anchor" href="#zshcommand-cannot-found-pip"></a> zsh:command cannot found pip</h4>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/42870537/zsh-command-cannot-found-pip">zsh command cannot found pip</a></p>
+<p>要点：<strong><strong>创建pip3环境变量</strong></strong></p>
+<p>查找pip3的路径：<code>pip3 -V</code></p>
+<p>创建alias：<code>alias pip=/usr/bin/pip3</code>放在zshrc内，之后<code>source ~/.zshrc</code>。</p>
+<h4 id="user权限问题"><a class="markdownIt-Anchor" href="#user权限问题"></a> –user权限问题</h4>
+<p>在更新pip时，版本从19-21，报出权限问题：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<pre class="highlight"><code class="bash">Consider using the `--user` option or check the permissions.
+</code></pre>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/52949531/could-not-install-packages-due-to-an-environmenterror-errno-13">Could not install packages due to an EnvironmentError: Errno 13</a></p>
+<p>使用<code>pip3 install package_name --user</code>更新pip，成功。</p>
+<h4 id="找到了一个issue"><a class="markdownIt-Anchor" href="#找到了一个issue"></a> 找到了一个issue</h4>
+<p>参考GitHub issue：<a target="_blank" rel="noopener" href="https://github.com/MatthewPierson/Vieux/issues/218">Running setup.py install for bsdiff4 … error</a></p>
+<p>–user应该放在后面，添加zchrc，当然之后也要source：</p>
+<pre class="highlight"><code class="bash"><span class="hljs-built_in">export</span> ARCHFLAGS=<span class="hljs-string">"-arch x86_64"</span>
+
+python3 -m pip install --user -r requirements.txt
+</code></pre>
+<p>使用以下命令安装成功：</p>
+<pre class="highlight"><code class="bash">python3 -m pip install --user -r requirements.txt
+</code></pre>
+<p>结果：</p>
+<pre class="highlight"><code class="bash">Requirement already satisfied: six==1.13.0 <span class="hljs-keyword">in</span> /Library/Python/3.8/site-packages (from -r requirements.txt (line 10)) (1.13.0)
+
+Building wheels <span class="hljs-keyword">for</span> collected packages: bsdiff4
+
+ Building wheel <span class="hljs-keyword">for</span> bsdiff4 (setup.py) ... <span class="hljs-keyword">done</span>
+
+ Created wheel <span class="hljs-keyword">for</span> bsdiff4: filename=bsdiff4-1.1.9-cp38-cp38-macosx_10_14_6_x86_64.whl size=12710 sha256=fe15fdacfe95ad6a085f38ac34c501937a582d632191b4053ede8afc76f0c938
+
+ Stored <span class="hljs-keyword">in</span> directory: /Users/penghaoxiong/Library/Caches/pip/wheels/94/a6/ac/6d5b7fdb7c73297adee2e9f7181664b33234cecfd1eb34280c
+
+Successfully built bsdiff4
+
+Installing collected packages: bsdiff4
+
+ WARNING: The scripts bsdiff4 and bspatch4 are installed <span class="hljs-keyword">in</span> <span class="hljs-string">'/Users/penghaoxiong/Library/Python/3.8/bin'</span> <span class="hljs-built_in">which</span> is not on PATH.
+
+ Consider adding this directory to PATH or, <span class="hljs-keyword">if</span> you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed bsdiff4-1.1.9
+</code></pre>
+<h2 id="开始降级"><a class="markdownIt-Anchor" href="#开始降级"></a> 开始降级</h2>
+<h4 id="catalina"><a class="markdownIt-Anchor" href="#catalina"></a> Catalina</h4>
+<p>在终端中输入<code>CatalinaFix.sh</code>，使用打开方式无效。</p>
+<h4 id="usbcorenobackenderror-no-backend-available"><a class="markdownIt-Anchor" href="#usbcorenobackenderror-no-backend-available"></a> usb.core.NoBackendError: No backend available</h4>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/nexuszjq/article/details/117407380">iPad mini2 Vieux降级ios10.3.3 问题解决合集</a></p>
+<p>需要安装usbilb:<code>brew install libusb</code></p>
+<p>当前（2021年7月）下载，可能会提示：</p>
+<pre class="highlight"><code class="bash">Starting iBSS/iBEC patching
+Looks like you are downgrading an iPad Mini 2 to 10.3.3!
+Patched iBSS/iBEC
+About to re-build IPSW
+Entering PWNREC mode...
+Getting SHSH...
+Restoring...
+Note that errors about <span class="hljs-string">'BbSkeyId'</span>, <span class="hljs-string">'FDR Client'</span>, <span class="hljs-string">'BasebandFirmware Node'</span> and <span class="hljs-string">'ERROR: zip_name_locate: Firmware/all_flash/manifest'</span> are not important.
+Just ignore them and only report errors that actually stop the restore.
+Restoring without a baseband as your iPad4,4 doesn<span class="hljs-string">'t have cellular capabilities...
+WARNING: Unable to find BbChipID node
+WARNING: Unable to find BbChipID node
+Files cleaned.
+Finished! Enjoy your downgraded device :)
+penghaoxiong@PenghaoXiongs-MacBook-Pro Vieux-master %
+</span></code></pre>
+<p>便降级成功了。</p>
+<hr />
+<p><a target="_blank" rel="noopener" href="https://ipsw.me/iPad4,4">Choose an IPSW for the iPad Mini 2 (WiFi)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/MatthewPierson">MatthewPierson</a> / <a target="_blank" rel="noopener" href="https://github.com/MatthewPierson/Vieux">Vieux</a></p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>此处由于安装完brew的python3之后总结，故报错信息不完整，但意思还是到了。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你们的赞赏是我更新的动力～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    FelixXiong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://felixxiong.github.io/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/" title="iPad mini2降级iOS10.3.3">https://felixxiong.github.io/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E9%99%8D%E7%BA%A7/" rel="tag"># 降级</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/06/19/%E8%AF%B4%E8%AF%B4%E8%BF%91%E5%86%B5/" rel="next" title="说说近况">
+                <i class="fa fa-chevron-left"></i> 说说近况
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/09/04/%E6%AC%B2%E6%8F%90%E5%8D%87%E2%80%9C%E5%B7%A5%E4%BD%9C%E7%94%9F%E4%BA%A7%E5%8A%9B%E2%80%9D%EF%BC%8C%E5%9D%9A%E6%9E%9CR2%E5%B8%AE%E4%BA%86%E6%88%91%E5%A4%9A%E5%B0%91%E5%BF%99/" rel="prev" title="欲提升“工作生产力”，坚果R2帮了我这些忙">
+                欲提升“工作生产力”，坚果R2帮了我这些忙 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">167</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:holothemixet@gmail.com" target="_blank" title="E-Mail">
+                      
+                          <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/felixxiong" target="_blank" title="GitHub">
+                      
+                          <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                      
+                          <i class="iconfont icon-zhihu"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
+                      
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://i.youku.com/i/UNDQzNDczOTMzNg==?spm=a2hfu.20010077.uerCenter.5~5!2~A" target="_blank" title="Youku">
+                      
+                          <i class="iconfont icon-youku"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://dribbble.com/FelixXiong" target="_blank" title="Dribbble">
+                      
+                          <i class="fa fa-fw fa-dribbble"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
+            </div>
+          
+         
+          <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
+         </div>
+
+          <div id="podcast">
+            <a target="_blank" rel="noopener" href="https://pca.st/3ubc6ciz" border=0 src="https://www.pocketcasts.com/assets/images/badges/pocketcasts_large_light.svg" alt="PocketCast收听链接" width="auto" height="auto">
+            </a>
+         </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99"><span class="nav-text"> 安装环境报错</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bsdiff4-setuppy-error"><span class="nav-text"> bsdiff4 (setup.py) … error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E5%A4%8D"><span class="nav-text"> 修复</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sudo-h"><span class="nav-text"> sudo -H</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E7%BB%AD%E4%BF%AE%E5%A4%8D"><span class="nav-text"> 继续修复</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zshcommand-cannot-found-pip"><span class="nav-text"> zsh:command cannot found pip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#user%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98"><span class="nav-text"> –user权限问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%BE%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AAissue"><span class="nav-text"> 找到了一个issue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E9%99%8D%E7%BA%A7"><span class="nav-text"> 开始降级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#catalina"><span class="nav-text"> Catalina</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usbcorenobackenderror-no-backend-available"><span class="nav-text"> usb.core.NoBackendError: No backend available</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FelixXiong</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">199.9k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次数
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://felixxiong-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://felixxiong.github.io/2021/07/09/iPad-mini2%E9%99%8D%E7%BA%A7iOS10-3-3/';
+          this.page.identifier = '2021/07/09/iPad-mini2降级iOS10-3-3/';
+          this.page.title = 'iPad mini2降级iOS10.3.3';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://felixxiong-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

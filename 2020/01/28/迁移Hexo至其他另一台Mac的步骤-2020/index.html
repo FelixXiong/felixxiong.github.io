@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="教程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="2020年，MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)，Hexo。  迁移具体步骤  新计算机  下载  Git 下载Git（官网），直接下载地址：git-osx-installer 打开终端[1]，用户主目录[2]运行： ssh-keygen -t rsa -C &quot;youremail@example.com&quot;，将邮">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果">
+<meta property="og:url" content="https://felixxiong.github.io/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/index.html">
+<meta property="og:site_name" content="故事熊">
+<meta property="og:description" content="2020年，MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)，Hexo。  迁移具体步骤  新计算机  下载  Git 下载Git（官网），直接下载地址：git-osx-installer 打开终端[1]，用户主目录[2]运行： ssh-keygen -t rsa -C &quot;youremail@example.com&quot;，将邮">
+<meta property="og:locale">
+<meta property="og:image" content="https://sm.ms/image/CyjgU9dkMEZqeIb">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/wqDf1hKWz8RHip6.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/7uYn6OBLoywRiS9.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/31gDP4vLNeGHpiX.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/Flc5gy6kOdMzWJL.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/3GHfWeVkjyUIlLZ.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/5BVT6EqZCW8UHOA.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/ewjZ39bLkxQUsEa.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/01/28/Tn4l7hQLSmVsaYw.png">
+<meta property="article:published_time" content="2020-01-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-24T11:52:44.867Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sm.ms/image/CyjgU9dkMEZqeIb">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://felixxiong.github.io/2020/01/28/迁移Hexo至其他另一台Mac的步骤-2020/"/>
+
+
+
+
+
+  <title>大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果 | 故事熊</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126731684-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">故事熊</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">情绪泛滥 沉浸其中</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogmenorabilia">
+          <a href="/blogmenorabilia/" rel="section">
+            
+            博客大事记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wechatpublic">
+          <a href="/wechatpublic/" rel="section">
+            
+            微信公众账号
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-podcast">
+          <a href="/podcast/" rel="section">
+            
+            podcast
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume/" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-messageboard">
+          <a href="/messageboard/" rel="section">
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事熊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-28T00:00:00+08:00">
+                2020-01-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-24T19:52:44+08:00">
+                2021-03-24
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/" itemprop="url" rel="index">
+                    <span itemprop="name">博客探索</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/Hexo/%E8%BF%81%E7%A7%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">迁移</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/28/迁移Hexo至其他另一台Mac的步骤-2020/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>阅读次数：
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2020年，MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports)，Hexo。</p>
+<h2 id="迁移具体步骤"><a class="markdownIt-Anchor" href="#迁移具体步骤"></a> 迁移具体步骤</h2>
+<h3 id="新计算机"><a class="markdownIt-Anchor" href="#新计算机"></a> 新计算机</h3>
+<h4 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h4>
+<h4 id="git"><a class="markdownIt-Anchor" href="#git"></a> Git</h4>
+<p>下载Git（官网），直接下载地址：<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">git-osx-installer</a></p>
+<p>打开终端<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，用户主目录<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>运行：</p>
+<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;，</code>将邮箱更换为你的邮箱。</p>
+<p>由于是新计算机，之前未生成过SSH key，可以回车。直到出现：</p>
+<pre class="highlight"><code class="bash">Your identification has been saved <span class="hljs-keyword">in</span> /Users/……/.ssh/id_rsa.
+Your public key has been saved <span class="hljs-keyword">in</span> /Users/……/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:
+The key’s randomart image is:
+</code></pre>
+<p>即可。id_rsa.pub为公钥，在下方进行粘贴。id_rsa为私钥，暂时不用管。</p>
+<p>进入Github，Settings，SSH and GPG keys，new SSH key。</p>
+<p><img src="https://sm.ms/image/CyjgU9dkMEZqeIb" alt="博客迁移.003.jpeg" /></p>
+<p><img src="https://i.loli.net/2020/01/28/wqDf1hKWz8RHip6.jpg" alt="博客迁移.004.jpeg" /></p>
+<h5 id="寻找id_rsapub"><a class="markdownIt-Anchor" href="#寻找id_rsapub"></a> 寻找id_rsa.pub</h5>
+<p>Finder-前往-文件夹，/Users/……/，出现id_rsa与id_rsa.pub两个文件，后者使用文本编辑[3]打开。</p>
+<p><img src="https://i.loli.net/2020/01/28/7uYn6OBLoywRiS9.jpg" alt="博客迁移.002.jpeg" /></p>
+<p>点击Add new提交，即可查看相应Key。</p>
+<h4 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> node.js</h4>
+<p>下载<a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a>安装。</p>
+<p>输入<code>npm install hexo-cli -g</code>安装hexo。</p>
+<h3 id="报错"><a class="markdownIt-Anchor" href="#报错"></a> 报错</h3>
+<p>使用以下代码，详细参考链接可参考我之前文章：[Mac下重新部署博客记录<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>](<a href="https://felixxiong.github.io/2018/09/26/Mac%E4%B8%8B%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/">https://felixxiong.github.io/2018/09/26/Mac下重新部署博客记录/</a>)相应段落。</p>
+<p>可用：<code>sudo npm install -g hexo-cli</code></p>
+<p>不可用：<code>npm install hexo-cli -g</code>、<code>sudo npm install hexo-cli -g</code>，皆会报错。</p>
+<h2 id="旧计算机"><a class="markdownIt-Anchor" href="#旧计算机"></a> 旧计算机</h2>
+<p>拷贝<code>_config.yml，theme/，source/，scaffolds/，package.json，.gitignore</code>文件。</p>
+<p>此处我在个人文件夹里新建了Hexo的文件夹。</p>
+<h2 id="新计算机-2"><a class="markdownIt-Anchor" href="#新计算机-2"></a> 新计算机</h2>
+<p>终端，cd到新建的hexo文件夹内，进行npm的所需模块安装。此处步骤均为Hexo文件夹内操作。</p>
+<h3 id="npm模块安装"><a class="markdownIt-Anchor" href="#npm模块安装"></a> npm模块安装</h3>
+<p>根据知乎的参考链接，使用npm install进行安装，此处过程中出现安装下载Xcodebuild命令行工具。</p>
+<p>此时经历了一番波折（详见下面“问题”段落）且“洁癖发作”，使用命令进行卸载：<code>sudo npm uninstall npm -g</code>。</p>
+<p><img src="https://i.loli.net/2020/01/28/31gDP4vLNeGHpiX.png" alt="image.png" /></p>
+<p>之后再次安装node.js（目的为安装全局node里的npm？<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup>）。</p>
+<p>并进入Hexo文件夹，进行npm模块的安装：<code>sudo npm install</code>，后续确认npm版本，安装完毕。</p>
+<p><img src="https://i.loli.net/2020/01/28/Flc5gy6kOdMzWJL.png" alt="image.png" /></p>
+<h3 id="安装必要组件"><a class="markdownIt-Anchor" href="#安装必要组件"></a> 安装必要组件</h3>
+<p>使用hexo d来部署到Git：<code>npm install hexo-deployer-git --save</code>，稍后进行部署。</p>
+<p>使用RSS订阅：<code>npm install hexo-generator-feed --save</code></p>
+<p>建立站点地图：<code>npm install hexo-generator-sitemap --save</code></p>
+<p><img src="https://i.loli.net/2020/01/28/3GHfWeVkjyUIlLZ.png" alt="image.png" /></p>
+<p>配置组件相关，需要在GitHub上进行相应说明查找。</p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<p>熟悉的hexo g -d，需最后要输入GitHub账号与密码。</p>
+<p>若未开代理，相关错误详见下方段落。</p>
+<p><img src="https://i.loli.net/2020/01/28/5BVT6EqZCW8UHOA.jpg" alt="博客迁移.014.jpeg" /></p>
+<h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
+<h3 id="hexo文件夹的npm安装与卸载"><a class="markdownIt-Anchor" href="#hexo文件夹的npm安装与卸载"></a> Hexo文件夹的npm安装与卸载</h3>
+<p>根据知乎的参考链接，使用npm install进行安装（我们称为第一次安装），此处过程中出现安装下载Xcodebuild命令行工具。</p>
+<p>之后出现了一些问题，如下图所示。</p>
+<p><img src="https://i.loli.net/2020/01/28/ewjZ39bLkxQUsEa.jpg" alt="博客迁移.008.jpeg" /></p>
+<p>在粘贴尝试fix时发现了手误多粘贴了“fix them”，之后我不知如何退出bquote<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>，故重新打开终端进行修复。</p>
+<p>此处经历三个命令：<code>npm install</code>、<code>npm audit fix</code>、<code>npm audit fix —force</code>。</p>
+<p>卸载：这里使用的一个命令：<code>npm uninstall -g</code>，卸载失败，命令来源：如何卸载全局安装的包</p>
+<p><img src="https://i.loli.net/2020/01/28/Tn4l7hQLSmVsaYw.png" alt="image.png" /></p>
+<p>第二次安装：</p>
+<p>此时应该就安装完毕，但查看Hexo文件夹路径内无npm文件夹，以及没有核实npm版本，准备再次卸载。</p>
+<p>命令：<code>npm install</code></p>
+<p>最终卸载：</p>
+<p>命令：<code>sudo npm uninstall npm -g</code>，详见参考链接。</p>
+<p>此时进行<code>sudo npm install</code>，会出现sudo: npm: command not found，</p>
+<p>解决方案：查看相应路径/重新安装node.js，我这里选择了后者。</p>
+<p>再次安装node.js与npm：<code>sudo npm install</code>，之后检查npm版本，确认安装。</p>
+<h3 id="部署至github"><a class="markdownIt-Anchor" href="#部署至github"></a> 部署至GitHub</h3>
+<p>自动绑定的作者信息</p>
+<p>部署时出现以下信息，暂未知需要在哪里进行设置。</p>
+<pre><code>Your name and email address were configured automatically based on your username and hostname. Please check that they are accurate.
+
+You can suppress this message by setting them explicitly.
+
+Run the following command and follow the instructions in your editor to edit your configuration file: git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+git commit --amend --reset-author
+</code></pre>
+<p>问题</p>
+<p>部署至GitHub时出现此错误，挂代理即可解决。</p>
+<pre class="highlight"><code class="bash">Username <span class="hljs-keyword">for</span> <span class="hljs-string">'https://github.com'</span>: FelixXiong
+Password <span class="hljs-keyword">for</span> <span class="hljs-string">'https://FelixXiong@github.com'</span>: 
+remote: Invalid username or password.
+fatal: Authentication failed <span class="hljs-keyword">for</span> <span class="hljs-string">'https://github.com/FelixXiong/FelixXiong.github.io/'</span>
+FATAL Something<span class="hljs-string">'s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.&lt;anonymous&gt; (/Users/felixxiong/FelixXiongHexo/node_modules/hexo-deployer-git/node_modules/hexo-util/lib/spawn.js:51:21)
+    at ChildProcess.emit (events.js:223:5)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+</span></code></pre>
+<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
+<h3 id="hexo迁移与搭建"><a class="markdownIt-Anchor" href="#hexo迁移与搭建"></a> hexo迁移与搭建</h3>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21193762/answer/103097754">使用hexo，如果换了电脑怎么更新博客？-skycrown的回答</a></p>
+<p>我的博客：<a href="https://felixxiong.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/">博客探索</a>分类</p>
+<h3 id="npm的卸载与安装"><a class="markdownIt-Anchor" href="#npm的卸载与安装"></a> npm的卸载与安装</h3>
+<p>卸载npm-简书：<a href="https://felixxiong.github.io/2020/01/28/2020%E5%B9%B4%EF%BC%8C%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4/">卸载再重装了npm</a></p>
+<p>安装npm-npm文档：<a target="_blank" rel="noopener" href="https://www.npmjs.cn/getting-started/installing-node/">如何安装 npm 并管理 npm 版本</a></p>
+<p>Starkoverflow：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31472755/sudo-npm-command-not-found">sudo: npm: command not found</a></p>
+<h3 id="hexo部署至github"><a class="markdownIt-Anchor" href="#hexo部署至github"></a> hexo部署至GitHub</h3>
+<p>CSDN：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangqqjuly/article/details/91446830">hexo d 部署报错求解决</a></p>
+<hr />
+<blockquote>
+<p>Last login: Sun Jan 19 20:23:06 on console</p>
+<p>example@ExampleMacBook-Pro-2 ~ %</p>
+</blockquote>
+<hr />
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>如果你是英文系统，叫做Termial。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>用户主目录，此版本计算机为： <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>如果您了解，欢迎在下方进行留言。 <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>终端如何退出bquote成了我的待学事项。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你们的赞赏是我更新的动力～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    FelixXiong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://felixxiong.github.io/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/" title="大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果">https://felixxiong.github.io/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/26/WordPress%E5%88%9D%E6%8E%A2/" rel="next" title="WordPress初探">
+                <i class="fa fa-chevron-left"></i> WordPress初探
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/01/%E5%B9%B3%E5%BF%83%E9%9D%99%E6%B0%94%EF%BC%8C%E5%9B%9E%E5%BD%92%E5%B7%A5%E4%BD%9C/" rel="prev" title="平心静气，回归工作">
+                平心静气，回归工作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">167</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:holothemixet@gmail.com" target="_blank" title="E-Mail">
+                      
+                          <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/felixxiong" target="_blank" title="GitHub">
+                      
+                          <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                      
+                          <i class="iconfont icon-zhihu"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
+                      
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://i.youku.com/i/UNDQzNDczOTMzNg==?spm=a2hfu.20010077.uerCenter.5~5!2~A" target="_blank" title="Youku">
+                      
+                          <i class="iconfont icon-youku"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://dribbble.com/FelixXiong" target="_blank" title="Dribbble">
+                      
+                          <i class="fa fa-fw fa-dribbble"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
+            </div>
+          
+         
+          <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
+         </div>
+
+          <div id="podcast">
+            <a target="_blank" rel="noopener" href="https://pca.st/3ubc6ciz" border=0 src="https://www.pocketcasts.com/assets/images/badges/pocketcasts_large_light.svg" alt="PocketCast收听链接" width="auto" height="auto">
+            </a>
+         </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-text"> 迁移具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text"> 新计算机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-text"> 下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git"><span class="nav-text"> Git</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%BB%E6%89%BEid_rsapub"><span class="nav-text"> 寻找id_rsa.pub</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nodejs"><span class="nav-text"> node.js</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99"><span class="nav-text"> 报错</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A7%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text"> 旧计算机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E8%AE%A1%E7%AE%97%E6%9C%BA-2"><span class="nav-text"> 新计算机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85"><span class="nav-text"> npm模块安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%BB%84%E4%BB%B6"><span class="nav-text"> 安装必要组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-text"> 部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text"> 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84npm%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="nav-text"> Hexo文件夹的npm安装与卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E8%87%B3github"><span class="nav-text"> 部署至GitHub</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-text"> 参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E8%BF%81%E7%A7%BB%E4%B8%8E%E6%90%AD%E5%BB%BA"><span class="nav-text"> hexo迁移与搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm%E7%9A%84%E5%8D%B8%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-text"> npm的卸载与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E9%83%A8%E7%BD%B2%E8%87%B3github"><span class="nav-text"> hexo部署至GitHub</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FelixXiong</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">199.9k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次数
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://felixxiong-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://felixxiong.github.io/2020/01/28/%E8%BF%81%E7%A7%BBHexo%E8%87%B3%E5%85%B6%E4%BB%96%E5%8F%A6%E4%B8%80%E5%8F%B0Mac%E7%9A%84%E6%AD%A5%E9%AA%A4-2020/';
+          this.page.identifier = '2020/01/28/迁移Hexo至其他另一台Mac的步骤-2020/';
+          this.page.title = '大学生创新项目 “发吧”界面UI概念设计：个人全部设计过程以及UI设计成果';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://felixxiong-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

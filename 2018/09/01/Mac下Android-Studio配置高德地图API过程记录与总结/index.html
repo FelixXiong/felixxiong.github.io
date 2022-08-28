@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,Android SDK," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="故事熊" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="集成高德地图SDK的过程总结以及发现的问题。 欢迎指正。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下Android Studio配置高德地图API过程记录与总结">
+<meta property="og:url" content="https://felixxiong.github.io/2018/09/01/Mac%E4%B8%8BAndroid-Studio%E9%85%8D%E7%BD%AE%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="故事熊">
+<meta property="og:description" content="集成高德地图SDK的过程总结以及发现的问题。 欢迎指正。">
+<meta property="og:locale">
+<meta property="og:image" content="https://i.loli.net/2018/09/01/5b8a84e5c0451.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/01/5b8a884196212.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/01/5b8a99a1ee954.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/01/5b8a9ae9bfb2e.png">
+<meta property="article:published_time" content="2018-09-01T15:09:36.000Z">
+<meta property="article:modified_time" content="2018-11-08T05:04:25.490Z">
+<meta property="article:author" content="FelixXiong">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Android SDK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/01/5b8a84e5c0451.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://felixxiong.github.io/2018/09/01/Mac下Android-Studio配置高德地图API过程记录与总结/"/>
+
+
+
+
+
+  <title>Mac下Android Studio配置高德地图API过程记录与总结 | 故事熊</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126731684-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">故事熊</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">情绪泛滥 沉浸其中</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogmenorabilia">
+          <a href="/blogmenorabilia/" rel="section">
+            
+            博客大事记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-wechatpublic">
+          <a href="/wechatpublic/" rel="section">
+            
+            微信公众账号
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-podcast">
+          <a href="/podcast/" rel="section">
+            
+            podcast
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume/" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-messageboard">
+          <a href="/messageboard/" rel="section">
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://felixxiong.github.io/2018/09/01/Mac%E4%B8%8BAndroid-Studio%E9%85%8D%E7%BD%AE%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事熊">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Mac下Android Studio配置高德地图API过程记录与总结</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T23:09:36+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-08T13:04:25+08:00">
+                2018-11-08
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">编程开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/Android%E5%BC%80%E5%8F%91/Android-SDK/" itemprop="url" rel="index">
+                    <span itemprop="name">Android SDK</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/01/Mac%E4%B8%8BAndroid-Studio%E9%85%8D%E7%BD%AE%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/01/Mac下Android-Studio配置高德地图API过程记录与总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>阅读次数：
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>集成高德地图SDK的过程总结以及发现的问题。</p>
+<p>欢迎指正。</p>
+<span id="more"></span>
+<h2 id="获取api-key"><a class="markdownIt-Anchor" href="#获取api-key"></a> 获取API KEY</h2>
+<h3 id="获取sha1"><a class="markdownIt-Anchor" href="#获取sha1"></a> 获取SHA1</h3>
+<p>参考链接(高德开放平台)：<a target="_blank" rel="noopener" href="https://lbs.amap.com/api/android-location-sdk/guide/create-project/get-key/">获取Key</a></p>
+<h4 id="需要用到的命令"><a class="markdownIt-Anchor" href="#需要用到的命令"></a> 需要用到的命令</h4>
+<p><strong>keytool -v -list -keystore</strong> 文件路径，此处的keystore文件的路径</p>
+<h4 id="终端输入命令"><a class="markdownIt-Anchor" href="#终端输入命令"></a> 终端输入命令</h4>
+<p>笔者认为此方法最为简便，其他方法可参见上述官方链接。</p>
+<p>打开系统-其他工具-终端，输入：<code>cd android</code>,再次输入：<code>keytool -v -list -keystor</code></p>
+<p><strong>密钥库口令：android</strong>，并不是开机密码。</p>
+<p>若密钥库错误，提示：</p>
+<pre class="highlight"><code class="">keytool 错误: java.io.IOException: Keystore was tampered with, or password was incorrect
+java.io.IOException: Keystore was tampered with, or password was incorrect
+	at java.base/sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:780)
+	at java.base/sun.security.util.KeyStoreDelegator.engineLoad(KeyStoreDelegator.java:222)
+	at java.base/java.security.KeyStore.load(KeyStore.java:1479)
+	at java.base/sun.security.tools.keytool.Main.doCommands(Main.java:1048)
+	at java.base/sun.security.tools.keytool.Main.run(Main.java:397)
+	at java.base/sun.security.tools.keytool.Main.main(Main.java:390)
+Caused by: java.security.UnrecoverableKeyException: Password verification failed
+	at java.base/sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:778)
+	... 5 more
+</code></pre>
+<p>成功后如下图所示：</p>
+<h3 id="android-studio输入命令方法可能出现的问题"><a class="markdownIt-Anchor" href="#android-studio输入命令方法可能出现的问题"></a> Android Studio输入命令方法可能出现的问题</h3>
+<p>笔者此处没有使用这个方法，即遇到之后的方案：</p>
+<p>这里尝试使用在Android Studio的终端中输入，终端打开路径：View-Tool Windows-Terminal</p>
+<p>提示错误，此处当时未截图，意为找不到JDK。</p>
+<p>原来是笔者此处未安装SDK，需要的下载链接（Oracle技术网）：<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html">Java SE Development Kit 10下载</a></p>
+<p>keystore文件的路径</p>
+<p>参考链接(CSDN)：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m00123456789/article/details/60142613">获取高德地图api key</a>:</p>
+<blockquote>
+<p>提示密钥库文件不存在。解决办法如下：</p>
+<p>进入.android/下。  c:  cd \Users\admin\ .android\  输入命令：</p>
+<p>keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -keyalg RSA -validity 10000</p>
+</blockquote>
+<p>此处未尝试。</p>
+<h3 id="获取packagename"><a class="markdownIt-Anchor" href="#获取packagename"></a> 获取PackageName</h3>
+<p>在Android Studio中获取：</p>
+<blockquote>
+<p>获取build.gradle文件中的ApplicationId作为PackageName；</p>
+<p>如果没有设置ApplicationId，请以AndroidManifest.xml配置文件的package 属性为准。</p>
+</blockquote>
+<p>build.gradle路径：</p>
+<p>包名\app\build.gradle</p>
+<pre class="highlight"><code class="">android &#123;
+    compileSdkVersion 28
+    defaultConfig &#123;
+        applicationId &quot;product.你的包名.com.你的工程名称&quot;  //此行
+        minSdkVersion 2X
+       ...
+        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;
+    &#125;
+</code></pre>
+<p>AndroidManifest.xml路径：</p>
+<p>包名\app\src\main\AndroidManifest.xml</p>
+<pre class="highlight"><code class="xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">manifest</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">package</span>=<span class="hljs-string">"product.你的包名.com.你的工程名称"</span>&gt;</span>   //此行
+</code></pre>
+<h2 id="下载并配置开发包"><a class="markdownIt-Anchor" href="#下载并配置开发包"></a> <a href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E5%8C%85">下载并配置开发包</a></h2>
+<h3 id="下载与安装"><a class="markdownIt-Anchor" href="#下载与安装"></a> 下载与安装</h3>
+<p>下载链接（高德开放平台）：<a target="_blank" rel="noopener" href="https://lbs.amap.com/api/android-sdk/download">Android 地图SDK 相关下载</a></p>
+<p>笔者下载的是Android地图SDK 一键下载</p>
+<h3 id="配置拷贝添加sdk"><a class="markdownIt-Anchor" href="#配置拷贝添加sdk"></a> 配置：拷贝添加SDK</h3>
+<p>参考链接（高德开放平台）：</p>
+<p>由于高德地图地图SDK（入门指南第四步）处没有和定位SDK（入门指南第四步）一样添加链接：</p>
+<p>此处直接放上地图配置SDK的配置拷贝文件集成SDK的链接：</p>
+<p><a target="_blank" rel="noopener" href="https://lbs.amap.com/api/android-sdk/guide/create-project/android-studio-create-project">Android Studio 配置工程</a></p>
+<ol>
+<li>拷贝jar到libs：</li>
+</ol>
+<p>将下载的文件解压，获得jar，笔者项目需要两类地图，故如下图所示：</p>
+<p>复制路径：包名\app\libs</p>
+<p><img src="https://i.loli.net/2018/09/01/5b8a84e5c0451.png" alt="" /></p>
+<ol>
+<li>添加 so 库</li>
+</ol>
+<p>笔者使用的是新建文件的方式，其他方法可参见上述官方链接。</p>
+<blockquote>
+<p><strong>方法一：</strong></p>
+<p>使用默认配置，不需要修改build.gradle。在 main 目录下创建文件夹 jniLibs (如果有就不需要创建了)，将下载文件的 armeabi 文件夹复制到这个目录下,如果已经有这个目录，将下载的 so 库复制到这个目录即可。</p>
+</blockquote>
+<p>将AMap3DMap.zip中的文件夹文件拷贝到新建的jnilibs文件夹中，完成如下图所示：</p>
+<p><img src="https://i.loli.net/2018/09/01/5b8a884196212.png" alt="" /></p>
+<p>此处完成之后，继续配置build.gradle文件。</p>
+<h3 id="配置通过gradle集成sdk"><a class="markdownIt-Anchor" href="#配置通过gradle集成sdk"></a> 配置：通过Gradle集成SDK</h3>
+<ol>
+<li>Project的build.gradle文件中配置repositories，添加maven或jcenter仓库地址</li>
+</ol>
+<p>加入代码：</p>
+<pre class="highlight"><code class="java"><span class="hljs-function">proguardFiles <span class="hljs-title">getDefaultProguardFile</span><span class="hljs-params">(<span class="hljs-string">'proguard-android.txt'</span>)</span>, 'proguard-rules.pro'
+        &#125;
+    &#125;<span class="hljs-comment">//上文</span>
+
+    allprojects </span>&#123;
+        repositories &#123;
+            jcenter() <span class="hljs-comment">// 或者 mavenCentral()</span>
+        &#125;
+    &#125;<span class="hljs-comment">//下文</span>
+    android &#123;
+        defaultConfig &#123;
+</code></pre>
+<ol>
+<li>主工程的build.gradle文件配置dependencies：添加依赖</li>
+</ol>
+<blockquote>
+<p>根据项目需求添加SDK依赖。引入各个SDK功能最新版本， dependencies 配置方式如下：</p>
+<p>表格</p>
+</blockquote>
+<pre class="highlight"><code class="java">allprojects &#123;
+        repositories &#123;
+            jcenter() <span class="hljs-comment">// 或者 mavenCentral()，此为上文中配置repositories</span>
+        &#125;
+    &#125;
+    android &#123;
+        defaultConfig &#123;
+            ndk &#123;
+                <span class="hljs-comment">//设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）</span>
+                abiFilters <span class="hljs-string">"armeabi"</span>, <span class="hljs-string">"armeabi-v7a"</span>, <span class="hljs-string">"arm64-v8a"</span>, <span class="hljs-string">"x86"</span>,<span class="hljs-string">"arm64-v8a"</span>,<span class="hljs-string">"x86_64"</span>
+            &#125;
+        &#125;
+    &#125;
+
+&#125;
+
+dependencies &#123;
+    <span class="hljs-function">implementation <span class="hljs-title">fileTree</span><span class="hljs-params">(dir: <span class="hljs-string">'libs'</span>, include: [<span class="hljs-string">'*.jar'</span>])</span>
+    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    <span class="hljs-comment">//以下为添加项目依赖代码</span>
+    compile <span class="hljs-title">fileTree</span><span class="hljs-params">(dir: <span class="hljs-string">'libs'</span>, include: [<span class="hljs-string">'*.jar'</span>])</span>
+    compile 'com.amap.api:map2d:latest.integration'    <span class="hljs-comment">//2D地图</span>
+    <span class="hljs-comment">//compile 'com.amap.api:3dmap:latest.integration'    //3d地图</span>
+    compile 'com.amap.api:navi-3dmap:latest.integration'<span class="hljs-comment">//导航</span>
+    compile 'com.amap.api:search:latest.integration'   <span class="hljs-comment">//搜索</span>
+    compile 'com.amap.api:location:latest.integration' <span class="hljs-comment">//定位</span>
+&#125;
+</span></code></pre>
+<p>此处我觉得常见问题应该放在表格的下面，最应当加粗的两条：</p>
+<blockquote>
+<p>1、3D地图 SDK 和导航 SDK，5.0.0 版本以后全面支持多平台 so 库(armeabi、armeabi-v7a、arm64-v8a、x86、x86_64)，开发者可以根据需要选择。同时还需要注意的是：如果您涉及到新旧版本更替请移除旧版本的 so 库之后替换新版本 so 库到工程中。</p>
+<p><strong>2、navi导航SDK 5.0.0以后版本包含了3D地图SDK，所以请不要同时引入 map3d 和 navi SDK。</strong></p>
+<p>3、如果build失败提示com.amap.api:XXX:X.X.X 找不到，请确认拼写及版本号是否正确，如果访问不到jcenter可以切换为maven仓库尝试一下。</p>
+<p><strong>4、依照上述方法引入 SDK 以后，不需要在libs文件夹下导入对应SDK的 so 和 jar 包，会有冲突。</strong></p>
+</blockquote>
+<p><a href="#%E9%9B%86%E6%88%90%E7%BB%93%E6%9E%9C%E4%B8%8E%E6%8A%A5%E9%94%99%E5%9B%BE%E7%89%87">集成结果与报错图片</a></p>
+<p><img src="https://i.loli.net/2018/09/01/5b8a99a1ee954.png" alt="" /></p>
+<h3 id="报错信息cause-archive-is-not-a-zip-archive"><a class="markdownIt-Anchor" href="#报错信息cause-archive-is-not-a-zip-archive"></a> 报错信息：Cause: archive is not a ZIP archive</h3>
+<p>可能是jar文件出现了问题。</p>
+<h3 id="错误代码可点击跳到下一个标题"><a class="markdownIt-Anchor" href="#错误代码可点击跳到下一个标题"></a> 错误代码(<a href="#next">可点击跳到下一个标题</a>)</h3>
+<pre class="highlight"><code class="java">org.gradle.api.tasks.TaskExecutionException: Execution failed <span class="hljs-keyword">for</span> task <span class="hljs-string">':app:compileDebugJavaWithJavac'</span>.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:<span class="hljs-number">100</span>)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:<span class="hljs-number">70</span>)
+	at org.gradle.api.internal.tasks.execution.OutputDirectoryCreatingTaskExecuter.execute(OutputDirectoryCreatingTaskExecuter.java:<span class="hljs-number">51</span>)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:<span class="hljs-number">62</span>)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute(ResolveTaskOutputCachingStateExecuter.java:<span class="hljs-number">54</span>)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:<span class="hljs-number">60</span>)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:<span class="hljs-number">97</span>)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:<span class="hljs-number">87</span>)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute(ResolveTaskArtifactStateTaskExecuter.java:<span class="hljs-number">52</span>)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:<span class="hljs-number">52</span>)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:<span class="hljs-number">54</span>)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:<span class="hljs-number">43</span>)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:<span class="hljs-number">34</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker$<span class="hljs-number">1</span>.run(DefaultTaskGraphExecuter.java:<span class="hljs-number">248</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:<span class="hljs-number">336</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:<span class="hljs-number">328</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:<span class="hljs-number">199</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:<span class="hljs-number">110</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:<span class="hljs-number">241</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:<span class="hljs-number">230</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.processTask(DefaultTaskPlanExecutor.java:<span class="hljs-number">123</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.access$<span class="hljs-number">200</span>(DefaultTaskPlanExecutor.java:<span class="hljs-number">79</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$<span class="hljs-number">1</span>.execute(DefaultTaskPlanExecutor.java:<span class="hljs-number">104</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$<span class="hljs-number">1</span>.execute(DefaultTaskPlanExecutor.java:<span class="hljs-number">98</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.execute(DefaultTaskExecutionPlan.java:<span class="hljs-number">626</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.executeWithTask(DefaultTaskExecutionPlan.java:<span class="hljs-number">581</span>)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.run(DefaultTaskPlanExecutor.java:<span class="hljs-number">98</span>)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:<span class="hljs-number">63</span>)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$<span class="hljs-number">1</span>.run(ManagedExecutorImpl.java:<span class="hljs-number">46</span>)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:<span class="hljs-number">1142</span>)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:<span class="hljs-number">617</span>)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:<span class="hljs-number">55</span>)
+	at java.lang.Thread.run(Thread.java:<span class="hljs-number">745</span>)
+Caused by: org.gradle.api.GradleException: Could not expand ZIP <span class="hljs-string">'/Users/felixxiong/AndroidStudioProjects/mypackname/app/libs/AMap_Search_V6.1.0_20180330.jar'</span>.
+	at org.gradle.api.internal.file.archive.ZipFileTree.visit(ZipFileTree.java:<span class="hljs-number">104</span>)
+	at org.gradle.api.internal.file.collections.FileTreeAdapter.visit(FileTreeAdapter.java:<span class="hljs-number">110</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.DefaultJarSnapshotter.createSnapshot(DefaultJarSnapshotter.java:<span class="hljs-number">45</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.CachingJarSnapshotter$<span class="hljs-number">1</span>.create(CachingJarSnapshotter.java:<span class="hljs-number">42</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.CachingJarSnapshotter$<span class="hljs-number">1</span>.create(CachingJarSnapshotter.java:<span class="hljs-number">40</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.DefaultJarSnapshotCache$<span class="hljs-number">1</span>.create(DefaultJarSnapshotCache.java:<span class="hljs-number">53</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.DefaultJarSnapshotCache$<span class="hljs-number">1</span>.create(DefaultJarSnapshotCache.java:<span class="hljs-number">51</span>)
+	at org.gradle.cache.internal.MinimalPersistentCache.get(MinimalPersistentCache.java:<span class="hljs-number">36</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.DefaultJarSnapshotCache.get(DefaultJarSnapshotCache.java:<span class="hljs-number">51</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.DefaultJarSnapshotCache.get(DefaultJarSnapshotCache.java:<span class="hljs-number">28</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.CachingJarSnapshotter.createSnapshot(CachingJarSnapshotter.java:<span class="hljs-number">40</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.JarClasspathSnapshotFactory.createSnapshot(JarClasspathSnapshotFactory.java:<span class="hljs-number">43</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.JarClasspathSnapshotMaker.maybeInitialize(JarClasspathSnapshotMaker.java:<span class="hljs-number">63</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.jar.JarClasspathSnapshotMaker.getJarClasspathSnapshot(JarClasspathSnapshotMaker.java:<span class="hljs-number">52</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:<span class="hljs-number">56</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:<span class="hljs-number">34</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalCompilationFinalizer.execute(IncrementalCompilationFinalizer.java:<span class="hljs-number">39</span>)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalCompilationFinalizer.execute(IncrementalCompilationFinalizer.java:<span class="hljs-number">24</span>)
+	at org.gradle.api.tasks.compile.JavaCompile.performCompilation(JavaCompile.java:<span class="hljs-number">207</span>)
+	at org.gradle.api.tasks.compile.JavaCompile.compile(JavaCompile.java:<span class="hljs-number">133</span>)
+	at com.android.build.gradle.tasks.factory.AndroidJavaCompile.compile(AndroidJavaCompile.java:<span class="hljs-number">125</span>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:<span class="hljs-number">62</span>)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:<span class="hljs-number">43</span>)
+	at java.lang.reflect.Method.invoke(Method.java:<span class="hljs-number">498</span>)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:<span class="hljs-number">73</span>)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:<span class="hljs-number">46</span>)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:<span class="hljs-number">39</span>)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:<span class="hljs-number">26</span>)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$<span class="hljs-number">1</span>.run(ExecuteActionsTaskExecuter.java:<span class="hljs-number">121</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:<span class="hljs-number">336</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:<span class="hljs-number">328</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:<span class="hljs-number">199</span>)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:<span class="hljs-number">110</span>)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:<span class="hljs-number">110</span>)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:<span class="hljs-number">92</span>)
+	... <span class="hljs-number">32</span> more
+Caused by: java.util.zip.ZipException: archive is not a ZIP archive
+	at org.apache.tools.zip.ZipFile.positionAtEndOfCentralDirectoryRecord(ZipFile.java:<span class="hljs-number">774</span>)
+	at org.apache.tools.zip.ZipFile.positionAtCentralDirectory(ZipFile.java:<span class="hljs-number">710</span>)
+	at org.apache.tools.zip.ZipFile.populateFromCentralDirectory(ZipFile.java:<span class="hljs-number">455</span>)
+	at org.apache.tools.zip.ZipFile.&lt;init&gt;(ZipFile.java:<span class="hljs-number">215</span>)
+	at org.apache.tools.zip.ZipFile.&lt;init&gt;(ZipFile.java:<span class="hljs-number">191</span>)
+	at org.apache.tools.zip.ZipFile.&lt;init&gt;(ZipFile.java:<span class="hljs-number">151</span>)
+	at org.gradle.api.internal.file.archive.ZipFileTree.visit(ZipFileTree.java:<span class="hljs-number">80</span>)
+	... <span class="hljs-number">67</span> more
+</code></pre>
+<p>其中第二条加粗，即使删除了这一行依然报错。</p>
+<p>第四条，查看示例代码之后，</p>
+<p>确实也<strong>在libs包下引入jar文件以及不同的SO库架构，而不是在教程里的jniLibs文件夹下</strong>，是教程错了吗？</p>
+<h3 id="下载的实例代码的文件比对"><a class="markdownIt-Anchor" href="#下载的实例代码的文件比对"></a> <a href="#next">下载的实例代码的文件比对</a></h3>
+<p>文件结构：</p>
+<p><img src="https://i.loli.net/2018/09/01/5b8a9ae9bfb2e.png" alt="" /></p>
+<p>和自己添加的值得注意的地方：</p>
+<p>在<a target="_blank" rel="noopener" href="https://lbs.amap.com/api/android-sdk/download">Android 地图SDK 相关下载</a>里面<strong>并没有location、volley</strong>的jar包，和这个是否有关系还需要测试。</p>
+<p><strong>build.gradie：</strong></p>
+<p>因为发布在是自己的博客，就用代码的形式。</p>
+<pre class="highlight"><code class="java">buildscript &#123;   <span class="hljs-comment">//直接配置res放在开头了</span>
+    repositories &#123;
+        jcenter()
+    &#125;
+&#125;
+apply plugin: <span class="hljs-string">'com.android.application'</span>
+
+dependencies &#123;
+    <span class="hljs-function">compile <span class="hljs-title">fileTree</span><span class="hljs-params">(include: <span class="hljs-string">'*.jar'</span>, dir: <span class="hljs-string">'libs'</span>)</span>
+    compile 'com.android.support:recyclerview-v7:26.0.0'
+    compile 'com.android.support:support-v4:26.0.0'
+&#125;
+
+android </span>&#123;
+    compileSdkVersion <span class="hljs-number">26</span>
+    buildToolsVersion <span class="hljs-string">'26.0.2'</span>
+    defaultConfig &#123;
+        minSdkVersion <span class="hljs-number">14</span>
+        targetSdkVersion <span class="hljs-number">26</span>
+        versionCode <span class="hljs-number">1</span>
+        versionName <span class="hljs-string">"1.0"</span>
+        testInstrumentationRunner <span class="hljs-string">"android.support.test.runner.AndroidJUnitRunner"</span>
+    &#125;
+
+    sourceSets &#123;
+        main &#123;
+            jniLibs.srcDirs = [<span class="hljs-string">'libs'</span>]  
+            <span class="hljs-comment">//使用了第二种方法：使用自定义配置，将下载文件的 armeabi 文件夹复制到 libs 目录，如果有这个目录,请将下载的 so 库复制到这个目录，然后打开build.gradle，找到 sourceSets 标签，在里面增加一项配置</span>
+        &#125;
+
+
+        <span class="hljs-comment">// Move the tests to tests/java, tests/res, etc...</span>
+        instrumentTest.setRoot(<span class="hljs-string">'tests'</span>)
+
+        <span class="hljs-comment">// Move the build types to build-types/&lt;type&gt;</span>
+        <span class="hljs-comment">// For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...</span>
+        <span class="hljs-comment">// This moves them out of them default location under src/&lt;type&gt;/... which would</span>
+        <span class="hljs-comment">// conflict with src/ being used by the main source set.</span>
+        <span class="hljs-comment">// Adding new build types or product flavors should be accompanied</span>
+        <span class="hljs-comment">// by a similar customization.</span>
+        debug.setRoot(<span class="hljs-string">'build-types/debug'</span>)
+        release.setRoot(<span class="hljs-string">'build-types/release'</span>)
+    &#125;
+&#125;
+</code></pre>
+<p>这个问题需要有待解决。</p>
+<p>第一时间获得动态，官方开发者社区帖子链接：</p>
+<p><a target="_blank" rel="noopener" href="http://lbsbbs.amap.com/forum.php?mod=viewthread&amp;tid=45652&amp;page=1&amp;extra=#pid189864">http://lbsbbs.amap.com/forum.php?mod=viewthread&amp;tid=45652&amp;page=1&amp;extra=#pid189864</a></p>
+<h2 id="出现的其他集成解决方案"><a class="markdownIt-Anchor" href="#出现的其他集成解决方案"></a> 出现的其他集成解决方案</h2>
+<p>官方开发社区链接：<a target="_blank" rel="noopener" href="http://lbsbbs.amap.com/forum.php">http://lbsbbs.amap.com/forum.php</a></p>
+<p>网上出现的其他集成解决方案链接：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/to_perfect/article/details/53978603">高德地图报Native method not found: com.autonavi.amap.mapcore.MapCore.nativeNewInstance:</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.tuicool.com/articles/eyEn2yN">高德地图在个别机型手机上运行崩溃的问题</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>产品北里，讲述产品和人性、涉及设计、技术和运营的公众号。</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你们的赞赏是我更新的动力～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    FelixXiong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://felixxiong.github.io/2018/09/01/Mac%E4%B8%8BAndroid-Studio%E9%85%8D%E7%BD%AE%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/" title="Mac下Android Studio配置高德地图API过程记录与总结">https://felixxiong.github.io/2018/09/01/Mac%E4%B8%8BAndroid-Studio%E9%85%8D%E7%BD%AE%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Android-SDK/" rel="tag"># Android SDK</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/25/AI%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" rel="next" title="AI常用操作总结">
+                <i class="fa fa-chevron-left"></i> AI常用操作总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/03/%E5%8E%9F%E7%94%9FAndroid%20%E4%BE%A7%E6%BB%91%E8%8F%9C%E5%8D%95%E5%AE%9E%E8%B7%B5(%E9%83%A8%E5%88%86)/" rel="prev" title="原生Android 侧滑菜单实践（部分）">
+                原生Android 侧滑菜单实践（部分） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">167</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:holothemixet@gmail.com" target="_blank" title="E-Mail">
+                      
+                          <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/felixxiong" target="_blank" title="GitHub">
+                      
+                          <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mui-yoko" target="_blank" title="Zhihu">
+                      
+                          <i class="iconfont icon-zhihu"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/9363298/felix-xiong" target="_blank" title="StackOverflow">
+                      
+                          <i class="fa fa-fw fa-stack-overflow"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://i.youku.com/i/UNDQzNDczOTMzNg==?spm=a2hfu.20010077.uerCenter.5~5!2~A" target="_blank" title="Youku">
+                      
+                          <i class="iconfont icon-youku"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://dribbble.com/FelixXiong" target="_blank" title="Dribbble">
+                      
+                          <i class="fa fa-fw fa-dribbble"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.eyeem.com/u/storypanda" target="_blank" title="EyeEm">
+                      
+                          <i class="eyeem"></i></a>
+                  </span>
+                
+            </div>
+          
+         
+          <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=208926&auto=0&height=66"></iframe>
+            </iframe>
+         </div>
+
+          <div id="podcast">
+            <a target="_blank" rel="noopener" href="https://pca.st/3ubc6ciz" border=0 src="https://www.pocketcasts.com/assets/images/badges/pocketcasts_large_light.svg" alt="PocketCast收听链接" width="auto" height="auto">
+            </a>
+         </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96api-key"><span class="nav-text"> 获取API KEY</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96sha1"><span class="nav-text"> 获取SHA1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-text"> 需要用到的命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4"><span class="nav-text"> 终端输入命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-studio%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4%E6%96%B9%E6%B3%95%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text"> Android Studio输入命令方法可能出现的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96packagename"><span class="nav-text"> 获取PackageName</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E5%8C%85"><span class="nav-text"> 下载并配置开发包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-text"> 下载与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%8B%B7%E8%B4%9D%E6%B7%BB%E5%8A%A0sdk"><span class="nav-text"> 配置：拷贝添加SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%80%9A%E8%BF%87gradle%E9%9B%86%E6%88%90sdk"><span class="nav-text"> 配置：通过Gradle集成SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFcause-archive-is-not-a-zip-archive"><span class="nav-text"> 报错信息：Cause: archive is not a ZIP archive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81%E5%8F%AF%E7%82%B9%E5%87%BB%E8%B7%B3%E5%88%B0%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%A0%87%E9%A2%98"><span class="nav-text"> 错误代码(可点击跳到下一个标题)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E7%9A%84%E5%AE%9E%E4%BE%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%87%E4%BB%B6%E6%AF%94%E5%AF%B9"><span class="nav-text"> 下载的实例代码的文件比对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E7%9A%84%E5%85%B6%E4%BB%96%E9%9B%86%E6%88%90%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-text"> 出现的其他集成解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FelixXiong</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">199.9k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次数
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://felixxiong-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://felixxiong.github.io/2018/09/01/Mac%E4%B8%8BAndroid-Studio%E9%85%8D%E7%BD%AE%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/';
+          this.page.identifier = '2018/09/01/Mac下Android-Studio配置高德地图API过程记录与总结/';
+          this.page.title = 'Mac下Android Studio配置高德地图API过程记录与总结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://felixxiong-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
