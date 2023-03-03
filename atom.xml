@@ -120,39 +120,6 @@
   </entry>
   
   <entry>
-    <title>编辑百度百科那些事儿</title>
-    <link href="https://felixxiong.github.io/2022/04/19/%E7%BC%96%E8%BE%91%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/"/>
-    <id>https://felixxiong.github.io/2022/04/19/%E7%BC%96%E8%BE%91%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</id>
-    <published>2022-04-19T11:54:30.000Z</published>
-    <updated>2022-04-20T13:52:37.791Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近一段时间，我都在编辑着百度百科的公司词条。现在分享给大家我在编辑过程中的那些技巧。</p><p>在目前的工作与之前的工作经历当中，小厂必做的应该有两件事：</p><ol><li>注册百度、秒懂百科</li><li>编辑自己在地图上的位置，便于客户找来</li><li>注册各类自媒体平台账号</li></ol><p>这些，除了百度百科是第一次经历外，其他我都在之前的工作中经历过。</p><p>您可查看<a href="https://felixxiong.github.io/2019/10/04/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E8%B4%A6%E5%8F%B7%E7%94%B3%E8%AF%B7%E6%9D%90%E6%96%99%E5%B9%B6%E5%BC%80%E9%80%9A%E4%B8%8E%E8%AE%A4%E8%AF%81%E5%85%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/">本文</a>，了解我注册微信公众号的时候所需要的材料梳理。</p><span id="more"></span><h2 id="说说百度百科"><a class="markdownIt-Anchor" href="#说说百度百科"></a> 说说百度百科</h2><p>虽然我个人认为维基百科依旧是我的心头好，但是作为国内的百度百科，依旧是一个作为国内不可避免的宣传工具，尤其是当别人小厂没听过公司的名字时。</p><p>本次，我注册的类目包含：企业词条、软件词条，其中还涉及一些人物词条。</p><p>撰写本文，也是将自己所遇到的一些坑，作为总结。</p><p>此处我分享一些通用的编辑技巧与客服的对话<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，希望可以帮助到大家，节省大家与客服的时间<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p><p><img src="https://s2.loli.net/2022/04/20/qDVSX6cpw4GrQNW.jpg" alt="Untitled.004.jpeg" /></p><h3 id="百度修改提醒"><a class="markdownIt-Anchor" href="#百度修改提醒"></a> 百度修改提醒</h3><p><img src="https://s2.loli.net/2022/04/20/BLzaXlKuOm8PMN6.jpg" alt="Untitled.001.jpeg" /></p><p>于是我将目前所遇到的错误归纳如下：（图片）</p><ol><li>词条名错误</li><li>义项名错误</li><li>编辑内容存在主观评价</li><li>编辑内容无法对应</li><li>内容冗长或相关性低</li><li>参考资料无法佐证内容</li><li>删除了词条中的有效内容</li><li>图片质量差</li></ol><h3 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h3><h3 id="词条名"><a class="markdownIt-Anchor" href="#词条名"></a> 词条名</h3><p>首先确定词条名是否正确。若不正确，<strong>重新创建该词条</strong>，此处也没有继续编辑的必要了，重新来过。</p><p>至于之前撰写的内容，可以做一下CV工程师，复制到新的词条里。</p><p><strong>对于软件</strong>：可直接使用软件的词条名。</p><p><strong>对于公司</strong>：可查看是否有对应的已存在词条。例如：</p><p>南京xx信息科技有限公司，则无需创建xx信息的简称，且也并不规范。</p><h4 id="义项名"><a class="markdownIt-Anchor" href="#义项名"></a> 义项名</h4><p>这里的义项名：</p><p>软件：解决方案为例，我之前得意洋洋地写：”xx信息科技旗下的解决方案之一“，实际需要写xx公司的软件。</p><p>公司：200x年成立于南京的公司，截至目前可以通过该义项。</p><h3 id="词条内容"><a class="markdownIt-Anchor" href="#词条内容"></a> 词条内容</h3><h4 id="编辑内容存在主观评价"><a class="markdownIt-Anchor" href="#编辑内容存在主观评价"></a> 编辑内容存在主观评价</h4><p>不可使用一些词：“<strong>截至目前</strong>”，这里的目前应当为具体的年月日；“<strong>一目了然</strong>”：此处我仍在修改中。</p><h4 id="内容冗长或相关性低"><a class="markdownIt-Anchor" href="#内容冗长或相关性低"></a> 内容冗长或相关性低</h4><p>此刻最有印象的是我在撰写餐饮成本管控系统词条时，根据前公司的书籍直接成段复制。</p><p>成段复制不可取，还需精简内容。</p><h4 id="删除了词条中的有效内容"><a class="markdownIt-Anchor" href="#删除了词条中的有效内容"></a> 删除了词条中的有效内容</h4><p>此处很好理解，点击“查看错误详情”，即可复制并还原。</p><h3 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h3><p>此处因为本人手快，在离职时一并退出账号，想到仍需撰写文章，仍旧退出。</p><p>如果你有遇到如此编辑的情况，欢迎在下方评论留言。</p><h4 id="编辑内容无法对应"><a class="markdownIt-Anchor" href="#编辑内容无法对应"></a> 编辑内容无法对应</h4><h4 id="图片质量差"><a class="markdownIt-Anchor" href="#图片质量差"></a> 图片质量差</h4><p>这里，则需要更清晰的图片[^ 3]。</p><h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2><h4 id="参考资料无法佐证内容"><a class="markdownIt-Anchor" href="#参考资料无法佐证内容"></a> 参考资料无法佐证内容</h4><p><strong>对于公司</strong>：需要经公众传播的内容，一般使用媒体与自媒体发布的新闻较好。</p><p>我尝试了公司的Boss直聘企业简介，也无法通过<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>：</p><p><img src="https://s2.loli.net/2022/04/20/wBPjnclamoTg1ke.jpg" alt="Untitled.002.jpeg" /><strong>对于软件</strong>：一般可以通过有软著来证明企业对于公司的参考资料所有权，可至<a href="https://register.ccopyright.com.cn/query.html">中国版权中心</a>查询。</p><p>查询时需要软著的编号与软件名称，<strong>缺一不可</strong><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。</p><p><img src="https://s2.loli.net/2022/04/20/OpJGE4MWQCwLfUi.jpg" alt="Untitled.003.jpeg" /></p><p>即使在注册时候，点击发送验证码会出现网页已过期，所以确保在“网络质量好<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4:1]</a></sup>”的情况下操作。</p><h3 id="一些其它经验"><a class="markdownIt-Anchor" href="#一些其它经验"></a> 一些其它经验</h3><h4 id="概述图册"><a class="markdownIt-Anchor" href="#概述图册"></a> 概述图册</h4><p>放概述图时，不能出现带有宣传的文字。</p><p>此处，我撰写的是公司的《餐饮成本管控》解决方案的图片。</p><p>需要使用软件的Logo图。关于大小，最低需要320*320px的图片，如果利用sketch导出，则需要3倍（3x）图，确保图片质量清晰。</p><h5 id="不能使用传统设计思维"><a class="markdownIt-Anchor" href="#不能使用传统设计思维"></a> 不能使用传统/设计思维</h5><p>首先，我使用带有“餐饮xx专家”的宣传图，只是觉得剪裁的时候好看，版式新颖。实则，有更多的宣传嫌疑。</p><p>在博客的本文中，我还有一些关于理性与感性的一些想法，扫描二维码即可查看。</p><p>欢迎评论留言你在编辑维基百科或者百度百科时遇到的一些想法，推荐留下博客地址与邮箱，和我互动。</p><p>最后，愿我们都能真实地反应这个世界。</p><hr /><hr class="footnotes-sep" /><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>要是在之前的链接，会有图片，目前考虑无需图片，正如之前的一篇文章也提到这个 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>本文微信公众号将会同步发布 <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p>可见BOSS 直聘网站的地位是多么低 <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p>也正是这样，我得到了公司目前的全部软著图片 <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;最近一段时间，我都在编辑着百度百科的公司词条。现在分享给大家我在编辑过程中的那些技巧。&lt;/p&gt;
-&lt;p&gt;在目前的工作与之前的工作经历当中，小厂必做的应该有两件事：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;注册百度、秒懂百科&lt;/li&gt;
-&lt;li&gt;编辑自己在地图上的位置，便于客户找来&lt;/li&gt;
-&lt;li&gt;注册各类自媒体平台账号&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这些，除了百度百科是第一次经历外，其他我都在之前的工作中经历过。&lt;/p&gt;
-&lt;p&gt;您可查看&lt;a href=&quot;https://felixxiong.github.io/2019/10/04/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E8%B4%A6%E5%8F%B7%E7%94%B3%E8%AF%B7%E6%9D%90%E6%96%99%E5%B9%B6%E5%BC%80%E9%80%9A%E4%B8%8E%E8%AE%A4%E8%AF%81%E5%85%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/&quot;&gt;本文&lt;/a&gt;，了解我注册微信公众号的时候所需要的材料梳理。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工作" scheme="https://felixxiong.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
-    
-    <category term="经验分享" scheme="https://felixxiong.github.io/categories/%E5%B7%A5%E4%BD%9C/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="产品" scheme="https://felixxiong.github.io/tags/%E4%BA%A7%E5%93%81/"/>
-    
-    <category term="百度" scheme="https://felixxiong.github.io/tags/%E7%99%BE%E5%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>最近的生活状态</title>
     <link href="https://felixxiong.github.io/2022/04/03/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/"/>
     <id>https://felixxiong.github.io/2022/04/03/%E6%9C%80%E8%BF%91%E7%9A%84%E7%94%9F%E6%B4%BB%E7%8A%B6%E6%80%81/</id>
@@ -561,6 +528,34 @@
     <category term="UI" scheme="https://felixxiong.github.io/tags/UI/"/>
     
     <category term="导航" scheme="https://felixxiong.github.io/tags/%E5%AF%BC%E8%88%AA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeanCloud国内版迁移至国际版</title>
+    <link href="https://felixxiong.github.io/2020/09/25/LeanCloud%E5%9B%BD%E5%86%85%E7%89%88%E8%BF%81%E7%A7%BB%E8%87%B3%E5%9B%BD%E9%99%85%E7%89%88/"/>
+    <id>https://felixxiong.github.io/2020/09/25/LeanCloud%E5%9B%BD%E5%86%85%E7%89%88%E8%BF%81%E7%A7%BB%E8%87%B3%E5%9B%BD%E9%99%85%E7%89%88/</id>
+    <published>2020-09-24T16:00:00.000Z</published>
+    <updated>2021-03-24T15:35:29.051Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从9月15日收到第一条LeanCloud的“实名认证”的短信之后，发现自己之前的错误选择。</p><p>对于自己信奉的“自由信条”，所以在自己做产品的时候，一定要让评论更“自由”。博客产品也是如此。</p><p>正好4个月后，我解决了迁移过程中博客无法评论的问题，以及无法展示阅读数量的问题，希望迁移的“来客”可以有所帮助。</p><p>2020年12月25日，上线了新版控制台。以下截图为旧版截图，大家看看就好。</p><span id="more"></span><h2 id="数据备份"><a class="markdownIt-Anchor" href="#数据备份"></a> 数据备份</h2><p>首先从华北节点的LeanCloud数据进行导出，开发版不支持转让应用，否则可能更便捷。</p><p>之后，查看邮件，会得到带有.tar.gz的压缩文件格式，解压缩之后是多个json文件。</p><h2 id="国际版开始配置"><a class="markdownIt-Anchor" href="#国际版开始配置"></a> 国际版开始配置</h2><p>国际版Leancloud入口：<a href="https://console.leancloud.app/login.html#/signin%EF%BC%8C%E9%80%89%E6%8B%A9%E5%9B%BD%E9%99%85%E7%89%88">https://console.leancloud.app/login.html#/signin，选择国际版</a></p><h3 id="创建class"><a class="markdownIt-Anchor" href="#创建class"></a> 创建Class</h3><p>如果你使用的是Valine的评论（下文也会提到），那么需要根据国内版的节点创建Class，如图所示：</p><p><strong>根据你的使用场景</strong>来创建，我创建的是Comment+Counter：<strong>评论与未读计数</strong>。</p><p><img src="https://i.loli.net/2020/09/25/UmBjcXv87W1Caxb.jpg" alt="未命名.001.jpeg" /></p><p>改版后的控制台创建Class需要权限，也可以在国内版的权限中进行设置：</p><p><img src="https://i.loli.net/2020/09/25/G3t1wm4q6eAuXW5.jpg" alt="未命名.002.jpeg" /></p><h3 id="导入"><a class="markdownIt-Anchor" href="#导入"></a> 导入</h3><p>存储-导入导出-输入创建的两个Class的名称，我这里是Comment与Counter，输入两次，选择文件即可。</p><p>若未出现绿色导入成功的提示，刷新一下页面，查看结构化数据即可。</p><p>我这里还有<code>_User</code>字段，应该是用来存储用户评论的用户（名）的，也进行导入。</p><p><img src="https://i.loli.net/2020/09/25/7Yzb1hRodgavHtc.jpg" alt="未命名.003.jpeg" /></p><h3 id="key的设置"><a class="markdownIt-Anchor" href="#key的设置"></a> Key的设置</h3><p>这里根据你创建的Class进行修改，我需要修改两处：</p><p>先是评论(Comment)：</p><pre class="highlight"><code class=""># Valine.# You can get your appid and appkey from https://leancloud.cn# more info please open https://valine.js.orgvaline:  enable: true  appid:    # your leancloud application appid  appkey:   # your leancloud application appkey  notify: true # mail notifier , https://github.com/xCss/Valine/wiki  verify: false # Verification code  placeholder: Just go go # comment box placeholder  avatar: mm # gravatar style  guest_info: nick,mail,link # custom comment header  pageSize: 10 # pagination size</code></pre><p>之后为访问量(Counter)：</p><pre class="highlight"><code class=""># Show number of visitors to each article.# You can visit https://leancloud.cn get AppID and AppKey.leancloud_visitors:  enable: true  app_id:  #&lt;app_id&gt;  app_key:  #&lt;app_key&gt;</code></pre><h3 id="验证"><a class="markdownIt-Anchor" href="#验证"></a> 验证</h3><p>最后<code>hexo g -d</code>上去，随便找一条最新的博文输入测试数据，之后在控制台进行查看即可。</p><h3 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h3><p>删除国内版LeanCloud账号，需事先删除创建的应用。</p><h2 id="优化"><a class="markdownIt-Anchor" href="#优化"></a> 优化</h2><p>设置-风险监测，可查看当前应用的情况，可结合相应权限进行更改操作。</p><h2 id="踩坑记录"><a class="markdownIt-Anchor" href="#踩坑记录"></a> 踩坑记录</h2><h3 id="部分路径"><a class="markdownIt-Anchor" href="#部分路径"></a> 部分路径</h3><p>以下为我修改相应文件的路径，以供参考。</p><p><code>/Users/felixxiong/FelixXiongHexo/themes/next/layout/_partials/pagination.swig</code>：pagination.swig</p><p><code>/Users/felixxiong/FelixXiongHexo/themes/next/layout/_third-party/comments/valine.swig</code>：valine.swig</p><p><code>/Users/felixxiong/FelixXiongHexo/themes/next/layout/_third-party/analytics/lean-analytics.swig</code>：lean-analytics.swig</p><p><code>/Users/felixxiong/FelixXiongHexo/themes/next/layout/_third-party/analytics/busuanzi-counter.swig</code>：</p><p>busuanzi-counter.swig</p><h3 id="网站页脚修正"><a class="markdownIt-Anchor" href="#网站页脚修正"></a> 网站页脚修正</h3><p>修改<code>pagination.swig</code>：</p><pre class="highlight"><code class="">&#123;&#123;   paginator(&#123;   prev_text: '&lt;i class=&quot;fa fa-angle-left&quot; aria-label=&quot;'+__('accessibility.prev_page')+'&quot;&gt;&lt;/i&gt;',   next_text: '&lt;i class=&quot;fa fa-angle-right&quot; aria-label=&quot;'+__('accessibility.next_page')+'&quot;&gt;&lt;/i&gt;',   ... &#125;)</code></pre><h3 id="网站总访问量修正"><a class="markdownIt-Anchor" href="#网站总访问量修正"></a> 网站总访问量修正</h3><p>更新了不蒜子的域名，官方解释在<a href="http://ibruce.info/2015/04/04/busuanzi/">这里</a>。</p><p>修改<code>busuanzi-counter.swig</code>：</p><pre class="highlight"><code class="">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="valine无法评论"><a class="markdownIt-Anchor" href="#valine无法评论"></a> Valine无法评论</h3><h4 id="提示code-401-message-unauthorized"><a class="markdownIt-Anchor" href="#提示code-401-message-unauthorized"></a> 提示：<code>Code 401 message Unauthorized</code></h4><p>{“code”:401,“message”:“Unauthorized.”}</p><p>尝试：</p><ol><li>检查appid、appkey：正确无误</li><li>更改<code>valine.swig</code>：<ol><li>两条js，因为直接访问cdn地址无法打开，所以拷贝至本地，创建路径，下载链接参见链接6。</li><li>去除<code>valine.swig</code>中的第一条js，只留下<code>Valine.min.js</code></li><li><code>''</code>为真实的字符串。</li></ol></li><li>更改LeanCloud配置：<ol><li>安全域名：添加端口号（https：443，http：80）</li><li>增加不带https前缀的URL，结果为错误</li></ol></li></ol><p><strong>结果：使用1、2.2，成功显示之前导入评论。</strong></p><p>检查控制台，<a href="http://xn--leancloud-fp6nq4ch83ab48e1zvauh7f.cn">发现请求仍为leancloud.cn</a>：</p><h3 id="leancloud评论计数不显示"><a class="markdownIt-Anchor" href="#leancloud评论计数不显示"></a> LeanCloud评论计数不显示</h3><p>尝试：<strong>复制<code>lean-analytics.swig</code>的js代码，成功</strong>，参见链接3。</p><h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2><p>博客也修好了，终于又有可以安心说话的地方了。：）</p><h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2><p>1：<a href="https://felixxiong.github.io/2018/05/05/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E9%80%89%E7%94%A8%E4%B9%8B%E8%B7%AF/">博客评论系统选用之路</a></p><p>2：使用 LeanCloud：<a href="https://bjtu-hxs.github.io/2018/06/12/leancloud-config/">Hexo博客Next主题添加统计文章阅读量功能</a></p><p>3：<a href="https://co5.me/2019/190818-valine.html">将 Valine 切换至 leancloud 国际版</a></p><p>4：<a href="https://blog.csdn.net/Aoman_Hao/article/details/87809762">Hexo博客使用valine评论系统无效果及终极解决方案</a></p><p>5：<a href="https://www.fayne.cn/2019/01/08/new-comment-valine/">hexo+valine评论系统(评论无效+头像不显示问题解决)</a></p><p>6：<a href="https://www.fujiatian.com/post/32518.html">Valine评论系统不能使用</a></p><p>​</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;自从9月15日收到第一条LeanCloud的“实名认证”的短信之后，发现自己之前的错误选择。&lt;/p&gt;
+&lt;p&gt;对于自己信奉的“自由信条”，所以在自己做产品的时候，一定要让评论更“自由”。博客产品也是如此。&lt;/p&gt;
+&lt;p&gt;正好4个月后，我解决了迁移过程中博客无法评论的问题，以及无法展示阅读数量的问题，希望迁移的“来客”可以有所帮助。&lt;/p&gt;
+&lt;p&gt;2020年12月25日，上线了新版控制台。以下截图为旧版截图，大家看看就好。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="博客探索" scheme="https://felixxiong.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/"/>
+    
+    <category term="Hexo" scheme="https://felixxiong.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/Hexo/"/>
+    
+    <category term="功能组件" scheme="https://felixxiong.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%8E%A2%E7%B4%A2/Hexo/%E5%8A%9F%E8%83%BD%E7%BB%84%E4%BB%B6/"/>
+    
+    
+    <category term="迁移" scheme="https://felixxiong.github.io/tags/%E8%BF%81%E7%A7%BB/"/>
     
   </entry>
   
