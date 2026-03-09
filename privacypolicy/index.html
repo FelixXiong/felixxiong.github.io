@@ -41,29 +41,21 @@
         <p>为了提供完整的相册管理功能，本应用需要申请以下权限：</p>
         
         <div class="permission-item">
-            <div class="permission-name">1. 读取媒体文件权限（ohos.permission.READ_MEDIA）</div>
+            <div class="permission-name">1. 读取媒体文件权限（ACL受限权限）（ohos.permission.READ_IMAGEVIDEO）</div>
             <div class="permission-desc">
                 <strong>用途：</strong>读取您设备相册中的照片和视频<br>
                 <strong>使用场景：</strong>展示相册内容、浏览照片、管理相册<br>
                 <strong>数据处理方式：</strong>仅在本地读取和展示，不上传服务器
             </div>
         </div>
+      
         
         <div class="permission-item">
-            <div class="permission-name">2. 写入媒体文件权限（ohos.permission.WRITE_MEDIA）</div>
+            <div class="permission-name">2. 手势权限（ohos.permission.DETECT_GESTURE）</div>
             <div class="permission-desc">
-                <strong>用途：</strong>保存照片和视频到您的设备相册<br>
-                <strong>使用场景：</strong>导入照片、保存编辑后的照片、整理相册<br>
-                <strong>数据处理方式：</strong>仅在本地保存，不上传服务器
-            </div>
-        </div>
-        
-        <div class="permission-item">
-            <div class="permission-name">3. 网络权限（ohos.permission.INTERNET）</div>
-            <div class="permission-desc">
-                <strong>用途：</strong>访问网络加载隐私政策和用户协议<br>
-                <strong>使用场景：</strong>展示本隐私政策页面、用户协议页面<br>
-                <strong>数据处理方式：</strong>仅用于加载文本内容，不传输用户数据
+                <strong>用途：</strong>设置内的“适配智感握姿开关”<br>
+                <strong>使用场景：</strong>当用户开启“适配智感握姿”后，可检测用户左手/右手或双手握持，首页对应的功能也会对应出现在对应位置<br>
+                <strong>数据处理方式：</strong>不涉及
             </div>
         </div>
         
